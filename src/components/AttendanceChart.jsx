@@ -139,12 +139,12 @@
 //       const total = payload.reduce((sum, entry) => sum + entry.value, 0);
 //       return (
 //         <div className="bg-white p-4 shadow-lg rounded-lg border border-gray-200 min-w-[180px]">
-//           <p className="font-bold text-gray-800 mb-2 border-b pb-2">{label}</p>
+//           <p className="pb-2 mb-2 font-bold text-gray-800 border-b">{label}</p>
 //           <div className="space-y-1">
 //             {payload.map((entry, index) => (
-//               <div key={index} className="flex justify-between items-center">
+//               <div key={index} className="flex items-center justify-between">
 //                 <div className="flex items-center">
-//                   <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: entry.color }} />
+//                   <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: entry.color }} />
 //                   <span style={{ color: entry.color }}>{entry.name}</span>
 //                 </div>
 //                 <span className="font-semibold">
@@ -153,7 +153,7 @@
 //               </div>
 //             ))}
 //           </div>
-//           <div className="mt-2 pt-2 border-t text-sm">
+//           <div className="pt-2 mt-2 text-sm border-t">
 //             <span className="font-medium">Total: </span>
 //             <span className="font-bold">{total}</span>
 //           </div>
@@ -168,11 +168,11 @@
 //       const employee = payload[0].payload;
 //       return (
 //         <div className="bg-white p-4 shadow-lg rounded-lg border border-gray-200 min-w-[220px]">
-//           <p className="font-bold text-gray-800 mb-2 border-b pb-2">{label}</p>
+//           <p className="pb-2 mb-2 font-bold text-gray-800 border-b">{label}</p>
 //           <div className="space-y-2">
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Present }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Present }} />
 //                 <span className="text-gray-700">Present</span>
 //               </div>
 //               <div className="text-right">
@@ -180,9 +180,9 @@
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Late }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Late }} />
 //                 <span className="text-gray-700">Late</span>
 //               </div>
 //               <div className="text-right">
@@ -190,9 +190,9 @@
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.HalfDay }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.HalfDay }} />
 //                 <span className="text-gray-700">Half Day</span>
 //               </div>
 //               <div className="text-right">
@@ -200,9 +200,9 @@
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Absent }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Absent }} />
 //                 <span className="text-gray-700">Absent</span>
 //               </div>
 //               <div className="text-right">
@@ -210,7 +210,7 @@
 //               </div>
 //             </div>
 //           </div>
-//           <div className="mt-3 pt-2 border-t text-sm">
+//           <div className="pt-2 mt-3 text-sm border-t">
 //             <div className="flex justify-between mb-1">
 //               <span className="font-medium text-gray-700">Days Worked: </span>
 //               <span className="font-bold text-gray-800">{employee.daysWorked}</span>
@@ -228,14 +228,14 @@
 
 //   const renderMonthlyChart = () => (
 //     <div className="mt-6">
-//       <div className="flex justify-between items-center mb-6">
+//       <div className="flex items-center justify-between mb-6">
 //         <div>
 //           <h3 className="text-lg font-semibold text-gray-800">Monthly Attendance Overview</h3>
 //           <p className="text-sm text-gray-500">Attendance distribution across all months</p>
 //         </div>
 //         <div className="flex space-x-3">
 //           {Object.entries(stats).map(([status, count]) => (
-//             <div key={status} className="text-center px-3 py-2 bg-gray-50 rounded-lg">
+//             <div key={status} className="px-3 py-2 text-center rounded-lg bg-gray-50">
 //               <div className="text-xs font-medium text-gray-500">{status}</div>
 //               <div className="text-lg font-bold" style={{ color: statusColors[status] }}>{count}</div>
 //             </div>
@@ -243,7 +243,7 @@
 //         </div>
 //       </div>
       
-//       <div className="h-80 bg-gray-50 rounded-xl p-4 border border-gray-100">
+//       <div className="p-4 border border-gray-100 h-80 bg-gray-50 rounded-xl">
 //         <ResponsiveContainer width="100%" height="100%">
 //           <BarChart data={data}>
 //             <XAxis 
@@ -270,10 +270,10 @@
 //         </ResponsiveContainer>
 //       </div>
       
-//       <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+//       <div className="grid grid-cols-2 gap-3 mt-4 md:grid-cols-4">
 //         {Object.entries(statusColors).map(([status, color]) => (
-//           <div key={status} className="flex items-center bg-gray-50 px-3 py-2 rounded-lg">
-//             <div className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: color }} />
+//           <div key={status} className="flex items-center px-3 py-2 rounded-lg bg-gray-50">
+//             <div className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: color }} />
 //             <span className="text-sm font-medium text-gray-700">{status}</span>
 //             <span className="ml-auto text-sm font-bold" style={{ color }}>{stats[status]}</span>
 //           </div>
@@ -295,7 +295,7 @@
     
 //     return (
 //       <div className="mt-4">
-//         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+//         <div className="flex flex-col gap-4 mb-6 md:flex-row md:justify-between md:items-center">
 //           <div>
 //             <h3 className="text-lg font-semibold text-gray-800">Employee Attendance Details</h3>
 //             <p className="text-sm text-gray-500">Attendance breakdown by employee for {selectedMonth}</p>
@@ -314,9 +314,7 @@
 //             <select 
 //               value={selectedMonth} 
 //               onChange={(e) => setSelectedMonth(e.target.value)}
-//               className="px-3 py-2 border border-gray-200 rounded-lg shadow-sm 
-//                          focus:outline-none focus:ring-2 focus:ring-blue-500 
-//                          text-gray-700 font-medium bg-white"
+//               className="px-3 py-2 font-medium text-gray-700 bg-white border border-gray-200 rounded-lg shadow-sm // focus:outline-none focus:ring-2 focus:ring-blue-500"
 //             >
 //               {months.map(month => (
 //                 <option key={month} value={month}>{month}</option>
@@ -326,9 +324,7 @@
 //              <select 
 //     value={selectedMonth} 
 //     onChange={(e) => setSelectedMonth(e.target.value)}
-//     className="px-3 py-2 border border-gray-300 rounded-md shadow-sm 
-//                focus:outline-none focus:ring-2 focus:ring-blue-500 
-//                text-blue-600 font-medium bg-white"
+//     className="px-3 py-2 font-medium text-blue-600 bg-white border border-gray-300 rounded-md shadow-sm // focus:outline-none focus:ring-2 focus:ring-blue-500"
 //   >
 //     {months.map(month => (
 //       <option 
@@ -344,7 +340,7 @@
 //         </div>
 
 //         {employeeData.length > 0 ? (
-//           <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+//           <div className="p-4 border border-gray-100 bg-gray-50 rounded-xl">
 //             <div className="h-[500px] overflow-y-auto pr-2">
 //               <ResponsiveContainer width="100%" height={employeeData.length * 60}>
 //                 <BarChart
@@ -397,10 +393,10 @@
 //             </div>
 //           </div>
 //         ) : (
-//           <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-xl">
+//           <div className="py-12 text-center text-gray-500 bg-gray-50 rounded-xl">
 //             {loading ? (
 //               <div className="flex flex-col items-center">
-//                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+//                 <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
 //                 <span>Loading employee data...</span>
 //               </div>
 //             ) : 'No attendance data available for this month'}
@@ -411,13 +407,13 @@
 //   };
 
 //   return (
-//     <div className="bg-white rounded-2xl p-6 shadow-sm w-full border border-gray-100">
-//       <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+//     <div className="w-full p-6 bg-white border border-gray-100 shadow-sm rounded-2xl">
+//       <div className="flex flex-col gap-4 mb-6 md:flex-row md:justify-between md:items-center">
 //         <div>
 //           <h2 className="text-2xl font-bold text-gray-800">Attendance Analytics</h2>
 //           <p className="text-sm text-gray-500">Visualize and analyze employee attendance patterns</p>
 //         </div>
-//         <div className="flex space-x-2 bg-gray-50 p-1 rounded-lg">
+//         <div className="flex p-1 space-x-2 rounded-lg bg-gray-50">
 //           <button
 //             onClick={() => setActiveTab('monthly')}
 //             className={`px-4 py-2 rounded-md font-medium text-sm transition-colors ${
@@ -442,9 +438,9 @@
 //       </div>
 
 //       {loading && activeTab === 'monthly' ? (
-//         <div className="text-center py-12 text-gray-500">
+//         <div className="py-12 text-center text-gray-500">
 //           <div className="flex flex-col items-center">
-//             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+//             <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
 //             <span>Loading monthly data...</span>
 //           </div>
 //         </div>
@@ -605,12 +601,12 @@
 //       const total = payload.reduce((sum, entry) => sum + entry.value, 0);
 //       return (
 //         <div className="bg-white p-4 shadow-lg rounded-lg border border-gray-200 min-w-[180px]">
-//           <p className="font-bold text-gray-800 mb-2 border-b pb-2">{label}</p>
+//           <p className="pb-2 mb-2 font-bold text-gray-800 border-b">{label}</p>
 //           <div className="space-y-1">
 //             {payload.map((entry, index) => (
-//               <div key={index} className="flex justify-between items-center">
+//               <div key={index} className="flex items-center justify-between">
 //                 <div className="flex items-center">
-//                   <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: entry.color }} />
+//                   <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: entry.color }} />
 //                   <span style={{ color: entry.color }}>{entry.name}</span>
 //                 </div>
 //                 <span className="font-semibold">
@@ -619,7 +615,7 @@
 //               </div>
 //             ))}
 //           </div>
-//           <div className="mt-2 pt-2 border-t text-sm">
+//           <div className="pt-2 mt-2 text-sm border-t">
 //             <span className="font-medium">Total: </span>
 //             <span className="font-bold">{total}</span>
 //           </div>
@@ -634,11 +630,11 @@
 //       const employee = payload[0].payload;
 //       return (
 //         <div className="bg-white p-4 shadow-lg rounded-lg border border-gray-200 min-w-[220px]">
-//           <p className="font-bold text-gray-800 mb-2 border-b pb-2">{label}</p>
+//           <p className="pb-2 mb-2 font-bold text-gray-800 border-b">{label}</p>
 //           <div className="space-y-2">
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Present }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Present }} />
 //                 <span className="text-gray-700">Present</span>
 //               </div>
 //               <div className="text-right">
@@ -646,9 +642,9 @@
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Late }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Late }} />
 //                 <span className="text-gray-700">Late</span>
 //               </div>
 //               <div className="text-right">
@@ -656,9 +652,9 @@
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.HalfDay }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.HalfDay }} />
 //                 <span className="text-gray-700">Half Day</span>
 //               </div>
 //               <div className="text-right">
@@ -666,9 +662,9 @@
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Absent }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Absent }} />
 //                 <span className="text-gray-700">Absent</span>
 //               </div>
 //               <div className="text-right">
@@ -676,9 +672,9 @@
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.WeeklyOff }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.WeeklyOff }} />
 //                 <span className="text-gray-700">Weekly Off</span>
 //               </div>
 //               <div className="text-right">
@@ -686,7 +682,7 @@
 //               </div>
 //             </div>
 //           </div>
-//           <div className="mt-3 pt-2 border-t text-sm">
+//           <div className="pt-2 mt-3 text-sm border-t">
 //             <div className="flex justify-between mb-1">
 //               <span className="font-medium text-gray-700">Days Worked: </span>
 //               <span className="font-bold text-gray-800">{employee.daysWorked}</span>
@@ -704,14 +700,14 @@
 
 //   const renderMonthlyChart = () => (
 //     <div className="mt-6">
-//       <div className="flex justify-between items-center mb-6">
+//       <div className="flex items-center justify-between mb-6">
 //         <div>
 //           <h3 className="text-lg font-semibold text-gray-800">Monthly Attendance Overview</h3>
 //           <p className="text-sm text-gray-500">Attendance distribution across all months</p>
 //         </div>
 //         <div className="flex space-x-3">
 //           {Object.entries(stats).map(([status, count]) => (
-//             <div key={status} className="text-center px-3 py-2 bg-gray-50 rounded-lg">
+//             <div key={status} className="px-3 py-2 text-center rounded-lg bg-gray-50">
 //               <div className="text-xs font-medium text-gray-500">{status}</div>
 //               <div className="text-lg font-bold" style={{ color: statusColors[status] }}>{count}</div>
 //             </div>
@@ -719,7 +715,7 @@
 //         </div>
 //       </div>
       
-//       <div className="h-80 bg-gray-50 rounded-xl p-4 border border-gray-100">
+//       <div className="p-4 border border-gray-100 h-80 bg-gray-50 rounded-xl">
 //         <ResponsiveContainer width="100%" height="100%">
 //           <BarChart data={data}>
 //             <XAxis 
@@ -747,10 +743,10 @@
 //         </ResponsiveContainer>
 //       </div>
       
-//       <div className="mt-4 grid grid-cols-2 md:grid-cols-5 gap-3">
+//       <div className="grid grid-cols-2 gap-3 mt-4 md:grid-cols-5">
 //         {Object.entries(statusColors).map(([status, color]) => (
-//           <div key={status} className="flex items-center bg-gray-50 px-3 py-2 rounded-lg">
-//             <div className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: color }} />
+//           <div key={status} className="flex items-center px-3 py-2 rounded-lg bg-gray-50">
+//             <div className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: color }} />
 //             <span className="text-sm font-medium text-gray-700">{status}</span>
 //             <span className="ml-auto text-sm font-bold" style={{ color }}>{stats[status]}</span>
 //           </div>
@@ -773,7 +769,7 @@
     
 //     return (
 //       <div className="mt-4">
-//         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+//         <div className="flex flex-col gap-4 mb-6 md:flex-row md:justify-between md:items-center">
 //           <div>
 //             <h3 className="text-lg font-semibold text-gray-800">Employee Attendance Details</h3>
 //             <p className="text-sm text-gray-500">Attendance breakdown by employee for {selectedMonth}</p>
@@ -792,9 +788,7 @@
 //             <select 
 //               value={selectedMonth} 
 //               onChange={(e) => setSelectedMonth(e.target.value)}
-//               className="px-3 py-2 border border-gray-300 rounded-md shadow-sm 
-//                          focus:outline-none focus:ring-2 focus:ring-blue-500 
-//                          text-blue-600 font-medium bg-white"
+//               className="px-3 py-2 font-medium text-blue-600 bg-white border border-gray-300 rounded-md shadow-sm // focus:outline-none focus:ring-2 focus:ring-blue-500"
 //             >
 //               {months.map(month => (
 //                 <option key={month} value={month} className="text-gray-800">
@@ -806,7 +800,7 @@
 //         </div>
 
 //         {employeeData.length > 0 ? (
-//           <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+//           <div className="p-4 border border-gray-100 bg-gray-50 rounded-xl">
 //             <div className="h-[500px] overflow-y-auto pr-2">
 //               <ResponsiveContainer width="100%" height={employeeData.length * 60}>
 //                 <BarChart
@@ -864,10 +858,10 @@
 //             </div>
 //           </div>
 //         ) : (
-//           <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-xl">
+//           <div className="py-12 text-center text-gray-500 bg-gray-50 rounded-xl">
 //             {loading ? (
 //               <div className="flex flex-col items-center">
-//                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+//                 <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
 //                 <span>Loading employee data...</span>
 //               </div>
 //             ) : 'No attendance data available for this month'}
@@ -878,13 +872,13 @@
 //   };
 
 //   return (
-//     <div className="bg-white rounded-2xl p-6 shadow-sm w-full border border-gray-100">
-//       <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+//     <div className="w-full p-6 bg-white border border-gray-100 shadow-sm rounded-2xl">
+//       <div className="flex flex-col gap-4 mb-6 md:flex-row md:justify-between md:items-center">
 //         <div>
 //           <h2 className="text-2xl font-bold text-gray-800">Attendance Analytics</h2>
 //           <p className="text-sm text-gray-500">Visualize and analyze employee attendance patterns</p>
 //         </div>
-//         <div className="flex space-x-2 bg-gray-50 p-1 rounded-lg">
+//         <div className="flex p-1 space-x-2 rounded-lg bg-gray-50">
 //           <button
 //             onClick={() => setActiveTab('monthly')}
 //             className={`px-4 py-2 rounded-md font-medium text-sm transition-colors ${
@@ -909,9 +903,9 @@
 //       </div>
 
 //       {loading && activeTab === 'monthly' ? (
-//         <div className="text-center py-12 text-gray-500">
+//         <div className="py-12 text-center text-gray-500">
 //           <div className="flex flex-col items-center">
-//             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+//             <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
 //             <span>Loading monthly data...</span>
 //           </div>
 //         </div>
@@ -1102,12 +1096,12 @@ const AttendanceChart = () => {
       const total = payload.reduce((sum, entry) => sum + entry.value, 0);
       return (
         <div className="bg-white p-4 shadow-lg rounded-lg border border-gray-200 min-w-[180px]">
-          <p className="font-bold text-gray-800 mb-2 border-b pb-2">{label}</p>
+          <p className="pb-2 mb-2 font-bold text-gray-800 border-b">{label}</p>
           <div className="space-y-1">
             {payload.map((entry, index) => (
-              <div key={index} className="flex justify-between items-center">
+              <div key={index} className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: entry.color }} />
+                  <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: entry.color }} />
                   <span style={{ color: entry.color }}>{entry.name}</span>
                 </div>
                 <span className="font-semibold">
@@ -1116,7 +1110,7 @@ const AttendanceChart = () => {
               </div>
             ))}
           </div>
-          <div className="mt-2 pt-2 border-t text-sm">
+          <div className="pt-2 mt-2 text-sm border-t">
             <span className="font-medium">Total: </span>
             <span className="font-bold">{total}</span>
           </div>
@@ -1131,11 +1125,11 @@ const AttendanceChart = () => {
       const employee = payload[0].payload;
       return (
         <div className="bg-white p-4 shadow-lg rounded-lg border border-gray-200 min-w-[220px]">
-          <p className="font-bold text-gray-800 mb-2 border-b pb-2">{label}</p>
+          <p className="pb-2 mb-2 font-bold text-gray-800 border-b">{label}</p>
           <div className="space-y-2">
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Present }} />
+                <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Present }} />
                 <span className="text-gray-700">Present</span>
               </div>
               <div className="text-right">
@@ -1143,9 +1137,9 @@ const AttendanceChart = () => {
               </div>
             </div>
             
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Late }} />
+                <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Late }} />
                 <span className="text-gray-700">Late</span>
               </div>
               <div className="text-right">
@@ -1153,9 +1147,9 @@ const AttendanceChart = () => {
               </div>
             </div>
             
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.HalfDay }} />
+                <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.HalfDay }} />
                 <span className="text-gray-700">Half Day</span>
               </div>
               <div className="text-right">
@@ -1163,9 +1157,9 @@ const AttendanceChart = () => {
               </div>
             </div>
             
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Absent }} />
+                <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Absent }} />
                 <span className="text-gray-700">Absent</span>
               </div>
               <div className="text-right">
@@ -1173,9 +1167,9 @@ const AttendanceChart = () => {
               </div>
             </div>
             
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Leave }} />
+                <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Leave }} />
                 <span className="text-gray-700">Leave</span>
               </div>
               <div className="text-right">
@@ -1183,9 +1177,9 @@ const AttendanceChart = () => {
               </div>
             </div>
             
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.WeeklyOff }} />
+                <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.WeeklyOff }} />
                 <span className="text-gray-700">Weekly Off</span>
               </div>
               <div className="text-right">
@@ -1193,7 +1187,7 @@ const AttendanceChart = () => {
               </div>
             </div>
           </div>
-          <div className="mt-3 pt-2 border-t text-sm">
+          <div className="pt-2 mt-3 text-sm border-t">
             <div className="flex justify-between mb-1">
               <span className="font-medium text-gray-700">Days Worked: </span>
               <span className="font-bold text-gray-800">{employee.daysWorked}</span>
@@ -1211,14 +1205,14 @@ const AttendanceChart = () => {
 
   const renderMonthlyChart = () => (
     <div className="mt-6">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex items-center justify-between mb-6">
         <div>
           <h3 className="text-lg font-semibold text-gray-800">Monthly Attendance Overview</h3>
           <p className="text-sm text-gray-500">Attendance distribution across all months</p>
         </div>
         <div className="flex space-x-3">
           {Object.entries(overallStats).map(([status, count]) => (
-            <div key={status} className="text-center px-3 py-2 bg-gray-50 rounded-lg">
+            <div key={status} className="px-3 py-2 text-center rounded-lg bg-gray-50">
               <div className="text-xs font-medium text-gray-500">{status.replace('total', '')}</div>
               <div className="text-lg font-bold" style={{ color: statusColors[status.replace('total', '')] }}>{count}</div>
             </div>
@@ -1226,7 +1220,7 @@ const AttendanceChart = () => {
         </div>
       </div>
       
-      <div className="h-80 bg-gray-50 rounded-xl p-4 border border-gray-100">
+      <div className="p-4 border border-gray-100 h-80 bg-gray-50 rounded-xl">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data}>
             <XAxis 
@@ -1255,10 +1249,10 @@ const AttendanceChart = () => {
         </ResponsiveContainer>
       </div>
       
-      <div className="mt-4 grid grid-cols-2 md:grid-cols-6 gap-3">
+      <div className="grid grid-cols-2 gap-3 mt-4 md:grid-cols-6">
         {Object.entries(statusColors).map(([status, color]) => (
-          <div key={status} className="flex items-center bg-gray-50 px-3 py-2 rounded-lg">
-            <div className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: color }} />
+          <div key={status} className="flex items-center px-3 py-2 rounded-lg bg-gray-50">
+            <div className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: color }} />
             <span className="text-sm font-medium text-gray-700">{status}</span>
             <span className="ml-auto text-sm font-bold" style={{ color }}>
               {status === 'Present' ? overallStats.totalPresent :
@@ -1287,7 +1281,7 @@ const AttendanceChart = () => {
     
     return (
       <div className="mt-4">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+        <div className="flex flex-col gap-4 mb-6 md:flex-row md:justify-between md:items-center">
           <div>
             <h3 className="text-lg font-semibold text-gray-800">Employee Attendance Details</h3>
             <p className="text-sm text-gray-500">Attendance breakdown by employee for {selectedMonth}</p>
@@ -1306,9 +1300,7 @@ const AttendanceChart = () => {
             <select 
               value={selectedMonth} 
               onChange={(e) => setSelectedMonth(e.target.value)}
-              className="px-3 py-2 border border-gray-300 rounded-md shadow-sm 
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 
-                         text-blue-600 font-medium bg-white"
+              className="px-3 py-2 font-medium text-blue-600 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               {months.map(month => (
                 <option key={month} value={month} className="text-gray-800">
@@ -1320,7 +1312,7 @@ const AttendanceChart = () => {
         </div>
 
         {employeeData.length > 0 ? (
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+          <div className="p-4 border border-gray-100 bg-gray-50 rounded-xl">
             <div className="h-[500px] overflow-y-auto pr-2">
               <ResponsiveContainer width="100%" height={employeeData.length * 60}>
                 <BarChart
@@ -1383,10 +1375,10 @@ const AttendanceChart = () => {
             </div>
           </div>
         ) : (
-          <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-xl">
+          <div className="py-12 text-center text-gray-500 bg-gray-50 rounded-xl">
             {loading ? (
               <div className="flex flex-col items-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+                <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
                 <span>Loading employee data...</span>
               </div>
             ) : 'No attendance data available for this month'}
@@ -1440,37 +1432,37 @@ const ChartBarIcon = ({ className }) => (
   const renderEmployeeStatsTable = () => {
     return (
       <div className="mt-6">
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex items-center justify-between mb-6">
           <div>
             <h3 className="text-lg font-semibold text-gray-800">Employee Attendance Summary</h3>
             <p className="text-sm text-gray-500">Detailed breakdown by employee</p>
           </div>
         </div>
         
-        {/* <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        {/* <div className="overflow-hidden bg-white border border-gray-200 rounded-xl">
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                     Employee
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                     Role
                   </th>
-                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                     Present
                   </th>
-                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                     Absent
                   </th>
-                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                     Leave
                   </th>
-                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                     Weekly Off
                   </th>
-                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                     Total Days
                   </th>
                 </tr>
@@ -1486,22 +1478,22 @@ const ChartBarIcon = ({ className }) => (
                         </div>
                       </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                       {employee.role}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-green-600">
+                    <td className="px-6 py-4 text-sm font-medium text-center text-green-600 whitespace-nowrap">
                       {employee.present}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-red-600">
+                    <td className="px-6 py-4 text-sm font-medium text-center text-red-600 whitespace-nowrap">
                       {employee.absent}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-yellow-600">
+                    <td className="px-6 py-4 text-sm font-medium text-center text-yellow-600 whitespace-nowrap">
                       {employee.leave}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-purple-600">
+                    <td className="px-6 py-4 text-sm font-medium text-center text-purple-600 whitespace-nowrap">
                       {employee.weeklyOff}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-gray-600">
+                    <td className="px-6 py-4 text-sm font-medium text-center text-gray-600 whitespace-nowrap">
                       {employee.present + employee.absent + employee.leave + employee.weeklyOff}
                     </td>
                   </tr>
@@ -1511,48 +1503,48 @@ const ChartBarIcon = ({ className }) => (
           </div>
         </div> */}
 
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <div className="overflow-hidden bg-white border border-gray-100 shadow-sm rounded-2xl">
   <div className="overflow-x-auto">
     <table className="w-full">
       <thead className="bg-gradient-to-r from-blue-50 to-indigo-50">
         <tr>
-          <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-blue-900 uppercase tracking-wider border-b border-blue-100">
+          <th scope="col" className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-blue-900 uppercase border-b border-blue-100">
             <div className="flex items-center">
               <UserIcon className="w-4 h-4 mr-2" />
               Employee
             </div>
           </th>
-          <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-blue-900 uppercase tracking-wider border-b border-blue-100">
+          <th scope="col" className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-blue-900 uppercase border-b border-blue-100">
             <div className="flex items-center">
               <BriefcaseIcon className="w-4 h-4 mr-2" />
               Role
             </div>
           </th>
-          <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-blue-900 uppercase tracking-wider border-b border-blue-100">
+          <th scope="col" className="px-6 py-4 text-xs font-semibold tracking-wider text-center text-blue-900 uppercase border-b border-blue-100">
             <div className="flex items-center justify-center">
               <CheckCircleIcon className="w-4 h-4 mr-2 text-green-500" />
               Present
             </div>
           </th>
-          <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-blue-900 uppercase tracking-wider border-b border-blue-100">
+          <th scope="col" className="px-6 py-4 text-xs font-semibold tracking-wider text-center text-blue-900 uppercase border-b border-blue-100">
             <div className="flex items-center justify-center">
               <XCircleIcon className="w-4 h-4 mr-2 text-red-500" />
               Absent
             </div>
           </th>
-          <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-blue-900 uppercase tracking-wider border-b border-blue-100">
+          <th scope="col" className="px-6 py-4 text-xs font-semibold tracking-wider text-center text-blue-900 uppercase border-b border-blue-100">
             <div className="flex items-center justify-center">
               <CalendarIcon className="w-4 h-4 mr-2 text-yellow-500" />
               Leave
             </div>
           </th>
-          <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-blue-900 uppercase tracking-wider border-b border-blue-100">
+          <th scope="col" className="px-6 py-4 text-xs font-semibold tracking-wider text-center text-blue-900 uppercase border-b border-blue-100">
             <div className="flex items-center justify-center">
               <MoonIcon className="w-4 h-4 mr-2 text-purple-500" />
               Weekly Off
             </div>
           </th>
-          <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-blue-900 uppercase tracking-wider border-b border-blue-100">
+          <th scope="col" className="px-6 py-4 text-xs font-semibold tracking-wider text-center text-blue-900 uppercase border-b border-blue-100">
             <div className="flex items-center justify-center">
               <ChartBarIcon className="w-4 h-4 mr-2 text-gray-600" />
               Total Days
@@ -1568,12 +1560,12 @@ const ChartBarIcon = ({ className }) => (
           >
             <td className="px-6 py-4 whitespace-nowrap">
               <div className="flex items-center">
-                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-sm font-semibold text-white rounded-full bg-gradient-to-br from-blue-500 to-indigo-600">
                   {employee.name.split(' ').map(n => n[0]).join('').toUpperCase()}
                 </div>
                 <div className="ml-4">
                   <div className="text-sm font-semibold text-gray-900">{employee.name}</div>
-                  <div className="text-xs text-gray-500 font-medium">{employee.email}</div>
+                  <div className="text-xs font-medium text-gray-500">{employee.email}</div>
                 </div>
               </div>
             </td>
@@ -1582,28 +1574,28 @@ const ChartBarIcon = ({ className }) => (
                 {employee.role}
               </span>
             </td>
-            <td className="px-6 py-4 whitespace-nowrap text-center">
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-green-100 text-green-800 font-bold text-sm rounded-full">
+            <td className="px-6 py-4 text-center whitespace-nowrap">
+              <span className="inline-flex items-center justify-center w-8 h-8 text-sm font-bold text-green-800 bg-green-100 rounded-full">
                 {employee.present}
               </span>
             </td>
-            <td className="px-6 py-4 whitespace-nowrap text-center">
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-red-100 text-red-800 font-bold text-sm rounded-full">
+            <td className="px-6 py-4 text-center whitespace-nowrap">
+              <span className="inline-flex items-center justify-center w-8 h-8 text-sm font-bold text-red-800 bg-red-100 rounded-full">
                 {employee.absent}
               </span>
             </td>
-            <td className="px-6 py-4 whitespace-nowrap text-center">
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-yellow-100 text-yellow-800 font-bold text-sm rounded-full">
+            <td className="px-6 py-4 text-center whitespace-nowrap">
+              <span className="inline-flex items-center justify-center w-8 h-8 text-sm font-bold text-yellow-800 bg-yellow-100 rounded-full">
                 {employee.leave}
               </span>
             </td>
-            <td className="px-6 py-4 whitespace-nowrap text-center">
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-purple-100 text-purple-800 font-bold text-sm rounded-full">
+            <td className="px-6 py-4 text-center whitespace-nowrap">
+              <span className="inline-flex items-center justify-center w-8 h-8 text-sm font-bold text-purple-800 bg-purple-100 rounded-full">
                 {employee.weeklyOff}
               </span>
             </td>
-            <td className="px-6 py-4 whitespace-nowrap text-center">
-              <span className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 font-bold text-sm rounded-full border border-gray-200">
+            <td className="px-6 py-4 text-center whitespace-nowrap">
+              <span className="inline-flex items-center justify-center w-10 h-10 text-sm font-bold text-gray-800 border border-gray-200 rounded-full bg-gradient-to-br from-gray-100 to-gray-200">
                 {employee.present + employee.absent + employee.leave + employee.weeklyOff}
               </span>
             </td>
@@ -1618,13 +1610,13 @@ const ChartBarIcon = ({ className }) => (
   };
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm w-full border border-gray-100">
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+    <div className="w-full p-6 bg-white border border-gray-100 shadow-sm rounded-2xl">
+      <div className="flex flex-col gap-4 mb-6 md:flex-row md:justify-between md:items-center">
         <div>
           <h2 className="text-2xl font-bold text-gray-800">Attendance Analytics</h2>
           <p className="text-sm text-gray-500">Visualize and analyze employee attendance patterns</p>
         </div>
-        <div className="flex space-x-2 bg-gray-50 p-1 rounded-lg">
+        <div className="flex p-1 space-x-2 rounded-lg bg-gray-50">
           <button
             onClick={() => setActiveTab('monthly')}
             className={`px-4 py-2 rounded-md font-medium text-sm transition-colors ${
@@ -1659,9 +1651,9 @@ const ChartBarIcon = ({ className }) => (
       </div>
 
       {loading && activeTab === 'monthly' ? (
-        <div className="text-center py-12 text-gray-500">
+        <div className="py-12 text-center text-gray-500">
           <div className="flex flex-col items-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+            <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
             <span>Loading monthly data...</span>
           </div>
         </div>
@@ -1878,12 +1870,12 @@ export default AttendanceChart;
 //       const total = payload.reduce((sum, entry) => sum + entry.value, 0);
 //       return (
 //         <div className="bg-white p-4 shadow-lg rounded-lg border border-gray-200 min-w-[180px]">
-//           <p className="font-bold text-gray-800 mb-2 border-b pb-2">{label}</p>
+//           <p className="pb-2 mb-2 font-bold text-gray-800 border-b">{label}</p>
 //           <div className="space-y-1">
 //             {payload.map((entry, index) => (
-//               <div key={index} className="flex justify-between items-center">
+//               <div key={index} className="flex items-center justify-between">
 //                 <div className="flex items-center">
-//                   <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: entry.color }} />
+//                   <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: entry.color }} />
 //                   <span style={{ color: entry.color }}>{entry.name}</span>
 //                 </div>
 //                 <span className="font-semibold">
@@ -1892,7 +1884,7 @@ export default AttendanceChart;
 //               </div>
 //             ))}
 //           </div>
-//           <div className="mt-2 pt-2 border-t text-sm">
+//           <div className="pt-2 mt-2 text-sm border-t">
 //             <span className="font-medium">Total: </span>
 //             <span className="font-bold">{total}</span>
 //           </div>
@@ -1907,11 +1899,11 @@ export default AttendanceChart;
 //       const employee = payload[0].payload;
 //       return (
 //         <div className="bg-white p-4 shadow-lg rounded-lg border border-gray-200 min-w-[220px]">
-//           <p className="font-bold text-gray-800 mb-2 border-b pb-2">{label}</p>
+//           <p className="pb-2 mb-2 font-bold text-gray-800 border-b">{label}</p>
 //           <div className="space-y-2">
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Present }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Present }} />
 //                 <span className="text-gray-700">Present</span>
 //               </div>
 //               <div className="text-right">
@@ -1919,9 +1911,9 @@ export default AttendanceChart;
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Late }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Late }} />
 //                 <span className="text-gray-700">Late</span>
 //               </div>
 //               <div className="text-right">
@@ -1929,9 +1921,9 @@ export default AttendanceChart;
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.HalfDay }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.HalfDay }} />
 //                 <span className="text-gray-700">Half Day</span>
 //               </div>
 //               <div className="text-right">
@@ -1939,9 +1931,9 @@ export default AttendanceChart;
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Absent }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Absent }} />
 //                 <span className="text-gray-700">Absent</span>
 //               </div>
 //               <div className="text-right">
@@ -1949,9 +1941,9 @@ export default AttendanceChart;
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Leave }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Leave }} />
 //                 <span className="text-gray-700">Leave</span>
 //               </div>
 //               <div className="text-right">
@@ -1959,9 +1951,9 @@ export default AttendanceChart;
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.WeeklyOff }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.WeeklyOff }} />
 //                 <span className="text-gray-700">Weekly Off</span>
 //               </div>
 //               <div className="text-right">
@@ -1969,7 +1961,7 @@ export default AttendanceChart;
 //               </div>
 //             </div>
 //           </div>
-//           <div className="mt-3 pt-2 border-t text-sm">
+//           <div className="pt-2 mt-3 text-sm border-t">
 //             <div className="flex justify-between mb-1">
 //               <span className="font-medium text-gray-700">Days Worked: </span>
 //               <span className="font-bold text-gray-800">{employee.daysWorked}</span>
@@ -1987,14 +1979,14 @@ export default AttendanceChart;
 
 //   const renderMonthlyChart = () => (
 //     <div className="mt-6">
-//       <div className="flex justify-between items-center mb-6">
+//       <div className="flex items-center justify-between mb-6">
 //         <div>
 //           <h3 className="text-lg font-semibold text-gray-800">Monthly Attendance Overview</h3>
 //           <p className="text-sm text-gray-500">Attendance distribution across all months</p>
 //         </div>
 //         <div className="flex space-x-3">
 //           {Object.entries(overallStats).map(([status, count]) => (
-//             <div key={status} className="text-center px-3 py-2 bg-gray-50 rounded-lg">
+//             <div key={status} className="px-3 py-2 text-center rounded-lg bg-gray-50">
 //               <div className="text-xs font-medium text-gray-500">{status.replace('total', '')}</div>
 //               <div className="text-lg font-bold" style={{ color: statusColors[status.replace('total', '')] }}>{count}</div>
 //             </div>
@@ -2002,7 +1994,7 @@ export default AttendanceChart;
 //         </div>
 //       </div>
       
-//       <div className="h-80 bg-gray-50 rounded-xl p-4 border border-gray-100">
+//       <div className="p-4 border border-gray-100 h-80 bg-gray-50 rounded-xl">
 //         <ResponsiveContainer width="100%" height="100%">
 //           <BarChart data={data}>
 //             <XAxis 
@@ -2031,10 +2023,10 @@ export default AttendanceChart;
 //         </ResponsiveContainer>
 //       </div>
       
-//       <div className="mt-4 grid grid-cols-2 md:grid-cols-6 gap-3">
+//       <div className="grid grid-cols-2 gap-3 mt-4 md:grid-cols-6">
 //         {Object.entries(statusColors).map(([status, color]) => (
-//           <div key={status} className="flex items-center bg-gray-50 px-3 py-2 rounded-lg">
-//             <div className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: color }} />
+//           <div key={status} className="flex items-center px-3 py-2 rounded-lg bg-gray-50">
+//             <div className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: color }} />
 //             <span className="text-sm font-medium text-gray-700">{status}</span>
 //             <span className="ml-auto text-sm font-bold" style={{ color }}>
 //               {status === 'Present' ? overallStats.totalPresent :
@@ -2063,7 +2055,7 @@ export default AttendanceChart;
     
 //     return (
 //       <div className="mt-4">
-//         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+//         <div className="flex flex-col gap-4 mb-6 md:flex-row md:justify-between md:items-center">
 //           <div>
 //             <h3 className="text-lg font-semibold text-gray-800">Employee Attendance Details</h3>
 //             <p className="text-sm text-gray-500">Attendance breakdown by employee for {selectedMonth}</p>
@@ -2082,9 +2074,7 @@ export default AttendanceChart;
 //             <select 
 //               value={selectedMonth} 
 //               onChange={(e) => setSelectedMonth(e.target.value)}
-//               className="px-3 py-2 border border-gray-300 rounded-md shadow-sm 
-//                          focus:outline-none focus:ring-2 focus:ring-blue-500 
-//                          text-blue-600 font-medium bg-white"
+//               className="px-3 py-2 font-medium text-blue-600 bg-white border border-gray-300 rounded-md shadow-sm // focus:outline-none focus:ring-2 focus:ring-blue-500"
 //             >
 //               {months.map(month => (
 //                 <option key={month} value={month} className="text-gray-800">
@@ -2096,7 +2086,7 @@ export default AttendanceChart;
 //         </div>
 
 //         {employeeData.length > 0 ? (
-//           <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+//           <div className="p-4 border border-gray-100 bg-gray-50 rounded-xl">
 //             <div className="h-[500px] overflow-y-auto pr-2">
 //               <ResponsiveContainer width="100%" height={employeeData.length * 60}>
 //                 <BarChart
@@ -2159,10 +2149,10 @@ export default AttendanceChart;
 //             </div>
 //           </div>
 //         ) : (
-//           <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-xl">
+//           <div className="py-12 text-center text-gray-500 bg-gray-50 rounded-xl">
 //             {loading ? (
 //               <div className="flex flex-col items-center">
-//                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+//                 <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
 //                 <span>Loading employee data...</span>
 //               </div>
 //             ) : 'No attendance data available for this month'}
@@ -2175,14 +2165,14 @@ export default AttendanceChart;
 //   const renderEmployeeStatsTable = () => {
 //     return (
 //       <div className="mt-6">
-//         <div className="flex justify-between items-center mb-6">
+//         <div className="flex items-center justify-between mb-6">
 //           <div>
 //             <h3 className="text-lg font-semibold text-gray-800">Employee Attendance Summary</h3>
 //             <p className="text-sm text-gray-500">Detailed breakdown by employee</p>
 //           </div>
 //           <div className="flex space-x-3">
 //             {Object.entries(overallStats).map(([status, count]) => (
-//               <div key={status} className="text-center px-3 py-2 bg-gray-50 rounded-lg">
+//               <div key={status} className="px-3 py-2 text-center rounded-lg bg-gray-50">
 //                 <div className="text-xs font-medium text-gray-500">{status.replace('total', '')}</div>
 //                 <div className="text-lg font-bold" style={{ color: statusColors[status.replace('total', '')] }}>{count}</div>
 //               </div>
@@ -2191,37 +2181,37 @@ export default AttendanceChart;
 //         </div>
         
 //         {summaryLoading ? (
-//           <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-xl">
+//           <div className="py-12 text-center text-gray-500 bg-gray-50 rounded-xl">
 //             <div className="flex flex-col items-center">
-//               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+//               <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
 //               <span>Loading employee summary...</span>
 //             </div>
 //           </div>
 //         ) : employeeStats.length > 0 ? (
-//           <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+//           <div className="overflow-hidden bg-white border border-gray-200 rounded-xl">
 //             <div className="overflow-x-auto">
 //               <table className="min-w-full divide-y divide-gray-200">
 //                 <thead className="bg-gray-50">
 //                   <tr>
-//                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
 //                       Employee
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
 //                       Role
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
 //                       Present
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
 //                       Absent
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
 //                       Leave
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
 //                       Weekly Off
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
 //                       Total Days
 //                     </th>
 //                   </tr>
@@ -2237,22 +2227,22 @@ export default AttendanceChart;
 //                           </div>
 //                         </div>
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                       <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                         {employee.role}
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-green-600">
+//                       <td className="px-6 py-4 text-sm font-medium text-center text-green-600 whitespace-nowrap">
 //                         {employee.present}
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-red-600">
+//                       <td className="px-6 py-4 text-sm font-medium text-center text-red-600 whitespace-nowrap">
 //                         {employee.absent}
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-yellow-600">
+//                       <td className="px-6 py-4 text-sm font-medium text-center text-yellow-600 whitespace-nowrap">
 //                         {employee.leave}
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-purple-600">
+//                       <td className="px-6 py-4 text-sm font-medium text-center text-purple-600 whitespace-nowrap">
 //                         {employee.weeklyOff}
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-gray-600">
+//                       <td className="px-6 py-4 text-sm font-medium text-center text-gray-600 whitespace-nowrap">
 //                         {employee.present + employee.absent + employee.leave + employee.weeklyOff}
 //                       </td>
 //                     </tr>
@@ -2262,7 +2252,7 @@ export default AttendanceChart;
 //             </div>
 //           </div>
 //         ) : (
-//           <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-xl">
+//           <div className="py-12 text-center text-gray-500 bg-gray-50 rounded-xl">
 //             No employee summary data available
 //           </div>
 //         )}
@@ -2271,13 +2261,13 @@ export default AttendanceChart;
 //   };
 
 //   return (
-//     <div className="bg-white rounded-2xl p-6 shadow-sm w-full border border-gray-100">
-//       <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+//     <div className="w-full p-6 bg-white border border-gray-100 shadow-sm rounded-2xl">
+//       <div className="flex flex-col gap-4 mb-6 md:flex-row md:justify-between md:items-center">
 //         <div>
 //           <h2 className="text-2xl font-bold text-gray-800">Attendance Analytics</h2>
 //           <p className="text-sm text-gray-500">Visualize and analyze employee attendance patterns</p>
 //         </div>
-//         <div className="flex space-x-2 bg-gray-50 p-1 rounded-lg">
+//         <div className="flex p-1 space-x-2 rounded-lg bg-gray-50">
 //           <button
 //             onClick={() => setActiveTab('monthly')}
 //             className={`px-4 py-2 rounded-md font-medium text-sm transition-colors ${
@@ -2312,9 +2302,9 @@ export default AttendanceChart;
 //       </div>
 
 //       {loading && activeTab === 'monthly' ? (
-//         <div className="text-center py-12 text-gray-500">
+//         <div className="py-12 text-center text-gray-500">
 //           <div className="flex flex-col items-center">
-//             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+//             <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
 //             <span>Loading monthly data...</span>
 //           </div>
 //         </div>
@@ -2554,12 +2544,12 @@ export default AttendanceChart;
 //       const total = payload.reduce((sum, entry) => sum + entry.value, 0);
 //       return (
 //         <div className="bg-white p-4 shadow-lg rounded-lg border border-gray-200 min-w-[180px]">
-//           <p className="font-bold text-gray-800 mb-2 border-b pb-2">{label}</p>
+//           <p className="pb-2 mb-2 font-bold text-gray-800 border-b">{label}</p>
 //           <div className="space-y-1">
 //             {payload.map((entry, index) => (
-//               <div key={index} className="flex justify-between items-center">
+//               <div key={index} className="flex items-center justify-between">
 //                 <div className="flex items-center">
-//                   <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: entry.color }} />
+//                   <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: entry.color }} />
 //                   <span style={{ color: entry.color }}>{entry.name}</span>
 //                 </div>
 //                 <span className="font-semibold">
@@ -2568,7 +2558,7 @@ export default AttendanceChart;
 //               </div>
 //             ))}
 //           </div>
-//           <div className="mt-2 pt-2 border-t text-sm">
+//           <div className="pt-2 mt-2 text-sm border-t">
 //             <span className="font-medium">Total: </span>
 //             <span className="font-bold">{total}</span>
 //           </div>
@@ -2583,11 +2573,11 @@ export default AttendanceChart;
 //       const employee = payload[0].payload;
 //       return (
 //         <div className="bg-white p-4 shadow-lg rounded-lg border border-gray-200 min-w-[220px]">
-//           <p className="font-bold text-gray-800 mb-2 border-b pb-2">{label}</p>
+//           <p className="pb-2 mb-2 font-bold text-gray-800 border-b">{label}</p>
 //           <div className="space-y-2">
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Present }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Present }} />
 //                 <span className="text-gray-700">Present</span>
 //               </div>
 //               <div className="text-right">
@@ -2595,9 +2585,9 @@ export default AttendanceChart;
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Late }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Late }} />
 //                 <span className="text-gray-700">Late</span>
 //               </div>
 //               <div className="text-right">
@@ -2605,9 +2595,9 @@ export default AttendanceChart;
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.HalfDay }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.HalfDay }} />
 //                 <span className="text-gray-700">Half Day</span>
 //               </div>
 //               <div className="text-right">
@@ -2615,9 +2605,9 @@ export default AttendanceChart;
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Absent }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Absent }} />
 //                 <span className="text-gray-700">Absent</span>
 //               </div>
 //               <div className="text-right">
@@ -2625,9 +2615,9 @@ export default AttendanceChart;
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.Leave }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.Leave }} />
 //                 <span className="text-gray-700">Leave</span>
 //               </div>
 //               <div className="text-right">
@@ -2635,9 +2625,9 @@ export default AttendanceChart;
 //               </div>
 //             </div>
             
-//             <div className="flex justify-between items-center">
+//             <div className="flex items-center justify-between">
 //               <div className="flex items-center">
-//                 <span className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: statusColors.WeeklyOff }} />
+//                 <span className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: statusColors.WeeklyOff }} />
 //                 <span className="text-gray-700">Weekly Off</span>
 //               </div>
 //               <div className="text-right">
@@ -2645,7 +2635,7 @@ export default AttendanceChart;
 //               </div>
 //             </div>
 //           </div>
-//           <div className="mt-3 pt-2 border-t text-sm">
+//           <div className="pt-2 mt-3 text-sm border-t">
 //             <div className="flex justify-between mb-1">
 //               <span className="font-medium text-gray-700">Days Worked: </span>
 //               <span className="font-bold text-gray-800">{employee.daysWorked}</span>
@@ -2663,14 +2653,14 @@ export default AttendanceChart;
 
 //   const renderMonthlyChart = () => (
 //     <div className="mt-6">
-//       <div className="flex justify-between items-center mb-6">
+//       <div className="flex items-center justify-between mb-6">
 //         <div>
 //           <h3 className="text-lg font-semibold text-gray-800">Monthly Attendance Overview</h3>
 //           <p className="text-sm text-gray-500">Attendance distribution across all months</p>
 //         </div>
 //         <div className="flex space-x-3">
 //           {Object.entries(overallStats).map(([status, count]) => (
-//             <div key={status} className="text-center px-3 py-2 bg-gray-50 rounded-lg">
+//             <div key={status} className="px-3 py-2 text-center rounded-lg bg-gray-50">
 //               <div className="text-xs font-medium text-gray-500">{status.replace('total', '')}</div>
 //               <div className="text-lg font-bold" style={{ color: statusColors[status.replace('total', '')] }}>{count}</div>
 //             </div>
@@ -2678,7 +2668,7 @@ export default AttendanceChart;
 //         </div>
 //       </div>
       
-//       <div className="h-80 bg-gray-50 rounded-xl p-4 border border-gray-100">
+//       <div className="p-4 border border-gray-100 h-80 bg-gray-50 rounded-xl">
 //         <ResponsiveContainer width="100%" height="100%">
 //           <BarChart data={data}>
 //             <XAxis 
@@ -2707,10 +2697,10 @@ export default AttendanceChart;
 //         </ResponsiveContainer>
 //       </div>
       
-//       <div className="mt-4 grid grid-cols-2 md:grid-cols-6 gap-3">
+//       <div className="grid grid-cols-2 gap-3 mt-4 md:grid-cols-6">
 //         {Object.entries(statusColors).map(([status, color]) => (
-//           <div key={status} className="flex items-center bg-gray-50 px-3 py-2 rounded-lg">
-//             <div className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: color }} />
+//           <div key={status} className="flex items-center px-3 py-2 rounded-lg bg-gray-50">
+//             <div className="w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: color }} />
 //             <span className="text-sm font-medium text-gray-700">{status}</span>
 //             <span className="ml-auto text-sm font-bold" style={{ color }}>
 //               {status === 'Present' ? overallStats.totalPresent :
@@ -2739,7 +2729,7 @@ export default AttendanceChart;
     
 //     return (
 //       <div className="mt-4">
-//         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+//         <div className="flex flex-col gap-4 mb-6 md:flex-row md:justify-between md:items-center">
 //           <div>
 //             <h3 className="text-lg font-semibold text-gray-800">Employee Attendance Details</h3>
 //             <p className="text-sm text-gray-500">Attendance breakdown by employee for {selectedMonth}</p>
@@ -2758,9 +2748,7 @@ export default AttendanceChart;
 //             <select 
 //               value={selectedMonth} 
 //               onChange={(e) => setSelectedMonth(e.target.value)}
-//               className="px-3 py-2 border border-gray-300 rounded-md shadow-sm 
-//                          focus:outline-none focus:ring-2 focus:ring-blue-500 
-//                          text-blue-600 font-medium bg-white"
+//               className="px-3 py-2 font-medium text-blue-600 bg-white border border-gray-300 rounded-md shadow-sm // focus:outline-none focus:ring-2 focus:ring-blue-500"
 //             >
 //               {months.map(month => (
 //                 <option key={month} value={month} className="text-gray-800">
@@ -2772,7 +2760,7 @@ export default AttendanceChart;
 //         </div>
 
 //         {employeeData.length > 0 ? (
-//           <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+//           <div className="p-4 border border-gray-100 bg-gray-50 rounded-xl">
 //             <div className="h-[500px] overflow-y-auto pr-2">
 //               <ResponsiveContainer width="100%" height={employeeData.length * 60}>
 //                 <BarChart
@@ -2835,10 +2823,10 @@ export default AttendanceChart;
 //             </div>
 //           </div>
 //         ) : (
-//           <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-xl">
+//           <div className="py-12 text-center text-gray-500 bg-gray-50 rounded-xl">
 //             {loading ? (
 //               <div className="flex flex-col items-center">
-//                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+//                 <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
 //                 <span>Loading employee data...</span>
 //               </div>
 //             ) : 'No attendance data available for this month'}
@@ -2851,14 +2839,14 @@ export default AttendanceChart;
 //   const renderEmployeeStatsTable = () => {
 //     return (
 //       <div className="mt-6">
-//         <div className="flex justify-between items-center mb-6">
+//         <div className="flex items-center justify-between mb-6">
 //           <div>
 //             <h3 className="text-lg font-semibold text-gray-800">Employee Attendance Summary</h3>
 //             <p className="text-sm text-gray-500">Detailed breakdown by employee</p>
 //           </div>
 //           <div className="flex space-x-3">
 //             {Object.entries(overallStats).map(([status, count]) => (
-//               <div key={status} className="text-center px-3 py-2 bg-gray-50 rounded-lg">
+//               <div key={status} className="px-3 py-2 text-center rounded-lg bg-gray-50">
 //                 <div className="text-xs font-medium text-gray-500">{status.replace('total', '')}</div>
 //                 <div className="text-lg font-bold" style={{ color: statusColors[status.replace('total', '')] }}>{count}</div>
 //               </div>
@@ -2867,37 +2855,37 @@ export default AttendanceChart;
 //         </div>
         
 //         {summaryLoading ? (
-//           <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-xl">
+//           <div className="py-12 text-center text-gray-500 bg-gray-50 rounded-xl">
 //             <div className="flex flex-col items-center">
-//               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+//               <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
 //               <span>Loading employee summary...</span>
 //             </div>
 //           </div>
 //         ) : employeeStats.length > 0 ? (
-//           <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+//           <div className="overflow-hidden bg-white border border-gray-200 rounded-xl">
 //             <div className="overflow-x-auto">
 //               <table className="min-w-full divide-y divide-gray-200">
 //                 <thead className="bg-gray-50">
 //                   <tr>
-//                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
 //                       Employee
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
 //                       Role
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
 //                       Present
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
 //                       Absent
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
 //                       Leave
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
 //                       Weekly Off
 //                     </th>
-//                     <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
 //                       Total Days
 //                     </th>
 //                   </tr>
@@ -2913,22 +2901,22 @@ export default AttendanceChart;
 //                           </div>
 //                         </div>
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                       <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                         {employee.role}
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-green-600">
+//                       <td className="px-6 py-4 text-sm font-medium text-center text-green-600 whitespace-nowrap">
 //                         {employee.present}
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-red-600">
+//                       <td className="px-6 py-4 text-sm font-medium text-center text-red-600 whitespace-nowrap">
 //                         {employee.absent}
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-yellow-600">
+//                       <td className="px-6 py-4 text-sm font-medium text-center text-yellow-600 whitespace-nowrap">
 //                         {employee.leave}
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-purple-600">
+//                       <td className="px-6 py-4 text-sm font-medium text-center text-purple-600 whitespace-nowrap">
 //                         {employee.weeklyOff}
 //                       </td>
-//                       <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-gray-600">
+//                       <td className="px-6 py-4 text-sm font-medium text-center text-gray-600 whitespace-nowrap">
 //                         {employee.present + employee.absent + employee.leave + employee.weeklyOff}
 //                       </td>
 //                     </tr>
@@ -2938,10 +2926,10 @@ export default AttendanceChart;
 //             </div>
 //           </div>
 //         ) : (
-//           <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-xl">
+//           <div className="py-12 text-center text-gray-500 bg-gray-50 rounded-xl">
 //             No employee summary data available. <button 
 //               onClick={fetchEmployeeSummary}
-//               className="text-blue-600 hover:text-blue-800 underline ml-1"
+//               className="ml-1 text-blue-600 underline hover:text-blue-800"
 //             >
 //               Try again
 //             </button>
@@ -2952,13 +2940,13 @@ export default AttendanceChart;
 //   };
 
 //   return (
-//     <div className="bg-white rounded-2xl p-6 shadow-sm w-full border border-gray-100">
-//       <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+//     <div className="w-full p-6 bg-white border border-gray-100 shadow-sm rounded-2xl">
+//       <div className="flex flex-col gap-4 mb-6 md:flex-row md:justify-between md:items-center">
 //         <div>
 //           <h2 className="text-2xl font-bold text-gray-800">Attendance Analytics</h2>
 //           <p className="text-sm text-gray-500">Visualize and analyze employee attendance patterns</p>
 //         </div>
-//         <div className="flex space-x-2 bg-gray-50 p-1 rounded-lg">
+//         <div className="flex p-1 space-x-2 rounded-lg bg-gray-50">
 //           <button
 //             onClick={() => setActiveTab('monthly')}
 //             className={`px-4 py-2 rounded-md font-medium text-sm transition-colors ${
@@ -2993,9 +2981,9 @@ export default AttendanceChart;
 //       </div>
 
 //       {loading && activeTab === 'monthly' ? (
-//         <div className="text-center py-12 text-gray-500">
+//         <div className="py-12 text-center text-gray-500">
 //           <div className="flex flex-col items-center">
-//             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-2" />
+//             <div className="w-8 h-8 mb-2 border-b-2 border-blue-500 rounded-full animate-spin" />
 //             <span>Loading monthly data...</span>
 //           </div>
 //         </div>

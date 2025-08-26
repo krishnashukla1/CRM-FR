@@ -575,16 +575,21 @@ const App = () => {
             <Route path="/call-logs" element={<AllCallLogs />} />
             <Route path="/performance" element={<Performance />} />
             <Route path="/admin-login-status" element={<AdminLoginStatus />} />
-            <Route
+            {/* <Route
               path="/admin-reset-password"
               element={
-                user?.email === 'fbadmin@gmail.com' ? (
+                user?.email === 'abc@gmail.com' ? (
                   <AdminPasswordReset />
                 ) : (
                   <Navigate to="/unauthorized" replace />
                 )
               }
-            />
+            /> */}
+
+            <Route path="/admin-reset-password" element={<AdminPasswordReset />} />
+
+
+
             {/* <Route path="/unauthorized" element={<Unauthorized />} /> */}
             <Route path="/attendance" element={<Attendance />} />
             <Route path="/leave" element={<Leave />} />

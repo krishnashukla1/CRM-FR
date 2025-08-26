@@ -385,7 +385,7 @@
 //     }
 
 //     return (
-//       <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md hover:border-blue-100">
+//       <div key={index} className="overflow-hidden transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md hover:border-blue-100">
 //         <div className="p-5">
 //           <div className="flex items-center justify-between mb-3">
 //             <div>
@@ -401,16 +401,16 @@
 //           </div>
 
 //           <div className="grid grid-cols-2 gap-3 mb-4">
-//             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg border border-blue-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-blue-100 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiDollarSign className="mr-1" /> Sales
 //               </p>
 //               <p className="text-lg font-bold text-blue-600">
 //                 ${profit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //               </p>
 //             </div>
-//             <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-3 rounded-lg border border-purple-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-purple-100 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiTarget className="mr-1" /> Target
 //               </p>
 //               <p className="text-lg font-bold text-purple-600">
@@ -420,13 +420,13 @@
 //           </div>
 
 //           <div className="mb-4">
-//             <div className="flex justify-between text-xs text-gray-500 mb-1">
+//             <div className="flex justify-between mb-1 text-xs text-gray-500">
 //               <span>0%</span>
 //               <span>100%</span>
 //             </div>
-//             <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+//             <div className="h-2 overflow-hidden bg-gray-100 rounded-full">
 //               <div
-//                 className="h-full rounded-full transition-all duration-500"
+//                 className="h-full transition-all duration-500 rounded-full"
 //                 style={{
 //                   width: `${Math.min(percent, 100)}%`,
 //                   background: percent >= 100 ? 'linear-gradient(90deg, #10B981, #34D399)' :
@@ -505,36 +505,36 @@
 
 //     return (
 //       <div className={`rounded-xl p-5 shadow-md ${badgeColors[index] || 'bg-gray-300'} text-white`}>
-//         <div className="flex justify-between items-start mb-4">
+//         <div className="flex items-start justify-between mb-4">
 //           <div>
 //             <h3 className="text-lg font-semibold">{titles[index]}</h3>
-//             <h2 className="text-xl font-bold mt-1">{performer.name}</h2>
+//             <h2 className="mt-1 text-xl font-bold">{performer.name}</h2>
 //             <p className="text-sm opacity-80">ID: {performer.id}</p>
 //           </div>
 //           <div className="text-3xl">{medalIcons[index] || ''}</div>
 //         </div>
 
 //         <div className="grid grid-cols-2 gap-4 mb-4">
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Total Sales</p>
 //             <p className="text-lg font-bold">
 //               ${totalSales.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //             </p>
-//             <p className="text-xs mt-1">Target: ${totalTarget.toLocaleString()}</p>
+//             <p className="mt-1 text-xs">Target: ${totalTarget.toLocaleString()}</p>
 
 //           </div>
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Avg Monthly</p>
 //             <p className="text-lg font-bold">{avgMonthlyPerformance}%</p>
 //           </div>
 //         </div>
 
 //         <div className="w-full">
-//           <div className="flex justify-between items-center mb-2">
+//           <div className="flex items-center justify-between mb-2">
 //             <button
 //               onClick={handlePrev}
 //               disabled={startIndex === 0}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ◀
 //             </button>
@@ -542,15 +542,15 @@
 //             <button
 //               onClick={handleNext}
 //               disabled={startIndex + itemsPerPage >= monthlyPerformance.length}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ▶
 //             </button>
 //           </div>
 
-//           <div className="grid grid-cols-4 gap-2 text-center text-xs">
+//           <div className="grid grid-cols-4 gap-2 text-xs text-center">
 //             {visibleMonths.map((monthData, i) => (
-//               <div key={i} className="p-2 bg-white bg-opacity-20 rounded text-black">
+//               <div key={i} className="p-2 text-black bg-white rounded bg-opacity-20">
 //                 <p className="font-semibold">{monthData.month}</p>
 //                 <p className={`font-medium ${monthData.target === 0 ? 'text-gray-400' : ''}`}>
 //                   {monthData.target === 0 ? 'N/A' : `${monthData.percentage}%`}
@@ -594,14 +594,14 @@
 //   };
 
 //   return (
-//     <div className="bg-gray-50 p-4 sm:p-6 rounded-xl">
+//     <div className="p-4 bg-gray-50 sm:p-6 rounded-xl">
 //       {/* Dashboard Header */}
-//       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+//       <div className="flex flex-col items-start justify-between mb-6 md:flex-row md:items-center">
 //         <div>
-//           <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Team Performance Dashboard</h1>
-//           <p className="text-gray-600 mt-1">Track and analyze your team's sales performance</p>
+//           <h1 className="text-2xl font-bold text-gray-800 md:text-3xl">Team Performance Dashboard</h1>
+//           <p className="mt-1 text-gray-600">Track and analyze your team's sales performance</p>
 //         </div>
-//         <div className="mt-4 md:mt-0 flex space-x-2">
+//         <div className="flex mt-4 space-x-2 md:mt-0">
 //           <button
 //             onClick={() => setActiveTab('monthly')}
 //             className={`px-4 py-2 rounded-lg text-sm font-medium flex items-center ${activeTab === 'monthly' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 border border-gray-200'}`}
@@ -618,34 +618,34 @@
 //       </div>
 
 //       {error ? (
-//         <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
+//         <div className="p-4 mb-6 text-red-700 border border-red-200 rounded-lg bg-red-50">
 //           <p className="font-medium">Error loading data:</p>
 //           <p>{error}</p>
 //         </div>
 //       ) : loading ? (
-//         <div className="flex justify-center items-center h-64">
-//           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+//         <div className="flex items-center justify-center h-64">
+//           <div className="w-12 h-12 border-t-2 border-b-2 border-blue-500 rounded-full animate-spin"></div>
 //         </div>
 //       ) : targetInfo ? (
 //         <>
 //           {/* Summary Cards */}
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//           <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-4">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FaDollarSign className="mr-1" /> Total Sales
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     ${totalProfit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-amber-100 rounded-lg text-amber-600">
+//                 <div className="p-2 rounded-lg bg-amber-100 text-amber-600">
 //                   <FaDollarSign className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <div className="flex justify-between text-xs text-gray-500 mb-1">
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <div className="flex justify-between mb-1 text-xs text-gray-500">
 //                   <span>Target: ${targetInfo.overall.totalTarget.toLocaleString()}</span>
 //                   <span>{Math.round((targetInfo.overall.totalSales / targetInfo.overall.totalTarget) * 100)}%</span>
 //                 </div>
@@ -660,62 +660,62 @@
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiTarget className="mr-1" /> Remaining Target
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">${targetInfo.overall.remaining.toLocaleString()}</p>
 //                 </div>
-//                 <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+//                 <div className="p-2 text-blue-600 bg-blue-100 rounded-lg">
 //                   <FiTarget className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Daily Goal (7 days)</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Daily Goal (7 days)</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   ${targetInfo.overall.perDayGoal.toLocaleString()} per day
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiUser className="mr-1" /> Total Employees
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">{Object.keys(employeeDetails).length}</p>
 //                 </div>
-//                 <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
+//                 <div className="p-2 text-purple-600 bg-purple-100 rounded-lg">
 //                   <FiUser className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Active this period</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Active this period</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {Object.keys(employeeDetails).length} employees
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiAward className="mr-1" /> Top Performer
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     {topPerformers.length > 0 ? topPerformers[0].name : 'N/A'}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-yellow-100 rounded-lg text-yellow-600">
+//                 <div className="p-2 text-yellow-600 bg-yellow-100 rounded-lg">
 //                   <FiAward className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Performance</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Performance</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {topPerformers.length > 0 ? Math.round(topPerformers[0].performance) : 0}%
 //                 </p>
@@ -724,11 +724,11 @@
 //           </div>
 
 //           {callCategorySummary?.length > 0 && (
-//             <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4">
+//             <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//               <h3 className="mb-4 text-xl font-semibold text-gray-800">
 //                 📊 Call Category Distribution
 //               </h3>
-//               <div className="h-80 w-full">
+//               <div className="w-full h-80">
 //                 <ResponsiveContainer>
 //                   <PieChart>
 //                     <Pie
@@ -761,10 +761,10 @@
 
 //           {topPerformers.length > 0 && (
 //             <div className="mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+//               <h3 className="flex items-center mb-4 text-xl font-semibold text-gray-800">
 //                 <FiAward className="mr-2 text-yellow-500" /> Top Performers
 //               </h3>
-//               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+//               <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
 //                 {topPerformers.map((performer, index) => (
 //                   <TopPerformerCard
 //                     key={index}
@@ -777,13 +777,13 @@
 //           )}
 
 //           {/* Filters */}
-//           <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+//           <div className="p-4 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <h3 className="flex items-center mb-3 text-lg font-semibold text-gray-800">
 //               <FiFilter className="mr-2 text-gray-500" /> Filter Data
 //             </h3>
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 //               <div className="mb-4">
-//                 <label className="block text-base font-medium text-gray-800 mb-2">Time Period</label>
+//                 <label className="block mb-2 text-base font-medium text-gray-800">Time Period</label>
 //                 <div className="flex flex-wrap gap-2">
 //                   <button
 //                     onClick={() => setPerformanceView('monthly')}
@@ -817,8 +817,8 @@
 
 //               {performanceView === 'monthly' && (
 //                 <div>
-//                   <label className="block text-sm font-medium text-gray-700 mb-1">Months</label>
-//                   <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+//                   <label className="block mb-1 text-sm font-medium text-gray-700">Months</label>
+//                   <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
 //                     {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(month => (
 //                       <button
 //                         key={month}
@@ -841,12 +841,12 @@
 //               )}
 
 //               <div className="w-full">
-//                 <label className="block text-sm font-medium text-gray-700 mb-3">Employee</label>
+//                 <label className="block mb-3 text-sm font-medium text-gray-700">Employee</label>
 //                 <div className="relative">
 //                   <select
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
-//                     className="block w-full appearance-none border border-gray-300 bg-white rounded-lg px-3 py-2 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+//                     className="block w-full px-3 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                   >
 //                     <option value="all">All Employees</option>
 //                     {Object.keys(employeeDetails).map(empKey => {
@@ -864,7 +864,7 @@
 
 
 
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -876,12 +876,12 @@
 
 //           {/* Employee Performance Grid */}
 //           <div className="mb-6">
-//             <div className="flex justify-between items-center mb-4">
+//             <div className="flex items-center justify-between mb-4">
 //               <h3 className="text-xl font-semibold text-gray-800">Team Members</h3>
 //               {employeeNames.length > 4 && (
 //                 <button
 //                   onClick={() => setShowAllEmployees(!showAllEmployees)}
-//                   className="text-sm text-blue-600 hover:text-blue-800 flex items-center"
+//                   className="flex items-center text-sm text-blue-600 hover:text-blue-800"
 //                 >
 //                   {showAllEmployees ? (
 //                     <>
@@ -895,7 +895,7 @@
 //                 </button>
 //               )}
 //             </div>
-//             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
 //               {(showAllEmployees ? employeeNames : employeeNames.slice(0, 3)).map((employee, index) =>
 //                 renderPerformanceCard(employee, index)
 //               )}
@@ -903,8 +903,8 @@
 //           </div>
 
 //           {/* Performance Trend Chart */}
-//           <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 gap-3">
+//           <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <div className="flex flex-col items-start justify-between gap-3 mb-5 sm:flex-row sm:items-center">
 //               <h3 className="text-xl font-semibold text-gray-800">
 //                 {performanceView === 'monthly' && 'Monthly Performance Trend'}
 //                 {performanceView === 'weekly' && 'Weekly Performance Trend'}
@@ -914,7 +914,7 @@
 //                 <span className="text-sm text-gray-600">View:</span>
 //                 <div className="relative">
 //                   <select
-//                     className="block w-full appearance-none text-sm border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+//                     className="block w-full px-4 py-2 pr-10 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
 //                   >
@@ -923,7 +923,7 @@
 //                       <option key={name} value={name}>{name}</option>
 //                     ))}
 //                   </select>
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-2 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 20 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -932,7 +932,7 @@
 //               </div>
 //             </div>
 
-//             <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50 pb-2">
+//             <div className="pb-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50">
 //               <div className="min-w-[1000px] h-[450px]">
 //                 <ResponsiveContainer width="100%" height="100%">
 //                   <BarChart
@@ -1071,11 +1071,11 @@
 //               </div>
 //             </div>
 
-//             <div className="mt-4 flex justify-between items-center">
-//               <div className="text-xs text-gray-500 flex items-center">
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500 mr-1"></span>
+//             <div className="flex items-center justify-between mt-4">
+//               <div className="flex items-center text-xs text-gray-500">
+//                 <span className="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"></span>
 //                 <span className="mr-3">Sales</span>
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500/20 border border-blue-500 mr-1"></span>
+//                 <span className="inline-block w-3 h-3 mr-1 border border-blue-500 rounded-full bg-blue-500/20"></span>
 //                 <span>Target</span>
 //               </div>
 //               <div className="text-xs text-gray-500">
@@ -1087,7 +1087,7 @@
 //           </div>
 //         </>
 //       ) : (
-//         <div className="text-center py-10">
+//         <div className="py-10 text-center">
 //           <p className="text-gray-500">No performance data available</p>
 //         </div>
 //       )}
@@ -1368,7 +1368,7 @@
 //     return (
 //       <div
 //         key={index}
-//         className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md hover:border-blue-100"
+//         className="overflow-hidden transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md hover:border-blue-100"
 //       >
 //         <div className="p-5">
 //           <div className="flex items-center justify-between mb-3">
@@ -1392,16 +1392,16 @@
 //           </div>
 
 //           <div className="grid grid-cols-2 gap-3 mb-4">
-//             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg border border-blue-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-blue-100 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiDollarSign className="mr-1" /> Sales
 //               </p>
 //               <p className="text-lg font-bold text-blue-600">
 //                 ${profit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //               </p>
 //             </div>
-//             <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-3 rounded-lg border border-purple-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-purple-100 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiTarget className="mr-1" /> Target
 //               </p>
 //               <p className="text-lg font-bold text-purple-600">
@@ -1411,13 +1411,13 @@
 //           </div>
 
 //           <div className="mb-4">
-//             <div className="flex justify-between text-xs text-gray-500 mb-1">
+//             <div className="flex justify-between mb-1 text-xs text-gray-500">
 //               <span>0%</span>
 //               <span>100%</span>
 //             </div>
-//             <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+//             <div className="h-2 overflow-hidden bg-gray-100 rounded-full">
 //               <div
-//                 className="h-full rounded-full transition-all duration-500"
+//                 className="h-full transition-all duration-500 rounded-full"
 //                 style={{
 //                   width: `${Math.min(percent, 100)}%`,
 //                   background:
@@ -1500,35 +1500,35 @@
 
 //     return (
 //       <div className={`rounded-xl p-5 shadow-md ${badgeColors[index] || 'bg-gray-300'} text-white`}>
-//         <div className="flex justify-between items-start mb-4">
+//         <div className="flex items-start justify-between mb-4">
 //           <div>
 //             <h3 className="text-lg font-semibold">{titles[index] || 'Performer'}</h3>
-//             <h2 className="text-xl font-bold mt-1">{performer.name}</h2>
+//             <h2 className="mt-1 text-xl font-bold">{performer.name}</h2>
 //             <p className="text-sm opacity-80">ID: {performer.id}</p>
 //           </div>
 //           <div className="text-3xl">{medalIcons[index] || ''}</div>
 //         </div>
 
 //         <div className="grid grid-cols-2 gap-4 mb-4">
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Total Sales</p>
 //             <p className="text-lg font-bold">
 //               ${totalSales.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //             </p>
-//             <p className="text-xs mt-1">Target: ${totalTarget.toLocaleString()}</p>
+//             <p className="mt-1 text-xs">Target: ${totalTarget.toLocaleString()}</p>
 //           </div>
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Avg Monthly</p>
 //             <p className="text-lg font-bold">{avgMonthlyPerformance}%</p>
 //           </div>
 //         </div>
 
 //         <div className="w-full">
-//           <div className="flex justify-between items-center mb-2">
+//           <div className="flex items-center justify-between mb-2">
 //             <button
 //               onClick={handlePrev}
 //               disabled={startIndex === 0}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ◀
 //             </button>
@@ -1536,15 +1536,15 @@
 //             <button
 //               onClick={handleNext}
 //               disabled={startIndex + itemsPerPage >= monthlyPerformance.length}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ▶
 //             </button>
 //           </div>
 
-//           <div className="grid grid-cols-4 gap-2 text-center text-xs">
+//           <div className="grid grid-cols-4 gap-2 text-xs text-center">
 //             {visibleMonths.map((monthData, i) => (
-//               <div key={i} className="p-2 bg-white bg-opacity-20 rounded text-black">
+//               <div key={i} className="p-2 text-black bg-white rounded bg-opacity-20">
 //                 <p className="font-semibold">{monthData.month}</p>
 //                 <p className={`font-medium ${monthData.target === 0 ? 'text-gray-400' : ''}`}>
 //                   {monthData.target === 0 ? 'N/A' : `$${monthData.percentage.toFixed(2)}`}
@@ -1588,14 +1588,14 @@
 //   };
 
 //   return (
-//     <div className="bg-gray-50 p-4 sm:p-6 rounded-xl">
+//     <div className="p-4 bg-gray-50 sm:p-6 rounded-xl">
 //       {/* Dashboard Header */}
-//       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+//       <div className="flex flex-col items-start justify-between mb-6 md:flex-row md:items-center">
 //         <div>
-//           <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Team Performance Dashboard</h1>
-//           <p className="text-gray-600 mt-1">Track and analyze your team's sales performance</p>
+//           <h1 className="text-2xl font-bold text-gray-800 md:text-3xl">Team Performance Dashboard</h1>
+//           <p className="mt-1 text-gray-600">Track and analyze your team's sales performance</p>
 //         </div>
-//         <div className="mt-4 md:mt-0 flex space-x-2">
+//         <div className="flex mt-4 space-x-2 md:mt-0">
 //           <button
 //             onClick={() => setActiveTab('monthly')}
 //             className={`px-4 py-2 rounded-lg text-sm font-medium flex items-center ${activeTab === 'monthly' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 border border-gray-200'}`}
@@ -1612,34 +1612,34 @@
 //       </div>
 
 //       {error ? (
-//         <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
+//         <div className="p-4 mb-6 text-red-700 border border-red-200 rounded-lg bg-red-50">
 //           <p className="font-medium">Error loading data:</p>
 //           <p>{error}</p>
 //         </div>
 //       ) : loading ? (
-//         <div className="flex justify-center items-center h-64">
-//           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+//         <div className="flex items-center justify-center h-64">
+//           <div className="w-12 h-12 border-t-2 border-b-2 border-blue-500 rounded-full animate-spin"></div>
 //         </div>
 //       ) : targetInfo ? (
 //         <>
 //           {/* Summary Cards */}
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//           <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-4">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FaDollarSign className="mr-1" /> Total Sales
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     ${totalProfit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-amber-100 rounded-lg text-amber-600">
+//                 <div className="p-2 rounded-lg bg-amber-100 text-amber-600">
 //                   <FaDollarSign className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <div className="flex justify-between text-xs text-gray-500 mb-1">
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <div className="flex justify-between mb-1 text-xs text-gray-500">
 //                   <span>Target: ${targetInfo.overall.totalTarget.toLocaleString()}</span>
 //                   <span>{Math.round((targetInfo.overall.totalSales / targetInfo.overall.totalTarget) * 100)}%</span>
 //                 </div>
@@ -1654,62 +1654,62 @@
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiTarget className="mr-1" /> Remaining Target
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">${targetInfo.overall.remaining.toLocaleString()}</p>
 //                 </div>
-//                 <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+//                 <div className="p-2 text-blue-600 bg-blue-100 rounded-lg">
 //                   <FiTarget className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Daily Goal (7 days)</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Daily Goal (7 days)</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   ${targetInfo.overall.perDayGoal.toLocaleString()} per day
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiUser className="mr-1" /> Total Employees
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">{Object.keys(employeeDetails).length}</p>
 //                 </div>
-//                 <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
+//                 <div className="p-2 text-purple-600 bg-purple-100 rounded-lg">
 //                   <FiUser className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Active this period</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Active this period</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {Object.keys(employeeDetails).length} employees
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiAward className="mr-1" /> Top Performer
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     {topPerformers.length > 0 ? topPerformers[0].name : 'N/A'}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-yellow-100 rounded-lg text-yellow-600">
+//                 <div className="p-2 text-yellow-600 bg-yellow-100 rounded-lg">
 //                   <FiAward className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Performance</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Performance</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {topPerformers.length > 0 ? Math.round(topPerformers[0].performance) : 0}%
 //                 </p>
@@ -1718,11 +1718,11 @@
 //           </div>
 
 //           {callCategorySummary?.length > 0 && (
-//             <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4">
+//             <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//               <h3 className="mb-4 text-xl font-semibold text-gray-800">
 //                 📊 Call Category Distribution
 //               </h3>
-//               <div className="h-80 w-full">
+//               <div className="w-full h-80">
 //                 <ResponsiveContainer>
 //                   <PieChart>
 //                     <Pie
@@ -1755,10 +1755,10 @@
 
 //           {topPerformers.length > 0 && (
 //             <div className="mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+//               <h3 className="flex items-center mb-4 text-xl font-semibold text-gray-800">
 //                 <FiAward className="mr-2 text-yellow-500" /> Top Performers
 //               </h3>
-//               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+//               <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
 //                 {topPerformers.map((performer, index) => (
 //                   <TopPerformerCard
 //                     key={index}
@@ -1771,13 +1771,13 @@
 //           )}
 
 //           {/* Filters */}
-//           <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+//           <div className="p-4 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <h3 className="flex items-center mb-3 text-lg font-semibold text-gray-800">
 //               <FiFilter className="mr-2 text-gray-500" /> Filter Data
 //             </h3>
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 //               <div className="mb-4">
-//                 <label className="block text-base font-medium text-gray-800 mb-2">Time Period</label>
+//                 <label className="block mb-2 text-base font-medium text-gray-800">Time Period</label>
 //                 <div className="flex flex-wrap gap-2">
 //                   <button
 //                     onClick={() => setPerformanceView('monthly')}
@@ -1811,8 +1811,8 @@
 
 //               {performanceView === 'monthly' && (
 //                 <div>
-//                   <label className="block text-sm font-medium text-gray-700 mb-1">Months</label>
-//                   <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+//                   <label className="block mb-1 text-sm font-medium text-gray-700">Months</label>
+//                   <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
 //                     {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(month => (
 //                       <button
 //                         key={month}
@@ -1835,12 +1835,12 @@
 //               )}
 
 //               <div className="w-full">
-//                 <label className="block text-sm font-medium text-gray-700 mb-3">Employee</label>
+//                 <label className="block mb-3 text-sm font-medium text-gray-700">Employee</label>
 //                 <div className="relative">
 //                   <select
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
-//                     className="block w-full appearance-none border border-gray-300 bg-white rounded-lg px-3 py-2 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+//                     className="block w-full px-3 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                   >
 //                     <option value="all">All Employees</option>
 //                     {Object.keys(employeeDetails).map(empKey => {
@@ -1852,7 +1852,7 @@
 //                       );
 //                     })}
 //                   </select>
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -1864,12 +1864,12 @@
 
 //           {/* Employee Performance Grid */}
 //           <div className="mb-6">
-//             <div className="flex justify-between items-center mb-4">
+//             <div className="flex items-center justify-between mb-4">
 //               <h3 className="text-xl font-semibold text-gray-800">Team Members</h3>
 //               {Object.keys(employeeDetails).length > 3 && (
 //                 <button
 //                   onClick={() => setShowAllEmployees(!showAllEmployees)}
-//                   className="text-sm text-blue-600 hover:text-blue-800 flex items-center"
+//                   className="flex items-center text-sm text-blue-600 hover:text-blue-800"
 //                 >
 //                   {showAllEmployees ? (
 //                     <>
@@ -1883,7 +1883,7 @@
 //                 </button>
 //               )}
 //             </div>
-//             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
 //               {(showAllEmployees ? Object.keys(employeeDetails) : Object.keys(employeeDetails).slice(0, 3)).map((empKey, index) =>
 //                 renderPerformanceCard(empKey, index)
 //               )}
@@ -1891,8 +1891,8 @@
 //           </div>
 
 //           {/* Performance Trend Chart */}
-//           <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 gap-3">
+//           <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <div className="flex flex-col items-start justify-between gap-3 mb-5 sm:flex-row sm:items-center">
 //               <h3 className="text-xl font-semibold text-gray-800">
 //                 {performanceView === 'monthly' && 'Monthly Performance Trend'}
 //                 {performanceView === 'weekly' && 'Weekly Performance Trend'}
@@ -1902,7 +1902,7 @@
 //                 <span className="text-sm text-gray-600">View:</span>
 //                 <div className="relative">
 //                   <select
-//                     className="block w-full appearance-none text-sm border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+//                     className="block w-full px-4 py-2 pr-10 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
 //                   >
@@ -1914,7 +1914,7 @@
 //                       );
 //                     })}
 //                   </select>
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -1923,7 +1923,7 @@
 //               </div>
 //             </div>
 
-//             <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50 pb-2">
+//             <div className="pb-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50">
 //               <div className="min-w-[1000px] h-[450px]">
 //                 <ResponsiveContainer width="100%" height="100%">
 //                   <BarChart
@@ -2027,11 +2027,11 @@
 //               </div>
 //             </div>
 
-//             <div className="mt-4 flex justify-between items-center">
-//               <div className="text-xs text-gray-500 flex items-center">
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500 mr-1"></span>
+//             <div className="flex items-center justify-between mt-4">
+//               <div className="flex items-center text-xs text-gray-500">
+//                 <span className="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"></span>
 //                 <span className="mr-3">Sales</span>
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500/20 border border-blue-500 mr-1"></span>
+//                 <span className="inline-block w-3 h-3 mr-1 border border-blue-500 rounded-full bg-blue-500/20"></span>
 //                 <span>Target</span>
 //               </div>
 //               <div className="text-xs text-gray-500">
@@ -2043,7 +2043,7 @@
 //           </div>
 //         </>
 //       ) : (
-//         <div className="text-center py-10">
+//         <div className="py-10 text-center">
 //           <p className="text-gray-500">No performance data available</p>
 //         </div>
 //       )}
@@ -2346,7 +2346,7 @@
 //     return (
 //       <div
 //         key={index}
-//         className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md hover:border-blue-100"
+//         className="overflow-hidden transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md hover:border-blue-100"
 //       >
 //         <div className="p-5">
 //           <div className="flex items-center justify-between mb-3">
@@ -2370,16 +2370,16 @@
 //           </div>
 
 //           <div className="grid grid-cols-2 gap-3 mb-4">
-//             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg border border-blue-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-blue-100 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiDollarSign className="mr-1" /> Sales
 //               </p>
 //               <p className="text-lg font-bold text-blue-600">
 //                 ${profit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //               </p>
 //             </div>
-//             <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-3 rounded-lg border border-purple-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-purple-100 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiTarget className="mr-1" /> Target
 //               </p>
 //               <p className="text-lg font-bold text-purple-600">
@@ -2389,13 +2389,13 @@
 //           </div>
 
 //           <div className="mb-4">
-//             <div className="flex justify-between text-xs text-gray-500 mb-1">
+//             <div className="flex justify-between mb-1 text-xs text-gray-500">
 //               <span>0%</span>
 //               <span>100%</span>
 //             </div>
-//             <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+//             <div className="h-2 overflow-hidden bg-gray-100 rounded-full">
 //               <div
-//                 className="h-full rounded-full transition-all duration-500"
+//                 className="h-full transition-all duration-500 rounded-full"
 //                 style={{
 //                   width: `${Math.min(percent, 100)}%`,
 //                   background:
@@ -2479,35 +2479,35 @@
 
 //     return (
 //       <div className={`rounded-xl p-5 shadow-md ${badgeColors[index] || 'bg-gray-300'} text-white`}>
-//         <div className="flex justify-between items-start mb-4">
+//         <div className="flex items-start justify-between mb-4">
 //           <div>
 //             <h3 className="text-lg font-semibold">{titles[index] || 'Performer'}</h3>
-//             <h2 className="text-xl font-bold mt-1">{performer.name}</h2>
+//             <h2 className="mt-1 text-xl font-bold">{performer.name}</h2>
 //             <p className="text-sm opacity-80">ID: {performer.id}</p>
 //           </div>
 //           <div className="text-3xl">{medalIcons[index] || ''}</div>
 //         </div>
 
 //         <div className="grid grid-cols-2 gap-4 mb-4">
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Total Sales</p>
 //             <p className="text-lg font-bold">
 //               ${totalSales.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //             </p>
-//             <p className="text-xs mt-1">Target: ${totalTarget.toLocaleString()}</p>
+//             <p className="mt-1 text-xs">Target: ${totalTarget.toLocaleString()}</p>
 //           </div>
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Avg Monthly</p>
 //             <p className="text-lg font-bold">{avgMonthlyPerformance}%</p>
 //           </div>
 //         </div>
 
 //         <div className="w-full">
-//           <div className="flex justify-between items-center mb-2">
+//           <div className="flex items-center justify-between mb-2">
 //             <button
 //               onClick={handlePrev}
 //               disabled={startIndex === 0}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ◀
 //             </button>
@@ -2515,15 +2515,15 @@
 //             <button
 //               onClick={handleNext}
 //               disabled={startIndex + itemsPerPage >= monthlyPerformance.length}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ▶
 //             </button>
 //           </div>
 
-//           <div className="grid grid-cols-4 gap-2 text-center text-xs">
+//           <div className="grid grid-cols-4 gap-2 text-xs text-center">
 //             {visibleMonths.map((monthData, i) => (
-//               <div key={i} className="p-2 bg-white bg-opacity-20 rounded text-black">
+//               <div key={i} className="p-2 text-black bg-white rounded bg-opacity-20">
 //                 <p className="font-semibold">{monthData.month}</p>
 //                 <p className={`font-medium ${monthData.target === 0 ? 'text-gray-400' : ''}`}>
 //                   {monthData.target === 0 ? 'N/A' : `$${monthData.percentage.toFixed(2)}`}
@@ -2567,14 +2567,14 @@
 //   };
 
 //   return (
-//     <div className="bg-gray-50 p-4 sm:p-6 rounded-xl">
+//     <div className="p-4 bg-gray-50 sm:p-6 rounded-xl">
 //       {/* Dashboard Header */}
-//       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+//       <div className="flex flex-col items-start justify-between mb-6 md:flex-row md:items-center">
 //         <div>
-//           <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Team Performance Dashboard</h1>
-//           <p className="text-gray-600 mt-1">Track and analyze your team's sales performance</p>
+//           <h1 className="text-2xl font-bold text-gray-800 md:text-3xl">Team Performance Dashboard</h1>
+//           <p className="mt-1 text-gray-600">Track and analyze your team's sales performance</p>
 //         </div>
-//         <div className="mt-4 md:mt-0 flex space-x-2">
+//         <div className="flex mt-4 space-x-2 md:mt-0">
 //           <button
 //             onClick={() => setActiveTab('monthly')}
 //             className={`px-4 py-2 rounded-lg text-sm font-medium flex items-center ${activeTab === 'monthly' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 border border-gray-200'}`}
@@ -2591,34 +2591,34 @@
 //       </div>
 
 //       {error ? (
-//         <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
+//         <div className="p-4 mb-6 text-red-700 border border-red-200 rounded-lg bg-red-50">
 //           <p className="font-medium">Error loading data:</p>
 //           <p>{error}</p>
 //         </div>
 //       ) : loading ? (
-//         <div className="flex justify-center items-center h-64">
-//           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+//         <div className="flex items-center justify-center h-64">
+//           <div className="w-12 h-12 border-t-2 border-b-2 border-blue-500 rounded-full animate-spin"></div>
 //         </div>
 //       ) : targetInfo ? (
 //         <>
 //           {/* Summary Cards */}
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//           <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-4">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FaDollarSign className="mr-1" /> Total Sales
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     ${totalProfit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-amber-100 rounded-lg text-amber-600">
+//                 <div className="p-2 rounded-lg bg-amber-100 text-amber-600">
 //                   <FaDollarSign className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <div className="flex justify-between text-xs text-gray-500 mb-1">
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <div className="flex justify-between mb-1 text-xs text-gray-500">
 //                   <span>Target: ${targetInfo.overall.totalTarget.toLocaleString()}</span>
 //                   <span>{Math.round((targetInfo.overall.totalSales / (targetInfo.overall.totalTarget || 1)) * 100)}%</span>
 //                 </div>
@@ -2633,62 +2633,62 @@
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiTarget className="mr-1" /> Remaining Target
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">${targetInfo.overall.remaining.toLocaleString()}</p>
 //                 </div>
-//                 <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+//                 <div className="p-2 text-blue-600 bg-blue-100 rounded-lg">
 //                   <FiTarget className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Daily Goal (7 days)</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Daily Goal (7 days)</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   ${targetInfo.overall.perDayGoal.toLocaleString()} per day
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiUser className="mr-1" /> Total Employees
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">{Object.keys(employeeDetails).length}</p>
 //                 </div>
-//                 <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
+//                 <div className="p-2 text-purple-600 bg-purple-100 rounded-lg">
 //                   <FiUser className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Active this period</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Active this period</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {Object.keys(employeeDetails).length} employees
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiAward className="mr-1" /> Top Performer
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     {topPerformers.length > 0 ? topPerformers[0].name : 'N/A'}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-yellow-100 rounded-lg text-yellow-600">
+//                 <div className="p-2 text-yellow-600 bg-yellow-100 rounded-lg">
 //                   <FiAward className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Performance</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Performance</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {topPerformers.length > 0 ? Math.round(topPerformers[0].performance) : 0}%
 //                 </p>
@@ -2697,11 +2697,11 @@
 //           </div>
 
 //           {callCategorySummary?.length > 0 && (
-//             <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4">
+//             <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//               <h3 className="mb-4 text-xl font-semibold text-gray-800">
 //                 📊 Call Category Distribution
 //               </h3>
-//               <div className="h-80 w-full">
+//               <div className="w-full h-80">
 //                 <ResponsiveContainer>
 //                   <PieChart>
 //                     <Pie
@@ -2734,10 +2734,10 @@
 
 //           {topPerformers.length > 0 && (
 //             <div className="mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+//               <h3 className="flex items-center mb-4 text-xl font-semibold text-gray-800">
 //                 <FiAward className="mr-2 text-yellow-500" /> Top Performers
 //               </h3>
-//               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+//               <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
 //                 {topPerformers.map((performer, index) => (
 //                   <TopPerformerCard
 //                     key={index}
@@ -2750,13 +2750,13 @@
 //           )}
 
 //           {/* Filters */}
-//           <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+//           <div className="p-4 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <h3 className="flex items-center mb-3 text-lg font-semibold text-gray-800">
 //               <FiFilter className="mr-2 text-gray-500" /> Filter Data
 //             </h3>
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 //               <div className="mb-4">
-//                 <label className="block text-base font-medium text-gray-800 mb-2">Time Period</label>
+//                 <label className="block mb-2 text-base font-medium text-gray-800">Time Period</label>
 //                 <div className="flex flex-wrap gap-2">
 //                   <button
 //                     onClick={() => setPerformanceView('monthly')}
@@ -2790,8 +2790,8 @@
 
 //               {performanceView === 'monthly' && (
 //                 <div>
-//                   <label className="block text-sm font-medium text-gray-700 mb-1">Months</label>
-//                   <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+//                   <label className="block mb-1 text-sm font-medium text-gray-700">Months</label>
+//                   <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
 //                     {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(month => (
 //                       <button
 //                         key={month}
@@ -2814,12 +2814,12 @@
 //               )}
 
 //               <div className="w-full">
-//                 <label className="block text-sm font-medium text-gray-700 mb-3">Employee</label>
+//                 <label className="block mb-3 text-sm font-medium text-gray-700">Employee</label>
 //                 <div className="relative">
 //                   <select
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
-//                     className="block w-full appearance-none border border-gray-300 bg-white rounded-lg px-3 py-2 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+//                     className="block w-full px-3 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                   >
 //                     <option value="all">All Employees</option>
 //                     {Object.keys(employeeDetails).map(empKey => {
@@ -2831,7 +2831,7 @@
 //                       );
 //                     })}
 //                   </select>
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -2843,12 +2843,12 @@
 
 //           {/* Employee Performance Grid */}
 //           <div className="mb-6">
-//             <div className="flex justify-between items-center mb-4">
+//             <div className="flex items-center justify-between mb-4">
 //               <h3 className="text-xl font-semibold text-gray-800">Team Members</h3>
 //               {Object.keys(employeeDetails).length > 3 && (
 //                 <button
 //                   onClick={() => setShowAllEmployees(!showAllEmployees)}
-//                   className="text-sm text-blue-600 hover:text-blue-800 flex items-center"
+//                   className="flex items-center text-sm text-blue-600 hover:text-blue-800"
 //                 >
 //                   {showAllEmployees ? (
 //                     <>
@@ -2862,7 +2862,7 @@
 //                 </button>
 //               )}
 //             </div>
-//             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
 //               {(showAllEmployees ? Object.keys(employeeDetails) : Object.keys(employeeDetails).slice(0, 3)).map((empKey, index) =>
 //                 renderPerformanceCard(empKey, index)
 //               )}
@@ -2870,8 +2870,8 @@
 //           </div>
 
 //           {/* Performance Trend Chart */}
-//           <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 gap-3">
+//           <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <div className="flex flex-col items-start justify-between gap-3 mb-5 sm:flex-row sm:items-center">
 //               <h3 className="text-xl font-semibold text-gray-800">
 //                 {performanceView === 'monthly' && 'Monthly Performance Trend'}
 //                 {performanceView === 'weekly' && 'Weekly Performance Trend'}
@@ -2881,7 +2881,7 @@
 //                 <span className="text-sm text-gray-600">View:</span>
 //                 <div className="relative">
 //                   <select
-//                     className="block w-full appearance-none text-sm border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+//                     className="block w-full px-4 py-2 pr-10 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
 //                   >
@@ -2893,7 +2893,7 @@
 //                       );
 //                     })}
 //                   </select>
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -2902,7 +2902,7 @@
 //               </div>
 //             </div>
 
-//             <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50 pb-2">
+//             <div className="pb-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50">
 //               <div className="min-w-[1000px] h-[450px]">
 //                 <ResponsiveContainer width="100%" height="100%">
 //                   <BarChart
@@ -3006,11 +3006,11 @@
 //               </div>
 //             </div>
 
-//             <div className="mt-4 flex justify-between items-center">
-//               <div className="text-xs text-gray-500 flex items-center">
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500 mr-1"></span>
+//             <div className="flex items-center justify-between mt-4">
+//               <div className="flex items-center text-xs text-gray-500">
+//                 <span className="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"></span>
 //                 <span className="mr-3">Sales</span>
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500/20 border border-blue-500 mr-1"></span>
+//                 <span className="inline-block w-3 h-3 mr-1 border border-blue-500 rounded-full bg-blue-500/20"></span>
 //                 <span>Target</span>
 //               </div>
 //               <div className="text-xs text-gray-500">
@@ -3022,7 +3022,7 @@
 //           </div>
 //         </>
 //       ) : (
-//         <div className="text-center py-10">
+//         <div className="py-10 text-center">
 //           <p className="text-gray-500">No performance data available</p>
 //         </div>
 //       )}
@@ -3325,7 +3325,7 @@
 //     return (
 //       <div
 //         key={index}
-//         className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md hover:border-blue-100"
+//         className="overflow-hidden transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md hover:border-blue-100"
 //       >
 //         <div className="p-5">
 //           <div className="flex items-center justify-between mb-3">
@@ -3349,16 +3349,16 @@
 //           </div>
 
 //           <div className="grid grid-cols-2 gap-3 mb-4">
-//             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg border border-blue-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-blue-100 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiDollarSign className="mr-1" /> Sales
 //               </p>
 //               <p className="text-lg font-bold text-blue-600">
 //                 ${profit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //               </p>
 //             </div>
-//             <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-3 rounded-lg border border-purple-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-purple-100 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiTarget className="mr-1" /> Target
 //               </p>
 //               <p className="text-lg font-bold text-purple-600">
@@ -3368,13 +3368,13 @@
 //           </div>
 
 //           <div className="mb-4">
-//             <div className="flex justify-between text-xs text-gray-500 mb-1">
+//             <div className="flex justify-between mb-1 text-xs text-gray-500">
 //               <span>0%</span>
 //               <span>100%</span>
 //             </div>
-//             <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+//             <div className="h-2 overflow-hidden bg-gray-100 rounded-full">
 //               <div
-//                 className="h-full rounded-full transition-all duration-500"
+//                 className="h-full transition-all duration-500 rounded-full"
 //                 style={{
 //                   width: `${Math.min(percent, 100)}%`,
 //                   background:
@@ -3459,35 +3459,35 @@
 
 //     return (
 //       <div className={`rounded-xl p-5 shadow-md ${badgeColors[index] || 'bg-gray-300'} text-white`}>
-//         <div className="flex justify-between items-start mb-4">
+//         <div className="flex items-start justify-between mb-4">
 //           <div>
 //             <h3 className="text-lg font-semibold">{titles[index] || 'Performer'}</h3>
-//             <h2 className="text-xl font-bold mt-1">{performer.name}</h2>
+//             <h2 className="mt-1 text-xl font-bold">{performer.name}</h2>
 //             <p className="text-sm opacity-80">ID: {performer.id}</p>
 //           </div>
 //           <div className="text-3xl">{medalIcons[index] || ''}</div>
 //         </div>
 
 //         <div className="grid grid-cols-2 gap-4 mb-4">
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Total Sales</p>
 //             <p className="text-lg font-bold">
 //               ${totalSales.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //             </p>
-//             <p className="text-xs mt-1">Target: ${totalTarget.toLocaleString()}</p>
+//             <p className="mt-1 text-xs">Target: ${totalTarget.toLocaleString()}</p>
 //           </div>
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Avg Monthly</p>
 //             <p className="text-lg font-bold">{avgMonthlyPerformance}%</p>
 //           </div>
 //         </div>
 
 //         <div className="w-full">
-//           <div className="flex justify-between items-center mb-2">
+//           <div className="flex items-center justify-between mb-2">
 //             <button
 //               onClick={handlePrev}
 //               disabled={startIndex === 0}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ◀
 //             </button>
@@ -3495,15 +3495,15 @@
 //             <button
 //               onClick={handleNext}
 //               disabled={startIndex + itemsPerPage >= monthlyPerformance.length}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ▶
 //             </button>
 //           </div>
 
-//           <div className="grid grid-cols-4 gap-2 text-center text-xs">
+//           <div className="grid grid-cols-4 gap-2 text-xs text-center">
 //             {visibleMonths.map((monthData, i) => (
-//               <div key={i} className="p-2 bg-white bg-opacity-20 rounded text-black">
+//               <div key={i} className="p-2 text-black bg-white rounded bg-opacity-20">
 //                 <p className="font-semibold">{monthData.month}</p>
 //                 <p className={`font-medium ${monthData.target === 0 ? 'text-gray-400' : ''}`}>
 //                   {monthData.target === 0 ? 'N/A' : `${monthData.percentage.toFixed(1)}%`}
@@ -3547,14 +3547,14 @@
 //   };
 
 //   return (
-//     <div className="bg-gray-50 p-4 sm:p-6 rounded-xl">
+//     <div className="p-4 bg-gray-50 sm:p-6 rounded-xl">
 //       {/* Dashboard Header */}
-//       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+//       <div className="flex flex-col items-start justify-between mb-6 md:flex-row md:items-center">
 //         <div>
-//           <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Team Performance Dashboard</h1>
-//           <p className="text-gray-600 mt-1">Track and analyze your team's sales performance</p>
+//           <h1 className="text-2xl font-bold text-gray-800 md:text-3xl">Team Performance Dashboard</h1>
+//           <p className="mt-1 text-gray-600">Track and analyze your team's sales performance</p>
 //         </div>
-//         <div className="mt-4 md:mt-0 flex space-x-2">
+//         <div className="flex mt-4 space-x-2 md:mt-0">
 //           <button
 //             onClick={() => setActiveTab('monthly')}
 //             className={`px-4 py-2 rounded-lg text-sm font-medium flex items-center ${activeTab === 'monthly' ? 'bg-blue-600 text-white' : 'bg-white !text-gray-700 border border-gray-200'}`}
@@ -3571,34 +3571,34 @@
 //       </div>
 
 //       {error ? (
-//         <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
+//         <div className="p-4 mb-6 text-red-700 border border-red-200 rounded-lg bg-red-50">
 //           <p className="font-medium">Error loading data:</p>
 //           <p>{error}</p>
 //         </div>
 //       ) : loading ? (
-//         <div className="flex justify-center items-center h-64">
-//           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+//         <div className="flex items-center justify-center h-64">
+//           <div className="w-12 h-12 border-t-2 border-b-2 border-blue-500 rounded-full animate-spin"></div>
 //         </div>
 //       ) : targetInfo ? (
 //         <>
 //           {/* Summary Cards */}
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//           <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-4">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FaDollarSign className="mr-1" /> Total Sales
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     ${totalProfit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-amber-100 rounded-lg text-amber-600">
+//                 <div className="p-2 rounded-lg bg-amber-100 text-amber-600">
 //                   <FaDollarSign className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <div className="flex justify-between text-xs text-gray-500 mb-1">
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <div className="flex justify-between mb-1 text-xs text-gray-500">
 //                   <span>Target: ${targetInfo.overall.totalTarget.toLocaleString()}</span>
 //                   <span>{Math.round((targetInfo.overall.totalSales / (targetInfo.overall.totalTarget || 1)) * 100)}%</span>
 //                 </div>
@@ -3613,62 +3613,62 @@
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiTarget className="mr-1" /> Remaining Target
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">${targetInfo.overall.remaining.toLocaleString()}</p>
 //                 </div>
-//                 <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+//                 <div className="p-2 text-blue-600 bg-blue-100 rounded-lg">
 //                   <FiTarget className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Daily Goal (7 days)</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Daily Goal (7 days)</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   ${targetInfo.overall.perDayGoal.toLocaleString()} per day
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiUser className="mr-1" /> Total Employees
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">{Object.keys(employeeDetails).length}</p>
 //                 </div>
-//                 <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
+//                 <div className="p-2 text-purple-600 bg-purple-100 rounded-lg">
 //                   <FiUser className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Active this period</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Active this period</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {Object.keys(employeeDetails).length} employees
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiAward className="mr-1" /> Top Performer
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     {topPerformers.length > 0 ? topPerformers[0].name : 'N/A'}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-yellow-100 rounded-lg text-yellow-600">
+//                 <div className="p-2 text-yellow-600 bg-yellow-100 rounded-lg">
 //                   <FiAward className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Performance</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Performance</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {topPerformers.length > 0 ? Math.round(topPerformers[0].performance) : 0}%
 //                 </p>
@@ -3677,11 +3677,11 @@
 //           </div>
 
 //           {callCategorySummary?.length > 0 && (
-//             <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4">
+//             <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//               <h3 className="mb-4 text-xl font-semibold text-gray-800">
 //                 📊 Call Category Distribution
 //               </h3>
-//               <div className="h-80 w-full">
+//               <div className="w-full h-80">
 //                 <ResponsiveContainer>
 //                   <PieChart>
 //                     <Pie
@@ -3714,10 +3714,10 @@
 
 //           {topPerformers.length > 0 && (
 //             <div className="mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+//               <h3 className="flex items-center mb-4 text-xl font-semibold text-gray-800">
 //                 <FiAward className="mr-2 text-yellow-500" /> Top Performers
 //               </h3>
-//               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+//               <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
 //                 {topPerformers.map((performer, index) => (
 //                   <TopPerformerCard
 //                     key={index}
@@ -3730,13 +3730,13 @@
 //           )}
 
 //           {/* Filters */}
-//           <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+//           <div className="p-4 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <h3 className="flex items-center mb-3 text-lg font-semibold text-gray-800">
 //               <FiFilter className="mr-2 text-gray-500" /> Filter Data
 //             </h3>
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 //               <div className="mb-4">
-//                 <label className="block text-base font-medium text-gray-800 mb-2">Time Period</label>
+//                 <label className="block mb-2 text-base font-medium text-gray-800">Time Period</label>
 //                 <div className="flex flex-wrap gap-2">
 //                   <button
 //                     onClick={() => setPerformanceView('monthly')}
@@ -3770,8 +3770,8 @@
 
 //               {performanceView === 'monthly' && (
 //                 <div>
-//                   <label className="block text-sm font-medium text-gray-700 mb-1">Months</label>
-//                   <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+//                   <label className="block mb-1 text-sm font-medium text-gray-700">Months</label>
+//                   <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
 //                     {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(month => (
 //                       <button
 //                         key={month}
@@ -3794,12 +3794,12 @@
 //               )}
 
 //               <div className="w-full">
-//                 <label className="block text-sm font-medium text-gray-700 mb-3">Employee</label>
+//                 <label className="block mb-3 text-sm font-medium text-gray-700">Employee</label>
 //                 <div className="relative">
 //                   {/* <select
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
-//                     className="block w-full appearance-none border border-gray-300 bg-white rounded-lg px-3 py-2 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+//                     className="block w-full px-3 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                   >
 //                     <option value="all">All Employees</option>
 //                     {Object.keys(employeeDetails).map(empKey => {
@@ -3815,7 +3815,7 @@
 //                   <select
 //   value={selectedEmployee}
 //   onChange={(e) => setSelectedEmployee(e.target.value)}
-//   className="block w-full appearance-none border border-gray-300 bg-white rounded-lg px-3 py-2 text-sm text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+//   className="block w-full px-3 py-2 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 // >
 //   <option value="all" className="text-gray-900">
 //     All Employees
@@ -3830,7 +3830,7 @@
 //   })}
 // </select>
 
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -3842,7 +3842,7 @@
 
 //           {/* Employee Performance Grid */}
 //           <div className="mb-6">
-//             <div className="flex justify-between items-center mb-4">
+//             <div className="flex items-center justify-between mb-4">
 //               <h3 className="text-xl font-semibold text-gray-800">Team Members</h3>
 //               {Object.keys(employeeDetails).length > 3 && (
 //                 <button
@@ -3861,7 +3861,7 @@
 //                 </button>
 //               )}
 //             </div>
-//             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
 //               {(showAllEmployees ? Object.keys(employeeDetails) : Object.keys(employeeDetails).slice(0, 3)).map((empKey, index) =>
 //                 renderPerformanceCard(empKey, index)
 //               )}
@@ -3869,8 +3869,8 @@
 //           </div>
 
 //           {/* Performance Trend Chart */}
-//           <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 gap-3">
+//           <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <div className="flex flex-col items-start justify-between gap-3 mb-5 sm:flex-row sm:items-center">
 //               <h3 className="text-xl font-semibold text-gray-800">
 //                 {performanceView === 'monthly' && 'Monthly Performance Trend'}
 //                 {performanceView === 'weekly' && 'Weekly Performance Trend'}
@@ -3880,7 +3880,7 @@
 //                 <span className="text-sm text-gray-600">View:</span>
 //                 <div className="relative">
 //                   {/* <select
-//                     className="block w-full appearance-none text-sm border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+//                     className="block w-full px-4 py-2 pr-10 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
 //                   >
@@ -3895,7 +3895,7 @@
 
 
 // <select
-//   className="block w-full appearance-none text-sm border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+//   className="block w-full px-4 py-2 pr-10 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //   value={selectedEmployee}
 //   onChange={(e) => setSelectedEmployee(e.target.value)}
 // >
@@ -3913,7 +3913,7 @@
 // </select>
 
 
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -3922,7 +3922,7 @@
 //               </div>
 //             </div>
 
-//             <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50 pb-2">
+//             <div className="pb-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50">
 //               <div className="min-w-[1000px] h-[450px]">
 //                 <ResponsiveContainer width="100%" height="100%">
 //                   <BarChart
@@ -4026,11 +4026,11 @@
 //               </div>
 //             </div>
 
-//             <div className="mt-4 flex justify-between items-center">
-//               <div className="text-xs text-gray-500 flex items-center">
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500 mr-1"></span>
+//             <div className="flex items-center justify-between mt-4">
+//               <div className="flex items-center text-xs text-gray-500">
+//                 <span className="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"></span>
 //                 <span className="mr-3">Sales</span>
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500/20 border border-blue-500 mr-1"></span>
+//                 <span className="inline-block w-3 h-3 mr-1 border border-blue-500 rounded-full bg-blue-500/20"></span>
 //                 <span>Target</span>
 //               </div>
 //               <div className="text-xs text-gray-500">
@@ -4042,7 +4042,7 @@
 //           </div>
 //         </>
 //       ) : (
-//         <div className="text-center py-10">
+//         <div className="py-10 text-center">
 //           <p className="text-gray-500">No performance data available</p>
 //         </div>
 //       )}
@@ -4089,7 +4089,7 @@ import weekOfYear from 'dayjs/plugin/weekOfYear';
 dayjs.extend(weekOfYear);
 import { FaDollarSign } from 'react-icons/fa';
 
-const API_URL = import.meta.env.VITE_API_BASE_URL || 'https://crm-backend-f4lj.onrender.com/api';
+const API_URL = import.meta.env.VITE_API_BASE_URL || 'https://crm-ba.onrender.com/api';
 const PERFORMANCE_API_URL = 'http://localhost:5000/api';
 
 const COLORS = [
@@ -4370,7 +4370,7 @@ const SalesChart = () => {
     return (
       <div
         key={index}
-        className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md hover:border-blue-100"
+        className="overflow-hidden transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md hover:border-blue-100"
       >
         <div className="p-5">
           <div className="flex items-center justify-between mb-3">
@@ -4393,16 +4393,16 @@ const SalesChart = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-3 mb-4">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg border border-blue-100">
-              <p className="text-xs text-gray-600 mb-1 flex items-center">
+            <div className="p-3 border border-blue-100 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100">
+              <p className="flex items-center mb-1 text-xs text-gray-600">
                 <FiDollarSign className="mr-1" /> Net Profit
               </p>
               <p className="text-lg font-bold text-blue-600">
                 ${profit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </p>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-3 rounded-lg border border-purple-100">
-              <p className="text-xs text-gray-600 mb-1 flex items-center">
+            <div className="p-3 border border-purple-100 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100">
+              <p className="flex items-center mb-1 text-xs text-gray-600">
                 <FiTarget className="mr-1" /> Target
               </p>
               <p className="text-lg font-bold text-purple-600">
@@ -4412,13 +4412,13 @@ const SalesChart = () => {
           </div>
 
           <div className="mb-4">
-            <div className="flex justify-between text-xs text-gray-500 mb-1">
+            <div className="flex justify-between mb-1 text-xs text-gray-500">
               <span>0%</span>
               <span>100%</span>
             </div>
-            <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div className="h-2 overflow-hidden bg-gray-100 rounded-full">
               <div
-                className="h-full rounded-full transition-all duration-500"
+                className="h-full transition-all duration-500 rounded-full"
                 style={{
                   width: `${Math.min(percent, 100)}%`,
                   background:
@@ -4503,31 +4503,31 @@ const SalesChart = () => {
 
     return (
       <div className={`rounded-xl p-5 shadow-md ${badgeColors[index] || 'bg-gray-300'} text-white`}>
-        <div className="flex justify-between items-start mb-4">
+        <div className="flex items-start justify-between mb-4">
           <div>
             <h3 className="text-lg font-semibold">{titles[index] || 'Performer'}</h3>
-            <h2 className="text-xl font-bold mt-1">{performer.name}</h2>
+            <h2 className="mt-1 text-xl font-bold">{performer.name}</h2>
             <p className="text-sm opacity-80">ID: {performer.id}</p>
           </div>
           <div className="text-3xl">{medalIcons[index] || ''}</div>
         </div>
 
         <div className="grid grid-cols-2 gap-4 mb-4">
-          <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+          <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
             <p className="text-xs">Total Net Profit</p>
             <p className="text-lg font-bold">
               ${totalSales.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </p>
-            <p className="text-xs mt-1">Target: ${totalTarget.toLocaleString()}</p>
+            <p className="mt-1 text-xs">Target: ${totalTarget.toLocaleString()}</p>
           </div>
-          <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+          <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
             <p className="text-xs">Avg Monthly</p>
             <p className="text-lg font-bold">{avgMonthlyPerformance}%</p>
           </div>
         </div>
 
         <div className="w-full">
-          <div className="flex justify-between items-center mb-2">
+          <div className="flex items-center justify-between mb-2">
             <button
               onClick={handlePrev}
               disabled={startIndex === 0}
@@ -4545,9 +4545,9 @@ const SalesChart = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-4 gap-2 text-center text-xs">
+          <div className="grid grid-cols-4 gap-2 text-xs text-center">
             {visibleMonths.map((monthData, i) => (
-              <div key={i} className="p-2 bg-white bg-opacity-20 rounded text-black">
+              <div key={i} className="p-2 text-black bg-white rounded bg-opacity-20">
                 <p className="font-semibold">{monthData.month}</p>
                 <p className={`font-medium ${monthData.target === 0 ? 'text-gray-400' : ''}`}>
                   {monthData.target === 0 ? 'N/A' : `${monthData.percentage.toFixed(1)}%`}
@@ -4591,14 +4591,14 @@ const SalesChart = () => {
   };
 
   return (
-    <div className="bg-gray-50 p-4 sm:p-6 rounded-xl">
+    <div className="p-4 bg-gray-50 sm:p-6 rounded-xl">
       {/* Dashboard Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+      <div className="flex flex-col items-start justify-between mb-6 md:flex-row md:items-center">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Team Performance Dashboard</h1>
-          <p className="text-gray-600 mt-1">Track and analyze your team's sales performance</p>
+          <h1 className="text-2xl font-bold text-gray-800 md:text-3xl">Team Performance Dashboard</h1>
+          <p className="mt-1 text-gray-600">Track and analyze your team's sales performance</p>
         </div>
-        <div className="mt-4 md:mt-0 flex space-x-2">
+        <div className="flex mt-4 space-x-2 md:mt-0">
           <button
             onClick={() => setActiveTab('monthly')}
             className={`px-4 py-2 rounded-lg text-sm font-medium flex items-center ${activeTab === 'monthly' ? 'bg-blue-600 text-white' : 'bg-white !text-gray-700 border border-gray-200'}`}
@@ -4615,36 +4615,36 @@ const SalesChart = () => {
       </div>
 
       {error ? (
-        <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
+        <div className="p-4 mb-6 text-red-700 border border-red-200 rounded-lg bg-red-50">
           <p className="font-medium">Error loading data:</p>
           <p>{error}</p>
         </div>
       ) : loading ? (
-        <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        <div className="flex items-center justify-center h-64">
+          <div className="w-12 h-12 border-t-2 border-b-2 border-blue-500 rounded-full animate-spin"></div>
         </div>
       ) : targetInfo ? (
         <>
           {/* Summary Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-4">
 
 
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+            <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600 mb-1 flex items-center">
+                  <p className="flex items-center mb-1 text-sm text-gray-600">
                     <FaDollarSign className="mr-1" /> Total Net Profit
                   </p>
                   <p className="text-2xl font-bold text-gray-800">
                     ${totalProfit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                   </p>
                 </div>
-                <div className="p-2 bg-amber-100 rounded-lg text-amber-600">
+                <div className="p-2 rounded-lg bg-amber-100 text-amber-600">
                   <FaDollarSign className="text-xl" />
                 </div>
               </div>
-              <div className="mt-3 pt-3 border-t border-gray-100">
-                <div className="flex justify-between text-xs text-gray-500 mb-1">
+              <div className="pt-3 mt-3 border-t border-gray-100">
+                <div className="flex justify-between mb-1 text-xs text-gray-500">
                   <span>Target: ${targetInfo.overall.totalTarget.toLocaleString()}</span>
                   <span>{Math.round((targetInfo.overall.totalSales / (targetInfo.overall.totalTarget || 1)) * 100)}%</span>
                 </div>
@@ -4660,62 +4660,62 @@ const SalesChart = () => {
             </div>
 
 
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+            <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600 mb-1 flex items-center">
+                  <p className="flex items-center mb-1 text-sm text-gray-600">
                     <FiTarget className="mr-1" /> Remaining Target
                   </p>
                   <p className="text-2xl font-bold text-gray-800">${targetInfo.overall.remaining.toLocaleString()}</p>
                 </div>
-                <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+                <div className="p-2 text-blue-600 bg-blue-100 rounded-lg">
                   <FiTarget className="text-xl" />
                 </div>
               </div>
-              <div className="mt-3 pt-3 border-t border-gray-100">
-                <p className="text-xs text-gray-500 mb-1">Daily Goal (7 days)</p>
+              <div className="pt-3 mt-3 border-t border-gray-100">
+                <p className="mb-1 text-xs text-gray-500">Daily Goal (7 days)</p>
                 <p className="text-sm font-medium text-gray-800">
                   ${targetInfo.overall.perDayGoal.toLocaleString()} per day
                 </p>
               </div>
             </div>
 
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+            <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600 mb-1 flex items-center">
+                  <p className="flex items-center mb-1 text-sm text-gray-600">
                     <FiUser className="mr-1" /> Total Employees
                   </p>
                   <p className="text-2xl font-bold text-gray-800">{Object.keys(employeeDetails).length}</p>
                 </div>
-                <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
+                <div className="p-2 text-purple-600 bg-purple-100 rounded-lg">
                   <FiUser className="text-xl" />
                 </div>
               </div>
-              <div className="mt-3 pt-3 border-t border-gray-100">
-                <p className="text-xs text-gray-500 mb-1">Active this period</p>
+              <div className="pt-3 mt-3 border-t border-gray-100">
+                <p className="mb-1 text-xs text-gray-500">Active this period</p>
                 <p className="text-sm font-medium text-gray-800">
                   {Object.keys(employeeDetails).length} employees
                 </p>
               </div>
             </div>
 
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+            <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600 mb-1 flex items-center">
+                  <p className="flex items-center mb-1 text-sm text-gray-600">
                     <FiAward className="mr-1" /> Top Performer
                   </p>
                   <p className="text-2xl font-bold text-gray-800">
                     {topPerformers.length > 0 ? topPerformers[0].name : 'N/A'}
                   </p>
                 </div>
-                <div className="p-2 bg-yellow-100 rounded-lg text-yellow-600">
+                <div className="p-2 text-yellow-600 bg-yellow-100 rounded-lg">
                   <FiAward className="text-xl" />
                 </div>
               </div>
-              <div className="mt-3 pt-3 border-t border-gray-100">
-                <p className="text-xs text-gray-500 mb-1">Performance</p>
+              <div className="pt-3 mt-3 border-t border-gray-100">
+                <p className="mb-1 text-xs text-gray-500">Performance</p>
                 <p className="text-sm font-medium text-gray-800">
                   {topPerformers.length > 0 ? Math.round(topPerformers[0].performance) : 0}%
                 </p>
@@ -4724,11 +4724,11 @@ const SalesChart = () => {
           </div>
 
           {callCategorySummary?.length > 0 && (
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">
+            <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+              <h3 className="mb-4 text-xl font-semibold text-gray-800">
                 📊 Call Category Distribution
               </h3>
-              <div className="h-80 w-full">
+              <div className="w-full h-80">
                 <ResponsiveContainer>
                   <PieChart>
                     <Pie
@@ -4761,10 +4761,10 @@ const SalesChart = () => {
 
           {topPerformers.length > 0 && (
             <div className="mb-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+              <h3 className="flex items-center mb-4 text-xl font-semibold text-gray-800">
                 <FiAward className="mr-2 text-yellow-500" /> Top Performers
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                 {topPerformers.map((performer, index) => (
                   <TopPerformerCard
                     key={index}
@@ -4777,13 +4777,13 @@ const SalesChart = () => {
           )}
 
           {/* Filters */}
-          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+          <div className="p-4 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+            <h3 className="flex items-center mb-3 text-lg font-semibold text-gray-800">
               <FiFilter className="mr-2 text-gray-500" /> Filter Data
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="mb-4">
-                <label className="block text-base font-medium text-gray-800 mb-2">Time Period</label>
+                <label className="block mb-2 text-base font-medium text-gray-800">Time Period</label>
                 <div className="flex flex-wrap gap-2">
                   <button
                     onClick={() => setPerformanceView('monthly')}
@@ -4817,8 +4817,8 @@ const SalesChart = () => {
 
               {performanceView === 'monthly' && (
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Months</label>
-                  <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                  <label className="block mb-1 text-sm font-medium text-gray-700">Months</label>
+                  <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
                     {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(month => (
                       <button
                         key={month}
@@ -4841,12 +4841,12 @@ const SalesChart = () => {
               )}
 
               <div className="w-full">
-                <label className="block text-sm font-medium text-gray-700 mb-3">Employee</label>
+                <label className="block mb-3 text-sm font-medium text-gray-700">Employee</label>
                 <div className="relative">
                   {/* <select
                     value={selectedEmployee}
                     onChange={(e) => setSelectedEmployee(e.target.value)}
-                    className="block w-full appearance-none border border-gray-300 bg-white rounded-lg px-3 py-2 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="block w-full px-3 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="all">All Employees</option>
                     {Object.keys(employeeDetails).map(empKey => {
@@ -4862,7 +4862,7 @@ const SalesChart = () => {
                   <select
                     value={selectedEmployee}
                     onChange={(e) => setSelectedEmployee(e.target.value)}
-                    className="block w-full appearance-none border border-gray-300 bg-white rounded-lg px-3 py-2 text-sm text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="block w-full px-3 py-2 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="all" className="text-gray-900">
                       All Employees
@@ -4877,7 +4877,7 @@ const SalesChart = () => {
                     })}
                   </select>
 
-                  <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                  <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -4889,7 +4889,7 @@ const SalesChart = () => {
 
           {/* Employee Performance Grid */}
           <div className="mb-6">
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-semibold text-gray-800">Team Members</h3>
               {Object.keys(employeeDetails).length > 3 && (
                 <button
@@ -4908,7 +4908,7 @@ const SalesChart = () => {
                 </button>
               )}
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {(showAllEmployees ? Object.keys(employeeDetails) : Object.keys(employeeDetails).slice(0, 3)).map((empKey, index) =>
                 renderPerformanceCard(empKey, index)
               )}
@@ -4916,8 +4916,8 @@ const SalesChart = () => {
           </div>
 
           {/* Performance Trend Chart */}
-          <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 gap-3">
+          <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+            <div className="flex flex-col items-start justify-between gap-3 mb-5 sm:flex-row sm:items-center">
               <h3 className="text-xl font-semibold text-gray-800">
                 {performanceView === 'monthly' && 'Monthly Performance Trend'}
                 {performanceView === 'weekly' && 'Weekly Performance Trend'}
@@ -4930,7 +4930,7 @@ const SalesChart = () => {
 
 
                   <select
-                    className="block w-full appearance-none text-sm border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+                    className="block w-full px-4 py-2 pr-10 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     value={selectedEmployee}
                     onChange={(e) => setSelectedEmployee(e.target.value)}
                   >
@@ -4948,7 +4948,7 @@ const SalesChart = () => {
                   </select>
 
 
-                  <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                  <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -4957,7 +4957,7 @@ const SalesChart = () => {
               </div>
             </div>
 
-            <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50 pb-2">
+            <div className="pb-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50">
               <div className="min-w-[1000px] h-[450px]">
 
                 <ResponsiveContainer width="100%" height="100%">
@@ -5095,11 +5095,11 @@ const SalesChart = () => {
               </div>
             </div>
 
-            <div className="mt-4 flex justify-between items-center">
-              <div className="text-xs text-gray-500 flex items-center">
-                <span className="inline-block w-3 h-3 rounded-full bg-blue-500 mr-1"></span>
+            <div className="flex items-center justify-between mt-4">
+              <div className="flex items-center text-xs text-gray-500">
+                <span className="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"></span>
                 <span className="mr-3">Sales</span>
-                <span className="inline-block w-3 h-3 rounded-full bg-blue-500/20 border border-blue-500 mr-1"></span>
+                <span className="inline-block w-3 h-3 mr-1 border border-blue-500 rounded-full bg-blue-500/20"></span>
                 <span>Target</span>
               </div>
               <div className="text-xs text-gray-500">
@@ -5111,7 +5111,7 @@ const SalesChart = () => {
           </div>
         </>
       ) : (
-        <div className="text-center py-10">
+        <div className="py-10 text-center">
           <p className="text-gray-500">No performance data available</p>
         </div>
       )}
@@ -5496,7 +5496,7 @@ export default SalesChart;
 //     return (
 //       <div
 //         key={index}
-//         className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md hover:border-blue-100"
+//         className="overflow-hidden transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md hover:border-blue-100"
 //       >
 //         <div className="p-5">
 //           <div className="flex items-center justify-between mb-3">
@@ -5520,16 +5520,16 @@ export default SalesChart;
 //           </div>
 
 //           <div className="grid grid-cols-2 gap-3 mb-4">
-//             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg border border-blue-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-blue-100 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiDollarSign className="mr-1" /> Sales
 //               </p>
 //               <p className="text-lg font-bold text-blue-600">
 //                 ${sales.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //               </p>
 //             </div>
-//             <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-3 rounded-lg border border-purple-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-purple-100 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiTarget className="mr-1" /> Target
 //               </p>
 //               <p className="text-lg font-bold text-purple-600">
@@ -5539,13 +5539,13 @@ export default SalesChart;
 //           </div>
 
 //           <div className="mb-4">
-//             <div className="flex justify-between text-xs text-gray-500 mb-1">
+//             <div className="flex justify-between mb-1 text-xs text-gray-500">
 //               <span>0%</span>
 //               <span>100%</span>
 //             </div>
-//             <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+//             <div className="h-2 overflow-hidden bg-gray-100 rounded-full">
 //               <div
-//                 className="h-full rounded-full transition-all duration-500"
+//                 className="h-full transition-all duration-500 rounded-full"
 //                 style={{
 //                   width: `${Math.min(percent, 100)}%`,
 //                   background:
@@ -5628,35 +5628,35 @@ export default SalesChart;
 
 //     return (
 //       <div className={`rounded-xl p-5 shadow-md ${badgeColors[index] || 'bg-gray-300'} text-white`}>
-//         <div className="flex justify-between items-start mb-4">
+//         <div className="flex items-start justify-between mb-4">
 //           <div>
 //             <h3 className="text-lg font-semibold">{titles[index] || 'Performer'}</h3>
-//             <h2 className="text-xl font-bold mt-1">{performer.name}</h2>
+//             <h2 className="mt-1 text-xl font-bold">{performer.name}</h2>
 //             <p className="text-sm opacity-80">ID: {performer.id}</p>
 //           </div>
 //           <div className="text-3xl">{medalIcons[index] || ''}</div>
 //         </div>
 
 //         <div className="grid grid-cols-2 gap-4 mb-4">
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Total Sales</p>
 //             <p className="text-lg font-bold">
 //               ${totalSales.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //             </p>
-//             <p className="text-xs mt-1">Target: ${totalTarget.toLocaleString()}</p>
+//             <p className="mt-1 text-xs">Target: ${totalTarget.toLocaleString()}</p>
 //           </div>
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Avg Monthly</p>
 //             <p className="text-lg font-bold">{avgMonthlyPerformance}%</p>
 //           </div>
 //         </div>
 
 //         <div className="w-full">
-//           <div className="flex justify-between items-center mb-2">
+//           <div className="flex items-center justify-between mb-2">
 //             <button
 //               onClick={handlePrev}
 //               disabled={startIndex === 0}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ◀
 //             </button>
@@ -5664,15 +5664,15 @@ export default SalesChart;
 //             <button
 //               onClick={handleNext}
 //               disabled={startIndex + itemsPerPage >= monthlyPerformance.length}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ▶
 //             </button>
 //           </div>
 
-//           <div className="grid grid-cols-4 gap-2 text-center text-xs">
+//           <div className="grid grid-cols-4 gap-2 text-xs text-center">
 //             {visibleMonths.map((monthData, i) => (
-//               <div key={i} className="p-2 bg-white bg-opacity-20 rounded text-black">
+//               <div key={i} className="p-2 text-black bg-white rounded bg-opacity-20">
 //                 <p className="font-semibold">{monthData.month}</p>
 //                 <p className={`font-medium ${monthData.target === 0 ? 'text-gray-400' : ''}`}>
 //                   {monthData.target === 0 ? 'N/A' : `${monthData.percentage}%`}
@@ -5716,14 +5716,14 @@ export default SalesChart;
 //   };
 
 //   return (
-//     <div className="bg-gray-50 p-4 sm:p-6 rounded-xl">
+//     <div className="p-4 bg-gray-50 sm:p-6 rounded-xl">
 //       {/* Dashboard Header */}
-//       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+//       <div className="flex flex-col items-start justify-between mb-6 md:flex-row md:items-center">
 //         <div>
-//           <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Team Performance Dashboard</h1>
-//           <p className="text-gray-600 mt-1">Track and analyze your team's sales performance</p>
+//           <h1 className="text-2xl font-bold text-gray-800 md:text-3xl">Team Performance Dashboard</h1>
+//           <p className="mt-1 text-gray-600">Track and analyze your team's sales performance</p>
 //         </div>
-//         <div className="mt-4 md:mt-0 flex space-x-2">
+//         <div className="flex mt-4 space-x-2 md:mt-0">
 //           <button
 //             onClick={() => setActiveTab('monthly')}
 //             className={`px-4 py-2 rounded-lg text-sm font-medium flex items-center ${activeTab === 'monthly' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 border border-gray-200'}`}
@@ -5740,34 +5740,34 @@ export default SalesChart;
 //       </div>
 
 //       {error ? (
-//         <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
+//         <div className="p-4 mb-6 text-red-700 border border-red-200 rounded-lg bg-red-50">
 //           <p className="font-medium">Error loading data:</p>
 //           <p>{error}</p>
 //         </div>
 //       ) : loading ? (
-//         <div className="flex justify-center items-center h-64">
-//           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+//         <div className="flex items-center justify-center h-64">
+//           <div className="w-12 h-12 border-t-2 border-b-2 border-blue-500 rounded-full animate-spin"></div>
 //         </div>
 //       ) : targetInfo ? (
 //         <>
 //           {/* Summary Cards */}
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//           <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-4">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FaDollarSign className="mr-1" /> Total Sales
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     ${totalProfit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-amber-100 rounded-lg text-amber-600">
+//                 <div className="p-2 rounded-lg bg-amber-100 text-amber-600">
 //                   <FaDollarSign className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <div className="flex justify-between text-xs text-gray-500 mb-1">
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <div className="flex justify-between mb-1 text-xs text-gray-500">
 //                   <span>Target: ${targetInfo.overall.totalTarget.toLocaleString()}</span>
 //                   <span>{Math.round((targetInfo.overall.totalSales / targetInfo.overall.totalTarget) * 100)}%</span>
 //                 </div>
@@ -5782,62 +5782,62 @@ export default SalesChart;
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiTarget className="mr-1" /> Remaining Target
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">${targetInfo.overall.remaining.toLocaleString()}</p>
 //                 </div>
-//                 <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+//                 <div className="p-2 text-blue-600 bg-blue-100 rounded-lg">
 //                   <FiTarget className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Daily Goal (7 days)</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Daily Goal (7 days)</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   ${targetInfo.overall.perDayGoal.toLocaleString()} per day
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiUser className="mr-1" /> Total Employees
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">{Object.keys(employeeDetails).length}</p>
 //                 </div>
-//                 <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
+//                 <div className="p-2 text-purple-600 bg-purple-100 rounded-lg">
 //                   <FiUser className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Active this period</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Active this period</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {Object.keys(employeeDetails).length} employees
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiAward className="mr-1" /> Top Performer
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     {topPerformers.length > 0 ? topPerformers[0].name : 'N/A'}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-yellow-100 rounded-lg text-yellow-600">
+//                 <div className="p-2 text-yellow-600 bg-yellow-100 rounded-lg">
 //                   <FiAward className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Performance</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Performance</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {topPerformers.length > 0 ? Math.round(topPerformers[0].performance) : 0}%
 //                 </p>
@@ -5846,11 +5846,11 @@ export default SalesChart;
 //           </div>
 
 //           {callCategorySummary?.length > 0 && (
-//             <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4">
+//             <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//               <h3 className="mb-4 text-xl font-semibold text-gray-800">
 //                 📊 Call Category Distribution
 //               </h3>
-//               <div className="h-80 w-full">
+//               <div className="w-full h-80">
 //                 <ResponsiveContainer>
 //                   <PieChart>
 //                     <Pie
@@ -5883,10 +5883,10 @@ export default SalesChart;
 
 //           {topPerformers.length > 0 && (
 //             <div className="mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+//               <h3 className="flex items-center mb-4 text-xl font-semibold text-gray-800">
 //                 <FiAward className="mr-2 text-yellow-500" /> Top Performers
 //               </h3>
-//               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+//               <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
 //                 {topPerformers.map((performer, index) => (
 //                   <TopPerformerCard
 //                     key={index}
@@ -5899,13 +5899,13 @@ export default SalesChart;
 //           )}
 
 //           {/* Filters */}
-//           <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+//           <div className="p-4 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <h3 className="flex items-center mb-3 text-lg font-semibold text-gray-800">
 //               <FiFilter className="mr-2 text-gray-500" /> Filter Data
 //             </h3>
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 //               <div className="mb-4">
-//                 <label className="block text-base font-medium text-gray-800 mb-2">Time Period</label>
+//                 <label className="block mb-2 text-base font-medium text-gray-800">Time Period</label>
 //                 <div className="flex flex-wrap gap-2">
 //                   <button
 //                     onClick={() => setPerformanceView('monthly')}
@@ -5939,8 +5939,8 @@ export default SalesChart;
 
 //               {performanceView === 'monthly' && (
 //                 <div>
-//                   <label className="block text-sm font-medium text-gray-700 mb-1">Months</label>
-//                   <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+//                   <label className="block mb-1 text-sm font-medium text-gray-700">Months</label>
+//                   <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
 //                     {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(month => (
 //                       <button
 //                         key={month}
@@ -5963,12 +5963,12 @@ export default SalesChart;
 //               )}
 
 //               <div className="w-full">
-//                 <label className="block text-sm font-medium text-gray-700 mb-3">Employee</label>
+//                 <label className="block mb-3 text-sm font-medium text-gray-700">Employee</label>
 //                 <div className="relative">
 //                   <select
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
-//                     className="block w-full appearance-none border border-gray-300 bg-white rounded-lg px-3 py-2 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+//                     className="block w-full px-3 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                   >
 //                     <option value="all">All Employees</option>
 //                     {Object.keys(employeeDetails).map(empKey => {
@@ -5980,7 +5980,7 @@ export default SalesChart;
 //                       );
 //                     })}
 //                   </select>
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -5992,12 +5992,12 @@ export default SalesChart;
 
 //           {/* Employee Performance Grid */}
 //           <div className="mb-6">
-//             <div className="flex justify-between items-center mb-4">
+//             <div className="flex items-center justify-between mb-4">
 //               <h3 className="text-xl font-semibold text-gray-800">Team Members</h3>
 //               {Object.keys(employeeDetails).length > 3 && (
 //                 <button
 //                   onClick={() => setShowAllEmployees(!showAllEmployees)}
-//                   className="text-sm text-blue-600 hover:text-blue-800 flex items-center"
+//                   className="flex items-center text-sm text-blue-600 hover:text-blue-800"
 //                 >
 //                   {showAllEmployees ? (
 //                     <>
@@ -6011,7 +6011,7 @@ export default SalesChart;
 //                 </button>
 //               )}
 //             </div>
-//             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
 //               {(showAllEmployees ? Object.keys(employeeDetails) : Object.keys(employeeDetails).slice(0, 3)).map((empKey, index) =>
 //                 renderPerformanceCard(empKey, index)
 //               )}
@@ -6019,8 +6019,8 @@ export default SalesChart;
 //           </div>
 
 //           {/* Performance Trend Chart */}
-//           <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 gap-3">
+//           <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <div className="flex flex-col items-start justify-between gap-3 mb-5 sm:flex-row sm:items-center">
 //               <h3 className="text-xl font-semibold text-gray-800">
 //                 {performanceView === 'monthly' && 'Monthly Performance Trend'}
 //                 {performanceView === 'weekly' && 'Weekly Performance Trend'}
@@ -6030,7 +6030,7 @@ export default SalesChart;
 //                 <span className="text-sm text-gray-600">View:</span>
 //                 <div className="relative">
 //                   <select
-//                     className="block w-full appearance-none text-sm border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+//                     className="block w-full px-4 py-2 pr-10 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
 //                   >
@@ -6042,7 +6042,7 @@ export default SalesChart;
 //                       );
 //                     })}
 //                   </select>
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -6051,7 +6051,7 @@ export default SalesChart;
 //               </div>
 //             </div>
 
-//             <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50 pb-2">
+//             <div className="pb-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50">
 //               <div className="min-w-[1000px] h-[450px]">
 //                 <ResponsiveContainer width="100%" height="100%">
 //                   <BarChart
@@ -6171,11 +6171,11 @@ export default SalesChart;
 //               </div>
 //             </div>
 
-//             <div className="mt-4 flex justify-between items-center">
-//               <div className="text-xs text-gray-500 flex items-center">
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500 mr-1"></span>
+//             <div className="flex items-center justify-between mt-4">
+//               <div className="flex items-center text-xs text-gray-500">
+//                 <span className="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"></span>
 //                 <span className="mr-3">Sales</span>
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500/20 border border-blue-500 mr-1"></span>
+//                 <span className="inline-block w-3 h-3 mr-1 border border-blue-500 rounded-full bg-blue-500/20"></span>
 //                 <span>Target</span>
 //               </div>
 //               <div className="text-xs text-gray-500">
@@ -6187,7 +6187,7 @@ export default SalesChart;
 //           </div>
 //         </>
 //       ) : (
-//         <div className="text-center py-10">
+//         <div className="py-10 text-center">
 //           <p className="text-gray-500">No performance data available</p>
 //         </div>
 //       )}
@@ -6568,7 +6568,7 @@ export default SalesChart;
 //     return (
 //       <div
 //         key={index}
-//         className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md hover:border-blue-100"
+//         className="overflow-hidden transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md hover:border-blue-100"
 //       >
 //         <div className="p-5">
 //           <div className="flex items-center justify-between mb-3">
@@ -6592,16 +6592,16 @@ export default SalesChart;
 //           </div>
 
 //           <div className="grid grid-cols-2 gap-3 mb-4">
-//             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg border border-blue-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-blue-100 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiDollarSign className="mr-1" /> Sales
 //               </p>
 //               <p className="text-lg font-bold text-blue-600">
 //                 ${sales.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //               </p>
 //             </div>
-//             <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-3 rounded-lg border border-purple-100">
-//               <p className="text-xs text-gray-600 mb-1 flex items-center">
+//             <div className="p-3 border border-purple-100 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100">
+//               <p className="flex items-center mb-1 text-xs text-gray-600">
 //                 <FiTarget className="mr-1" /> Target
 //               </p>
 //               <p className="text-lg font-bold text-purple-600">
@@ -6611,13 +6611,13 @@ export default SalesChart;
 //           </div>
 
 //           <div className="mb-4">
-//             <div className="flex justify-between text-xs text-gray-500 mb-1">
+//             <div className="flex justify-between mb-1 text-xs text-gray-500">
 //               <span>0%</span>
 //               <span>100%</span>
 //             </div>
-//             <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+//             <div className="h-2 overflow-hidden bg-gray-100 rounded-full">
 //               <div
-//                 className="h-full rounded-full transition-all duration-500"
+//                 className="h-full transition-all duration-500 rounded-full"
 //                 style={{
 //                   width: `${Math.min(percent, 100)}%`,
 //                   background:
@@ -6700,35 +6700,35 @@ export default SalesChart;
 
 //     return (
 //       <div className={`rounded-xl p-5 shadow-md ${badgeColors[index] || 'bg-gray-300'} text-white`}>
-//         <div className="flex justify-between items-start mb-4">
+//         <div className="flex items-start justify-between mb-4">
 //           <div>
 //             <h3 className="text-lg font-semibold">{titles[index] || 'Performer'}</h3>
-//             <h2 className="text-xl font-bold mt-1">{performer.name}</h2>
+//             <h2 className="mt-1 text-xl font-bold">{performer.name}</h2>
 //             <p className="text-sm opacity-80">ID: {performer.id}</p>
 //           </div>
 //           <div className="text-3xl">{medalIcons[index] || ''}</div>
 //         </div>
 
 //         <div className="grid grid-cols-2 gap-4 mb-4">
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Total Sales</p>
 //             <p className="text-lg font-bold">
 //               ${totalSales.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //             </p>
-//             <p className="text-xs mt-1">Target: ${totalTarget.toLocaleString()}</p>
+//             <p className="mt-1 text-xs">Target: ${totalTarget.toLocaleString()}</p>
 //           </div>
-//           <div className="bg-white bg-opacity-20 p-2 rounded-lg text-black">
+//           <div className="p-2 text-black bg-white rounded-lg bg-opacity-20">
 //             <p className="text-xs">Avg Monthly</p>
 //             <p className="text-lg font-bold">{avgMonthlyPerformance}%</p>
 //           </div>
 //         </div>
 
 //         <div className="w-full">
-//           <div className="flex justify-between items-center mb-2">
+//           <div className="flex items-center justify-between mb-2">
 //             <button
 //               onClick={handlePrev}
 //               disabled={startIndex === 0}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ◀
 //             </button>
@@ -6736,15 +6736,15 @@ export default SalesChart;
 //             <button
 //               onClick={handleNext}
 //               disabled={startIndex + itemsPerPage >= monthlyPerformance.length}
-//               className="text-sm px-2 py-1 bg-white text-black rounded disabled:opacity-50"
+//               className="px-2 py-1 text-sm text-black bg-white rounded disabled:opacity-50"
 //             >
 //               ▶
 //             </button>
 //           </div>
 
-//           <div className="grid grid-cols-4 gap-2 text-center text-xs">
+//           <div className="grid grid-cols-4 gap-2 text-xs text-center">
 //             {visibleMonths.map((monthData, i) => (
-//               <div key={i} className="p-2 bg-white bg-opacity-20 rounded text-black">
+//               <div key={i} className="p-2 text-black bg-white rounded bg-opacity-20">
 //                 <p className="font-semibold">{monthData.month}</p>
 //                 <p className={`font-medium ${monthData.target === 0 ? 'text-gray-400' : ''}`}>
 //                   {monthData.target === 0 ? 'N/A' : `${monthData.percentage}%`}
@@ -6788,14 +6788,14 @@ export default SalesChart;
 //   };
 
 //   return (
-//     <div className="bg-gray-50 p-4 sm:p-6 rounded-xl">
+//     <div className="p-4 bg-gray-50 sm:p-6 rounded-xl">
 //       {/* Dashboard Header */}
-//       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+//       <div className="flex flex-col items-start justify-between mb-6 md:flex-row md:items-center">
 //         <div>
-//           <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Team Performance Dashboard</h1>
-//           <p className="text-gray-600 mt-1">Track and analyze your team's sales performance</p>
+//           <h1 className="text-2xl font-bold text-gray-800 md:text-3xl">Team Performance Dashboard</h1>
+//           <p className="mt-1 text-gray-600">Track and analyze your team's sales performance</p>
 //         </div>
-//         <div className="mt-4 md:mt-0 flex space-x-2">
+//         <div className="flex mt-4 space-x-2 md:mt-0">
 //           <button
 //             onClick={() => setActiveTab('monthly')}
 //             className={`px-4 py-2 rounded-lg text-sm font-medium flex items-center ${activeTab === 'monthly' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 border border-gray-200'}`}
@@ -6812,34 +6812,34 @@ export default SalesChart;
 //       </div>
 
 //       {error ? (
-//         <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
+//         <div className="p-4 mb-6 text-red-700 border border-red-200 rounded-lg bg-red-50">
 //           <p className="font-medium">Error loading data:</p>
 //           <p>{error}</p>
 //         </div>
 //       ) : loading ? (
-//         <div className="flex justify-center items-center h-64">
-//           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+//         <div className="flex items-center justify-center h-64">
+//           <div className="w-12 h-12 border-t-2 border-b-2 border-blue-500 rounded-full animate-spin"></div>
 //         </div>
 //       ) : targetInfo ? (
 //         <>
 //           {/* Summary Cards */}
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//           <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-4">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FaDollarSign className="mr-1" /> Total Sales
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     ${totalProfit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-amber-100 rounded-lg text-amber-600">
+//                 <div className="p-2 rounded-lg bg-amber-100 text-amber-600">
 //                   <FaDollarSign className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <div className="flex justify-between text-xs text-gray-500 mb-1">
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <div className="flex justify-between mb-1 text-xs text-gray-500">
 //                   <span>Target: ${targetInfo.overall.totalTarget.toLocaleString()}</span>
 //                   <span>{Math.round((targetInfo.overall.totalSales / targetInfo.overall.totalTarget) * 100)}%</span>
 //                 </div>
@@ -6854,62 +6854,62 @@ export default SalesChart;
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiTarget className="mr-1" /> Remaining Target
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">${targetInfo.overall.remaining.toLocaleString()}</p>
 //                 </div>
-//                 <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+//                 <div className="p-2 text-blue-600 bg-blue-100 rounded-lg">
 //                   <FiTarget className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Daily Goal (7 days)</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Daily Goal (7 days)</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   ${targetInfo.overall.perDayGoal.toLocaleString()} per day
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiUser className="mr-1" /> Total Employees
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">{Object.keys(employeeDetails).length}</p>
 //                 </div>
-//                 <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
+//                 <div className="p-2 text-purple-600 bg-purple-100 rounded-lg">
 //                   <FiUser className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Active this period</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Active this period</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {Object.keys(employeeDetails).length} employees
 //                 </p>
 //               </div>
 //             </div>
 
-//             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+//             <div className="p-4 transition-all bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md">
 //               <div className="flex items-center justify-between">
 //                 <div>
-//                   <p className="text-sm text-gray-600 mb-1 flex items-center">
+//                   <p className="flex items-center mb-1 text-sm text-gray-600">
 //                     <FiAward className="mr-1" /> Top Performer
 //                   </p>
 //                   <p className="text-2xl font-bold text-gray-800">
 //                     {topPerformers.length > 0 ? topPerformers[0].name : 'N/A'}
 //                   </p>
 //                 </div>
-//                 <div className="p-2 bg-yellow-100 rounded-lg text-yellow-600">
+//                 <div className="p-2 text-yellow-600 bg-yellow-100 rounded-lg">
 //                   <FiAward className="text-xl" />
 //                 </div>
 //               </div>
-//               <div className="mt-3 pt-3 border-t border-gray-100">
-//                 <p className="text-xs text-gray-500 mb-1">Performance</p>
+//               <div className="pt-3 mt-3 border-t border-gray-100">
+//                 <p className="mb-1 text-xs text-gray-500">Performance</p>
 //                 <p className="text-sm font-medium text-gray-800">
 //                   {topPerformers.length > 0 ? Math.round(topPerformers[0].performance) : 0}%
 //                 </p>
@@ -6918,11 +6918,11 @@ export default SalesChart;
 //           </div>
 
 //           {callCategorySummary?.length > 0 && (
-//             <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4">
+//             <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//               <h3 className="mb-4 text-xl font-semibold text-gray-800">
 //                 📊 Call Category Distribution
 //               </h3>
-//               <div className="h-80 w-full">
+//               <div className="w-full h-80">
 //                 <ResponsiveContainer>
 //                   <PieChart>
 //                     <Pie
@@ -6955,10 +6955,10 @@ export default SalesChart;
 
 //           {topPerformers.length > 0 && (
 //             <div className="mb-6">
-//               <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+//               <h3 className="flex items-center mb-4 text-xl font-semibold text-gray-800">
 //                 <FiAward className="mr-2 text-yellow-500" /> Top Performers
 //               </h3>
-//               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+//               <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
 //                 {topPerformers.map((performer, index) => (
 //                   <TopPerformerCard
 //                     key={index}
@@ -6971,13 +6971,13 @@ export default SalesChart;
 //           )}
 
 //           {/* Filters */}
-//           <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+//           <div className="p-4 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <h3 className="flex items-center mb-3 text-lg font-semibold text-gray-800">
 //               <FiFilter className="mr-2 text-gray-500" /> Filter Data
 //             </h3>
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 //               <div className="mb-4">
-//                 <label className="block text-base font-medium text-gray-800 mb-2">Time Period</label>
+//                 <label className="block mb-2 text-base font-medium text-gray-800">Time Period</label>
 //                 <div className="flex flex-wrap gap-2">
 //                   <button
 //                     onClick={() => setPerformanceView('monthly')}
@@ -7011,8 +7011,8 @@ export default SalesChart;
 
 //               {performanceView === 'monthly' && (
 //                 <div>
-//                   <label className="block text-sm font-medium text-gray-700 mb-1">Months</label>
-//                   <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+//                   <label className="block mb-1 text-sm font-medium text-gray-700">Months</label>
+//                   <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
 //                     {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(month => (
 //                       <button
 //                         key={month}
@@ -7035,12 +7035,12 @@ export default SalesChart;
 //               )}
 
 //               <div className="w-full">
-//                 <label className="block text-sm font-medium text-gray-700 mb-3">Employee</label>
+//                 <label className="block mb-3 text-sm font-medium text-gray-700">Employee</label>
 //                 <div className="relative">
 //                   <select
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
-//                     className="block w-full appearance-none border border-gray-300 bg-white rounded-lg px-3 py-2 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+//                     className="block w-full px-3 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                   >
 //                     <option value="all">All Employees</option>
 //                     {Object.keys(employeeDetails).map(empKey => {
@@ -7052,7 +7052,7 @@ export default SalesChart;
 //                       );
 //                     })}
 //                   </select>
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -7064,12 +7064,12 @@ export default SalesChart;
 
 //           {/* Employee Performance Grid */}
 //           <div className="mb-6">
-//             <div className="flex justify-between items-center mb-4">
+//             <div className="flex items-center justify-between mb-4">
 //               <h3 className="text-xl font-semibold text-gray-800">Team Members</h3>
 //               {Object.keys(employeeDetails).length > 3 && (
 //                 <button
 //                   onClick={() => setShowAllEmployees(!showAllEmployees)}
-//                   className="text-sm text-blue-600 hover:text-blue-800 flex items-center"
+//                   className="flex items-center text-sm text-blue-600 hover:text-blue-800"
 //                 >
 //                   {showAllEmployees ? (
 //                     <>
@@ -7083,7 +7083,7 @@ export default SalesChart;
 //                 </button>
 //               )}
 //             </div>
-//             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
 //               {(showAllEmployees ? Object.keys(employeeDetails) : Object.keys(employeeDetails).slice(0, 3)).map((empKey, index) =>
 //                 renderPerformanceCard(empKey, index)
 //               )}
@@ -7091,8 +7091,8 @@ export default SalesChart;
 //           </div>
 
 //           {/* Performance Trend Chart */}
-//           <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
-//             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 gap-3">
+//           <div className="p-5 mb-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+//             <div className="flex flex-col items-start justify-between gap-3 mb-5 sm:flex-row sm:items-center">
 //               <h3 className="text-xl font-semibold text-gray-800">
 //                 {performanceView === 'monthly' && 'Monthly Performance Trend'}
 //                 {performanceView === 'weekly' && 'Weekly Performance Trend'}
@@ -7102,7 +7102,7 @@ export default SalesChart;
 //                 <span className="text-sm text-gray-600">View:</span>
 //                 <div className="relative">
 //                   <select
-//                     className="block w-full appearance-none text-sm border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+//                     className="block w-full px-4 py-2 pr-10 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 //                     value={selectedEmployee}
 //                     onChange={(e) => setSelectedEmployee(e.target.value)}
 //                   >
@@ -7114,7 +7114,7 @@ export default SalesChart;
 //                       );
 //                     })}
 //                   </select>
-//                   <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+//                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
 //                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 //                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 //                     </svg>
@@ -7123,7 +7123,7 @@ export default SalesChart;
 //               </div>
 //             </div>
 
-//             <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50 pb-2">
+//             <div className="pb-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-50">
 //               <div className="min-w-[1000px] h-[450px]">
 //                 <ResponsiveContainer width="100%" height="100%">
 //                   <BarChart
@@ -7243,11 +7243,11 @@ export default SalesChart;
 //               </div>
 //             </div>
 
-//             <div className="mt-4 flex justify-between items-center">
-//               <div className="text-xs text-gray-500 flex items-center">
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500 mr-1"></span>
+//             <div className="flex items-center justify-between mt-4">
+//               <div className="flex items-center text-xs text-gray-500">
+//                 <span className="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"></span>
 //                 <span className="mr-3">Sales</span>
-//                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500/20 border border-blue-500 mr-1"></span>
+//                 <span className="inline-block w-3 h-3 mr-1 border border-blue-500 rounded-full bg-blue-500/20"></span>
 //                 <span>Target</span>
 //               </div>
 //               <div className="text-xs text-gray-500">
@@ -7259,7 +7259,7 @@ export default SalesChart;
 //           </div>
 //         </>
 //       ) : (
-//         <div className="text-center py-10">
+//         <div className="py-10 text-center">
 //           <p className="text-gray-500">No performance data available</p>
 //         </div>
 //       )}

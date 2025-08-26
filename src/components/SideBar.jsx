@@ -22,17 +22,20 @@ const Sidebar = ({ setLogoutMessage }) => {
   ];
 
   return (
-    <aside className="w-64 min-h-screen flex flex-col justify-between bg-[#72819a] text-white p-6 shadow-xl">
+    // <aside className="w-64 min-h-screen flex flex-col justify-between bg-[#72819a] text-white p-6 shadow-xl">
+     
+     <aside className="w-64 min-h-screen flex flex-col justify-between bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white p-6 shadow-xl">
+
       {/* Top - Logo and Nav */}
       <div>
-        {/* <div className="text-2xl font-bold text-center tracking-wide text-indigo-200 mb-8">
+        {/* <div className="mb-8 text-2xl font-bold tracking-wide text-center text-indigo-200">
           🚀 CRM Panel
         </div> */}
 
 
 
 
-        <div className="text-2xl font-bold text-center tracking-wide text-indigo-200 mb-8 flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-2 mb-8 text-2xl font-bold tracking-wide text-center text-indigo-200">
   <img
     src="/d2.png"
     // src="/favicon.svg"
@@ -43,7 +46,7 @@ const Sidebar = ({ setLogoutMessage }) => {
  FareBuzzer
 </div>
 
-{/* <div className="text-2xl font-bold text-center tracking-wide text-indigo-200 mb-8 flex items-center justify-center gap-3">
+{/* <div className="flex items-center justify-center gap-3 mb-8 text-2xl font-bold tracking-wide text-center text-indigo-200">
   <img
     src="/favicon.svg"
     alt="Logo"

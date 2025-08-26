@@ -4,8 +4,8 @@
 
 // const Sidebar = () => {
 //   return (
-//     <div className="w-64 h-screen bg-gray-800 text-white flex flex-col p-4 fixed">
-//       <h2 className="text-xl font-bold mb-6">User Panel</h2>
+//     <div className="fixed flex flex-col w-64 h-screen p-4 text-white bg-gray-800">
+//       <h2 className="mb-6 text-xl font-bold">User Panel</h2>
 
 //       <nav className="flex flex-col gap-4">
 //         <Link to="/dashboard/attendance" className="flex items-center gap-2 hover:text-yellow-400">
@@ -32,7 +32,7 @@
 //         <Link to="/dashboard/top-performers" className="flex items-center gap-2 hover:text-yellow-400">
 //           <FaMedal /> Top 3 Performers
 //         </Link>
-//         <Link to="/logout" className="flex items-center gap-2 text-red-400 mt-auto hover:text-red-600">
+//         <Link to="/logout" className="flex items-center gap-2 mt-auto text-red-400 hover:text-red-600">
 //           <FaPowerOff /> Logout
 //         </Link>
 //       </nav>
@@ -123,7 +123,7 @@
 //               : `https://crm-backend-f4lj.onrender.com/uploads/${employee.photo}`
 //           }
 //           alt="User"
-//           className="w-24 h-24 rounded-full border-4 border-white shadow-md mb-4 object-cover"
+//           className="object-cover w-24 h-24 mb-4 border-4 border-white rounded-full shadow-md"
 //         />
 //       )}
 
@@ -148,29 +148,29 @@
 
 //         <ul className="space-y-2 text-sm font-semibold text-white">
 //           <li>
-//             <Link to="my-tasks" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>🧾 My Tasks</Link>
+//             <Link to="my-tasks" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>🧾 My Tasks</Link>
 //           </li>
 
 //           <li>
-//             <Link to="top-performers" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>🏆 Top 3 Performers</Link>
+//             <Link to="top-performers" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>🏆 Top 3 Performers</Link>
 //           </li>
 //           <li>
-//             <Link to="attendance" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📅 Attendance</Link>
+//             <Link to="attendance" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📅 Attendance</Link>
 //           </li>
 //           <li>
-//             <Link to="leaves" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📝 Leaves</Link>
+//             <Link to="leaves" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📝 Leaves</Link>
 //           </li>
 //           <li>
-//             <Link to="weekly-off" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📆 Weekly Off</Link>
+//             <Link to="weekly-off" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📆 Weekly Off</Link>
 //           </li>
 //           <li>
-//             <Link to="salary" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>💰 Salary Details</Link>
+//             <Link to="salary" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>💰 Salary Details</Link>
 //           </li>
 //           <li>
-//             <Link to="request-leave" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>➕ Request New Leave</Link>
+//             <Link to="request-leave" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>➕ Request New Leave</Link>
 //           </li>
 //           <li>
-//             <Link to="break-time" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>⏱️ Break Time</Link>
+//             <Link to="break-time" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>⏱️ Break Time</Link>
 //           </li>
 
 //         </ul>
@@ -178,7 +178,7 @@
 
 //       <button
 //         onClick={markLogout}
-//         className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded shadow font-semibold"
+//         className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow hover:bg-red-600"
 //       >
 //         Logout
 //       </button>
@@ -213,7 +213,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
       className={`fixed md:relative z-40 md:z-0 w-64  h-100% min-h-screen bg-[#72819a] text-white px-6 py-8 shadow-xl flex flex-col items-center transition-all duration-300 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         }`}
     >
-      {employee?.photo && (
+      {/* {employee?.photo && (
         <img
           src={
             employee.photo.startsWith('http')
@@ -221,9 +221,24 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
               : `https://crm-backend-f4lj.onrender.com/uploads/${employee.photo}`
           }
           alt="User"
-          className="w-24 h-24 rounded-full border-4 border-white shadow-md mb-4 object-cover"
+          className="object-cover w-24 h-24 mb-4 border-4 border-white rounded-full shadow-md"
         />
-      )}
+      )} */}
+
+ <img
+  src={
+    employee?.photo && employee.photo.startsWith("http")
+      ? employee.photo
+      : "https://cdn-icons-png.flaticon.com/512/6069/6069202.png" // always fallback avatar
+  }
+  alt="User"
+  className="object-cover w-24 h-24 mb-4 border-4 border-white rounded-full shadow-md"
+  onError={(e) => {
+    e.currentTarget.src = "https://cdn-icons-png.flaticon.com/512/6069/6069202.png"; // fallback if broken
+  }}
+/>
+
+
 
       <h2 className="text-xl font-bold text-center">{user?.name || 'Employee'}</h2>
       <p className="text-sm text-center text-white/80">{user?.email || 'user@example.com'}</p>
@@ -246,7 +261,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
           <li>
             <Link
               to="my-tasks"
-              className="hover:text-yellow-300 block"
+              className="block hover:text-yellow-300"
               onClick={() => setSidebarOpen(false)}
             >
               🧾 My Tasks
@@ -255,7 +270,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
           <li>
             <Link
               to="top-performers"
-              className="hover:text-yellow-300 block"
+              className="block hover:text-yellow-300"
               onClick={() => setSidebarOpen(false)}
             >
               🏆 Top 3 Performers
@@ -264,7 +279,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
           <li>
             <Link
               to="attendance"
-              className="hover:text-yellow-300 block"
+              className="block hover:text-yellow-300"
               onClick={() => setSidebarOpen(false)}
             >
               📅 Attendance
@@ -273,7 +288,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
           <li>
             <Link
               to="leaves"
-              className="hover:text-yellow-300 block"
+              className="block hover:text-yellow-300"
               onClick={() => setSidebarOpen(false)}
             >
               📝 Leaves
@@ -282,7 +297,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
           <li>
             <Link
               to="weekly-off"
-              className="hover:text-yellow-300 block"
+              className="block hover:text-yellow-300"
               onClick={() => setSidebarOpen(false)}
             >
               📆 Weekly Off
@@ -291,7 +306,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
           <li>
             <Link
               to="salary"
-              className="hover:text-yellow-300 block"
+              className="block hover:text-yellow-300"
               onClick={() => setSidebarOpen(false)}
             >
               💰 Salary Details
@@ -300,7 +315,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
           <li>
             <Link
               to="request-leave"
-              className="hover:text-yellow-300 block"
+              className="block hover:text-yellow-300"
               onClick={() => setSidebarOpen(false)}
             >
               ➕ Request New Leave
@@ -309,7 +324,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
           <li>
             <Link
               to="break-time"
-              className="hover:text-yellow-300 block"
+              className="block hover:text-yellow-300"
               onClick={() => setSidebarOpen(false)}
             >
               ⏱️ Break Time
@@ -318,7 +333,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
           <li>
             <Link
               to="policy"
-              className="hover:text-yellow-300 block"
+              className="block hover:text-yellow-300"
               onClick={() => setSidebarOpen(false)}
             >
               📜 Policy
@@ -329,7 +344,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
 
       <button
         onClick={initiateLogout}
-        className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded shadow font-semibold"
+        className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow hover:bg-red-600"
       >
         Logout
       </button>

@@ -247,16 +247,16 @@
 //   };
 
 //   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-//       <div className="bg-white p-6 md:p-8 rounded-xl shadow-md w-full max-w-4xl">
-//         <h2 className="text-xl md:text-2xl font-bold text-center text-blue-600 mb-2">
+//     <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
+//       <div className="w-full max-w-4xl p-6 bg-white shadow-md md:p-8 rounded-xl">
+//         <h2 className="mb-2 text-xl font-bold text-center text-blue-600 md:text-2xl">
 //           End of Day Report (Pre-Logout)
 //         </h2>
-//         <p className="text-gray-600 text-center mb-6">
+//         <p className="mb-6 text-center text-gray-600">
 //           {employee?.name ? `Review your work, ${employee.name}, before logging out!` : 'Your daily report'}
 //         </p>
 
-//         <div className="flex flex-col md:flex-row gap-4 mb-6">
+//         <div className="flex flex-col gap-4 mb-6 md:flex-row">
 //           <button
 //             onClick={fetchCallLogs}
 //             disabled={loading || !employee?._id}
@@ -309,22 +309,22 @@
 //         {showCallLogs && (
 //           <div className="mt-6">
 //             {summary && (
-//               <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-//                 <h3 className="font-bold text-lg mb-3">Today's Summary</h3>
-//                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-//                   <div className="bg-white p-3 rounded shadow">
+//               <div className="p-4 mb-6 rounded-lg bg-gray-50">
+//                 <h3 className="mb-3 text-lg font-bold">Today's Summary</h3>
+//                 <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+//                   <div className="p-3 bg-white rounded shadow">
 //                     <p className="text-sm text-gray-500">Total Calls</p>
 //                     <p className="text-xl font-bold">{summary.totalCalls || 0}</p>
 //                   </div>
-//                   <div className="bg-white p-3 rounded shadow">
+//                   <div className="p-3 bg-white rounded shadow">
 //                     <p className="text-sm text-gray-500">Sales Converted</p>
 //                     <p className="text-xl font-bold text-green-600">{summary.salesCount || 0}</p>
 //                   </div>
-//                   <div className="bg-white p-3 rounded shadow">
+//                   <div className="p-3 bg-white rounded shadow">
 //                     <p className="text-sm text-gray-500">Profit Earned</p>
 //                     <p className="text-xl font-bold text-green-600">${summary.profitEarned || 0}</p>
 //                   </div>
-//                   <div className="bg-white p-3 rounded shadow">
+//                   <div className="p-3 bg-white rounded shadow">
 //                     <p className="text-sm text-gray-500">Rejections</p>
 //                     <p className="text-xl font-bold text-red-600">{summary.rejectionCount || 0}</p>
 //                   </div>
@@ -332,16 +332,16 @@
 //               </div>
 //             )}
 
-//             <h3 className="font-bold text-lg mb-3">Today's Call Details ({todaysLogs.length})</h3>
+//             <h3 className="mb-3 text-lg font-bold">Today's Call Details ({todaysLogs.length})</h3>
 //             <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
 //               {todaysLogs.length > 0 ? (
 //                 todaysLogs.map((log, index) => (
-//                   <div key={log._id} className="border rounded-lg overflow-hidden">
-//                     <div className="bg-gray-100 p-3 flex justify-between items-center">
+//                   <div key={log._id} className="overflow-hidden border rounded-lg">
+//                     <div className="flex items-center justify-between p-3 bg-gray-100">
 //                       <span className="font-medium">Call #{index + 1}</span>
 //                       <span className="text-sm text-gray-600">{formatDate(log.createdAt)}</span>
 //                     </div>
-//                     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+//                     <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2">
 //                       <div>
 //                         <p>
 //                           <span className="font-medium">Type:</span> {log.typeOfCall}
@@ -394,7 +394,7 @@
 //                   </div>
 //                 ))
 //               ) : (
-//                 <p className="text-center py-4 text-gray-500">
+//                 <p className="py-4 text-center text-gray-500">
 //                   {message.includes('Failed')
 //                     ? 'Error fetching call logs. Please try again.'
 //                     : 'No call logs found for today.'}
@@ -406,7 +406,7 @@
 
 //         <button
 //           onClick={handleConfirmLogout}
-//           className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded shadow font-semibold"
+//           className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow hover:bg-red-600"
 //         >
 //           Confirm Logout
 //         </button>
@@ -724,16 +724,16 @@
 //   };
 
 //   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-//       <div className="bg-white p-6 md:p-8 rounded-xl shadow-md w-full max-w-4xl">
-//         <h2 className="text-xl md:text-2xl font-bold text-center text-blue-600 mb-2">
+//     <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
+//       <div className="w-full max-w-4xl p-6 bg-white shadow-md md:p-8 rounded-xl">
+//         <h2 className="mb-2 text-xl font-bold text-center text-blue-600 md:text-2xl">
 //           End of Day Report (Pre-Logout)
 //         </h2>
-//         <p className="text-gray-600 text-center mb-6">
+//         <p className="mb-6 text-center text-gray-600">
 //           {employee?.name ? `Review your work, ${employee.name}, before logging out!` : 'Your daily report'}
 //         </p>
 
-//         <div className="flex flex-col md:flex-row gap-4 mb-6">
+//         <div className="flex flex-col gap-4 mb-6 md:flex-row">
 //           <button
 //             onClick={fetchCallLogs}
 //             disabled={loading || !employee?._id}
@@ -786,22 +786,22 @@
 //         {showCallLogs && (
 //           <div className="mt-6">
 //             {summary && (
-//               <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-//                 <h3 className="font-bold text-lg mb-3">Today's Summary</h3>
-//                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-//                   <div className="bg-white p-3 rounded shadow">
+//               <div className="p-4 mb-6 rounded-lg bg-gray-50">
+//                 <h3 className="mb-3 text-lg font-bold">Today's Summary</h3>
+//                 <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+//                   <div className="p-3 bg-white rounded shadow">
 //                     <p className="text-sm text-gray-500">Total Calls</p>
 //                     <p className="text-xl font-bold">{summary.totalCalls || 0}</p>
 //                   </div>
-//                   <div className="bg-white p-3 rounded shadow">
+//                   <div className="p-3 bg-white rounded shadow">
 //                     <p className="text-sm text-gray-500">Sales Converted</p>
 //                     <p className="text-xl font-bold text-green-600">{summary.salesCount || 0}</p>
 //                   </div>
-//                   <div className="bg-white p-3 rounded shadow">
+//                   <div className="p-3 bg-white rounded shadow">
 //                     <p className="text-sm text-gray-500">Profit Earned</p>
 //                     <p className="text-xl font-bold text-green-600">${summary.profitEarned || 0}</p>
 //                   </div>
-//                   <div className="bg-white p-3 rounded shadow">
+//                   <div className="p-3 bg-white rounded shadow">
 //                     <p className="text-sm text-gray-500">Rejections</p>
 //                     <p className="text-xl font-bold text-red-600">{summary.rejectionCount || 0}</p>
 //                   </div>
@@ -809,16 +809,16 @@
 //               </div>
 //             )}
 
-//             <h3 className="font-bold text-lg mb-3">Today's Call Details ({todaysLogs.length})</h3>
+//             <h3 className="mb-3 text-lg font-bold">Today's Call Details ({todaysLogs.length})</h3>
 //             <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
 //               {todaysLogs.length > 0 ? (
 //                 todaysLogs.map((log, index) => (
-//                   <div key={log._id} className="border rounded-lg overflow-hidden">
-//                     <div className="bg-gray-100 p-3 flex justify-between items-center">
+//                   <div key={log._id} className="overflow-hidden border rounded-lg">
+//                     <div className="flex items-center justify-between p-3 bg-gray-100">
 //                       <span className="font-medium">Call #{index + 1}</span>
 //                       <span className="text-sm text-gray-600">{formatDate(log.createdAt)}</span>
 //                     </div>
-//                     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+//                     <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2">
 //                       <div>
 //                         <p>
 //                           <span className="font-medium">Type:</span> {log.typeOfCall}
@@ -871,7 +871,7 @@
 //                   </div>
 //                 ))
 //               ) : (
-//                 <p className="text-center py-4 text-gray-500">
+//                 <p className="py-4 text-center text-gray-500">
 //                   {message.includes('Failed')
 //                     ? 'Error fetching call logs. Please try again.'
 //                     : 'No call logs found for today.'}
@@ -883,7 +883,7 @@
 
 //         <button
 //           onClick={handleConfirmLogout}
-//           className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded shadow font-semibold"
+//           className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow hover:bg-red-600"
 //         >
 //           Confirm Logout
 //         </button>
@@ -1744,7 +1744,7 @@ const handleSendEmail = async () => {
        netProfit:summary?.netProfit || 0,
         rejectionCount: summary?.rejectionCount || 0,
       },
-      toEmail: 'meneiljohnson@gmail.com', // Replace with actual HR email
+      toEmail: 'krishnaprasad24795@gmail.com', // Replace with actual HR email
     };
 
     const resp = await API.post('/daily-report/email', payload, {
@@ -1788,16 +1788,16 @@ const handleSendEmail = async () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-      <div className="bg-white p-6 md:p-8 rounded-xl shadow-md w-full max-w-4xl">
-        <h2 className="text-xl md:text-2xl font-bold text-center text-blue-600 mb-2">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
+      <div className="w-full max-w-4xl p-6 bg-white shadow-md md:p-8 rounded-xl">
+        <h2 className="mb-2 text-xl font-bold text-center text-blue-600 md:text-2xl">
           End of Day Report (Pre-Logout)
         </h2>
-        <p className="text-gray-600 text-center mb-6">
+        <p className="mb-6 text-center text-gray-600">
           {employee?.name ? `Review your work, ${employee.name}, before logging out!` : 'Your daily report'}
         </p>
 
-        <div className="flex flex-col md:flex-row gap-4 mb-6">
+        <div className="flex flex-col gap-4 mb-6 md:flex-row">
           <button
             onClick={fetchCallLogs}
             disabled={loading || !employee?._id}
@@ -1850,30 +1850,30 @@ const handleSendEmail = async () => {
         {showCallLogs && (
           <div className="mt-6">
             {summary && (
-              <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                <h3 className="font-bold text-lg mb-3">Today's Summary</h3>
-                <div className="grid grid-cols-3 md:grid-cols-3 gap-4">
-                  <div className="bg-white p-3 rounded shadow">
+              <div className="p-4 mb-6 rounded-lg bg-gray-50">
+                <h3 className="mb-3 text-lg font-bold">Today's Summary</h3>
+                <div className="grid grid-cols-3 gap-4 md:grid-cols-3">
+                  <div className="p-3 bg-white rounded shadow">
                     <p className="text-sm text-gray-500">Total Calls</p>
                     <p className="text-xl font-bold">{summary.totalCalls || 0}</p>
                   </div>
-                  <div className="bg-white p-3 rounded shadow">
+                  <div className="p-3 bg-white rounded shadow">
                     <p className="text-sm text-gray-500">Sales Converted</p>
                     <p className="text-xl font-bold text-green-600">{summary.salesCount || 0}</p>
                   </div>
-                  <div className="bg-white p-3 rounded shadow">
+                  <div className="p-3 bg-white rounded shadow">
                     <p className="text-sm text-gray-500">Profit Earned</p>
                     <p className="text-xl font-bold text-green-600">${summary.profitEarned || 0}</p>
                   </div>
-                   <div className="bg-white p-3 rounded shadow">
+                   <div className="p-3 bg-white rounded shadow">
                     <p className="text-sm text-gray-500">Chargeback/Refund</p>
                     <p className="text-xl font-bold text-green-600">${summary.chargebackRefund || 0}</p>
                   </div>
-                    <div className="bg-white p-3 rounded shadow">
+                    <div className="p-3 bg-white rounded shadow">
                     <p className="text-sm text-gray-500">Net Profit Earned</p>
                     <p className="text-xl font-bold text-green-600">${summary.netProfit || 0}</p>
                   </div>
-                  <div className="bg-white p-3 rounded shadow">
+                  <div className="p-3 bg-white rounded shadow">
                     <p className="text-sm text-gray-500">Rejections</p>
                     <p className="text-xl font-bold text-red-600">{summary.rejectionCount || 0}</p>
                   </div>
@@ -1883,7 +1883,7 @@ const handleSendEmail = async () => {
 
   
 
-            <h3 className="font-bold text-lg mb-3">Today's Call Details ({todaysLogs.length})</h3>
+            <h3 className="mb-3 text-lg font-bold">Today's Call Details ({todaysLogs.length})</h3>
           
 
 
@@ -1892,16 +1892,16 @@ const handleSendEmail = async () => {
     todaysLogs.map((log, index) => (
       <div
         key={log._id}
-        className="border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all bg-white"
+        className="overflow-hidden transition-all bg-white border shadow-sm rounded-xl hover:shadow-md"
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-indigo-500 to-purple-500 p-3 flex justify-between items-center">
+        <div className="flex items-center justify-between p-3 bg-gradient-to-r from-indigo-500 to-purple-500">
           <span className="font-semibold text-white">📞 Call #{index + 1}</span>
           <span className="text-xs text-white/80">{formatDate(log.createdAt)}</span>
         </div>
 
         {/* Body */}
-        <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+        <div className="grid grid-cols-1 gap-4 p-5 text-sm text-gray-700 md:grid-cols-2">
           {/* Left Column */}
           <div className="space-y-2">
             <p>
@@ -1942,15 +1942,15 @@ const handleSendEmail = async () => {
               <>
                 <p>
                   <span className="font-semibold text-gray-800">Profit:</span>{' '}
-                  <span className="text-emerald-600 font-bold">${log.profitAmount}</span>
+                  <span className="font-bold text-emerald-600">${log.profitAmount}</span>
                 </p>
                 <p>
                   <span className="font-semibold text-gray-800">Chargeback/Refund:</span>{' '}
-                  <span className="text-red-500 font-medium">${log.chargebackRefund || 0}</span>
+                  <span className="font-medium text-red-500">${log.chargebackRefund || 0}</span>
                 </p>
                 <p>
                   <span className="font-semibold text-gray-800">Net Profit:</span>{' '}
-                  <span className="text-blue-600 font-bold">${log.netProfit || 0}</span>
+                  <span className="font-bold text-blue-600">${log.netProfit || 0}</span>
                 </p>
               </>
             )}
@@ -1976,7 +1976,7 @@ const handleSendEmail = async () => {
       </div>
     ))
   ) : (
-    <p className="text-center py-6 text-gray-400 italic">
+    <p className="py-6 italic text-center text-gray-400">
       {message.includes('Failed')
         ? '⚠️ Error fetching call logs. Please try again.'
         : 'No call logs found for today.'}
@@ -1990,7 +1990,7 @@ const handleSendEmail = async () => {
 
         {/* <button
           onClick={handleConfirmLogout}
-          className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded shadow font-semibold"
+          className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow hover:bg-red-600"
         >
           Confirm Logout
         </button> */}

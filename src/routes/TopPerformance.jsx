@@ -10,7 +10,7 @@
 //     <PageWithCloseButton title="🏆 Top Performers">
 //       <div className="space-y-6">
 //         {topPerformers.length > 0 ? (
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 //             {[...topPerformers]
 //               .sort((a, b) => b.bestPerformance - a.bestPerformance)
 //               .slice(0, 3)
@@ -31,19 +31,19 @@
 //                           : 'https://cdn-icons-png.flaticon.com/512/219/219983.png'
 //                       }
 //                       alt={emp.name}
-//                       className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-md"
+//                       className="object-cover w-24 h-24 mx-auto mb-4 border-4 border-white rounded-full shadow-md"
 //                     />
 //                     {index === 0 && (
-//                       <div className="absolute -top-2 -right-2 bg-yellow-400 text-white rounded-full w-8 h-8 flex items-center justify-center">
-//                         <span className="font-bold text-sm">1</span>
+//                       <div className="absolute flex items-center justify-center w-8 h-8 text-white bg-yellow-400 rounded-full -top-2 -right-2">
+//                         <span className="text-sm font-bold">1</span>
 //                       </div>
 //                     )}
 //                   </div>
 
-//                   <h3 className="text-xl font-bold text-gray-800 mb-1">{emp.name}</h3>
-//                   <p className="text-purple-600 font-medium mb-3">{emp.role || 'Employee'}</p>
+//                   <h3 className="mb-1 text-xl font-bold text-gray-800">{emp.name}</h3>
+//                   <p className="mb-3 font-medium text-purple-600">{emp.role || 'Employee'}</p>
 
-//                   <div className="bg-white rounded-lg p-3 space-y-2">
+//                   <div className="p-3 space-y-2 bg-white rounded-lg">
 //                     <div className="flex justify-between">
 //                       <span className="text-gray-600">Sales:</span>
 //                       <span className="font-medium">${emp.sales?.toLocaleString?.() || 0}</span>
@@ -71,11 +71,11 @@
 //               ))}
 //           </div>
 //         ) : (
-//           <div className="bg-gray-50 rounded-xl p-8 text-center">
-//             <div className="text-gray-400 mb-3">
+//           <div className="p-8 text-center bg-gray-50 rounded-xl">
+//             <div className="mb-3 text-gray-400">
 //               <svg
 //                 xmlns="http://www.w3.org/2000/svg"
-//                 className="h-12 w-12 mx-auto"
+//                 className="w-12 h-12 mx-auto"
 //                 fill="none"
 //                 viewBox="0 0 24 24"
 //                 stroke="currentColor"
@@ -89,7 +89,7 @@
 //               </svg>
 //             </div>
 //             <h3 className="text-lg font-medium text-gray-700">No Performance Data Available</h3>
-//             <p className="text-gray-500 mt-1">Check back later for updated performance metrics</p>
+//             <p className="mt-1 text-gray-500">Check back later for updated performance metrics</p>
 //           </div>
 //         )}
 //       </div>
@@ -180,7 +180,7 @@
 //         {loading ? (
 //           <div className="text-center text-gray-500">Loading...</div>
 //         ) : topPerformers.length > 0 ? (
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 //             {topPerformers.map((emp, index) => (
 //               <div
 //                 key={emp._id}
@@ -198,19 +198,19 @@
 //                         : 'https://cdn-icons-png.flaticon.com/512/219/219983.png'
 //                     }
 //                     alt={emp.name}
-//                     className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-md"
+//                     className="object-cover w-24 h-24 mx-auto mb-4 border-4 border-white rounded-full shadow-md"
 //                   />
 //                   {index === 0 && (
-//                     <div className="absolute -top-2 -right-2 bg-yellow-400 text-white rounded-full w-8 h-8 flex items-center justify-center">
-//                       <span className="font-bold text-sm">1</span>
+//                     <div className="absolute flex items-center justify-center w-8 h-8 text-white bg-yellow-400 rounded-full -top-2 -right-2">
+//                       <span className="text-sm font-bold">1</span>
 //                     </div>
 //                   )}
 //                 </div>
 
-//                 <h3 className="text-xl font-bold text-gray-800 mb-1">{emp.name}</h3>
-//                 <p className="text-purple-600 font-medium mb-3">{emp.role}</p>
+//                 <h3 className="mb-1 text-xl font-bold text-gray-800">{emp.name}</h3>
+//                 <p className="mb-3 font-medium text-purple-600">{emp.role}</p>
 
-//                 <div className="bg-white rounded-lg p-3 space-y-2">
+//                 <div className="p-3 space-y-2 bg-white rounded-lg">
 //                   <div className="flex justify-between">
 //                     <span className="text-gray-600">Sales:</span>
 //                     <span className="font-medium">
@@ -242,11 +242,11 @@
 //             ))}
 //           </div>
 //         ) : (
-//           <div className="bg-gray-50 rounded-xl p-8 text-center">
-//             <div className="text-gray-400 mb-3">
+//           <div className="p-8 text-center bg-gray-50 rounded-xl">
+//             <div className="mb-3 text-gray-400">
 //               <svg
 //                 xmlns="http://www.w3.org/2000/svg"
-//                 className="h-12 w-12 mx-auto"
+//                 className="w-12 h-12 mx-auto"
 //                 fill="none"
 //                 viewBox="0 0 24 24"
 //                 stroke="currentColor"
@@ -262,7 +262,7 @@
 //             <h3 className="text-lg font-medium text-gray-700">
 //               No Performance Data Available
 //             </h3>
-//             <p className="text-gray-500 mt-1">
+//             <p className="mt-1 text-gray-500">
 //               Check back later for updated performance metrics
 //             </p>
 //           </div>
@@ -363,7 +363,7 @@
 //         {loading ? (
 //           <div className="text-center text-gray-500">Loading...</div>
 //         ) : topPerformers.length > 0 ? (
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 //             {topPerformers.map((emp, index) => (
 //               <div
 //                 key={emp._id}
@@ -381,19 +381,19 @@
 //                         : 'https://cdn-icons-png.flaticon.com/512/219/219983.png'
 //                     }
 //                     alt={emp.name}
-//                     className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-md"
+//                     className="object-cover w-24 h-24 mx-auto mb-4 border-4 border-white rounded-full shadow-md"
 //                   />
 //                   {index === 0 && (
-//                     <div className="absolute -top-2 -right-2 bg-yellow-400 text-white rounded-full w-8 h-8 flex items-center justify-center">
-//                       <span className="font-bold text-sm">1</span>
+//                     <div className="absolute flex items-center justify-center w-8 h-8 text-white bg-yellow-400 rounded-full -top-2 -right-2">
+//                       <span className="text-sm font-bold">1</span>
 //                     </div>
 //                   )}
 //                 </div>
 
-//                 <h3 className="text-xl font-bold text-gray-800 mb-1">{emp.name}</h3>
-//                 <p className="text-purple-600 font-medium mb-3">{emp.role}</p>
+//                 <h3 className="mb-1 text-xl font-bold text-gray-800">{emp.name}</h3>
+//                 <p className="mb-3 font-medium text-purple-600">{emp.role}</p>
 
-//                 <div className="bg-white rounded-lg p-3 space-y-2">
+//                 <div className="p-3 space-y-2 bg-white rounded-lg">
 //                   <div className="flex justify-between">
 //                     <span className="text-gray-600">Sales:</span>
 //                     <span className="font-medium">
@@ -425,11 +425,11 @@
 //             ))}
 //           </div>
 //         ) : (
-//           <div className="bg-gray-50 rounded-xl p-8 text-center">
-//             <div className="text-gray-400 mb-3">
+//           <div className="p-8 text-center bg-gray-50 rounded-xl">
+//             <div className="mb-3 text-gray-400">
 //               <svg
 //                 xmlns="http://www.w3.org/2000/svg"
-//                 className="h-12 w-12 mx-auto"
+//                 className="w-12 h-12 mx-auto"
 //                 fill="none"
 //                 viewBox="0 0 24 24"
 //                 stroke="currentColor"
@@ -445,7 +445,7 @@
 //             <h3 className="text-lg font-medium text-gray-700">
 //               No Performance Data Available
 //             </h3>
-//             <p className="text-gray-500 mt-1">
+//             <p className="mt-1 text-gray-500">
 //               Check back later for updated performance metrics
 //             </p>
 //           </div>
@@ -545,7 +545,7 @@ const TopPerformance = () => {
         {loading && topPerformers.length === 0 ? (
           <div className="text-center text-gray-500">Loading...</div>
         ) : topPerformers.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {topPerformers.map((emp, index) => (
               <div
                 key={emp._id}
@@ -559,23 +559,23 @@ const TopPerformance = () => {
                   <img
                     src={
                       emp.photo
-                        ? `https://crm-backend-f4lj.onrender.com/uploads/${emp.photo}`
+                        ? `https://crm-ba.onrender.com/uploads/${emp.photo}`
                         : 'https://cdn-icons-png.flaticon.com/512/219/219983.png'
                     }
                     alt={emp.name}
-                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-md"
+                    className="object-cover w-24 h-24 mx-auto mb-4 border-4 border-white rounded-full shadow-md"
                   />
                   {index === 0 && (
-                    <div className="absolute -top-2 -right-2 bg-yellow-400 text-white rounded-full w-8 h-8 flex items-center justify-center">
-                      <span className="font-bold text-sm">1</span>
+                    <div className="absolute flex items-center justify-center w-8 h-8 text-white bg-yellow-400 rounded-full -top-2 -right-2">
+                      <span className="text-sm font-bold">1</span>
                     </div>
                   )}
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-800 mb-1">{emp.name}</h3>
-                <p className="text-purple-600 font-medium mb-3">{emp.role}</p>
+                <h3 className="mb-1 text-xl font-bold text-gray-800">{emp.name}</h3>
+                <p className="mb-3 font-medium text-purple-600">{emp.role}</p>
 
-                <div className="bg-white rounded-lg p-3 space-y-2">
+                <div className="p-3 space-y-2 bg-white rounded-lg">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Sales:</span>
                     <span className="font-medium">
@@ -607,11 +607,11 @@ const TopPerformance = () => {
             ))}
           </div>
         ) : (
-          <div className="bg-gray-50 rounded-xl p-8 text-center">
-            <div className="text-gray-400 mb-3">
+          <div className="p-8 text-center bg-gray-50 rounded-xl">
+            <div className="mb-3 text-gray-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12 mx-auto"
+                className="w-12 h-12 mx-auto"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -627,7 +627,7 @@ const TopPerformance = () => {
             <h3 className="text-lg font-medium text-gray-700">
               No Performance Data Available
             </h3>
-            <p className="text-gray-500 mt-1">
+            <p className="mt-1 text-gray-500">
               Check back later for updated performance metrics
             </p>
           </div>

@@ -36,13 +36,15 @@ const Dashboard = () => {
   // };
 
   return (
-    <div className="flex min-h-screen w-full bg-[#92b7f8] text-white overflow-x-hidden">
+    // <div className="flex min-h-screen w-full bg-[#92b7f8] text-white overflow-x-hidden">
+<div className="flex min-h-screen w-full bg-gradient-to-r from-[#1e3c72] via-[#2a5298] to-[#1e3c72] text-white overflow-x-hidden">
+
       {/* Hamburger Button */}
       <button
-        className="md:hidden fixed top-4 left-4 z-50 bg-white text-gray-700 p-2 rounded-md shadow-md"
+        className="fixed z-50 p-2 text-gray-700 bg-white rounded-md shadow-md md:hidden top-4 left-4"
         onClick={() => setSidebarOpen(!sidebarOpen)}
       >
-        <FaBars className="h-6 w-6" />
+        <FaBars className="w-6 h-6" />
       </button>
 
       {/* Sidebar */}
@@ -56,10 +58,10 @@ const Dashboard = () => {
       </div>
 
       {/* Main content */}
-      <main className="flex-1 p-4 sm:p-6 space-y-6 min-w-0">
+      <main className="flex-1 min-w-0 p-4 space-y-6 sm:p-6">
         {/* Logout Message */}
         {logoutMessage && (
-          <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-100 text-green-800 px-6 py-3 rounded shadow-md z-50 text-sm font-medium">
+          <div className="fixed z-50 px-6 py-3 text-sm font-medium text-green-800 transform -translate-x-1/2 bg-green-100 rounded shadow-md top-4 left-1/2">
             {logoutMessage}
           </div>
         )}
@@ -68,14 +70,14 @@ const Dashboard = () => {
 
         {/* <button
           onClick={handleLogout}
-          className="fixed top-4 sm:top-5 right-2 sm:right-6 md:right-8 lg:right-15 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded z-40"
+          className="fixed z-40 px-4 py-2 text-white bg-red-500 rounded top-4 sm:top-5 right-2 sm:right-6 md:right-8 lg:right-15 hover:bg-red-600"
         >
           Logout
         </button> */}
 
         {/* Welcome */}
         <div className="mt-16 md:mt-0">
-          <h1 className="text-center text-2xl sm:text-3xl bg-gradient-to-r from-green-200 via-green to-green-200 text-black inline-block px-6 py-2 rounded">
+          <h1 className="inline-block px-6 py-2 text-2xl text-center text-black rounded sm:text-3xl bg-gradient-to-r from-green-200 via-green to-green-200">
             Welcome Admin
           </h1>
 
@@ -92,7 +94,7 @@ const Dashboard = () => {
         <DashboardCards />
 
         {/* Charts Row */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
+        {/* <div className="grid grid-cols-1 gap-4 md:grid-cols-2"> */}
         <div>
 
           <AttendanceChart />
@@ -101,7 +103,7 @@ const Dashboard = () => {
         {/* <SalesChart /> */}
 
         {/* Bottom Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {/* <EmployeeOfMonth /> */}
           <RecentLeaves />
           {/* <TaskOverview /> */}

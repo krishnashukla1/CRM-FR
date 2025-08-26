@@ -13,7 +13,9 @@ const AdminPasswordReset = () => {
     // const user = JSON.parse(localStorage.getItem('user'));
     const user = JSON.parse(localStorage.getItem('user') || 'null');
 
-    if (user?.email === 'fbadmin@gmail.com') {
+    // if (user?.email === 'fbadmin@gmail.com') {
+    if (user?.email === 'abc@gmail.com') {
+
       setLoggedInEmail(user.email);
       setAllowed(true);
     } else {
@@ -51,24 +53,24 @@ const AdminPasswordReset = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-12 p-6 rounded-2xl bg-gradient-to-br from-blue-100 via-white to-blue-50 shadow-xl border border-blue-200">
-      <h2 className="text-2xl font-bold text-blue-700 mb-6 flex items-center gap-2">
+    <div className="max-w-xl p-6 mx-auto mt-12 border border-blue-200 shadow-xl rounded-2xl bg-gradient-to-br from-blue-100 via-white to-blue-50">
+      <h2 className="flex items-center gap-2 mb-6 text-2xl font-bold text-blue-700">
         🔐 Admin Password Reset
       </h2>
 
       {!allowed ? (
-        <div className="bg-red-100 text-red-800 p-4 rounded-md font-medium">
+        <div className="p-4 font-medium text-red-800 bg-red-100 rounded-md">
           ❌ Access Denied: Only <strong>fbadmin@gmail.com</strong> can reset passwords.
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
+            <label className="block mb-1 text-sm font-semibold text-gray-700">
               User Email to Change
             </label>
             <input
               type="email"
-              className="w-full border border-blue-300 rounded-lg px-4 py-2 shadow-sm focus:ring focus:ring-blue-200"
+              className="w-full px-4 py-2 border border-blue-300 rounded-lg shadow-sm focus:ring focus:ring-blue-200"
               placeholder="Enter user/admin email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -77,12 +79,12 @@ const AdminPasswordReset = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
+            <label className="block mb-1 text-sm font-semibold text-gray-700">
               New Password
             </label>
             <input
               type="password"
-              className="w-full border border-blue-300 rounded-lg px-4 py-2 shadow-sm focus:ring focus:ring-blue-200"
+              className="w-full px-4 py-2 border border-blue-300 rounded-lg shadow-sm focus:ring focus:ring-blue-200"
               placeholder="Enter new password"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
