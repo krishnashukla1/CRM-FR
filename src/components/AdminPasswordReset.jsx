@@ -14,7 +14,7 @@ const AdminPasswordReset = () => {
     const user = JSON.parse(localStorage.getItem('user') || 'null');
 
     // if (user?.email === 'fbadmin@gmail.com') {
-    if (user?.email === 'abc@gmail.com') {
+    if (user?.email === 'krishna@gmail.com') {
 
       setLoggedInEmail(user.email);
       setAllowed(true);
