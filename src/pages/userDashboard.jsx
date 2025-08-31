@@ -1,6 +1,4 @@
-
 // ======================================it is proper working
-
 
 // import React, { useEffect, useState, useMemo } from 'react';
 // import { useNavigate, Routes, Route, Link } from 'react-router-dom';
@@ -186,7 +184,6 @@
 //         API.get(`/performance/employee/${empId}`, headers),
 //         // API.get(`/performance/employee/${userId}`, headers),
 
-
 //       ]);
 
 //       setAttendance(attRes.data.data || []);
@@ -215,9 +212,6 @@
 //       setLoading(false);
 //     }
 //   };
-
-
-
 
 //   const fetchTopPerformers = async () => {
 //     if (!verifyToken()) return;
@@ -313,9 +307,6 @@
 //   //   }
 //   // };
 
-
-
-
 //   const markLogout = async () => {
 //     try {
 //       const token = localStorage.getItem('token');
@@ -336,7 +327,6 @@
 //       }, 2000);
 //     }
 //   };
-
 
 //   const startBreak = async () => {
 //     if (!verifyToken() || !employee?._id) return;
@@ -511,9 +501,9 @@
 
 //   if (loading) {
 //     return (
-//       <div className="min-h-screen flex items-center justify-center bg-gray-100">
+//       <div className="flex items-center justify-center min-h-screen bg-gray-100">
 //         <div className="text-center">
-//           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+//           <div className="w-12 h-12 mx-auto border-t-2 border-b-2 border-blue-500 rounded-full animate-spin"></div>
 //           <p className="mt-4 text-gray-700">Loading your dashboard...</p>
 //         </div>
 //       </div>
@@ -532,24 +522,24 @@
 
 //     <div className={`transition-all duration-300 ${showModal ? 'blur-lg pointer-events-none select-none' : ''}`}>
 //       {/* Mobile Sidebar Toggle */}
-//       <div className="md:hidden fixed top-4 left-4 z-50">
+//       <div className="fixed z-50 md:hidden top-4 left-4">
 //         <button
 //           onClick={() => setSidebarOpen(!sidebarOpen)}
 //           className="bg-[#72819a] text-white p-2 rounded-lg shadow-lg"
 //         >
 //           {sidebarOpen ? (
-//             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+//             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 //               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
 //             </svg>
 //           ) : (
-//             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+//             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 //               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
 //             </svg>
 //           )}
 //         </button>
 //       </div>
 
-//       <div className="min-h-screen flex bg-gray-100">
+//       <div className="flex min-h-screen bg-gray-100">
 //         {/* Top-right fixed clock */}
 
 //         <Clock />
@@ -566,7 +556,7 @@
 //                   : `https://crm-backend-f4lj.onrender.com/uploads/${employee.photo}`
 //               }
 //               alt="User"
-//               className="w-24 h-24 rounded-full border-4 border-white shadow-md mb-4 object-cover"
+//               className="object-cover w-24 h-24 mb-4 border-4 border-white rounded-full shadow-md"
 //             />
 //           )}
 
@@ -611,25 +601,20 @@
 // <Link to="/dashboard/salary" className="hover:text-yellow-300">💰 Salary Details</Link>
 // <Link to="/dashboard/request-leave" className="hover:text-yellow-300">➕ Request New Leave</Link>
 
-
-
-
 //             </ul>
-
-
 
 //           </div>
 
 //          {/* <button
 //             onClick={markLogout}
-//             className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded shadow font-semibold"
+//             className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow hover:bg-red-600"
 //           >
 //             Logout
 //           </button> */}
 
 //           <button
 //             onClick={() => navigate('/daily-report')}
-//             className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded shadow font-semibold"
+//             className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow hover:bg-red-600"
 //           >
 //             Logout
 //           </button>
@@ -643,33 +628,32 @@
 //         </div>
 
 //         {/* Main Content */}
-//         <div className="w-full p-4 md:p-6 space-y-6">
-//           <h1 className="text-center text-2xl md:text-3xl bg-gradient-to-r from-green-200 via-white to-green-200 inline-block px-4 py-2 rounded">
+//         <div className="w-full p-4 space-y-6 md:p-6">
+//           <h1 className="inline-block px-4 py-2 text-2xl text-center rounded md:text-3xl bg-gradient-to-r from-green-200 via-white to-green-200">
 //             Welcome {user?.name || 'User'}
 //           </h1>
 
-//           <h1 className="text-2xl md:text-3xl font-semibold text-gray-800">👤 Your Dashboard</h1>
+//           <h1 className="text-2xl font-semibold text-gray-800 md:text-3xl">👤 Your Dashboard</h1>
 
 //           {/* CALL LOG */}
-//           <div className="bg-white p-4 md:p-6 rounded-xl shadow-md mx-auto mb-6 md:mb-10">
-//             <h1 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-green-700">📞 Log Customer Call Inquiry</h1>
+//           <div className="p-4 mx-auto mb-6 bg-white shadow-md md:p-6 rounded-xl md:mb-10">
+//             <h1 className="mb-3 text-lg font-bold text-green-700 md:text-xl md:mb-4">📞 Log Customer Call Inquiry</h1>
 //             <CallInquiryForm employeeId={employeeId} />
 //           </div>
 
-
 //           {/* Performance */}
 
-//           <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
-//             <h2 className="text-lg font-semibold text-blue-600 mb-2">📊 Performance</h2>
-//             <div id="top-performers" className="bg-white p-4 md:p-6 rounded-xl shadow-md">
-//               <h2 className="text-lg font-semibold text-purple-600 mb-4">🏆 Top 3 Performers</h2>
+//           <div className="p-4 bg-white shadow-md md:p-6 rounded-xl">
+//             <h2 className="mb-2 text-lg font-semibold text-blue-600">📊 Performance</h2>
+//             <div id="top-performers" className="p-4 bg-white shadow-md md:p-6 rounded-xl">
+//               <h2 className="mb-4 text-lg font-semibold text-purple-600">🏆 Top 3 Performers</h2>
 //               {topPerformers.length > 0 ? (
-//                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+//                 <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
 //                   {[...topPerformers]
 //                     .sort((a, b) => b.bestPerformance - a.bestPerformance)
 //                     .slice(0, 3)
 //                     .map((emp) => (
-//                       <li key={emp._id} className="bg-purple-50 rounded-lg p-4 shadow text-center">
+//                       <li key={emp._id} className="p-4 text-center rounded-lg shadow bg-purple-50">
 //                         <img
 //                           src={
 //                             emp.photo
@@ -677,12 +661,12 @@
 //                               : 'https://cdn-icons-png.flaticon.com/512/219/219983.png'
 //                           }
 //                           alt={emp.name}
-//                           className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto mb-2 object-cover border-2 border-purple-400"
+//                           className="object-cover w-16 h-16 mx-auto mb-2 border-2 border-purple-400 rounded-full md:w-20 md:h-20"
 //                         />
 //                         <p className="font-bold text-purple-800">{emp.name}</p>
 //                         <p className="text-sm text-gray-600">💰 Sales: ${emp.sales.toLocaleString()}</p>
 //                         <p className="text-sm text-gray-600">🎯 Target: ${emp.target.toLocaleString()}</p>
-//                         <p className="text-sm text-green-600 font-medium">📈 Performance: {emp.bestPerformance.toFixed(1)}%</p>
+//                         <p className="text-sm font-medium text-green-600">📈 Performance: {emp.bestPerformance.toFixed(1)}%</p>
 //                       </li>
 //                     ))}
 //                 </ul>
@@ -695,17 +679,17 @@
 
 //           {/* Attendance */}
 
-//           <div id="attendance" className="bg-white p-4 md:p-6 rounded-xl shadow-md">
-//             <h2 className="text-lg font-semibold text-green-700 mb-4">📅 Attendance</h2>
+//           <div id="attendance" className="p-4 bg-white shadow-md md:p-6 rounded-xl">
+//             <h2 className="mb-4 text-lg font-semibold text-green-700">📅 Attendance</h2>
 
 //             {attendance.length > 0 ? (
 //               <div className="overflow-x-auto">
 //                 <table className="min-w-full divide-y divide-gray-200">
 //                   <thead className="bg-gray-50">
 //                     <tr>
-//                       <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-//                       <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Day</th>
-//                       <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+//                       <th className="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Date</th>
+//                       <th className="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Day</th>
+//                       <th className="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Status</th>
 //                     </tr>
 //                   </thead>
 //                   <tbody className="bg-white divide-y divide-gray-200">
@@ -716,13 +700,13 @@
 
 //                       return (
 //                         <tr key={a._id} className={isSunday ? 'bg-blue-50' : ''}>
-//                           <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-700">
+//                           <td className="px-4 py-2 text-sm text-gray-700 whitespace-nowrap">
 //                             {dateObj.toLocaleDateString()}
 //                           </td>
-//                           <td className="px-4 py-2 whitespace-nowrap text-sm font-medium">
+//                           <td className="px-4 py-2 text-sm font-medium whitespace-nowrap">
 //                             {dayName}
 //                           </td>
-//                           <td className="px-4 py-2 whitespace-nowrap text-sm">
+//                           <td className="px-4 py-2 text-sm whitespace-nowrap">
 //                             <span className={isSunday ? 'text-blue-700 font-medium' : 'text-gray-800'}>
 //                               {isSunday ? 'Weekly Off (Sunday)' : a.status}
 //                             </span>
@@ -740,11 +724,11 @@
 
 //           {/* Leaves */}
 
-//           <div id="leaves" className="bg-white p-4 md:p-6 rounded-xl shadow-md">
-//             <h2 className="text-lg font-semibold text-yellow-600 mb-4">📝 Leaves</h2>
+//           <div id="leaves" className="p-4 bg-white shadow-md md:p-6 rounded-xl">
+//             <h2 className="mb-4 text-lg font-semibold text-yellow-600">📝 Leaves</h2>
 
 //             {/* Summary counts */}
-//             <div className="flex flex-wrap justify-center gap-3 text-sm mb-4">
+//             <div className="flex flex-wrap justify-center gap-3 mb-4 text-sm">
 //               <span>Total: <strong>{leaves.length || 0}</strong></span>
 //               <span className="text-green-600">Approved: <strong>{approvedCount}</strong></span>
 //               <span className="text-red-600">Rejected: <strong>{rejectedCount}</strong></span>
@@ -752,17 +736,17 @@
 //               <span className="text-purple-600">Sundays: <strong>{sundayCount}</strong></span>
 //             </div>
 
-//             <p className="text-sm font-semibold text-gray-800 mb-2">
+//             <p className="mb-2 text-sm font-semibold text-gray-800">
 //               🧮 Remaining Leaves:
 //               <span className="text-blue-700"> {remainingLeaves} </span> / {TOTAL_ANNUAL_LEAVES}
-//               <span className="text-xs text-gray-500 ml-2">(Sundays not deducted)</span>
+//               <span className="ml-2 text-xs text-gray-500">(Sundays not deducted)</span>
 //             </p>
 
 //             {/* Table View */}
 //             {leaves.length > 0 ? (
 //               <div className="overflow-x-auto">
-//                 <table className="min-w-full text-sm text-left border rounded overflow-hidden">
-//                   <thead className="bg-gray-100 text-gray-700">
+//                 <table className="min-w-full overflow-hidden text-sm text-left border rounded">
+//                   <thead className="text-gray-700 bg-gray-100">
 //                     <tr>
 //                       <th className="px-4 py-2 border">#</th>
 //                       <th className="px-4 py-2 border">Type</th>
@@ -807,32 +791,32 @@
 //                 </table>
 //               </div>
 //             ) : (
-//               <p className="text-gray-500 mt-4">No leave records found.</p>
+//               <p className="mt-4 text-gray-500">No leave records found.</p>
 //             )}
 //           </div>
 
 //           {/* Weekly Off Roster */}
-//           <div id="weekly-off" className="bg-white p-4 md:p-6 rounded-xl shadow-md">
-//             <h2 className="text-lg font-semibold text-indigo-600 mb-2">📅 Weekly Off Roster</h2>
+//           <div id="weekly-off" className="p-4 bg-white shadow-md md:p-6 rounded-xl">
+//             <h2 className="mb-2 text-lg font-semibold text-indigo-600">📅 Weekly Off Roster</h2>
 //             <p className="text-sm">{user?.name} — <strong className="text-blue-600">Sunday</strong></p>
 //           </div>
 
 //           {/* Break Info */}
-//           <div className="bg-white p-4 rounded-xl shadow-md">
+//           <div className="p-4 bg-white shadow-md rounded-xl">
 //             {workedHours < 9 && (
-//               <p className="text-red-600 font-semibold text-sm md:text-base">
+//               <p className="text-sm font-semibold text-red-600 md:text-base">
 //                 ⏳ You worked {workedHours.toFixed(2)} hrs. Work {(9 - workedHours).toFixed(2)} hrs more today.
 //               </p>
 //             )}
 //             {inBreak && (
-//               <p className="text-orange-700 mt-2 text-sm md:text-base">
+//               <p className="mt-2 text-sm text-orange-700 md:text-base">
 //                 Break time left: {Math.floor(breakTimeLeft / 60)}:{String(breakTimeLeft % 60).padStart(2, '0')} min
 //               </p>
 //             )}
 //             {inBreak && (
 //               <button
 //                 onClick={() => endBreak(false)}
-//                 className="mt-2 bg-red-500 text-white px-3 py-1 text-sm md:text-base md:px-4 rounded hover:bg-red-600 shadow"
+//                 className="px-3 py-1 mt-2 text-sm text-white bg-red-500 rounded shadow md:text-base md:px-4 hover:bg-red-600"
 //               >
 //                 🛑 Stop Break
 //               </button>
@@ -848,92 +832,90 @@
 //           </div>
 
 //           {logoutMessage && (
-//             <div className="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-100 text-green-800 px-4 py-2 md:px-6 md:py-3 rounded shadow-md z-50 text-xs md:text-sm font-medium transition duration-300">
+//             <div className="fixed z-50 px-4 py-2 text-xs font-medium text-green-800 transition duration-300 transform -translate-x-1/2 bg-green-100 rounded shadow-md top-5 left-1/2 md:px-6 md:py-3 md:text-sm">
 //               {logoutMessage}
 //             </div>
 //           )}
 
 //           {/* SALARY */}
-//           <div id="salary" className="bg-white p-4 md:p-6 rounded-xl shadow-md">
-//             <h2 className="text-xl md:text-2xl font-semibold text-indigo-700 mb-4 flex items-center justify-center gap-2 text-center">
+//           <div id="salary" className="p-4 bg-white shadow-md md:p-6 rounded-xl">
+//             <h2 className="flex items-center justify-center gap-2 mb-4 text-xl font-semibold text-center text-indigo-700 md:text-2xl">
 //               💰 Salary Details
 //             </h2>
 
 //             {salaryError && (
-//               <div className="bg-red-100 border border-red-400 text-red-700 px-3 py-1 md:px-4 md:py-2 rounded mb-4 text-xs md:text-sm text-center">
+//               <div className="px-3 py-1 mb-4 text-xs text-center text-red-700 bg-red-100 border border-red-400 rounded md:px-4 md:py-2 md:text-sm">
 //                 {salaryError}
 //               </div>
 //             )}
 
 //             {salaryInfo ? (
-//               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-6 gap-y-2 md:gap-y-3 text-xs md:text-sm text-gray-800">
-//                 <div className="flex justify-between border-b pb-1">
+//               <div className="grid grid-cols-1 text-xs text-gray-800 sm:grid-cols-2 gap-x-4 md:gap-x-6 gap-y-2 md:gap-y-3 md:text-sm">
+//                 <div className="flex justify-between pb-1 border-b">
 //                   <span className="font-medium">👤 Name:</span>
 //                   <span>{salaryInfo.name}</span>
 //                 </div>
-//                 <div className="flex justify-between border-b pb-1">
+//                 <div className="flex justify-between pb-1 border-b">
 //                   <span className="font-medium">📅 Month:</span>
 //                   <span>{salaryInfo.month}</span>
 //                 </div>
-//                 <div className="flex justify-between border-b pb-1">
+//                 <div className="flex justify-between pb-1 border-b">
 //                   <span className="font-medium">📆 Total Working Days:</span>
 //                   <span>{salaryInfo.totalWorkingDays}</span>
 //                 </div>
-//                 <div className="flex justify-between border-b pb-1 text-green-700">
+//                 <div className="flex justify-between pb-1 text-green-700 border-b">
 //                   <span className="font-medium">✅ Present Days:</span>
 //                   <span>{salaryInfo.presentDays}</span>
 //                 </div>
-//                 <div className="flex justify-between border-b pb-1 text-yellow-600">
+//                 <div className="flex justify-between pb-1 text-yellow-600 border-b">
 //                   <span className="font-medium">🟩 Paid Leave Days:</span>
 //                   <span>{salaryInfo.paidLeaveDays}</span>
 //                 </div>
-//                 <div className="flex justify-between border-b pb-1 text-red-600">
+//                 <div className="flex justify-between pb-1 text-red-600 border-b">
 //                   <span className="font-medium">🟥 LWP (Unpaid Leave Days):</span>
 //                   <span>{salaryInfo.unpaidLeaveDays}</span>
 //                 </div>
-//                 <div className="flex justify-between border-b pb-1 text-red-500">
+//                 <div className="flex justify-between pb-1 text-red-500 border-b">
 //                   <span className="font-medium">🚫 Total Absent:</span>
 //                   <span>{salaryInfo.totalAbsent}</span>
 //                 </div>
-//                 <div className="flex justify-between border-b pb-1">
+//                 <div className="flex justify-between pb-1 border-b">
 //                   <span className="font-medium">💰 Total Salary:</span>
 //                   <span>${salaryInfo.totalSalary}</span>
 //                 </div>
-//                 <div className="flex justify-between border-b pb-1">
+//                 <div className="flex justify-between pb-1 border-b">
 //                   <span className="font-medium">📆 Per Day Salary:</span>
 //                   <span>${parseFloat(salaryInfo.perDaySalary).toFixed(1)}</span>
 //                 </div>
-//                 <div className="flex justify-between border-b pb-1 font-semibold text-indigo-700">
+//                 <div className="flex justify-between pb-1 font-semibold text-indigo-700 border-b">
 //                   <span>🧮 Final Calculated Salary:</span>
 //                   <span>${salaryInfo.calculatedSalary}</span>
 //                 </div>
 //               </div>
 //             ) : (
-//               <p className="text-gray-500 text-center text-xs md:text-sm">Loading salary details...</p>
+//               <p className="text-xs text-center text-gray-500 md:text-sm">Loading salary details...</p>
 //             )}
 //           </div>
 
-
-
 //           {/* LEAVE REQUEST FORM */}
-//           <div id="new-leave" className="bg-white p-4 md:p-6 rounded-xl shadow-md mx-auto mb-6 md:mb-10">
-//             <h2 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-gray-700">➕ Request New Leave</h2>
+//           <div id="new-leave" className="p-4 mx-auto mb-6 bg-white shadow-md md:p-6 rounded-xl md:mb-10">
+//             <h2 className="mb-3 text-lg font-semibold text-gray-700 md:text-xl md:mb-4">➕ Request New Leave</h2>
 
-//             <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 mb-3 md:mb-4">
+//             <div className="grid grid-cols-1 gap-2 mb-3 md:grid-cols-4 md:gap-4 md:mb-4">
 //               <input
 //                 type="date"
-//                 className="border border-gray-300 rounded-lg px-2 py-1 md:px-3 md:py-2 text-xs md:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+//                 className="px-2 py-1 text-xs border border-gray-300 rounded-lg md:px-3 md:py-2 md:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //                 value={leaveForm.from}
 //                 onChange={(e) => setLeaveForm({ ...leaveForm, from: e.target.value })}
 //               />
 //               <input
 //                 type="date"
-//                 className="border border-gray-300 rounded-lg px-2 py-1 md:px-3 md:py-2 text-xs md:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+//                 className="px-2 py-1 text-xs border border-gray-300 rounded-lg md:px-3 md:py-2 md:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //                 value={leaveForm.to}
 //                 onChange={(e) => setLeaveForm({ ...leaveForm, to: e.target.value })}
 //               />
 //               <select
-//                 className="border border-gray-300 rounded-lg px-2 py-1 md:px-3 md:py-2 text-xs md:text-sm"
+//                 className="px-2 py-1 text-xs border border-gray-300 rounded-lg md:px-3 md:py-2 md:text-sm"
 //                 value={leaveForm.leaveType}
 //                 onChange={(e) => setLeaveForm({ ...leaveForm, leaveType: e.target.value })}
 //               >
@@ -942,14 +924,14 @@
 //               </select>
 //               <input
 //                 type="file"
-//                 className="border border-gray-300 rounded-lg px-2 py-1 md:px-3 md:py-2 text-xs md:text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+//                 className="px-2 py-1 text-xs border border-gray-300 rounded-lg md:px-3 md:py-2 md:text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
 //                 onChange={(e) => setLeaveForm({ ...leaveForm, document: e.target.files[0] })}
 //               />
 //             </div>
 
 //             <textarea
 //               placeholder="📝 Reason for Leave"
-//               className="w-full border border-gray-300 rounded-lg px-2 py-1 md:px-3 md:py-2 mb-3 md:mb-4 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-400 text-xs md:text-sm"
+//               className="w-full px-2 py-1 mb-3 text-xs border border-gray-300 rounded-lg resize-none md:px-3 md:py-2 md:mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-400 md:text-sm"
 //               rows="3"
 //               value={leaveForm.reason}
 //               onChange={(e) => setLeaveForm({ ...leaveForm, reason: e.target.value })}
@@ -957,14 +939,13 @@
 
 //             <button
 //               onClick={submitLeave}
-//               className="bg-indigo-600 text-white px-4 py-1 md:px-6 md:py-2 rounded-lg hover:bg-indigo-700 transition-all shadow text-sm md:text-base"
+//               className="px-4 py-1 text-sm text-white transition-all bg-indigo-600 rounded-lg shadow md:px-6 md:py-2 hover:bg-indigo-700 md:text-base"
 //             >
 //               Submit
 //             </button>
 //           </div>
 //         </div>
 //       </div>
-
 
 //       {/* Attendance Modal */}
 
@@ -976,13 +957,13 @@
 //         overlayClassName="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
 //       >
 //         <div>
-//           <h2 className="text-base md:text-xl font-bold text-center text-indigo-700 mb-3 md:mb-4">
+//           <h2 className="mb-3 text-base font-bold text-center text-indigo-700 md:text-xl md:mb-4">
 //             🕒 Mark Your Attendance
 //           </h2>
-//           <p className="text-xs md:text-sm text-gray-700 mb-3 md:mb-4 leading-relaxed">
+//           <p className="mb-3 text-xs leading-relaxed text-gray-700 md:text-sm md:mb-4">
 //             By continuing, you confirm that you are starting work and will aim to complete at least <strong>8 hours</strong> today.
 //             <br />
-//             <span className="text-red-500 font-medium block mt-1">
+//             <span className="block mt-1 font-medium text-red-500">
 //               Less than 8 hrs = Half Day, less than 5 hrs = Absent.
 //             </span>
 //           </p>
@@ -992,9 +973,9 @@
 //               type="checkbox"
 //               checked={agree}
 //               onChange={() => setAgree(!agree)}
-//               className="form-checkbox h-4 w-4 text-indigo-600 mt-1"
+//               className="w-4 h-4 mt-1 text-indigo-600 form-checkbox"
 //             />
-//             <span className="text-gray-800 text-xs md:text-sm font-medium">
+//             <span className="text-xs font-medium text-gray-800 md:text-sm">
 //               I agree to mark my attendance
 //             </span>
 //           </label>
@@ -1005,7 +986,7 @@
 //                 localStorage.clear();
 //                 navigate('/login');
 //               }}
-//               className="px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm text-gray-600 hover:text-gray-800"
+//               className="px-3 py-1 text-xs text-gray-600 md:px-4 md:py-2 md:text-sm hover:text-gray-800"
 //             >
 //               ❌ Cancel
 //             </button>
@@ -1022,13 +1003,11 @@
 //         </div>
 //       </Modal>
 
-
 //     </div>
 //   );
 // };
 
 // export default UserDashboard;
-
 
 //--------------------------------
 
@@ -1050,7 +1029,6 @@
 // import Sidebar from '../components2/Sidebar';
 // import useBreakTimer from '../routes/useBreakTimer';
 // import EmployeeTasks from '../routes/EmployeeTasks';
-
 
 // Modal.setAppElement('#root');
 
@@ -1092,7 +1070,6 @@
 //     leaveType: 'Paid Leave',
 //   });
 
-
 // const fetchEmployeeIdByUserId = async () => {
 //   try {
 //     const userId = localStorage.getItem("userId"); // from login
@@ -1110,8 +1087,6 @@
 // useEffect(() => {
 //   fetchEmployeeIdByUserId(); // Set employeeId to localStorage
 // }, []);
-
-
 
 //   useEffect(() => {
 //     const token = localStorage.getItem('token');
@@ -1220,8 +1195,6 @@
 //       setShowModal(true);
 //     }
 //   };
-
-
 
 //   useEffect(() => {
 //     if (!employee || !employee._id) return;
@@ -1412,8 +1385,8 @@
 //   //     const response = await API.post('/attendance/mark', { employeeId: employee._id }, headers);
 //   //     console.log("Attendance response:", response.data);
 //   //     const message = response?.data?.message || 'Attendance marked';
-//   //     setModalMessage(message);     
-//   //     setShowModal(true);       
+//   //     setModalMessage(message);
+//   //     setShowModal(true);
 //   //     return true;
 //   //   } catch (err) {
 //   //     console.error('Attendance marking failed:', err);
@@ -1469,7 +1442,6 @@
 //     }
 //   };
 
-
 //   const { approvedCount, rejectedCount, paidCount, sundayCount } = useMemo(() => {
 //     const result = { approvedCount: 0, rejectedCount: 0, paidCount: 0, sundayCount: 0 };
 //     if (!Array.isArray(leaves)) return result;
@@ -1490,9 +1462,9 @@
 
 //   if (loading) {
 //     return (
-//       <div className="min-h-screen flex items-center justify-center bg-gray-100">
+//       <div className="flex items-center justify-center min-h-screen bg-gray-100">
 //         <div className="text-center">
-//           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+//           <div className="w-12 h-12 mx-auto border-t-2 border-b-2 border-blue-500 rounded-full animate-spin"></div>
 //           <p className="mt-4 text-gray-700">Loading your dashboard...</p>
 //         </div>
 //       </div>
@@ -1501,7 +1473,7 @@
 
 //   return (
 //     <div className={`transition-all duration-300 ${showModal ? 'blur-lg pointer-events-none select-none' : ''}`}>
-//       <div className="md:hidden fixed top-4 left-4 z-50">
+//       <div className="fixed z-50 md:hidden top-4 left-4">
 //         <button
 //           onClick={() => setSidebarOpen(!sidebarOpen)}
 //           className="bg-[#72819a] text-white p-2 rounded-lg shadow-lg"
@@ -1510,7 +1482,7 @@
 //         </button>
 //       </div>
 
-//       <div className="min-h-screen flex bg-gray-100">
+//       <div className="flex min-h-screen bg-gray-100">
 //         <Clock />
 //         <Sidebar
 //           user={user}
@@ -1519,18 +1491,17 @@
 //           setSidebarOpen={setSidebarOpen}
 //         />
 
-//         <div className="w-full p-4 md:p-6 space-y-6">
-//           <h1 className="text-center text-2xl md:text-3xl bg-gradient-to-r from-green-200 via-white to-green-200 inline-block px-4 py-2 rounded">
+//         <div className="w-full p-4 space-y-6 md:p-6">
+//           <h1 className="inline-block px-4 py-2 text-2xl text-center rounded md:text-3xl bg-gradient-to-r from-green-200 via-white to-green-200">
 //             Welcome {user?.name || 'User'}
 //           </h1>
 
-//           <h1 className="text-2xl md:text-3xl font-semibold text-gray-800">👤 Your Dashboard</h1>
+//           <h1 className="text-2xl font-semibold text-gray-800 md:text-3xl">👤 Your Dashboard</h1>
 
-//           <div className="bg-white p-4 md:p-6 rounded-xl shadow-md mx-auto mb-6 md:mb-10">
-//             <h1 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-green-700">📞 Log Customer Call Inquiry</h1>
+//           <div className="p-4 mx-auto mb-6 bg-white shadow-md md:p-6 rounded-xl md:mb-10">
+//             <h1 className="mb-3 text-lg font-bold text-green-700 md:text-xl md:mb-4">📞 Log Customer Call Inquiry</h1>
 //             <CallInquiryForm employeeId={employeeId} />
 //           </div>
-
 
 //           <Outlet context={{
 //             employee,
@@ -1550,9 +1521,8 @@
 //             setLeaveForm,
 //             submitLeave,
 //             user,
-            
-//           }} />
 
+//           }} />
 
 //         </div>
 //       </div>
@@ -1565,13 +1535,13 @@
 //         overlayClassName="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
 //       >
 //         <div>
-//           <h2 className="text-base md:text-xl font-bold text-center text-indigo-700 mb-3 md:mb-4">
+//           <h2 className="mb-3 text-base font-bold text-center text-indigo-700 md:text-xl md:mb-4">
 //             🕒 Mark Your Attendance
 //           </h2>
-//           <p className="text-xs md:text-sm text-gray-700 mb-3 md:mb-4 leading-relaxed">
+//           <p className="mb-3 text-xs leading-relaxed text-gray-700 md:text-sm md:mb-4">
 //             By continuing, you confirm that you are starting work and will aim to complete at least <strong>8 hours</strong> today.
 //             <br />
-//             <span className="text-red-500 font-medium block mt-1">
+//             <span className="block mt-1 font-medium text-red-500">
 //               Less than 8 hrs = Half Day, less than 5 hrs = Absent.
 //             </span>
 //           </p>
@@ -1581,9 +1551,9 @@
 //               type="checkbox"
 //               checked={agree}
 //               onChange={() => setAgree(!agree)}
-//               className="form-checkbox h-4 w-4 text-indigo-600 mt-1"
+//               className="w-4 h-4 mt-1 text-indigo-600 form-checkbox"
 //             />
-//             <span className="text-gray-800 text-xs md:text-sm font-medium">
+//             <span className="text-xs font-medium text-gray-800 md:text-sm">
 //               I agree to mark my attendance
 //             </span>
 //           </label>
@@ -1594,7 +1564,7 @@
 //                 localStorage.clear();
 //                 navigate('/login');
 //               }}
-//               className="px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm text-gray-600 hover:text-gray-800"
+//               className="px-3 py-1 text-xs text-gray-600 md:px-4 md:py-2 md:text-sm hover:text-gray-800"
 //             >
 //               ❌ Cancel
 //             </button>
@@ -2022,9 +1992,9 @@
 
 //   if (loading) {
 //     return (
-//       <div className="min-h-screen flex items-center justify-center bg-gray-100">
+//       <div className="flex items-center justify-center min-h-screen bg-gray-100">
 //         <div className="text-center">
-//           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+//           <div className="w-12 h-12 mx-auto border-t-2 border-b-2 border-blue-500 rounded-full animate-spin"></div>
 //           <p className="mt-4 text-gray-700">Loading your dashboard...</p>
 //         </div>
 //       </div>
@@ -2033,7 +2003,7 @@
 
 //   return (
 //     <div className={`transition-all duration-300 ${showModal ? 'blur-lg pointer-events-none select-none' : ''}`}>
-//       <div className="md:hidden fixed top-4 left-4 z-50">
+//       <div className="fixed z-50 md:hidden top-4 left-4">
 //         <button
 //           onClick={() => setSidebarOpen(!sidebarOpen)}
 //           className="bg-[#72819a] text-white p-2 rounded-lg shadow-lg"
@@ -2042,7 +2012,7 @@
 //         </button>
 //       </div>
 
-//       <div className="min-h-screen flex bg-gray-100">
+//       <div className="flex min-h-screen bg-gray-100">
 //         <Clock />
 //         <Sidebar
 //           user={user}
@@ -2051,18 +2021,18 @@
 //           setSidebarOpen={setSidebarOpen}
 //         />
 
-//         <div className="w-full p-4 md:p-6 space-y-6">
+//         <div className="w-full p-4 space-y-6 md:p-6">
 //           {error && (
-//             <div className="bg-red-100 text-red-700 p-3 rounded mb-4 text-center">{error}</div>
+//             <div className="p-3 mb-4 text-center text-red-700 bg-red-100 rounded">{error}</div>
 //           )}
-//           <h1 className="text-center text-2xl md:text-3xl bg-gradient-to-r from-green-200 via-white to-green-200 inline-block px-4 py-2 rounded">
+//           <h1 className="inline-block px-4 py-2 text-2xl text-center rounded md:text-3xl bg-gradient-to-r from-green-200 via-white to-green-200">
 //             Welcome {user?.name || 'User'}
 //           </h1>
 
-//           <h1 className="text-2xl md:text-3xl font-semibold text-gray-800">👤 Your Dashboard</h1>
+//           <h1 className="text-2xl font-semibold text-gray-800 md:text-3xl">👤 Your Dashboard</h1>
 
-//           <div className="bg-white p-4 md:p-6 rounded-xl shadow-md mx-auto mb-6 md:mb-10">
-//             <h1 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-green-700">
+//           <div className="p-4 mx-auto mb-6 bg-white shadow-md md:p-6 rounded-xl md:mb-10">
+//             <h1 className="mb-3 text-lg font-bold text-green-700 md:text-xl md:mb-4">
 //               📞 Log Customer Call Inquiry
 //             </h1>
 //             <CallInquiryForm employeeId={employee?._id} />
@@ -2100,14 +2070,14 @@
 //         overlayClassName="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
 //       >
 //         <div>
-//           <h2 className="text-base md:text-xl font-bold text-center text-indigo-700 mb-3 md:mb-4">
+//           <h2 className="mb-3 text-base font-bold text-center text-indigo-700 md:text-xl md:mb-4">
 //             🕒 Mark Your Attendance
 //           </h2>
-//           <p className="text-xs md:text-sm text-gray-700 mb-3 md:mb-4 leading-relaxed">
+//           <p className="mb-3 text-xs leading-relaxed text-gray-700 md:text-sm md:mb-4">
 //             By continuing, you confirm that you are starting work and will aim to complete at least{' '}
 //             <strong>8 hours</strong> today.
 //             <br />
-//             <span className="text-red-500 font-medium block mt-1">
+//             <span className="block mt-1 font-medium text-red-500">
 //               Less than 8 hrs = Half Day, less than 5 hrs = Absent.
 //             </span>
 //           </p>
@@ -2117,9 +2087,9 @@
 //               type="checkbox"
 //               checked={agree}
 //               onChange={() => setAgree(!agree)}
-//               className="form-checkbox h-4 w-4 text-indigo-600 mt-1"
+//               className="w-4 h-4 mt-1 text-indigo-600 form-checkbox"
 //             />
-//             <span className="text-gray-800 text-xs md:text-sm font-medium">
+//             <span className="text-xs font-medium text-gray-800 md:text-sm">
 //               I agree to mark my attendance
 //             </span>
 //           </label>
@@ -2127,7 +2097,7 @@
 //           <div className="flex justify-between mt-4">
 //             <button
 //               onClick={() => setShowModal(false)}
-//               className="px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm text-gray-600 hover:text-gray-800"
+//               className="px-3 py-1 text-xs text-gray-600 md:px-4 md:py-2 md:text-sm hover:text-gray-800"
 //             >
 //               Close
 //             </button>
@@ -2150,24 +2120,24 @@
 // export default UserDashboard;
 
 //---
-import React, { useEffect, useState, useMemo, useCallback } from 'react';
-import { useNavigate, Outlet } from 'react-router-dom';
-import API from '../api';
-import Modal from 'react-modal';
-import CallInquiryForm from './CallInquiryForm';
-import Clock from '../components/Timer';
-import TopPerformance from '../routes/TopPerformance';
-import Attendance from '../routes/Attendance';
-import BreakTime from '../routes/BreakTime';
-import Leaves from '../routes/Leaves';
-import RequestLeaves from '../routes/RequestLeave';
-import SalaryDetails from '../routes/SalaryDetails';
-import WeeklyOff from '../routes/WeeklyOff';
-import Sidebar from '../components2/Sidebar';
-import useBreakTimer from '../routes/useBreakTimer';
-import EmployeeTasks from '../routes/EmployeeTasks';
+import React, { useEffect, useState, useMemo, useCallback } from "react";
+import { useNavigate, Outlet } from "react-router-dom";
+import API from "../api";
+import Modal from "react-modal";
+import CallInquiryForm from "./CallInquiryForm";
+import Clock from "../components/Timer";
+import TopPerformance from "../routes/TopPerformance";
+import Attendance from "../routes/Attendance";
+import BreakTime from "../routes/BreakTime";
+import Leaves from "../routes/Leaves";
+import RequestLeaves from "../routes/RequestLeave";
+import SalaryDetails from "../routes/SalaryDetails";
+import WeeklyOff from "../routes/WeeklyOff";
+import Sidebar from "../components2/Sidebar";
+import useBreakTimer from "../routes/useBreakTimer";
+import EmployeeTasks from "../routes/EmployeeTasks";
 
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 
 const UserDashboard = () => {
   const navigate = useNavigate();
@@ -2181,19 +2151,19 @@ const UserDashboard = () => {
   const breakTimer = useBreakTimer(employee);
   const TOTAL_ANNUAL_LEAVES = 20;
   const [salaryInfo, setSalaryInfo] = useState(null);
-  const [salaryError, setSalaryError] = useState('');
+  const [salaryError, setSalaryError] = useState("");
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [agree, setAgree] = useState(false);
-  const [modalMessage, setModalMessage] = useState('');
+  const [modalMessage, setModalMessage] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [leaveForm, setLeaveForm] = useState({
-    from: '',
-    to: '',
-    reason: '',
+    from: "",
+    to: "",
+    reason: "",
     document: null,
-    leaveType: 'Paid Leave',
+    leaveType: "Paid Leave",
   });
   const [isLoggingOut, setIsLoggingOut] = useState(false);
 
@@ -2205,32 +2175,32 @@ const UserDashboard = () => {
 
   const fetchEmployeeIdByUserId = useCallback(async () => {
     try {
-      const userId = localStorage.getItem('userId');
-      const token = localStorage.getItem('token');
+      const userId = localStorage.getItem("userId");
+      const token = localStorage.getItem("token");
       if (!userId || !token) {
-        throw new Error('User not authenticated');
+        throw new Error("User not authenticated");
       }
       const res = await API.get(`/employees/by-user/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.data?.employee?._id) {
-        localStorage.setItem('employeeId', res.data.employee._id);
+        localStorage.setItem("employeeId", res.data.employee._id);
         setEmployee(res.data.employee);
         return res.data.employee._id;
       } else {
-        throw new Error('Employee not found');
+        throw new Error("Employee not found");
       }
     } catch (err) {
-      console.error('Error fetching employee ID:', err);
-      setError('❌ Failed to fetch employee data. Please login again.');
+      console.error("Error fetching employee ID:", err);
+      setError("❌ Failed to fetch employee data. Please login again.");
       setShowModal(true);
-      setTimeout(() => navigate('/login'), 2000);
+      setTimeout(() => navigate("/login"), 2000);
       return null;
     }
   }, [navigate]);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (!token) {
       handleSessionExpired();
       return;
@@ -2241,11 +2211,11 @@ const UserDashboard = () => {
         await fetchUserData();
         await fetchTopPerformers();
       } catch (error) {
-        console.error('Initial data fetch failed:', error);
+        console.error("Initial data fetch failed:", error);
         if (error.response?.status === 401 || error.response?.status === 403) {
           handleSessionExpired();
         } else {
-          setError('❌ Failed to load dashboard data. Please try again.');
+          setError("❌ Failed to load dashboard data. Please try again.");
         }
       } finally {
         setLoading(false);
@@ -2256,26 +2226,26 @@ const UserDashboard = () => {
   }, [fetchEmployeeIdByUserId]);
 
   useEffect(() => {
-    if (employee?._id && !localStorage.getItem('attendanceChecked')) {
+    if (employee?._id && !localStorage.getItem("attendanceChecked")) {
       checkAttendance();
       markLogin();
       fetchTodayStats();
       fetchLeaves();
-      localStorage.setItem('attendanceChecked', 'true');
+      localStorage.setItem("attendanceChecked", "true");
     }
   }, [employee]);
 
   const handleSessionExpired = () => {
     setTimeout(() => {
-      setError('❌ Session expired. Please login again.');
+      setError("❌ Session expired. Please login again.");
       localStorage.clear();
-      navigate('/login');
+      navigate("/login");
     }, 300);
   };
 
   const verifyToken = () => {
-    const token = localStorage.getItem('token');
-    if (!token || token === 'undefined') {
+    const token = localStorage.getItem("token");
+    if (!token || token === "undefined") {
       handleSessionExpired();
       return false;
     }
@@ -2285,20 +2255,29 @@ const UserDashboard = () => {
   const handleLogout = async () => {
     if (isLoggingOut) return;
     setIsLoggingOut(true);
-    setError('');
+    setError("");
 
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       if (token) {
-        await API.post('/auth/logout', {}, { headers: { Authorization: `Bearer ${token}` } });
+        await API.post(
+          "/auth/logout",
+          {},
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
       }
     } catch (err) {
-      console.error('Logout API error:', err);
-      setError('❌ Failed to logout cleanly. Proceeding anyway.');
+      console.error("Logout API error:", err);
+      setError("❌ Failed to logout cleanly. Proceeding anyway.");
     } finally {
-      ['token', 'user', 'employee', 'attendanceChecked', 'employeeId', 'userId'].forEach((key) =>
-        localStorage.removeItem(key)
-      );
+      [
+        "token",
+        "user",
+        "employee",
+        "attendanceChecked",
+        "employeeId",
+        "userId",
+      ].forEach((key) => localStorage.removeItem(key));
       setEmployee(null);
       setUser(null);
       setAttendance([]);
@@ -2307,9 +2286,9 @@ const UserDashboard = () => {
       setRemainingLeaves(0);
       setTopPerformers([]);
       setSalaryInfo(null);
-      setSalaryError('');
+      setSalaryError("");
       setIsLoggingOut(false);
-      navigate('/login');
+      navigate("/login");
     }
   };
 
@@ -2317,21 +2296,21 @@ const UserDashboard = () => {
     if (!verifyToken() || !employee?._id) return;
 
     try {
-      const token = localStorage.getItem('token');
-      const res = await API.get('/attendance/today', {
+      const token = localStorage.getItem("token");
+      const res = await API.get("/attendance/today", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
       if (!res.data?.marked) {
-        setModalMessage('Please mark your attendance for today');
+        setModalMessage("Please mark your attendance for today");
         setShowModal(true);
       }
     } catch (err) {
-      console.error('Attendance check failed:', err);
+      console.error("Attendance check failed:", err);
       setModalMessage(
         err.response?.status === 401
-          ? 'Session expired or unauthorized. Please log in again.'
-          : 'Unable to verify attendance. Please try again.'
+          ? "Session expired or unauthorized. Please log in again."
+          : "Unable to verify attendance. Please try again."
       );
       setShowModal(true);
       if (err.response?.status === 401 || err.response?.status === 403) {
@@ -2345,18 +2324,21 @@ const UserDashboard = () => {
 
     const fetchSalary = async () => {
       try {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem("token");
         if (!token) {
-          throw new Error('Not authenticated');
+          throw new Error("Not authenticated");
         }
         const month = new Date().toISOString().slice(0, 7);
-        const res = await API.get(`/employees/salary/${employee._id}/${month}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const res = await API.get(
+          `/employees/salary/${employee._id}/${month}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         setSalaryInfo(res.data);
       } catch (err) {
-        console.error('Error fetching salary:', err);
-        setSalaryError('❌ Failed to load salary details.');
+        console.error("Error fetching salary:", err);
+        setSalaryError("❌ Failed to load salary details.");
         if (err.response?.status === 401 || err.response?.status === 403) {
           handleSessionExpired();
         }
@@ -2370,10 +2352,10 @@ const UserDashboard = () => {
     if (!verifyToken()) return;
 
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       const headers = { headers: { Authorization: `Bearer ${token}` } };
 
-      const profileRes = await API.get('/user/profile', headers);
+      const profileRes = await API.get("/user/profile", headers);
       const userData = profileRes.data;
       setUser(userData);
 
@@ -2391,7 +2373,7 @@ const UserDashboard = () => {
       setPerformance(perfRes.data.summary);
 
       const approvedLeaves = leaveRes.data.data.filter(
-        (l) => l.status === 'Approved' || l.status === 'Paid Leave'
+        (l) => l.status === "Approved" || l.status === "Paid Leave"
       );
 
       const usedLeaveDays = approvedLeaves.reduce((total, leave) => {
@@ -2403,11 +2385,11 @@ const UserDashboard = () => {
 
       setRemainingLeaves(TOTAL_ANNUAL_LEAVES - usedLeaveDays);
     } catch (err) {
-      console.error('User data fetch failed:', err);
+      console.error("User data fetch failed:", err);
       if (err.response?.status === 401 || err.response?.status === 403) {
         handleSessionExpired();
       } else {
-        setError('❌ Failed to load your data. Please refresh.');
+        setError("❌ Failed to load your data. Please refresh.");
       }
     }
   };
@@ -2416,13 +2398,13 @@ const UserDashboard = () => {
     if (!verifyToken()) return;
 
     try {
-      const token = localStorage.getItem('token');
-      const res = await API.get('/performance/top', {
+      const token = localStorage.getItem("token");
+      const res = await API.get("/performance/top", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTopPerformers(res.data.data || []);
     } catch (err) {
-      console.error('Failed to fetch top performers:', err);
+      console.error("Failed to fetch top performers:", err);
       if (err.response?.status === 401 || err.response?.status === 403) {
         handleSessionExpired();
       }
@@ -2433,13 +2415,13 @@ const UserDashboard = () => {
     if (!verifyToken() || !employee?._id) return;
 
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       const res = await API.get(`/leaves?employeeId=${employee._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setLeaves(res.data?.data || []);
     } catch (err) {
-      console.error('Failed to fetch leaves:', err);
+      console.error("Failed to fetch leaves:", err);
       if (err.response?.status === 401 || err.response?.status === 403) {
         handleSessionExpired();
       }
@@ -2451,12 +2433,12 @@ const UserDashboard = () => {
     if (!verifyToken() || !employee?._id) return;
 
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       await API.get(`/hours/today/${employee._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
     } catch (err) {
-      console.error('Stats fetch failed:', err);
+      console.error("Stats fetch failed:", err);
       if (err.response?.status === 401 || err.response?.status === 403) {
         handleSessionExpired();
       }
@@ -2467,118 +2449,130 @@ const UserDashboard = () => {
     if (!verifyToken() || !employee?._id) return;
 
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       await API.post(
-        '/hours/login',
+        "/hours/login",
         { employeeId: employee._id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
     } catch (err) {
-      console.error('Login time tracking failed:', err);
+      console.error("Login time tracking failed:", err);
       if (err.response?.status === 401 || err.response?.status === 403) {
         handleSessionExpired();
       }
     }
   };
 
-//   const submitLeave = async () => {
-//     if (!leaveForm.from || !leaveForm.to) {
-//       setError('❗ Please select both From and To dates.');
-//       return;
-//     }
+  //   const submitLeave = async () => {
+  //     if (!leaveForm.from || !leaveForm.to) {
+  //       setError('❗ Please select both From and To dates.');
+  //       return;
+  //     }
 
-//     if (!verifyToken() || !employee?._id) return;
+  //     if (!verifyToken() || !employee?._id) return;
 
-//     try {
-//       const token = localStorage.getItem('token');
-//       const formData = new FormData();
-//       formData.append('employeeId', employee._id);
-//       formData.append('from', leaveForm.from);
-//       formData.append('to', leaveForm.to);
-//       formData.append('reason', leaveForm.reason);
-//       formData.append('leaveType', leaveForm.leaveType || 'Paid Leave');
+  //     try {
+  //       const token = localStorage.getItem('token');
+  //       const formData = new FormData();
+  //       formData.append('employeeId', employee._id);
+  //       formData.append('from', leaveForm.from);
+  //       formData.append('to', leaveForm.to);
+  //       formData.append('reason', leaveForm.reason);
+  //       formData.append('leaveType', leaveForm.leaveType || 'Paid Leave');
 
-//       if (leaveForm.document) {
-//         formData.append('document', leaveForm.document);
-//       }
+  //       if (leaveForm.document) {
+  //         formData.append('document', leaveForm.document);
+  //       }
 
-//       await API.post('/leaves', formData, {
-//         headers: {
-//           Authorization: `Bearer ${token}`,
-//           'Content-Type': 'multipart/form-data',
-//         },
-//       });
+  //       await API.post('/leaves', formData, {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //           'Content-Type': 'multipart/form-data',
+  //         },
+  //       });
 
-//       setError('');
-//       alert('✅ Leave request submitted successfully.');
-//       setLeaveForm({ from: '', to: '', reason: '', document: null, leaveType: 'Paid Leave' });
-//       fetchUserData();
-//     } catch (err) {
-//       console.error('Leave submission failed:', err);
-//       if (err.response?.status === 401 || err.response?.status === 403) {
-//         handleSessionExpired();
-//       } else {
-//         setError('❌ Failed to submit leave. Try again.');
-// setError('More than 5 days or more than 4 leave requests per year. Please contact HR.');
-//       }
-//     }
-//   };
+  //       setError('');
+  //       alert('✅ Leave request submitted successfully.');
+  //       setLeaveForm({ from: '', to: '', reason: '', document: null, leaveType: 'Paid Leave' });
+  //       fetchUserData();
+  //     } catch (err) {
+  //       console.error('Leave submission failed:', err);
+  //       if (err.response?.status === 401 || err.response?.status === 403) {
+  //         handleSessionExpired();
+  //       } else {
+  //         setError('❌ Failed to submit leave. Try again.');
+  // setError('More than 5 days or more than 4 leave requests per year. Please contact HR.');
+  //       }
+  //     }
+  //   };
 
-
-const submitLeave = async () => {
-  if (!leaveForm.from || !leaveForm.to || !leaveForm.reason || !leaveForm.leaveType) {
-    setError('❗ Please select all required fields: From date, To date, Leave Type, and Reason.');
-    return;
-  }
-
-  if (!verifyToken() || !employee?._id) return;
-
-  try {
-    const token = localStorage.getItem('token');
-    const formData = new FormData();
-    formData.append('employeeId', employee._id);
-    formData.append('from', leaveForm.from);
-    formData.append('to', leaveForm.to);
-    formData.append('reason', leaveForm.reason);
-    formData.append('leaveType', leaveForm.leaveType || 'Paid Leave');
-
-    if (leaveForm.document) {
-      formData.append('document', leaveForm.document);
-    }
-
-    const res = await API.post('/leaves', formData, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'multipart/form-data',
-      },
-    });
-
-    // ✅ success case
-    setError('');
-    alert('✅ Leave request submitted successfully.');
-    setLeaveForm({ from: '', to: '', reason: '', document: null, leaveType: 'Paid Leave' });
-    fetchUserData();
-
-    return res.data; // important: return backend JSON
-  } catch (err) {
-    console.error('Leave submission failed:', err);
-
-    if (err.response?.status === 401 || err.response?.status === 403) {
-      handleSessionExpired();
+  const submitLeave = async () => {
+    if (
+      !leaveForm.from ||
+      !leaveForm.to ||
+      !leaveForm.reason ||
+      !leaveForm.leaveType
+    ) {
+      setError(
+        "❗ Please select all required fields: From date, To date, Leave Type, and Reason."
+      );
       return;
     }
 
-    // ✅ show backend's own message
-    const backendMsg = err.response?.data?.message;
-    if (backendMsg) {
-      setError(backendMsg); // "More than 5 days please contact HR." or "Maximum 4 leave requests per year. Please contact HR."
-    } else {
-      setError('❌ Failed to submit leave. Try again.');
-    }
+    if (!verifyToken() || !employee?._id) return;
 
-    return err.response?.data; // return so caller can also check
-  }
-};
+    try {
+      const token = localStorage.getItem("token");
+      const formData = new FormData();
+      formData.append("employeeId", employee._id);
+      formData.append("from", leaveForm.from);
+      formData.append("to", leaveForm.to);
+      formData.append("reason", leaveForm.reason);
+      formData.append("leaveType", leaveForm.leaveType || "Paid Leave");
+
+      if (leaveForm.document) {
+        formData.append("document", leaveForm.document);
+      }
+
+      const res = await API.post("/leaves", formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      // ✅ success case
+      setError("");
+      alert("✅ Leave request submitted successfully.");
+      setLeaveForm({
+        from: "",
+        to: "",
+        reason: "",
+        document: null,
+        leaveType: "Paid Leave",
+      });
+      fetchUserData();
+
+      return res.data; // important: return backend JSON
+    } catch (err) {
+      console.error("Leave submission failed:", err);
+
+      if (err.response?.status === 401 || err.response?.status === 403) {
+        handleSessionExpired();
+        return;
+      }
+
+      // ✅ show backend's own message
+      const backendMsg = err.response?.data?.message;
+      if (backendMsg) {
+        setError(backendMsg); // "More than 5 days please contact HR." or "Maximum 4 leave requests per year. Please contact HR."
+      } else {
+        setError("❌ Failed to submit leave. Try again.");
+      }
+
+      return err.response?.data; // return so caller can also check
+    }
+  };
 
   const markAttendance = async () => {
     if (!verifyToken() || !employee?._id) return false;
@@ -2589,19 +2583,19 @@ const submitLeave = async () => {
       const istNow = new Date(now.getTime() + istOffset);
       const istDate = istNow.toISOString().slice(0, 10);
 
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       const response = await API.post(
-        '/attendance/mark',
+        "/attendance/mark",
         { employeeId: employee._id, date: istDate },
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      setModalMessage(response?.data?.message || 'Attendance marked');
+      setModalMessage(response?.data?.message || "Attendance marked");
       setShowModal(true);
       return true;
     } catch (err) {
-      console.error('Attendance marking failed:', err);
-      setModalMessage('Failed to mark attendance. Please try again.');
+      console.error("Attendance marking failed:", err);
+      setModalMessage("Failed to mark attendance. Please try again.");
       setShowModal(true);
       return false;
     }
@@ -2609,7 +2603,7 @@ const submitLeave = async () => {
 
   const handleProceed = async () => {
     if (!agree) {
-      setModalMessage('You must agree to mark attendance');
+      setModalMessage("You must agree to mark attendance");
       setShowModal(true);
       return;
     }
@@ -2623,29 +2617,35 @@ const submitLeave = async () => {
     }
   };
 
-  const { approvedCount, rejectedCount, paidCount, sundayCount } = useMemo(() => {
-    const result = { approvedCount: 0, rejectedCount: 0, paidCount: 0, sundayCount: 0 };
-    if (!Array.isArray(leaves)) return result;
+  const { approvedCount, rejectedCount, paidCount, sundayCount } =
+    useMemo(() => {
+      const result = {
+        approvedCount: 0,
+        rejectedCount: 0,
+        paidCount: 0,
+        sundayCount: 0,
+      };
+      if (!Array.isArray(leaves)) return result;
 
-    leaves.forEach((l) => {
-      if (!l || !l.from || !l.to) return;
-      const fromDay = new Date(l.from).getDay();
-      const toDay = new Date(l.to).getDay();
-      const isSunday = fromDay === 0 && toDay === 0;
-      if (isSunday) result.sundayCount++;
-      else if (l.status === 'Approved') result.approvedCount++;
-      else if (l.status === 'Rejected') result.rejectedCount++;
-      else if (l.status === 'Paid Leave') result.paidCount++;
-    });
+      leaves.forEach((l) => {
+        if (!l || !l.from || !l.to) return;
+        const fromDay = new Date(l.from).getDay();
+        const toDay = new Date(l.to).getDay();
+        const isSunday = fromDay === 0 && toDay === 0;
+        if (isSunday) result.sundayCount++;
+        else if (l.status === "Approved") result.approvedCount++;
+        else if (l.status === "Rejected") result.rejectedCount++;
+        else if (l.status === "Paid Leave") result.paidCount++;
+      });
 
-    return result;
-  }, [leaves]);
+      return result;
+    }, [leaves]);
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+          <div className="w-12 h-12 mx-auto border-t-2 border-b-2 border-blue-500 rounded-full animate-spin"></div>
           <p className="mt-4 text-gray-700">Loading your dashboard...</p>
         </div>
       </div>
@@ -2653,20 +2653,22 @@ const submitLeave = async () => {
   }
 
   return (
-    <div className={`transition-all duration-300 ${showModal ? 'blur-lg pointer-events-none select-none' : ''}`}>
-      <div className="md:hidden fixed top-4 left-4 z-50">
+    <div
+      className={`transition-all duration-300 ${
+        showModal ? "blur-lg pointer-events-none select-none" : ""
+      }`}
+    >
+      <div className="fixed z-50 md:hidden top-4 left-4">
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
           className="bg-[#72819a] text-white p-2 rounded-lg shadow-lg"
         >
-          {sidebarOpen ? '❌' : '☰'}
+          {sidebarOpen ? "❌" : "☰"}
         </button>
       </div>
 
-      {/* <div className="min-h-screen flex bg-gray-100"> */}
-<div className="min-h-screen flex bg-gradient-to-br from-gray-100 via-blue-50 to-blue-100">
-
-
+      {/* <div className="flex min-h-screen bg-gray-100"> */}
+      {/* <div className="flex min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-blue-100">
         <Clock />
         <Sidebar
           user={user}
@@ -2676,30 +2678,26 @@ const submitLeave = async () => {
           onLogout={handleLogout}
         />
 
-        <div className="w-full p-4 md:p-6 space-y-6">
+        <div className="w-full p-4 space-y-6 md:p-6">
           {error && (
-            <div className="bg-red-100 text-red-700 p-3 rounded mb-4 text-center">{error}</div>
+            <div className="p-3 mb-4 text-center text-red-700 bg-red-100 rounded">
+              {error}
+            </div>
           )}
-          <h1 className="text-center text-2xl md:text-3xl bg-gradient-to-r from-green-200 via-white to-green-200 inline-block px-4 py-2 rounded">
-            Welcome {user?.name || 'User'}
+          <h1 className="inline-block px-4 py-2 text-2xl text-center rounded md:text-3xl bg-gradient-to-r from-green-200 via-white to-green-200">
+            Welcome {user?.name || "User"}
           </h1>
 
           <div className="flex justify-end">
-            {/* <button
-              onClick={handleLogout}
-              disabled={isLoggingOut}
-              className={`px-4 py-2 text-white rounded ${
-                isLoggingOut ? 'bg-gray-400 cursor-not-allowed' : 'bg-red-600 hover:bg-red-700'
-              }`}
-            >
-              {isLoggingOut ? 'Logging out...' : 'Logout'}
-            </button> */}
+   
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-semibold text-gray-800">👤 Your Dashboard</h1>
+          <h1 className="text-2xl font-semibold text-gray-800 md:text-3xl">
+            👤 Your Dashboard
+          </h1>
 
-          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md mx-auto mb-6 md:mb-10">
-            <h1 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-green-700">
+          <div className="p-4 mx-auto mb-6 bg-white shadow-md md:p-6 rounded-xl md:mb-10">
+            <h1 className="mb-3 text-lg font-bold text-green-700 md:text-xl md:mb-4">
               📞 Log Customer Call Inquiry
             </h1>
             <CallInquiryForm employeeId={employee?._id} />
@@ -2727,6 +2725,67 @@ const submitLeave = async () => {
             }}
           />
         </div>
+      </div> */}
+
+      <div className="flex h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-blue-100">
+        {/* Sidebar with only vertical scroll */}
+        <div className="w-64 overflow-x-hidden overflow-y-auto border-r border-gray-200">
+          <Sidebar
+            user={user}
+            employee={employee}
+            sidebarOpen={sidebarOpen}
+            setSidebarOpen={setSidebarOpen}
+            onLogout={handleLogout}
+          />
+        </div>
+
+        {/* Main content with only vertical scroll */}
+        <div className="flex-1 p-4 space-y-6 overflow-x-hidden overflow-y-auto md:p-6">
+          {error && (
+            <div className="p-3 mb-4 text-center text-red-700 bg-red-100 rounded">
+              {error}
+            </div>
+          )}
+
+          <h1 className="inline-block px-4 py-2 text-2xl text-center rounded md:text-3xl bg-gradient-to-r from-green-200 via-white to-green-200">
+            Welcome {user?.name || "User"}
+          </h1>
+
+          <div className="flex justify-end">{/* logout button */}</div>
+
+          <h1 className="text-2xl font-semibold text-gray-800 md:text-3xl">
+            👤 Your Dashboard
+          </h1>
+
+          <Outlet
+            context={{
+              employee,
+              breakTimer,
+              topPerformers,
+              attendance,
+              leaves,
+              remainingLeaves,
+              TOTAL_ANNUAL_LEAVES,
+              salaryInfo,
+              salaryError,
+              presentDays,
+              perDaySalary,
+              calculatedSalary,
+              absentDays,
+              leaveForm,
+              setLeaveForm,
+              submitLeave,
+              user,
+            }}
+          />
+
+          <div className="p-4 mx-auto mb-6 bg-white shadow-md md:p-6 rounded-xl md:mb-10">
+            <h1 className="mb-3 text-lg font-bold text-green-700 md:text-xl md:mb-4">
+              📞 Log Customer Call Inquiry
+            </h1>
+            <CallInquiryForm employeeId={employee?._id} />
+          </div>
+        </div>
       </div>
 
       {/* <Modal
@@ -2737,14 +2796,14 @@ const submitLeave = async () => {
         overlayClassName="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
       >
         <div>
-          <h2 className="text-base md:text-xl font-bold text-center text-indigo-700 mb-3 md:mb-4">
+          <h2 className="mb-3 text-base font-bold text-center text-indigo-700 md:text-xl md:mb-4">
             🕒 Mark Your Attendance
           </h2>
-          <p className="text-xs md:text-sm text-gray-700 mb-3 md:mb-4 leading-relaxed">
+          <p className="mb-3 text-xs leading-relaxed text-gray-700 md:text-sm md:mb-4">
             By continuing, you confirm that you are starting work and will aim to complete at least{' '}
             <strong>8 hours</strong> today.
             <br />
-            <span className="text-red-500 font-medium block mt-1">
+            <span className="block mt-1 font-medium text-red-500">
               Less than 8 hrs = Half Day, less than 5 hrs = Absent.
             </span>
           </p>
@@ -2754,9 +2813,9 @@ const submitLeave = async () => {
               type="checkbox"
               checked={agree}
               onChange={() => setAgree(!agree)}
-              className="form-checkbox h-4 w-4 text-indigo-600 mt-1"
+              className="w-4 h-4 mt-1 text-indigo-600 form-checkbox"
             />
-            <span className="text-gray-800 text-xs md:text-sm font-medium">
+            <span className="text-xs font-medium text-gray-800 md:text-sm">
               I agree to mark my attendance
             </span>
           </label>
@@ -2764,7 +2823,7 @@ const submitLeave = async () => {
           <div className="flex justify-between mt-4">
             <button
               onClick={() => setShowModal(false)}
-              className="px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm text-gray-600 hover:text-gray-800"
+              className="px-3 py-1 text-xs text-gray-600 md:px-4 md:py-2 md:text-sm hover:text-gray-800"
             >
               Close
             </button>
@@ -2781,73 +2840,72 @@ const submitLeave = async () => {
         </div>
       </Modal> */}
 
-
       <Modal
-  isOpen={showModal}
-  onRequestClose={() => setShowModal(false)}  // just close
-  contentLabel="Attendance Confirmation"
-  className="w-[90%] max-w-md mx-auto bg-white rounded-lg p-4 md:p-6 shadow-lg focus:outline-none"
-  overlayClassName="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
->
-  <div>
-    <h2 className="text-base md:text-xl font-bold text-center text-indigo-700 mb-3 md:mb-4">
-      🕒 Mark Your Attendance
-    </h2>
-    <p className="text-xs md:text-sm text-gray-700 mb-3 md:mb-4 leading-relaxed">
-      By continuing, you confirm that you are starting work and will aim to complete at least{' '}
-      <strong>8 hours</strong> today.
-      <br />
-      <span className="text-red-500 font-medium block mt-1">
-        Less than 8 hrs = Half Day, less than 5 hrs = Absent.
-      </span>
-    </p>
+        isOpen={showModal}
+        onRequestClose={() => setShowModal(false)} // just close
+        contentLabel="Attendance Confirmation"
+        className="w-[90%] max-w-md mx-auto bg-white rounded-lg p-4 md:p-6 shadow-lg focus:outline-none"
+        overlayClassName="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
+      >
+        <div>
+          <h2 className="mb-3 text-base font-bold text-center text-indigo-700 md:text-xl md:mb-4">
+            🕒 Mark Your Attendance
+          </h2>
+          <p className="mb-3 text-xs leading-relaxed text-gray-700 md:text-sm md:mb-4">
+            By continuing, you confirm that you are starting work and will aim
+            to complete at least <strong>8 hours</strong> today.
+            <br />
+            <span className="block mt-1 font-medium text-red-500">
+              Less than 8 hrs = Half Day, less than 5 hrs = Absent.
+            </span>
+          </p>
 
-    <label className="flex items-start gap-2 mb-3 md:mb-4">
-      <input
-        type="checkbox"
-        checked={agree}
-        onChange={() => setAgree(!agree)}
-        className="form-checkbox h-4 w-4 text-indigo-600 mt-1"
-      />
-      <span className="text-gray-800 text-xs md:text-sm font-medium">
-        I agree to mark my attendance
-      </span>
-    </label>
+          <label className="flex items-start gap-2 mb-3 md:mb-4">
+            <input
+              type="checkbox"
+              checked={agree}
+              onChange={() => setAgree(!agree)}
+              className="w-4 h-4 mt-1 text-indigo-600 form-checkbox"
+            />
+            <span className="text-xs font-medium text-gray-800 md:text-sm">
+              I agree to mark my attendance
+            </span>
+          </label>
 
-    <div className="flex justify-between mt-4">
-      {/* Close just hides modal */}
-      {/* <button
+          <div className="flex justify-between mt-4">
+            {/* Close just hides modal */}
+            {/* <button
         onClick={() => setShowModal(false)}
-        className="px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm text-gray-600 hover:text-gray-800"
+        className="px-3 py-1 text-xs text-gray-600 md:px-4 md:py-2 md:text-sm hover:text-gray-800"
       >
         Close
       </button> */}
-      <button
-  onClick={() => {
-    setShowModal(false);
-    localStorage.clear(); // optional: clear session
-    navigate('/login');   // redirect to login
-  }}
-  className="px-5 py-2 bg-gray-200 text-gray-700 font-medium rounded-lg shadow-sm hover:bg-gray-300 hover:text-gray-900 transition-colors"
->
-  ✖ Close
-</button>
+            <button
+              onClick={() => {
+                setShowModal(false);
+                localStorage.clear(); // optional: clear session
+                navigate("/login"); // redirect to login
+              }}
+              className="px-5 py-2 font-medium text-gray-700 transition-colors bg-gray-200 rounded-lg shadow-sm hover:bg-gray-300 hover:text-gray-900"
+            >
+              ✖ Close
+            </button>
 
-
-      {/* Proceed goes to dashboard */}
-      <button
-        onClick={handleProceed}
-        disabled={!agree}
-        className={`px-4 py-2 text-sm !text-white rounded transition-all duration-300 ${
-          agree ? 'bg-indigo-600 hover:bg-indigo-700' : 'bg-indigo-300 cursor-not-allowed'
-        }`}
-      >
-        ✅ Proceed to Dashboard
-      </button>
-    </div>
-  </div>
-</Modal>
-
+            {/* Proceed goes to dashboard */}
+            <button
+              onClick={handleProceed}
+              disabled={!agree}
+              className={`px-4 py-2 text-sm !text-white rounded transition-all duration-300 ${
+                agree
+                  ? "bg-indigo-600 hover:bg-indigo-700"
+                  : "bg-indigo-300 cursor-not-allowed"
+              }`}
+            >
+              ✅ Proceed to Dashboard
+            </button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };
