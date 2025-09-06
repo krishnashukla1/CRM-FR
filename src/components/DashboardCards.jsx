@@ -49,7 +49,7 @@ const DashboardCards = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
       {stats.map((stat, index) => (
         <div
           key={index}
@@ -114,7 +114,7 @@ export default DashboardCards;
 //   ];
 
 //   return (
-//     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+//     <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
 //       {stats.map((stat, index) => (
 //         <div
 //           key={index}
@@ -204,7 +204,7 @@ export default DashboardCards;
 //       {/* Dropdown filter */}
 //      <div className="flex justify-end">
 //   <select
-//     className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150"
+//     className="px-4 py-2 text-gray-700 transition duration-150 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
 //     value={filter}
 //     onChange={(e) => setFilter(e.target.value)}
 //   >
@@ -216,7 +216,7 @@ export default DashboardCards;
 
 
 //       {/* Stats Cards */}
-//       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+//       <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
 //         {stats.map((stat, index) => (
 //           <div
 //             key={index}
@@ -235,80 +235,283 @@ export default DashboardCards;
 
 //=========================================
 
+// import { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import moment from 'moment';
+
+// const DashboardCards = () => {
+//   const [filter, setFilter] = useState('today');
+//   const [statsData, setStatsData] = useState({
+//     totalEmployees: 0,
+//     presentCount: 0,
+//     leaveCount: 0,
+//     absentCount: 0
+//   });
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState(null);
+
+//   // Get API URL from environment variables with fallback
+//   const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+
+//   useEffect(() => {
+//     const fetchStats = async () => {
+//       setLoading(true);
+//       setError(null);
+
+//       try {
+//         // Create axios instance with base configuration
+//         const api = axios.create({
+//           baseURL: API_URL,
+//           timeout: 10000,
+//           headers: {
+//             'Content-Type': 'application/json',
+//             // Add authorization header if needed
+//             // 'Authorization': `Bearer ${localStorage.getItem('token')}`
+//           }
+//         });
+
+//         // 1. Fetch total employees
+//         const empRes = await api.get('/employees');
+//         const totalEmployees = empRes.data.totalCount || empRes.data.data?.length || 0;
+
+//         // 2. Fetch attendance data
+//         const attRes = await api.get('/attendance?perPage=1000');
+//         const allAttendance = attRes.data.data || [];
+
+//         // Filter based on selected time period
+//         let filteredAttendance = allAttendance;
+        
+//         // Get current date in UTC to match database format
+//         const todayUTC = moment().utc().startOf('day');
+//         const currentMonthUTC = moment().utc().startOf('month');
+
+//         if (filter === 'today') {
+//           filteredAttendance = allAttendance.filter(a => {
+//             const attendanceDate = moment(a.date).utc().startOf('day');
+//             return attendanceDate.isSame(todayUTC, 'day');
+//           });
+//         } else if (filter === 'monthly') {
+//           filteredAttendance = allAttendance.filter(a => {
+//             const attendanceDate = moment(a.date).utc().startOf('day');
+//             return attendanceDate.isSame(currentMonthUTC, 'month');
+//           });
+//         }
+
+//         // Count statuses
+//         const present = filteredAttendance.filter(a => a.status === 'Present').length;
+//         const leave = filteredAttendance.filter(a => a.status === 'Leave').length;
+//         const absent = filteredAttendance.filter(a => a.status === 'Absent').length;
+
+//         setStatsData({
+//           totalEmployees,
+//           presentCount: present,
+//           leaveCount: leave,
+//           absentCount: absent
+//         });
+
+//       } catch (err) {
+//         console.error('Dashboard stats error:', err);
+//         setError(err.response?.data?.message || err.message || 'Failed to fetch data');
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchStats();
+//   }, [filter, API_URL]);
+
+//   const stats = [
+//     {
+//       title: 'Total Employees',
+//       value: statsData.totalEmployees,
+//       color: 'bg-blue-100',
+//       textColor: 'text-blue-800',
+//       icon: '👥'
+//     },
+//     {
+//       title: `Total Present`,
+//       value: statsData.presentCount,
+//       color: 'bg-green-100',
+//       textColor: 'text-green-800',
+//       icon: '✅'
+//     },
+//     {
+//       title: `Total Leave`,
+//       value: statsData.leaveCount,
+//       color: 'bg-yellow-100',
+//       textColor: 'text-yellow-800',
+//       icon: '🌴'
+//     },
+//     {
+//       title: `Total Absent`,
+//       value: statsData.absentCount,
+//       color: 'bg-red-100',
+//       textColor: 'text-red-800',
+//       icon: '❌'
+//     },
+//   ];
+
+//   return (
+//     <div className="space-y-4">
+//       {/* Filter dropdown */}
+//       <div className="flex justify-end">
+//         <select
+//           className="px-4 py-2 rounded-lg border border-gray-300 !text-gray-700 !bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150"
+//           value={filter}
+//           onChange={(e) => setFilter(e.target.value)}
+//           disabled={loading}
+//         >
+//           <option value="today">Today's Attendance</option>
+//           <option value="monthly">Monthly Attendance</option>
+//           <option value="all">All Attendance</option>
+//         </select>
+//       </div>
+
+//       {/* Error message */}
+//       {error && (
+//         <div className="p-4 text-red-700 rounded-lg bg-red-50">
+//           {error}
+//         </div>
+//       )}
+
+//       {/* Stats Cards */}
+//       <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
+//         {stats.map((stat, index) => (
+//           <div
+//             key={index}
+//             className={`p-6 rounded-2xl shadow-md ${stat.color} ${stat.textColor} transition-all hover:shadow-lg`}
+//           >
+//             <div className="flex items-start justify-between">
+//               <div>
+//                 <p className="text-sm opacity-80">{stat.title}</p>
+//                 <p className="text-3xl font-bold">
+//                   {loading ? '...' : stat.value}
+//                 </p>
+//               </div>
+//               <span className="text-2xl">{stat.icon}</span>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default DashboardCards;
+
+
+//-------------------------------
+ 
+ 
+ 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
-
+ 
 const DashboardCards = () => {
   const [filter, setFilter] = useState('today');
+  const [selectedMonth, setSelectedMonth] = useState(moment().format('MMM'));
+  const [selectedYear, setSelectedYear] = useState(moment().year());
   const [statsData, setStatsData] = useState({
     totalEmployees: 0,
     presentCount: 0,
     leaveCount: 0,
-    absentCount: 0
+    absentCount: 0,
+    lateCount: 0,
+    halfDayCount: 0,
+    weeklyOffCount: 0,
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  // Get API URL from environment variables with fallback
+ 
   const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
-
+ 
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const years = Array.from({ length: 5 }, (_, i) => moment().year() - i);
+ 
   useEffect(() => {
     const fetchStats = async () => {
       setLoading(true);
       setError(null);
-
+ 
       try {
-        // Create axios instance with base configuration
         const api = axios.create({
           baseURL: API_URL,
           timeout: 10000,
-          headers: {
-            'Content-Type': 'application/json',
-            // Add authorization header if needed
-            // 'Authorization': `Bearer ${localStorage.getItem('token')}`
-          }
+          headers: { 'Content-Type': 'application/json' },
         });
-
-        // 1. Fetch total employees
+ 
+        // 1. Employees
         const empRes = await api.get('/employees');
         const totalEmployees = empRes.data.totalCount || empRes.data.data?.length || 0;
-
-        // 2. Fetch attendance data
-        const attRes = await api.get('/attendance?perPage=1000');
-        const allAttendance = attRes.data.data || [];
-
-        // Filter based on selected time period
+ 
+        // 2. Fetch attendance for the selected year (use local YYYY-MM-DD)
+        let allAttendance = [];
+        let page = 1;
+        let hasMore = true;
+ 
+ 
+        const startDate = moment(`${selectedYear}-01-01`).utc().format('YYYY-MM-DD');
+        const endDate = moment(`${selectedYear}-12-31`).utc().format('YYYY-MM-DD');
+        const res = await axios.get(
+          `${API_URL}/attendance?perPage=1000&page=${page}&startDate=${startDate}&endDate=${endDate}`
+        );
+ 
+        while (hasMore) {
+          const attRes = await api.get(`/attendance?perPage=1000&page=${page}&startDate=${startDate}&endDate=${endDate}`);
+          const records = attRes.data.data || [];
+          console.log('API Response (Page', page, '):', records.length);
+          allAttendance = [...allAttendance, ...records];
+          hasMore = records.length === 1000;
+          page++;
+        }
+ 
+        console.log('Total attendance fetched:', allAttendance.length);
+ 
+        // --- IMPORTANT: use local-day comparisons (no .utc()) to avoid shifting dates across midnight ---
         let filteredAttendance = allAttendance;
-        
-        // Get current date in UTC to match database format
-        const todayUTC = moment().utc().startOf('day');
-        const currentMonthUTC = moment().utc().startOf('month');
-
+        const todayLocal = moment().startOf('day'); // local day start
+        const selectedMonthStart = moment(`${selectedMonth} ${selectedYear}`, 'MMM YYYY').startOf('month');
+        const selectedMonthEnd = selectedMonthStart.clone().endOf('month');
+ 
+        console.log('Selected Month Range (local):', selectedMonthStart.format('YYYY-MM-DD'), 'to', selectedMonthEnd.format('YYYY-MM-DD'));
+ 
         if (filter === 'today') {
-          filteredAttendance = allAttendance.filter(a => {
-            const attendanceDate = moment(a.date).utc().startOf('day');
-            return attendanceDate.isSame(todayUTC, 'day');
+          filteredAttendance = allAttendance.filter((a) => {
+            if (!a?.date) return false;
+            const attendanceDate = moment(a.date).startOf('day'); // local
+            return attendanceDate.isSame(todayLocal, 'day');
           });
         } else if (filter === 'monthly') {
-          filteredAttendance = allAttendance.filter(a => {
-            const attendanceDate = moment(a.date).utc().startOf('day');
-            return attendanceDate.isSame(currentMonthUTC, 'month');
+          filteredAttendance = allAttendance.filter((a) => {
+            if (!a?.date) return false;
+            const attendanceDate = moment(a.date).startOf('day'); // local
+            const inSelected = attendanceDate.isBetween(selectedMonthStart, selectedMonthEnd, 'day', '[]'); // inclusive
+            // debug log (remove later)
+            console.log('raw:', a.date, 'parsed-day:', attendanceDate.format('YYYY-MM-DD'), 'inSelectedMonth:', inSelected);
+            return inSelected;
           });
-        }
-
+        } // else 'all' -> don't filter
+ 
         // Count statuses
-        const present = filteredAttendance.filter(a => a.status === 'Present').length;
-        const leave = filteredAttendance.filter(a => a.status === 'Leave').length;
-        const absent = filteredAttendance.filter(a => a.status === 'Absent').length;
-
+        const present = filteredAttendance.filter((a) => a.status === 'Present').length;
+        const leave = filteredAttendance.filter((a) => a.status === 'Leave').length;
+        const absent = filteredAttendance.filter((a) => a.status === 'Absent').length;
+        const late = filteredAttendance.filter((a) => a.status === 'Late').length;
+        const halfDay = filteredAttendance.filter((a) => a.status === 'HalfDay').length;
+        const weeklyOff = filteredAttendance.filter((a) => a.status === 'Weekly Off').length;
+ 
+        console.log('Counts (present, leave, absent):', present, leave, absent);
+ 
         setStatsData({
           totalEmployees,
           presentCount: present,
           leaveCount: leave,
-          absentCount: absent
+          absentCount: absent,
+          lateCount: late,
+          halfDayCount: halfDay,
+          weeklyOffCount: weeklyOff,
         });
-
       } catch (err) {
         console.error('Dashboard stats error:', err);
         setError(err.response?.data?.message || err.message || 'Failed to fetch data');
@@ -316,77 +519,52 @@ const DashboardCards = () => {
         setLoading(false);
       }
     };
-
+ 
     fetchStats();
-  }, [filter, API_URL]);
-
+  }, [filter, selectedMonth, selectedYear, API_URL]);
+ 
   const stats = [
-    {
-      title: 'Total Employees',
-      value: statsData.totalEmployees,
-      color: 'bg-blue-100',
-      textColor: 'text-blue-800',
-      icon: '👥'
-    },
-    {
-      title: `Total Present`,
-      value: statsData.presentCount,
-      color: 'bg-green-100',
-      textColor: 'text-green-800',
-      icon: '✅'
-    },
-    {
-      title: `Total Leave`,
-      value: statsData.leaveCount,
-      color: 'bg-yellow-100',
-      textColor: 'text-yellow-800',
-      icon: '🌴'
-    },
-    {
-      title: `Total Absent`,
-      value: statsData.absentCount,
-      color: 'bg-red-100',
-      textColor: 'text-red-800',
-      icon: '❌'
-    },
+    { title: 'Total Employees', value: statsData.totalEmployees, color: 'bg-blue-100', textColor: 'text-blue-800', icon: '👥' },
+    { title: `Total Present${filter === 'monthly' ? ` (${selectedMonth} ${selectedYear})` : filter === 'today' ? ' (Today)' : ''}`, value: statsData.presentCount, color: 'bg-green-100', textColor: 'text-green-800', icon: '✅' },
+    // { title: `Total Late${filter === 'monthly' ? ` (${selectedMonth} ${selectedYear})` : filter === 'today' ? ' (Today)' : ''}`, value: statsData.lateCount, color: 'bg-blue-200', textColor: 'text-blue-800', icon: '⏰' },
+    // { title: `Total Half Day${filter === 'monthly' ? ` (${selectedMonth} ${selectedYear})` : filter === 'today' ? ' (Today)' : ''}`, value: statsData.halfDayCount, color: 'bg-indigo-100', textColor: 'text-indigo-800', icon: '🌗' },
+    { title: `Total Absent${filter === 'monthly' ? ` (${selectedMonth} ${selectedYear})` : filter === 'today' ? ' (Today)' : ''}`, value: statsData.absentCount, color: 'bg-red-100', textColor: 'text-red-800', icon: '❌' },
+    { title: `Total Leave${filter === 'monthly' ? ` (${selectedMonth} ${selectedYear})` : filter === 'today' ? ' (Today)' : ''}`, value: statsData.leaveCount, color: 'bg-yellow-100', textColor: 'text-yellow-800', icon: '🌴' },
+    // { title: `Total Weekly Off${filter === 'monthly' ? ` (${selectedMonth} ${selectedYear})` : filter === 'today' ? ' (Today)' : ''}`, value: statsData.weeklyOffCount, color: 'bg-purple-100', textColor: 'text-purple-800', icon: '🌙' },
   ];
-
+ 
   return (
     <div className="space-y-4">
-      {/* Filter dropdown */}
-      <div className="flex justify-end">
-        <select
-          className="px-4 py-2 rounded-lg border border-gray-300 !text-gray-700 !bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150"
-          value={filter}
-          onChange={(e) => setFilter(e.target.value)}
-          disabled={loading}
-        >
+      <div className="flex justify-end space-x-3">
+        <select value={filter} onChange={(e) => setFilter(e.target.value)} disabled={loading} className="px-4 py-2 bg-black border rounded-lg">
           <option value="today">Today's Attendance</option>
           <option value="monthly">Monthly Attendance</option>
           <option value="all">All Attendance</option>
         </select>
+ 
+        {filter === 'monthly' && (
+          <>
+            <select value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)} disabled={loading} className="px-4 py-2 bg-black border rounded-lg"
+              >
+              {months.map((m) => <option key={m} value={m}>{m}</option>)}
+            </select>
+ 
+            <select value={selectedYear} onChange={(e) => setSelectedYear(Number(e.target.value))} disabled={loading} className="px-4 py-2 bg-black border rounded-lg">
+              {years.map((y) => <option key={y} value={y}>{y}</option>)}
+            </select>
+          </>
+        )}
       </div>
-
-      {/* Error message */}
-      {error && (
-        <div className="p-4 bg-red-50 text-red-700 rounded-lg">
-          {error}
-        </div>
-      )}
-
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        {stats.map((stat, index) => (
-          <div
-            key={index}
-            className={`p-6 rounded-2xl shadow-md ${stat.color} ${stat.textColor} transition-all hover:shadow-lg`}
-          >
-            <div className="flex justify-between items-start">
+ 
+      {error && <div className="p-4 text-red-700 rounded-lg bg-red-50">{error}</div>}
+ 
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
+        {stats.map((stat, i) => (
+          <div key={i} className={`p-6 rounded-2xl shadow-md ${stat.color} ${stat.textColor}`}>
+            <div className="flex items-start justify-between">
               <div>
                 <p className="text-sm opacity-80">{stat.title}</p>
-                <p className="text-3xl font-bold">
-                  {loading ? '...' : stat.value}
-                </p>
+                <p className="text-3xl font-bold">{loading ? '...' : stat.value}</p>
               </div>
               <span className="text-2xl">{stat.icon}</span>
             </div>
@@ -396,5 +574,8 @@ const DashboardCards = () => {
     </div>
   );
 };
-
+ 
 export default DashboardCards;
+
+ 
+ 
