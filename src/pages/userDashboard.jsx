@@ -2840,7 +2840,7 @@ const UserDashboard = () => {
         </div>
       </Modal> */}
 
-      <Modal
+      {/* <Modal
         isOpen={showModal}
         onRequestClose={() => setShowModal(false)} // just close
         contentLabel="Attendance Confirmation"
@@ -2873,13 +2873,7 @@ const UserDashboard = () => {
           </label>
 
           <div className="flex justify-between mt-4">
-            {/* Close just hides modal */}
-            {/* <button
-        onClick={() => setShowModal(false)}
-        className="px-3 py-1 text-xs text-gray-600 md:px-4 md:py-2 md:text-sm hover:text-gray-800"
-      >
-        Close
-      </button> */}
+          
             <button
               onClick={() => {
                 setShowModal(false);
@@ -2891,7 +2885,7 @@ const UserDashboard = () => {
               ✖ Close
             </button>
 
-            {/* Proceed goes to dashboard */}
+           
             <button
               onClick={handleProceed}
               disabled={!agree}
@@ -2905,7 +2899,76 @@ const UserDashboard = () => {
             </button>
           </div>
         </div>
-      </Modal>
+      </Modal> */}
+      
+
+
+
+    
+ 
+ 
+<Modal
+  isOpen={showModal}
+  shouldCloseOnOverlayClick={false}  // Prevent outside click
+  shouldCloseOnEsc={false}           // Optional: disable ESC key
+  onRequestClose={() => {}}           // Do nothing
+  contentLabel="Attendance Confirmation"
+  className="w-[90%] max-w-md mx-auto bg-white rounded-lg p-4 md:p-6 shadow-lg focus:outline-none"
+  overlayClassName="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
+>
+  <div>
+    <h2 className="mb-3 text-base font-bold text-center text-indigo-700 md:text-xl md:mb-4">
+      🕒 Mark Your Attendance
+    </h2>
+    <p className="mb-3 text-xs leading-relaxed text-gray-700 md:text-sm md:mb-4">
+      By continuing, you confirm that you are starting work and will aim to complete at least{' '}
+      <strong>8 hours</strong> today.
+      <br />
+      <span className="block mt-1 font-medium text-red-500">
+        Less than 8 hrs = Half Day, less than 5 hrs = Absent.
+      </span>
+    </p>
+ 
+    <label className="flex items-start gap-2 mb-3 cursor-pointer md:mb-4">
+      <input
+        type="checkbox"
+        checked={agree}
+        onChange={() => setAgree(!agree)}
+        className="w-4 h-4 mt-1 text-indigo-600 form-checkbox"
+      />
+      <span className="text-xs font-medium text-gray-800 md:text-sm">
+        I agree to mark my attendance
+      </span>
+    </label>
+ 
+    <div className="flex justify-between mt-4">
+      {/* Close button */}
+      <button
+        onClick={() => {
+          setShowModal(false);
+          localStorage.clear(); // Clear session
+          navigate('/login');   // Redirect to login
+        }}
+        className="px-5 py-2 font-medium text-gray-700 transition-colors bg-gray-200 rounded-lg shadow-sm hover:bg-gray-300 hover:text-gray-900"
+      >
+        ✖ Close
+      </button>
+ 
+      {/* Proceed button */}
+      <button
+        onClick={handleProceed}
+        disabled={!agree}
+        className={`px-4 py-2 text-sm !text-white rounded transition-all duration-300 ${
+          agree
+            ? 'bg-indigo-600 hover:bg-indigo-700 cursor-pointer'
+            : 'bg-indigo-300 cursor-not-allowed'
+        }`}
+      >
+        ✅ Proceed to Dashboard
+      </button>
+    </div>
+  </div>
+</Modal>
     </div>
   );
 };
