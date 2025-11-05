@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const AdminPasswordReset = () => {
@@ -8,6 +9,7 @@ const AdminPasswordReset = () => {
   const [status, setStatus] = useState('');
   const [loggedInEmail, setLoggedInEmail] = useState('');
   const [allowed, setAllowed] = useState(false);
+   const [showNewPassword, setShowNewPassword] = useState(false);
 
   useEffect(() => {
     // const user = JSON.parse(localStorage.getItem('user'));
@@ -78,7 +80,7 @@ const AdminPasswordReset = () => {
             />
           </div>
 
-          <div>
+          {/* <div>
             <label className="block mb-1 text-sm font-semibold text-gray-700">
               New Password
             </label>
@@ -90,7 +92,30 @@ const AdminPasswordReset = () => {
               onChange={(e) => setNewPassword(e.target.value)}
               required
             />
-          </div>
+          </div> */}
+
+           <div className="relative">
+      <label className="block mb-1 text-sm font-semibold text-gray-700">
+        New Password
+      </label>
+
+      <input
+        type={showNewPassword ? "text" : "password"}
+        className="w-full px-4 py-2 pr-10 border border-blue-300 rounded-lg shadow-sm focus:ring focus:ring-blue-200"
+        placeholder="Enter new password"
+        value={newPassword}
+        onChange={(e) => setNewPassword(e.target.value)}
+        required
+      />
+
+      {/* 👁️ Eye Icon */}
+      <div
+        className="absolute text-gray-600 cursor-pointer right-3 top-9 hover:text-blue-500"
+        onClick={() => setShowNewPassword(!showNewPassword)}
+      >
+        {showNewPassword ? <FaEyeSlash /> : <FaEye />}
+      </div>
+    </div>
 
           <button
             type="submit"
