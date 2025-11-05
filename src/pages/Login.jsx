@@ -84,12 +84,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -393,7 +395,7 @@ const Login = () => {
           </div>
 
           {/* Password */}
-          <div className="relative">
+          {/* <div className="relative">
             <input
               name="password"
               type="password"
@@ -408,12 +410,39 @@ const Login = () => {
             {errors.password && (
               <p className="mt-1 text-sm text-red-300">{errors.password}</p>
             )}
-          </div>
+          </div> */}
+
+           <div className="relative">
+      <input
+        name="password"
+        type={showPassword ? "text" : "password"}
+        value={form.password}
+        onChange={handleChange}
+        placeholder=" "
+        className="w-full px-4 py-3 !text-black placeholder-transparent rounded-lg peer bg-white/80 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      />
+      <label className="absolute left-4 -top-2.5 text-gray-600 text-sm bg-white/80 px-1 rounded transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-yellow-500">
+        Password *
+      </label>
+
+      {/* 👁️ Eye Icon */}
+      <div
+        className="absolute text-gray-600 cursor-pointer right-4 top-3 hover:text-yellow-500"
+        onClick={() => setShowPassword(!showPassword)}
+      >
+        {showPassword ? <FaEyeSlash /> : <FaEye />}
+      </div>
+
+      {errors.password && (
+        <p className="mt-1 text-sm text-red-300">{errors.password}</p>
+      )}
+    </div>
+  
 
           {/* Submit */}
           <button
             type="submit"
-            className="w-full py-3 font-bold text-black transition-all duration-300 bg-yellow-400 rounded-lg shadow-md hover:bg-yellow-500 hover:scale-105"
+            className="w-full py-3 font-bold text-black transition-all duration-300 bg-yellow-400 rounded-lg shadow-md cursor-pointer hover:bg-yellow-500 hover:scale-105"
           >
             🚀 Login to Dashboard
           </button>
