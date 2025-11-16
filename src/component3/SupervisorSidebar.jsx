@@ -107,7 +107,7 @@
 //         <img
 //           src={display.photoUrl}
 //           alt={display.name}
-//           className="w-24 h-24 rounded-full border-4 border-white shadow-md mb-4 object-cover"
+//           className="object-cover w-24 h-24 mb-4 border-4 border-white rounded-full shadow-md"
 //         />
 //       )}
 
@@ -138,7 +138,7 @@
 //           {/* <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/dashboard"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               🏠 Dashboard
@@ -147,7 +147,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/employees"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               👥 Employees
@@ -156,7 +156,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/login-status"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               ✅ Login Status
@@ -165,7 +165,7 @@
 //           {/* <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/performance"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📈 Performance
@@ -174,7 +174,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/attendance"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📅 Attendance
@@ -183,7 +183,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/tasks"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📅 Tasks
@@ -192,7 +192,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/leave"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📝 Leave
@@ -201,7 +201,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/weekly-off"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📆 Weekly Off
@@ -216,7 +216,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/top-performers"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               🏆 Top 3 Performers
@@ -225,7 +225,7 @@
 //           {/* <li>
 //             <Link
 //               to="/supervisor-dashboard/user/attendance"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📅 Attendance
@@ -235,7 +235,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/attendance"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📅 Your Attendance
@@ -244,7 +244,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/leaves"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📝 Leaves
@@ -253,7 +253,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/weekly-off"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📆 Weekly Off
@@ -262,7 +262,7 @@
 //           {/* <li>
 //             <Link
 //               to="/supervisor-dashboard/user/salary"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               💰 Salary Details
@@ -271,7 +271,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/leaves/request-leave"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               ➕ Request New Leave
@@ -281,7 +281,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/break-time"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               ⏱️ Break Time
@@ -290,7 +290,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/my-tasks"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📋 Assign Tasks
@@ -299,7 +299,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/policy"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📜 Policy
@@ -310,7 +310,7 @@
 
 //       <button
 //         onClick={initiateLogout}
-//         className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded shadow font-semibold"
+//         className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow hover:bg-red-600"
 //       >
 //         Logout
 //       </button>
@@ -436,7 +436,7 @@
 //         <img
 //           src={display.photoUrl}
 //           alt={display.name}
-//           className="w-24 h-24 rounded-full border-4 border-white shadow-md mb-4 object-cover"
+//           className="object-cover w-24 h-24 mb-4 border-4 border-white rounded-full shadow-md"
 //         />
 //       )}
 
@@ -470,7 +470,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/employees"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               👥 Employees
@@ -479,7 +479,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/login-status"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               ✅ Login Status
@@ -488,7 +488,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/attendance"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📅 Attendance
@@ -497,7 +497,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/tasks"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📅 Tasks
@@ -506,7 +506,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/leave"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📝 Leave
@@ -515,7 +515,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/admin/weekly-off"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📆 Weekly Off
@@ -530,7 +530,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/top-performers"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               🏆 Top 3 Performers
@@ -539,7 +539,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/attendance"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📅 Your Attendance
@@ -548,7 +548,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/leaves"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📝 Leaves
@@ -557,7 +557,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/weekly-off"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📆 Weekly Off
@@ -566,7 +566,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/leaves/request-leave"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               ➕ Request New Leave
@@ -575,7 +575,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/break-time"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               ⏱️ Break Time
@@ -584,7 +584,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/my-tasks"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📋 Assign Tasks
@@ -593,7 +593,7 @@
 //           <li>
 //             <Link
 //               to="/supervisor-dashboard/user/policy"
-//               className="hover:text-yellow-300 block"
+//               className="block hover:text-yellow-300"
 //               onClick={() => setSidebarOpen(false)}
 //             >
 //               📜 Policy
@@ -604,7 +604,7 @@
 
 //       <button
 //         onClick={initiateLogout}
-//         className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded shadow font-semibold"
+//         className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow hover:bg-red-600"
 //       >
 //         Logout
 //       </button>
@@ -724,7 +724,7 @@ const SupervisorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
         <img
           src={display.photoUrl}
           alt={display.name}
-          className="w-24 h-24 rounded-full border-4 border-white shadow-md mb-4 object-cover"
+          className="object-cover w-24 h-24 mb-4 border-4 border-white rounded-full shadow-md"
         />
       )}
 
@@ -742,32 +742,32 @@ const SupervisorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
 
         <h3 className="text-lg font-semibold">Admin Controls</h3>
         <ul className="space-y-2 text-sm font-semibold text-white">
-          <li><Link to="/supervisor-dashboard/admin/employees" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>👥 Employees</Link></li>
-          <li><Link to="/supervisor-dashboard/admin/login-status" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>✅ Login Status</Link></li>
-          <li><Link to="/supervisor-dashboard/admin/attendance" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📅 Attendance</Link></li>
-          <li><Link to="/supervisor-dashboard/admin/tasks" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📅 Tasks</Link></li>
-          <li><Link to="/supervisor-dashboard/admin/leave" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📝 Leave</Link></li>
-          <li><Link to="/supervisor-dashboard/admin/weekly-off" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📆 Weekly Off</Link></li>
+          <li><Link to="/supervisor-dashboard/admin/employees" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>👥 Employees</Link></li>
+          <li><Link to="/supervisor-dashboard/admin/login-status" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>✅ Login Status</Link></li>
+          <li><Link to="/supervisor-dashboard/admin/attendance" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📅 Attendance</Link></li>
+          <li><Link to="/supervisor-dashboard/admin/tasks" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📅 Tasks</Link></li>
+          <li><Link to="/supervisor-dashboard/admin/leave" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📝 Leave</Link></li>
+          <li><Link to="/supervisor-dashboard/admin/weekly-off" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📆 Weekly Off</Link></li>
         </ul>
 
         <hr className="my-4 border-white/30" />
 
         <h3 className="text-lg font-semibold">Supervisor Controls</h3>
         <ul className="space-y-2 text-sm font-semibold text-white">
-          <li><Link to="/supervisor-dashboard/user/top-performers" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>🏆 Top 3 Performers</Link></li>
-          <li><Link to="/supervisor-dashboard/attendance" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📅 Your Attendance</Link></li>
-          <li><Link to="/supervisor-dashboard/user/leaves" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📝 Leaves</Link></li>
-          <li><Link to="/supervisor-dashboard/user/weekly-off" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📆 Weekly Off</Link></li>
-          <li><Link to="/supervisor-dashboard/user/leaves/request-leave" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>➕ Request New Leave</Link></li>
-          <li><Link to="/supervisor-dashboard/user/break-time" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>⏱️ Break Time</Link></li>
-          <li><Link to="/supervisor-dashboard/user/my-tasks" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📋 Assign Tasks</Link></li>
-          <li><Link to="/supervisor-dashboard/user/policy" className="hover:text-yellow-300 block" onClick={() => setSidebarOpen(false)}>📜 Policy</Link></li>
+          <li><Link to="/supervisor-dashboard/user/top-performers" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>🏆 Top 3 Performers</Link></li>
+          <li><Link to="/supervisor-dashboard/attendance" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📅 Your Attendance</Link></li>
+          <li><Link to="/supervisor-dashboard/user/leaves" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📝 Leaves</Link></li>
+          <li><Link to="/supervisor-dashboard/user/weekly-off" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📆 Weekly Off</Link></li>
+          <li><Link to="/supervisor-dashboard/user/leaves/request-leave" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>➕ Request New Leave</Link></li>
+          <li><Link to="/supervisor-dashboard/user/break-time" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>⏱️ Break Time</Link></li>
+          <li><Link to="/supervisor-dashboard/user/my-tasks" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📋 Assign Tasks</Link></li>
+          <li><Link to="/supervisor-dashboard/user/policy" className="block hover:text-yellow-300" onClick={() => setSidebarOpen(false)}>📜 Policy</Link></li>
         </ul>
       </div>
 
       <button
         onClick={initiateLogout}
-        className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded shadow font-semibold"
+        className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow hover:bg-red-600"
       >
         Logout
       </button>
@@ -882,34 +882,34 @@ export default SupervisorSidebar;
 //           <img
 //             src={display.photoUrl}
 //             alt={display.name}
-//             className="w-28 h-28 rounded-full border-4 border-white/30 shadow-lg mb-4 object-cover hover:border-white/60 transition-all duration-300"
+//             className="object-cover mb-4 transition-all duration-300 border-4 rounded-full shadow-lg w-28 h-28 border-white/30 hover:border-white/60"
 //           />
 //         )}
 
-//         <h2 className="text-2xl font-bold text-center text-white tracking-wide">
+//         <h2 className="text-2xl font-bold tracking-wide text-center text-white">
 //           {display.name}
 //         </h2>
-//         <p className="text-sm text-center text-white/80 mt-1 font-light">
+//         <p className="mt-1 text-sm font-light text-center text-white/80">
 //           {display.email}
 //         </p>
 //       </div>
 
 //       {/* Info Section */}
-//       <div className="w-full mb-6 space-y-3 text-sm bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+//       <div className="w-full p-4 mb-6 space-y-3 text-sm rounded-lg bg-white/10 backdrop-blur-sm">
 //         <p className="flex items-center">
-//           <span className="font-medium mr-2">📌</span> 
+//           <span className="mr-2 font-medium">📌</span> 
 //           <span>{display.role}</span>
 //         </p>
 //         <p className="flex items-center">
-//           <span className="font-medium mr-2">🆔</span> 
+//           <span className="mr-2 font-medium">🆔</span> 
 //           <span>{display.employeeId}</span>
 //         </p>
 //         <p className="flex items-center">
-//           <span className="font-medium mr-2">🔑</span> 
+//           <span className="mr-2 font-medium">🔑</span> 
 //           <span>{display.userId}</span>
 //         </p>
 //         <p className="flex items-center">
-//           <span className="font-medium mr-2">📅</span>
+//           <span className="mr-2 font-medium">📅</span>
 //           <span>
 //             {display.dateOfJoining
 //               ? new Date(display.dateOfJoining).toLocaleDateString("en-GB")
@@ -919,70 +919,70 @@ export default SupervisorSidebar;
 //       </div>
 
 //       {/* Navigation Sections */}
-//       <div className="w-full flex-1 overflow-y-auto custom-scrollbar">
+//       <div className="flex-1 w-full overflow-y-auto custom-scrollbar">
 //         {/* Admin Controls */}
 //         <div className="mb-6">
-//           <h3 className="text-lg font-semibold mb-3 pb-2 border-b border-white/20 tracking-wide">
+//           <h3 className="pb-2 mb-3 text-lg font-semibold tracking-wide border-b border-white/20">
 //             Admin Controls
 //           </h3>
 //           <ul className="space-y-2">
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/admin/employees"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">👨‍💼</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">👨‍💼</span>
 //                 <span>Employees</span>
 //               </Link>
 //             </li>
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/admin/login-status"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">✅</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">✅</span>
 //                 <span>Login Status</span>
 //               </Link>
 //             </li>
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/admin/attendance"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">📅</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">📅</span>
 //                 <span>Attendance</span>
 //               </Link>
 //             </li>
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/admin/tasks"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">📝</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">📝</span>
 //                 <span>Tasks</span>
 //               </Link>
 //             </li>
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/admin/leave"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">📋</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">📋</span>
 //                 <span>Leave</span>
 //               </Link>
 //             </li>
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/admin/weekly-off"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">📆</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">📆</span>
 //                 <span>Weekly Off</span>
 //               </Link>
 //             </li>
@@ -991,77 +991,77 @@ export default SupervisorSidebar;
 
 //         {/* Supervisor Controls */}
 //         <div className="mb-6">
-//           <h3 className="text-lg font-semibold mb-3 pb-2 border-b border-white/20 tracking-wide">
+//           <h3 className="pb-2 mb-3 text-lg font-semibold tracking-wide border-b border-white/20">
 //             Supervisor Controls
 //           </h3>
 //           <ul className="space-y-2">
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/user/top-performers"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">🏆</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">🏆</span>
 //                 <span>Top 3 Performers</span>
 //               </Link>
 //             </li>
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/attendance"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">📊</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">📊</span>
 //                 <span>Your Attendance</span>
 //               </Link>
 //             </li>
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/user/leaves"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">📅</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">📅</span>
 //                 <span>Leaves</span>
 //               </Link>
 //             </li>
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/user/weekly-off"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">⏸️</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">⏸️</span>
 //                 <span>Weekly Off</span>
 //               </Link>
 //             </li>
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/user/leaves/request-leave"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">➕</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">➕</span>
 //                 <span>Request New Leave</span>
 //               </Link>
 //             </li>
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/user/my-tasks"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">📋</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">📋</span>
 //                 <span>Assign Tasks</span>
 //               </Link>
 //             </li>
 //             <li>
 //               <Link
 //                 to="/supervisor-dashboard/user/policy"
-//                 className="flex items-center px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+//                 className="flex items-center px-3 py-2 transition-all duration-200 rounded-lg hover:bg-white/10 group"
 //                 onClick={() => setSidebarOpen(false)}
 //               >
-//                 <span className="mr-2 group-hover:scale-110 transition-transform">📜</span>
+//                 <span className="mr-2 transition-transform group-hover:scale-110">📜</span>
 //                 <span>Policy</span>
 //               </Link>
 //             </li>
@@ -1076,7 +1076,7 @@ export default SupervisorSidebar;
 //       >
 //         <svg
 //           xmlns="http://www.w3.org/2000/svg"
-//           className="h-5 w-5 mr-2"
+//           className="w-5 h-5 mr-2"
 //           fill="none"
 //           viewBox="0 0 24 24"
 //           stroke="currentColor"

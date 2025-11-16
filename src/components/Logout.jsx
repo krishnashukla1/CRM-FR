@@ -20,7 +20,7 @@ const Logout = ({ onLogout, className }) => {
     // }
 
      if (onLogout) {
-      onLogout(<div className="bg-blue-500 text-white text-center px-4 py-3 rounded shadow-lg font-medium">
+      onLogout(<div className="px-4 py-3 font-medium text-center text-white bg-blue-500 rounded shadow-lg">
      ✅ You have successfully logged out.
    </div>);
       
@@ -28,7 +28,7 @@ const Logout = ({ onLogout, className }) => {
 //-------------------------or-----------------------
 //     if (onLogout) {
 //   onLogout(
-//     <div className="text-4xl font-extrabold text-green-200 bg-black bg-opacity-80 px-12 py-8 rounded-2xl shadow-2xl text-center">
+//     <div className="px-12 py-8 text-4xl font-extrabold text-center text-green-200 bg-black shadow-2xl bg-opacity-80 rounded-2xl">
 //       ✅ You have successfully logged out.
 //     </div>
 //   );
@@ -36,8 +36,8 @@ const Logout = ({ onLogout, className }) => {
 //--------------------------or----------------------
 // if (onLogout) {
 //   onLogout(
-//     <div className="fixed inset-0 flex items-center justify-center z-50">
-//       <div className="text-3xl font-bold text-green-700 bg-white px-10 py-6 rounded-xl shadow-lg border border-gray-300">
+//     <div className="fixed inset-0 z-50 flex items-center justify-center">
+//       <div className="px-10 py-6 text-3xl font-bold text-green-700 bg-white border border-gray-300 shadow-lg rounded-xl">
 //         ✅ You have successfully logged out.
 //       </div>
 //     </div>
@@ -46,8 +46,8 @@ const Logout = ({ onLogout, className }) => {
 //------------------------or-----------------------
 // if (onLogout) {
 //   onLogout(
-//    <div className="fixed top-4 left-1/2 transform -translate-x-1/2 w-full max-w-md z-50">
-//   <div className="bg-green-500 text-white text-center px-4 py-3 rounded shadow-lg font-medium">
+//    <div className="fixed z-50 w-full max-w-md transform -translate-x-1/2 top-4 left-1/2">
+//   <div className="px-4 py-3 font-medium text-center text-white bg-green-500 rounded shadow-lg">
 //     ✅ You have successfully logged out.
 //   </div>
 // </div>
@@ -67,7 +67,7 @@ const Logout = ({ onLogout, className }) => {
   return (
     <button
       onClick={handleClick}
-      className={`bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded ${className}`}
+      className={`cursor-pointer bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded ${className}`}
     >
       Logout
     </button>
@@ -179,10 +179,10 @@ export default Logout;
 //   };
 
 //   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-//       {/* <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-md w-full">
-//         <h2 className="text-xl font-semibold text-gray-800 mb-4">Daily Report</h2>
-//         <p className="text-gray-600 mb-6">
+//     <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
+//       {/* <div className="w-full max-w-md p-6 text-center bg-white rounded-lg shadow-lg">
+//         <h2 className="mb-4 text-xl font-semibold text-gray-800">Daily Report</h2>
+//         <p className="mb-6 text-gray-600">
 //           Thank you for your work today, {employee?.name || 'Employee'}.
 //         </p>
 
@@ -190,13 +190,13 @@ export default Logout;
 //           <>
 //             <button
 //               onClick={handleDownloadReport}
-//               className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-3 w-full transition-colors"
+//               className="w-full px-4 py-2 mb-3 text-white transition-colors bg-blue-500 rounded hover:bg-blue-600"
 //             >
 //               ⬇️ Download Report
 //             </button>
 //             <button
 //               onClick={handleSendEmail}
-//               className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full transition-colors"
+//               className="w-full px-4 py-2 text-white transition-colors bg-green-500 rounded hover:bg-green-600"
 //             >
 //               📧 Send Report to Email
 //             </button>
@@ -206,14 +206,14 @@ export default Logout;
 //                 setReportActionTaken(true);
 //                 startFinalLogout();
 //               }}
-//               className="mt-3 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 w-full transition-colors"
+//               className="w-full px-4 py-2 mt-3 text-white transition-colors bg-gray-500 rounded hover:bg-gray-600"
 //             >
 //               Skip and Logout
 //             </button>
 //           </>
 //         ) : (
 //           <div className="py-4">
-//             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-3"></div>
+//             <div className="w-8 h-8 mx-auto mb-3 border-b-2 border-blue-500 rounded-full animate-spin"></div>
 //             <p className="text-gray-700">Logging you out...</p>
 //           </div>
 //         )}
@@ -273,17 +273,17 @@ export default Logout;
 //   };
 
 //   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-//       <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-md w-full">
-//         <h2 className="text-xl font-semibold text-gray-800 mb-4">Logout</h2>
+//     <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
+//       <div className="w-full max-w-md p-6 text-center bg-white rounded-lg shadow-lg">
+//         <h2 className="mb-4 text-xl font-semibold text-gray-800">Logout</h2>
 //         <button
 //           onClick={handleLogout}
-//           className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded w-full transition-colors"
+//           className="w-full px-4 py-2 text-white transition-colors bg-red-500 rounded hover:bg-red-600"
 //         >
 //           Logout
 //         </button>
 //         {statusMessage && (
-//           <p className="mt-4 text-green-600 text-sm">{statusMessage}</p>
+//           <p className="mt-4 text-sm text-green-600">{statusMessage}</p>
 //         )}
 //       </div>
 //     </div>
