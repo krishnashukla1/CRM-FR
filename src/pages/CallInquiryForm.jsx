@@ -72,17 +72,17 @@
 //   };
 
 //   return (
-//     <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-//       {/* <h2 className="text-xl font-bold mb-4 text-green-700">📞 Log Customer Call Inquiry</h2> */}
+//     <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-lg">
+//       {/* <h2 className="mb-4 text-xl font-bold text-green-700">📞 Log Customer Call Inquiry</h2> */}
 
-//       {message && <div className="bg-green-100 text-green-800 p-2 rounded mb-3">{message}</div>}
-//       {error && <div className="bg-red-100 text-red-700 p-2 rounded mb-3">{error}</div>}
+//       {message && <div className="p-2 mb-3 text-green-800 bg-green-100 rounded">{message}</div>}
+//       {error && <div className="p-2 mb-3 text-red-700 bg-red-100 rounded">{error}</div>}
 
-//       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//       <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 md:grid-cols-2">
 //         <div>
 //           <label className="block font-medium">Reason for Call</label>
 //           <select name="reasonForCall" value={form.reasonForCall} onChange={handleChange} required
-//             className="w-full border px-3 py-2 rounded">
+//             className="w-full px-3 py-2 border rounded">
 //             <option value="">-- Select --</option>
 //             <option>Flight Inquiry</option>
 //             <option>Hotel Inquiry</option>
@@ -96,7 +96,7 @@
 //         <div>
 //           <label className="block font-medium">Type of Call</label>
 //           <select name="typeOfCall" value={form.typeOfCall} onChange={handleChange} required
-//             className="w-full border px-3 py-2 rounded">
+//             className="w-full px-3 py-2 border rounded">
 //             <option value="">-- Select --</option>
 //             <option>Sales Inquiry</option>
 //             <option>Post-Sale Inquiry</option>
@@ -114,7 +114,7 @@
 //               value={form.callCategory}
 //               onChange={handleChange}
 //               required
-//               className="w-full border px-3 py-2 rounded"
+//               className="w-full px-3 py-2 border rounded"
 //             >
 //               <option value="">-- Select --</option>
 //               <option value="Flight">Flight</option>
@@ -134,7 +134,7 @@
 //             onChange={handleChange}
 //             required
 //             rows="3"
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="What was discussed during the call?"
 //           ></textarea>
 //         </div>
@@ -142,7 +142,7 @@
 //         <div>
 //           <label className="block font-medium">Was Sale Converted?</label>
 //           <select name="wasSaleConverted" value={form.wasSaleConverted} onChange={handleChange} required
-//             className="w-full border px-3 py-2 rounded">
+//             className="w-full px-3 py-2 border rounded">
 //             <option value="">-- Select --</option>
 //             <option>Yes</option>
 //             <option>No</option>
@@ -158,7 +158,7 @@
 //               name="profitAmount"
 //               value={form.profitAmount}
 //               onChange={handleChange}
-//               className="w-full border px-3 py-2 rounded"
+//               className="w-full px-3 py-2 border rounded"
 //               placeholder="Enter amount"
 //               required
 //             />
@@ -172,7 +172,7 @@
 //               name="reasonForNoSale"
 //               value={form.reasonForNoSale}
 //               onChange={handleChange}
-//               className="w-full border px-3 py-2 rounded"
+//               className="w-full px-3 py-2 border rounded"
 //               required
 //             >
 //               <option value="">-- Select --</option>
@@ -192,7 +192,7 @@
 //             value={form.customerName}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Full Name"
 //           />
 //         </div>
@@ -205,7 +205,7 @@
 //             value={form.customerEmail}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Email"
 //           />
 //         </div>
@@ -218,7 +218,7 @@
 //             value={form.customerPhone}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Phone Number"
 //           />
 //         </div>
@@ -226,7 +226,7 @@
 //         <div>
 //           <label className="block font-medium">Language Preference</label>
 //           <select name="language" value={form.language} onChange={handleChange} required
-//             className="w-full border px-3 py-2 rounded">
+//             className="w-full px-3 py-2 border rounded">
 //             <option value="">-- Select --</option>
 //             <option>English</option>
 //             <option>Spanish</option>
@@ -234,10 +234,10 @@
 //           </select>
 //         </div>
 
-//         <div className="col-span-1 md:col-span-2 mt-4">
+//         <div className="col-span-1 mt-4 md:col-span-2">
 //           <button
 //             type="submit"
-//             className="w-full bg-green-600 hover:bg-green-700 transition text-white font-semibold py-2 px-4 rounded"
+//             className="w-full px-4 py-2 font-semibold text-white transition bg-green-600 rounded hover:bg-green-700"
 //           >
 //             Submit Call Log
 //           </button>
@@ -373,14 +373,14 @@
 
 
 //   return (
-//     <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-//       {message && <div className="bg-green-100 text-green-800 p-2 rounded mb-3">{message}</div>}
-//       {error && <div className="bg-red-100 text-red-700 p-2 rounded mb-3">{error}</div>}
+//     <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-lg">
+//       {message && <div className="p-2 mb-3 text-green-800 bg-green-100 rounded">{message}</div>}
+//       {error && <div className="p-2 mb-3 text-red-700 bg-red-100 rounded">{error}</div>}
 
-//       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//       <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 md:grid-cols-2">
 //         <div>
 //           <label className="block font-medium">Reason for Call</label>
-//           <select name="reasonForCall" value={form.reasonForCall} onChange={handleChange} required className="w-full border px-3 py-2 rounded">
+//           <select name="reasonForCall" value={form.reasonForCall} onChange={handleChange} required className="w-full px-3 py-2 border rounded">
 //             <option value="">-- Select --</option>
 //             <option>Flight Inquiry</option>
 //             <option>Hotel Inquiry</option>
@@ -393,7 +393,7 @@
 
 //         <div>
 //           <label className="block font-medium">Type of Call</label>
-//           <select name="typeOfCall" value={form.typeOfCall} onChange={handleChange} required className="w-full border px-3 py-2 rounded">
+//           <select name="typeOfCall" value={form.typeOfCall} onChange={handleChange} required className="w-full px-3 py-2 border rounded">
 //             <option value="">-- Select --</option>
 //             <option>Sales Inquiry</option>
 //             <option>Post-Sale Inquiry</option>
@@ -406,7 +406,7 @@
 //         {form.typeOfCall === 'Sales Inquiry' && (
 //           <div>
 //             <label className="block font-medium">Call Category</label>
-//             <select name="callCategory" value={form.callCategory} onChange={handleChange} required className="w-full border px-3 py-2 rounded">
+//             <select name="callCategory" value={form.callCategory} onChange={handleChange} required className="w-full px-3 py-2 border rounded">
 //               <option value="">-- Select --</option>
 //               <option value="Flight">Flight</option>
 //               <option value="Hotel">Hotel</option>
@@ -425,14 +425,14 @@
 //             onChange={handleChange}
 //             required
 //             rows="3"
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="What was discussed during the call?"
 //           ></textarea>
 //         </div>
 
 //         <div>
 //           <label className="block font-medium">Was Sale Converted?</label>
-//           <select name="wasSaleConverted" value={form.wasSaleConverted} onChange={handleChange} required className="w-full border px-3 py-2 rounded">
+//           <select name="wasSaleConverted" value={form.wasSaleConverted} onChange={handleChange} required className="w-full px-3 py-2 border rounded">
 //             <option value="">-- Select --</option>
 //             <option>Yes</option>
 //             <option>No</option>
@@ -448,7 +448,7 @@
 //               value={form.profitAmount}
 //               onChange={handleChange}
 //               required
-//               className="w-full border px-3 py-2 rounded"
+//               className="w-full px-3 py-2 border rounded"
 //               placeholder="Enter amount"
 //             />
 //           </div>
@@ -457,7 +457,7 @@
 //         {form.wasSaleConverted === 'No' && (
 //           <div>
 //             <label className="block font-medium">Reason for No Sale</label>
-//             <select name="reasonForNoSale" value={form.reasonForNoSale} onChange={handleChange} required className="w-full border px-3 py-2 rounded">
+//             <select name="reasonForNoSale" value={form.reasonForNoSale} onChange={handleChange} required className="w-full px-3 py-2 border rounded">
 //               <option value="">-- Select --</option>
 //               <option>Customer didn’t like price</option>
 //               <option>No seats</option>
@@ -475,7 +475,7 @@
 //             value={form.customerName}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Full Name"
 //           />
 //         </div>
@@ -488,7 +488,7 @@
 //             value={form.customerEmail}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Email"
 //           />
 //         </div>
@@ -501,14 +501,14 @@
 //             value={form.customerPhone}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Phone Number"
 //           />
 //         </div>
 
 //         <div>
 //           <label className="block font-medium">Language Preference</label>
-//           <select name="language" value={form.language} onChange={handleChange} required className="w-full border px-3 py-2 rounded">
+//           <select name="language" value={form.language} onChange={handleChange} required className="w-full px-3 py-2 border rounded">
 //             <option value="">-- Select --</option>
 //             <option>English</option>
 //             <option>Spanish</option>
@@ -516,8 +516,8 @@
 //           </select>
 //         </div>
 
-//         <div className="col-span-1 md:col-span-2 mt-4">
-//           <button type="submit" className="w-full bg-green-600 hover:bg-green-700 transition text-white font-semibold py-2 px-4 rounded">
+//         <div className="col-span-1 mt-4 md:col-span-2">
+//           <button type="submit" className="w-full px-4 py-2 font-semibold text-white transition bg-green-600 rounded hover:bg-green-700">
 //             Submit Call Log
 //           </button>
 //         </div>
@@ -704,11 +704,11 @@
 //   };
 
 //   return (
-//     <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-//       {message && <div className="bg-green-100 text-green-800 p-2 rounded mb-3">{message}</div>}
-//       {error && <div className="bg-red-100 text-red-700 p-2 rounded mb-3">{error}</div>}
+//     <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-lg">
+//       {message && <div className="p-2 mb-3 text-green-800 bg-green-100 rounded">{message}</div>}
+//       {error && <div className="p-2 mb-3 text-red-700 bg-red-100 rounded">{error}</div>}
 
-//       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//       <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 md:grid-cols-2">
 //         <div>
 //           <label className="block font-medium">Reason for Call</label>
 //           <select
@@ -716,7 +716,7 @@
 //             value={form.reasonForCall}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //           >
 //             <option value="">-- Select --</option>
 //             <option>Flight Inquiry</option>
@@ -735,7 +735,7 @@
 //             value={form.typeOfCall}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //           >
 //             <option value="">-- Select --</option>
 //             <option>Sales Inquiry</option>
@@ -754,7 +754,7 @@
 //               value={form.callCategory}
 //               onChange={handleChange}
 //               required
-//               className="w-full border px-3 py-2 rounded"
+//               className="w-full px-3 py-2 border rounded"
 //             >
 //               <option value="">-- Select --</option>
 //               <option>Flight</option>
@@ -774,7 +774,7 @@
 //             onChange={handleChange}
 //             required
 //             rows="3"
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="What was discussed during the call?"
 //           ></textarea>
 //         </div>
@@ -786,7 +786,7 @@
 //             value={form.wasSaleConverted}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //           >
 //             <option value="">-- Select --</option>
 //             <option>Yes</option>
@@ -804,7 +804,7 @@
 //               onChange={handleChange}
 //               required
 //               min="0"
-//               className="w-full border px-3 py-2 rounded"
+//               className="w-full px-3 py-2 border rounded"
 //               placeholder="Enter amount"
 //             />
 //           </div>
@@ -818,7 +818,7 @@
 //               value={form.reasonForNoSale}
 //               onChange={handleChange}
 //               required
-//               className="w-full border px-3 py-2 rounded"
+//               className="w-full px-3 py-2 border rounded"
 //             >
 //               <option value="">-- Select --</option>
 //               <option>Customer didn’t like price</option>
@@ -837,7 +837,7 @@
 //             value={form.customerName}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Full Name"
 //           />
 //         </div>
@@ -850,7 +850,7 @@
 //             value={form.customerEmail}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Email"
 //           />
 //         </div>
@@ -863,7 +863,7 @@
 //             value={form.customerPhone}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Phone Number"
 //           />
 //         </div>
@@ -875,7 +875,7 @@
 //             value={form.language}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //           >
 //             <option value="">-- Select --</option>
 //             <option>English</option>
@@ -884,17 +884,17 @@
 //           </select>
 //         </div>
 
-//         <div className="col-span-1 md:col-span-2 mt-4">
+//         <div className="col-span-1 mt-4 md:col-span-2">
 //           <button
 //             type="submit"
-//             className="w-full bg-green-600 hover:bg-green-700 transition text-white font-semibold py-2 px-4 rounded"
+//             className="w-full px-4 py-2 font-semibold text-white transition bg-green-600 rounded hover:bg-green-700"
 //             disabled={!employeeId}
 //           >
 //             Submit Call Log
 //           </button>
 //         </div>
 //       </form>
-//       <p className="text-xs text-gray-400 mt-2">Employee ID: {employeeId || 'Not found'}</p>
+//       <p className="mt-2 text-xs text-gray-400">Employee ID: {employeeId || 'Not found'}</p>
 //     </div>
 //   );
 // };
@@ -1105,21 +1105,21 @@
 //   };
 
 //   return (
-//     <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+//     <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-lg">
 //       {message && (
-//         <div className="bg-green-100 text-green-800 p-2 rounded mb-3">
+//         <div className="p-2 mb-3 text-green-800 bg-green-100 rounded">
 //           {message}
 //         </div>
 //       )}
 //       {error && (
-//         <div className="bg-red-100 text-red-700 p-2 rounded mb-3">
+//         <div className="p-2 mb-3 text-red-700 bg-red-100 rounded">
 //           {error}
 //         </div>
 //       )}
 
 //       <form
 //         onSubmit={handleSubmit}
-//         className="grid grid-cols-1 md:grid-cols-2 gap-4"
+//         className="grid grid-cols-1 gap-4 md:grid-cols-2"
 //       >
 //         {/* Reason for Call */}
 //         <div>
@@ -1129,7 +1129,7 @@
 //             value={form.reasonForCall}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //           >
 //             <option value="">-- Select --</option>
 //             <option>Flight Inquiry</option>
@@ -1149,7 +1149,7 @@
 //             value={form.callDirection}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //           >
 //             <option value="">-- Select --</option>
 //             <option>INBOUND</option>
@@ -1165,7 +1165,7 @@
 //             value={form.typeOfCall}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //           >
 //             <option value="">-- Select --</option>
 //             <option>Sales Inquiry</option>
@@ -1185,7 +1185,7 @@
 //               value={form.callCategory}
 //               onChange={handleChange}
 //               required
-//               className="w-full border px-3 py-2 rounded"
+//               className="w-full px-3 py-2 border rounded"
 //             >
 //               <option value="">-- Select --</option>
 //               <option>Flight</option>
@@ -1206,7 +1206,7 @@
 //             onChange={handleChange}
 //             required
 //             rows="3"
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="What was discussed during the call?"
 //           ></textarea>
 //         </div>
@@ -1219,7 +1219,7 @@
 //             value={form.wasSaleConverted}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //           >
 //             <option value="">-- Select --</option>
 //             <option>Yes</option>
@@ -1239,7 +1239,7 @@
 //                 onChange={handleChange}
 //                 required
 //                 min="0"
-//                 className="w-full border px-3 py-2 rounded"
+//                 className="w-full px-3 py-2 border rounded"
 //                 placeholder="Enter amount"
 //               />
 //             </div>
@@ -1250,7 +1250,7 @@
 //                 value={form.saleConvertedThrough}
 //                 onChange={handleChange}
 //                 required
-//                 className="w-full border px-3 py-2 rounded"
+//                 className="w-full px-3 py-2 border rounded"
 //               >
 //                 <option value="">-- Select --</option>
 //                 <option>Phone</option>
@@ -1270,7 +1270,7 @@
 //               value={form.reasonForNoSale}
 //               onChange={handleChange}
 //               required
-//               className="w-full border px-3 py-2 rounded"
+//               className="w-full px-3 py-2 border rounded"
 //             >
 //               <option value="">-- Select --</option>
 //               <option>Customer didn’t like price</option>
@@ -1290,7 +1290,7 @@
 //             value={form.customerName}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Full Name"
 //           />
 //         </div>
@@ -1304,7 +1304,7 @@
 //             value={form.customerEmail}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Email"
 //           />
 //         </div>
@@ -1318,7 +1318,7 @@
 //             value={form.customerPhone}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //             placeholder="Phone Number"
 //           />
 //         </div>
@@ -1331,7 +1331,7 @@
 //             value={form.language}
 //             onChange={handleChange}
 //             required
-//             className="w-full border px-3 py-2 rounded"
+//             className="w-full px-3 py-2 border rounded"
 //           >
 //             <option value="">-- Select --</option>
 //             <option>English</option>
@@ -1340,17 +1340,17 @@
 //           </select>
 //         </div>
 
-//         <div className="col-span-1 md:col-span-2 mt-4">
+//         <div className="col-span-1 mt-4 md:col-span-2">
 //           <button
 //             type="submit"
-//             className="w-full bg-green-600 hover:bg-green-700 transition text-white font-semibold py-2 px-4 rounded"
+//             className="w-full px-4 py-2 font-semibold text-white transition bg-green-600 rounded hover:bg-green-700"
 //             disabled={!employeeId}
 //           >
 //             Submit Call Log
 //           </button>
 //         </div>
 //       </form>
-//       <p className="text-xs text-gray-400 mt-2">
+//       <p className="mt-2 text-xs text-gray-400">
 //         Employee ID: {employeeId || 'Not found'}
 //       </p>
 //     </div>
@@ -1619,26 +1619,26 @@
 //   // Helper function to render error message for a field
 //   const renderFieldError = (fieldName) => {
 //     return fieldErrors[fieldName] ? (
-//       <span className="text-red-500 text-xs">{fieldErrors[fieldName]}</span>
+//       <span className="text-xs text-red-500">{fieldErrors[fieldName]}</span>
 //     ) : null;
 //   };
 
 //   return (
-//     <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+//     <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-lg">
 //       {message && (
-//         <div className="bg-green-100 text-green-800 p-2 rounded mb-3">
+//         <div className="p-2 mb-3 text-green-800 bg-green-100 rounded">
 //           {message}
 //         </div>
 //       )}
 //       {error && (
-//         <div className="bg-red-100 text-red-700 p-2 rounded mb-3">
+//         <div className="p-2 mb-3 text-red-700 bg-red-100 rounded">
 //           {error}
 //         </div>
 //       )}
 
 //       <form
 //         onSubmit={handleSubmit}
-//         className="grid grid-cols-1 md:grid-cols-2 gap-4"
+//         className="grid grid-cols-1 gap-4 md:grid-cols-2"
 //       >
 //         {/* Reason for Call */}
 //         <div>
@@ -1901,7 +1901,7 @@
 //           {renderFieldError('language')}
 //         </div>
 
-//         <div className="col-span-1 md:col-span-2 mt-4">
+//         <div className="col-span-1 mt-4 md:col-span-2">
 //           <button
 //             type="submit"
 //             className={`w-full bg-green-600 hover:bg-green-700 transition !text-white font-semibold py-2 px-4 rounded ${
@@ -1913,7 +1913,7 @@
 //           </button>
 //         </div>
 //       </form>
-//       <p className="text-xs text-gray-400 mt-2">
+//       <p className="mt-2 text-xs text-gray-400">
 //         Employee ID: {employeeId || 'Not found'}
 //       </p>
 //     </div>
@@ -2168,26 +2168,26 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
 
   const renderFieldError = (fieldName) => {
     return fieldErrors[fieldName] ? (
-      <span className="text-red-500 text-xs">{fieldErrors[fieldName]}</span>
+      <span className="text-xs text-red-500">{fieldErrors[fieldName]}</span>
     ) : null;
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+    <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-lg">
       {message && (
-        <div className="bg-green-100 text-green-800 p-2 rounded mb-3">
+        <div className="p-2 mb-3 text-green-800 bg-green-100 rounded">
           {message}
         </div>
       )}
       {error && (
-        <div className="bg-red-100 text-red-700 p-2 rounded mb-3">
+        <div className="p-2 mb-3 text-red-700 bg-red-100 rounded">
           {error}
         </div>
       )}
 
       <form
         onSubmit={handleSubmit}
-        className="grid grid-cols-1 md:grid-cols-2 gap-4"
+        className="grid grid-cols-1 gap-4 md:grid-cols-2"
       >
            {/* Reason for Call */}
         <div>
@@ -2269,7 +2269,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
               <option value="">-- Select --</option>
               <option>Flight</option>
               <option>Hotel</option>
-              <option>car Rental</option>
+              <option>Car Rental</option>
               <option>Packages</option>
               <option>Other</option>
             </select>
@@ -2343,7 +2343,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
                 onChange={handleChange}
                 min="0"
                 step="0.01"
-                className="w-full border px-3 py-2 rounded"
+                className="w-full px-3 py-2 border rounded"
                 placeholder="Enter refund/chargeback"
               />
             </div>
@@ -2355,7 +2355,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
                 name="netProfit"
                 value={form.netProfit}
                 readOnly
-                className="w-full border px-3 py-2 rounded bg-gray-100"
+                className="w-full px-3 py-2 bg-gray-100 border rounded"
               />
             </div>
 
@@ -2476,7 +2476,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
         </div>
 
 
-        <div className="col-span-1 md:col-span-2 mt-4">
+        <div className="col-span-1 mt-4 md:col-span-2">
           <button
             type="submit"
             className={`w-full bg-green-600 hover:bg-green-700 transition !text-white font-semibold py-2 px-4 rounded ${
@@ -2489,7 +2489,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
         </div>
       </form>
 
-      <p className="text-xs text-gray-400 mt-2">
+      <p className="mt-2 text-xs text-gray-400">
         Employee ID: {employeeId || 'Not found'}
       </p>
     </div>
