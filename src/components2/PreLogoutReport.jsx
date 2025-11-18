@@ -1801,7 +1801,7 @@ const handleSendEmail = async () => {
           <button
             onClick={fetchCallLogs}
             disabled={loading || !employee?._id}
-            className={`flex-1 py-2 px-4 rounded-md !text-white font-medium ${
+            className={`cursor-pointer flex-1 py-2 px-4 rounded-md !text-white font-medium ${
               loading || !employee?._id
                 ? 'bg-purple-400 cursor-not-allowed'
                 : 'bg-purple-600 hover:bg-purple-700'
@@ -1999,7 +1999,7 @@ const handleSendEmail = async () => {
         onClick={performLogout}
         disabled={loading}
         className={`mt-6 w-full py-2 rounded shadow font-semibold ${
-          loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-red-300 hover:bg-red-600 text-white'
+          loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-red-300 hover:bg-red-600 text-white cursor-pointer'
         }`}
       >
         {loading ? 'Logging out...' : 'Confirm Logout'}

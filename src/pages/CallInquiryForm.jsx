@@ -2197,7 +2197,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
             value={form.reasonForCall}
             onChange={handleChange}
             required
-            className={`w-full border px-3 py-2 rounded ${
+            className={`cursor-pointer w-full border px-3 py-2 rounded ${
               fieldErrors.reasonForCall ? 'border-red-500' : ''
             }`}
           >
@@ -2220,7 +2220,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
             value={form.callDirection}
             onChange={handleChange}
             required
-            className={`w-full border px-3 py-2 rounded ${
+            className={`cursor-pointer w-full border px-3 py-2 rounded ${
               fieldErrors.callDirection ? 'border-red-500' : ''
             }`}
           >
@@ -2239,7 +2239,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
             value={form.typeOfCall}
             onChange={handleChange}
             required
-            className={`w-full border px-3 py-2 rounded ${
+            className={`cursor-pointer w-full border px-3 py-2 rounded ${
               fieldErrors.typeOfCall ? 'border-red-500' : ''
             }`}
           >
@@ -2262,7 +2262,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
               value={form.callCategory}
               onChange={handleChange}
               required
-              className={`w-full border px-3 py-2 rounded ${
+              className={`cursor-pointer w-full border px-3 py-2 rounded ${
                 fieldErrors.callCategory ? 'border-red-500' : ''
               }`}
             >
@@ -2302,7 +2302,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
             value={form.wasSaleConverted}
             onChange={handleChange}
             required
-            className={`w-full border px-3 py-2 rounded ${
+            className={`cursor-pointer w-full border px-3 py-2 rounded ${
               fieldErrors.wasSaleConverted ? 'border-red-500' : ''
             }`}
           >
@@ -2366,7 +2366,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
                 value={form.saleConvertedThrough}
                 onChange={handleChange}
                 required
-                className={`w-full border px-3 py-2 rounded ${
+                className={`cursor-pointer w-full border px-3 py-2 rounded ${
                   fieldErrors.saleConvertedThrough ? 'border-red-500' : ''
                 }`}
               >
@@ -2390,7 +2390,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
               value={form.reasonForNoSale}
               onChange={handleChange}
               required
-              className={`w-full border px-3 py-2 rounded ${
+              className={`cursor-pointer w-full border px-3 py-2 rounded ${
                 fieldErrors.reasonForNoSale ? 'border-red-500' : ''
               }`}
             >
@@ -2463,7 +2463,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
             value={form.language}
             onChange={handleChange}
             required
-            className={`w-full border px-3 py-2 rounded ${
+            className={`cursor-pointer w-full border px-3 py-2 rounded ${
               fieldErrors.language ? 'border-red-500' : ''
             }`}
           >
@@ -2479,7 +2479,7 @@ const CallInquiryForm = ({ employeeId: propEmployeeId }) => {
         <div className="col-span-1 mt-4 md:col-span-2">
           <button
             type="submit"
-            className={`w-full bg-green-600 hover:bg-green-700 transition !text-white font-semibold py-2 px-4 rounded ${
+            className={`cursor-pointer w-full bg-green-600 hover:bg-green-700 transition !text-white font-semibold py-2 px-4 rounded ${
               loading ? 'opacity-70 cursor-not-allowed' : ''
             }`}
             disabled={!employeeId || loading}

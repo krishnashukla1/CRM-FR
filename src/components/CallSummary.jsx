@@ -1621,7 +1621,7 @@ const CallSummary = ({ employeeId }) => {
     // <div className="min-h-screen p-4 bg-gradient-to-br from-gray-50 to-blue-50 md:p-8">
     <div className="w-full p-6 mx-auto border border-indigo-100 shadow-lg bg-gradient-to-br from-white to-indigo-50 rounded-2xl max-w-8xl">
 
-      <div className="mx-auto max-w-7xl">
+      <div className="max-w-full mx-auto">
         {/* Header with Date Range Display */}
         <div className="p-6 mb-6 bg-white border border-gray-200 shadow-lg rounded-xl">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">

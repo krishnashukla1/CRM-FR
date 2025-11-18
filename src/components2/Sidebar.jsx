@@ -344,7 +344,7 @@ const Sidebar = ({ user, employee, sidebarOpen, setSidebarOpen }) => {
 
       <button
         onClick={initiateLogout}
-        className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow hover:bg-red-600"
+        className="w-full py-2 mt-6 font-semibold text-white bg-red-500 rounded shadow cursor-pointer hover:bg-red-600"
       >
         Logout
       </button>
