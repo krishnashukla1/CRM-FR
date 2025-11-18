@@ -38,31 +38,31 @@
 //     const prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
 
 //     return (
-//       <div className="p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl shadow-lg">
-//         <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
+//       <div className="p-6 shadow-lg bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl">
+//         <h2 className="mb-6 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
 //           Employee Attendance Dashboard
 //         </h2>
         
-//         <div className="overflow-hidden rounded-xl border border-gray-200 shadow-2xl">
+//         <div className="overflow-hidden border border-gray-200 shadow-2xl rounded-xl">
 //           <table className="min-w-full divide-y divide-gray-200">
 //             <thead className="bg-gradient-to-r from-blue-600 to-indigo-700">
 //               <tr>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Employee
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Email
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Date
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Login Time
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Logout Time
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Status
 //                 </th>
 //               </tr>
@@ -83,8 +83,8 @@
 //                   >
 //                     <td className="px-6 py-4 whitespace-nowrap">
 //                       <div className="flex items-center">
-//                         <div className="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-//                           <span className="text-blue-600 font-medium">
+//                         <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full">
+//                           <span className="font-medium text-blue-600">
 //                             {name.charAt(0).toUpperCase()}
 //                           </span>
 //                         </div>
@@ -93,24 +93,24 @@
 //                         </div>
 //                       </div>
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+//                     <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">
 //                       {email}
 //                     </td>
 //                     <td className="px-6 py-4 whitespace-nowrap">
-//                       <div className="text-sm text-gray-900 bg-gray-100 px-3 py-1 rounded-full inline-block">
+//                       <div className="inline-block px-3 py-1 text-sm text-gray-900 bg-gray-100 rounded-full">
 //                         {date}
 //                       </div>
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-//                       <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+//                     <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
+//                       <span className="px-3 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
 //                         {loginTime}
 //                       </span>
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+//                     <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
 //                       {logoutTime === '—' ? (
 //                         <span className="text-gray-500">{logoutTime}</span>
 //                       ) : (
-//                         <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">
+//                         <span className="px-3 py-1 text-xs font-semibold text-purple-800 bg-purple-100 rounded-full">
 //                           {logoutTime}
 //                         </span>
 //                       )}
@@ -132,9 +132,9 @@
 //         </div>
         
 //         {/* Pagination Controls */}
-//         <div className="mt-6 flex items-center justify-between">
+//         <div className="flex items-center justify-between mt-6">
 //           <div className="flex items-center space-x-2 text-sm text-gray-600">
-//             <span className="h-3 w-3 rounded-full bg-blue-500"></span>
+//             <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
 //             <span>Showing {indexOfFirstEntry + 1}-{Math.min(indexOfLastEntry, loginData.length)} of {loginData.length} entries</span>
 //           </div>
           
@@ -302,28 +302,28 @@
 //     };
 
 //     return (
-//       <div className="p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl shadow-lg">
-//         <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
+//       <div className="p-6 shadow-lg bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl">
+//         <h2 className="mb-6 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
 //           Employee Attendance (9PM to 8:59PM)
 //         </h2>
         
-//         <div className="overflow-hidden rounded-xl border border-gray-200 shadow-2xl">
+//         <div className="overflow-hidden border border-gray-200 shadow-2xl rounded-xl">
 //           <table className="min-w-full divide-y divide-gray-200">
 //             <thead className="bg-gradient-to-r from-blue-600 to-indigo-700">
 //               <tr>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Employee
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Email
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Login Time
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Logout Time
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Current Status
 //                 </th>
 //               </tr>
@@ -343,8 +343,8 @@
 //                   >
 //                     <td className="px-6 py-4 whitespace-nowrap">
 //                       <div className="flex items-center">
-//                         <div className="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-//                           <span className="text-blue-600 font-medium">
+//                         <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full">
+//                           <span className="font-medium text-blue-600">
 //                             {name.charAt(0).toUpperCase()}
 //                           </span>
 //                         </div>
@@ -353,19 +353,19 @@
 //                         </div>
 //                       </div>
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+//                     <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">
 //                       {email}
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-//                       <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+//                     <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
+//                       <span className="px-3 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
 //                         {loginTime}
 //                       </span>
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+//                     <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
 //                       {logoutTime === '—' ? (
 //                         <span className="text-gray-500">{logoutTime}</span>
 //                       ) : (
-//                         <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">
+//                         <span className="px-3 py-1 text-xs font-semibold text-purple-800 bg-purple-100 rounded-full">
 //                           {logoutTime}
 //                         </span>
 //                       )}
@@ -388,9 +388,9 @@
         
 //         {/* Pagination Controls */}
 //         {loginData.length > entriesPerPage && (
-//           <div className="mt-6 flex items-center justify-between">
+//           <div className="flex items-center justify-between mt-6">
 //             <div className="flex items-center space-x-2 text-sm text-gray-600">
-//               <span className="h-3 w-3 rounded-full bg-blue-500"></span>
+//               <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
 //               <span>Showing {indexOfFirstEntry + 1}-{Math.min(indexOfLastEntry, loginData.length)} of {loginData.length} entries</span>
 //             </div>
             
@@ -453,7 +453,7 @@
 //       {loading ? (
 //         <div className="p-6 text-center">
 //           <div className="inline-flex items-center">
-//             <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+//             <svg className="w-5 h-5 mr-3 -ml-1 text-blue-600 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
 //               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
 //               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
 //             </svg>
@@ -584,37 +584,37 @@
 //     const prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
 
 //     return (
-//       <div className="p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl shadow-lg">
-//         <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
+//       <div className="p-6 shadow-lg bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl">
+//         <h2 className="mb-6 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
 //           Employee Attendance Dashboard
 //         </h2>
         
-//         <div className="overflow-hidden rounded-xl border border-gray-200 shadow-2xl">
+//         <div className="overflow-hidden border border-gray-200 shadow-2xl rounded-xl">
 //           <table className="min-w-full divide-y divide-gray-200">
 //             <thead className="bg-gradient-to-r from-blue-600 to-indigo-700">
 //               <tr>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Employee
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Login Time
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Logout Time
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Status
 //                 </th>
-//                  <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                  <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //       Break Status
 //     </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Total Duration
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Break Time
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Working Hours
 //                 </th>
 //               </tr>
@@ -644,8 +644,8 @@
 //                   >
 //                     <td className="px-6 py-4 whitespace-nowrap">
 //                       <div className="flex items-center">
-//                         <div className="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-//                           <span className="text-blue-600 font-medium">
+//                         <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full">
+//                           <span className="font-medium text-blue-600">
 //                             {name.charAt(0).toUpperCase()}
 //                           </span>
 //                         </div>
@@ -654,16 +654,16 @@
 //                         </div>
 //                       </div>
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-//                       <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+//                     <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
+//                       <span className="px-3 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
 //                         {loginTime}
 //                       </span>
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+//                     <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
 //                       {logoutTime === '—' ? (
 //                         <span className="text-gray-500">{logoutTime}</span>
 //                       ) : (
-//                         <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">
+//                         <span className="px-3 py-1 text-xs font-semibold text-purple-800 bg-purple-100 rounded-full">
 //                           {logoutTime}
 //                         </span>
 //                       )}
@@ -689,13 +689,13 @@
 //         </span>
 //       </td>
       
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
+//                     <td className="px-6 py-4 text-sm text-center whitespace-nowrap">
 //                       {durations.loginDuration}
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
+//                     <td className="px-6 py-4 text-sm text-center whitespace-nowrap">
 //                       {durations.breakDuration}
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium">
+//                     <td className="px-6 py-4 text-sm font-medium text-center whitespace-nowrap">
 //                       {durations.workingDuration}
 //                     </td>
 //                   </tr>
@@ -707,9 +707,9 @@
         
 //         {/* Pagination Controls */}
 //         {loginData.length > entriesPerPage && (
-//           <div className="mt-6 flex items-center justify-between">
+//           <div className="flex items-center justify-between mt-6">
 //             <div className="flex items-center space-x-2 text-sm text-gray-600">
-//               <span className="h-3 w-3 rounded-full bg-blue-500"></span>
+//               <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
 //               <span>Showing {indexOfFirstEntry + 1}-{Math.min(indexOfLastEntry, loginData.length)} of {loginData.length} entries</span>
 //             </div>
             
@@ -772,7 +772,7 @@
 //       {loading ? (
 //         <div className="p-6 text-center">
 //           <div className="inline-flex items-center">
-//             <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+//             <svg className="w-5 h-5 mr-3 -ml-1 text-blue-600 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
 //               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
 //               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
 //             </svg>
@@ -966,37 +966,37 @@
 //     const prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
 
 //     return (
-//       <div className="p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl shadow-lg">
-//         <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
+//       <div className="p-6 shadow-lg bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl">
+//         <h2 className="mb-6 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
 //           Employee Attendance Dashboard
 //         </h2>
         
-//         <div className="overflow-hidden rounded-xl border border-gray-200 shadow-2xl">
+//         <div className="overflow-hidden border border-gray-200 shadow-2xl rounded-xl">
 //           <table className="min-w-full divide-y divide-gray-200">
 //             <thead className="bg-gradient-to-r from-blue-600 to-indigo-700">
 //               <tr>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Employee
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Login Time
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Logout Time
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Status
 //                 </th>
-//                  <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                  <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //       Break Status
 //     </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Total Duration
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Break Time
 //                 </th>
-//                 <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//                 <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                   Working Hours
 //                 </th>
 //               </tr>
@@ -1026,8 +1026,8 @@
 //                   >
 //                     <td className="px-6 py-4 whitespace-nowrap">
 //                       <div className="flex items-center">
-//                         <div className="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-//                           <span className="text-blue-600 font-medium">
+//                         <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full">
+//                           <span className="font-medium text-blue-600">
 //                             {name.charAt(0).toUpperCase()}
 //                           </span>
 //                         </div>
@@ -1036,16 +1036,16 @@
 //                         </div>
 //                       </div>
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-//                       <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+//                     <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
+//                       <span className="px-3 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
 //                         {loginTime}
 //                       </span>
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+//                     <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
 //                       {logoutTime === '—' ? (
 //                         <span className="text-gray-500">{logoutTime}</span>
 //                       ) : (
-//                         <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">
+//                         <span className="px-3 py-1 text-xs font-semibold text-purple-800 bg-purple-100 rounded-full">
 //                           {logoutTime}
 //                         </span>
 //                       )}
@@ -1071,13 +1071,13 @@
 //         </span>
 //       </td>
       
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
+//                     <td className="px-6 py-4 text-sm text-center whitespace-nowrap">
 //                       {durations.loginDuration}
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
+//                     <td className="px-6 py-4 text-sm text-center whitespace-nowrap">
 //                       {durations.breakDuration}
 //                     </td>
-//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium">
+//                     <td className="px-6 py-4 text-sm font-medium text-center whitespace-nowrap">
 //                       {durations.workingDuration}
 //                     </td>
 //                   </tr>
@@ -1089,9 +1089,9 @@
         
 //         {/* Pagination Controls */}
 //         {loginData.length > entriesPerPage && (
-//           <div className="mt-6 flex items-center justify-between">
+//           <div className="flex items-center justify-between mt-6">
 //             <div className="flex items-center space-x-2 text-sm text-gray-600">
-//               <span className="h-3 w-3 rounded-full bg-blue-500"></span>
+//               <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
 //               <span>Showing {indexOfFirstEntry + 1}-{Math.min(indexOfLastEntry, loginData.length)} of {loginData.length} entries</span>
 //             </div>
             
@@ -1154,7 +1154,7 @@
 //       {loading ? (
 //         <div className="p-6 text-center">
 //           <div className="inline-flex items-center">
-//             <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+//             <svg className="w-5 h-5 mr-3 -ml-1 text-blue-600 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
 //               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
 //               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
 //             </svg>
@@ -1489,7 +1489,7 @@ const fetchLoginData = async () => {
       {loading ? (
         <div className="p-6 text-center">
           <div className="inline-flex items-center">
-            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 mr-3 -ml-1 text-blue-600 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
@@ -1498,13 +1498,13 @@ const fetchLoginData = async () => {
         </div>
       ) : filteredData.length > 0 ? (
         <>
-          <div className="mb-6">
+          <div className="mb-6 mt-15">
             <input
               type="text"
               placeholder="Filter by employee name..."
               value={filterName}
               onChange={(e) => setFilterName(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-md w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full max-w-xs px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
           <EmployeeStatusTable loginData={filteredData} calculateDurations={calculateDurations} />
@@ -1558,37 +1558,37 @@ const EmployeeStatusTable = ({ loginData, calculateDurations }) => {
   };
 
   return (
-    <div className="p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl shadow-lg">
-      <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
+    <div className="p-6 shadow-lg bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl">
+      <h2 className="mb-6 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
         Employee Attendance Dashboard
       </h2>
 
-      <div className="overflow-hidden rounded-xl border border-gray-200 shadow-2xl">
+      <div className="overflow-hidden border border-gray-200 shadow-2xl rounded-xl">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gradient-to-r from-blue-600 to-indigo-700">
             <tr>
-              <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+              <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
                 Employee
               </th>
-              <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+              <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
                 Login Time
               </th>
-              <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+              <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
                 Logout Time
               </th>
-              <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+              <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
                 Status
               </th>
-              <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+              <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
                 Break Status
               </th>
-              <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+              <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
                 Total Duration
               </th>
-              <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+              <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
                 Break Time
               </th>
-              <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+              <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
                 Working Hours
               </th>
             </tr>
@@ -1621,8 +1621,8 @@ const EmployeeStatusTable = ({ loginData, calculateDurations }) => {
                 >
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
-                      <div className="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-                        <span className="text-blue-600 font-medium">
+                      <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full">
+                        <span className="font-medium text-blue-600">
                           {name.charAt(0).toUpperCase()}
                         </span>
                       </div>
@@ -1631,16 +1631,16 @@ const EmployeeStatusTable = ({ loginData, calculateDurations }) => {
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+                  <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
+                    <span className="px-3 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
                       {loginTime}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                  <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
                     {logoutTime === '—' ? (
                       <span className="text-gray-500">{logoutTime}</span>
                     ) : (
-                      <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">
+                      <span className="px-3 py-1 text-xs font-semibold text-purple-800 bg-purple-100 rounded-full">
                         {logoutTime}
                       </span>
                     )}
@@ -1661,13 +1661,13 @@ const EmployeeStatusTable = ({ loginData, calculateDurations }) => {
                       {breakStatus}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
+                  <td className="px-6 py-4 text-sm text-center whitespace-nowrap">
                     {durations.loginDuration}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
+                  <td className="px-6 py-4 text-sm text-center whitespace-nowrap">
                     {durations.breakDuration}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium">
+                  <td className="px-6 py-4 text-sm font-medium text-center whitespace-nowrap">
                     {durations.workingDuration}
                   </td>
                 </tr>
@@ -1678,9 +1678,9 @@ const EmployeeStatusTable = ({ loginData, calculateDurations }) => {
       </div>
 
       {loginData.length > entriesPerPage && (
-        <div className="mt-6 flex items-center justify-between">
+        <div className="flex items-center justify-between mt-6">
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <span className="h-3 w-3 rounded-full bg-blue-500"></span>
+            <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
             <span>Showing {indexOfFirstEntry + 1}-{Math.min(indexOfLastEntry, loginData.length)} of {loginData.length} entries</span>
           </div>
 
@@ -2054,7 +2054,7 @@ export default AdminLoginStatus;
 //       {loading ? (
 //         <div className="p-6 text-center">
 //           <div className="inline-flex items-center">
-//             <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+//             <svg className="w-5 h-5 mr-3 -ml-1 text-blue-600 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
 //               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
 //               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
 //             </svg>
@@ -2069,7 +2069,7 @@ export default AdminLoginStatus;
 //               placeholder="Filter by employee name..."
 //               value={filterName}
 //               onChange={(e) => setFilterName(e.target.value)}
-//               className="px-4 py-2 border border-gray-300 rounded-md w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+//               className="w-full max-w-xs px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
 //             />
 //           </div>
 //           <EmployeeStatusTable loginData={filteredData} calculateDurations={calculateDurations} />
@@ -2123,37 +2123,37 @@ export default AdminLoginStatus;
 //   };
 
 //   return (
-//     <div className="p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl shadow-lg">
-//       <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
+//     <div className="p-6 shadow-lg bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl">
+//       <h2 className="mb-6 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800">
 //         Employee Attendance Dashboard
 //       </h2>
 
-//       <div className="overflow-hidden rounded-xl border border-gray-200 shadow-2xl">
+//       <div className="overflow-hidden border border-gray-200 shadow-2xl rounded-xl">
 //         <table className="min-w-full divide-y divide-gray-200">
 //           <thead className="bg-gradient-to-r from-blue-600 to-indigo-700">
 //             <tr>
-//               <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//               <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                 Employee
 //               </th>
-//               <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//               <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                 Login Time
 //               </th>
-//               <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//               <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                 Logout Time
 //               </th>
-//               <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//               <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                 Status
 //               </th>
-//               <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//               <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                 Break Status
 //               </th>
-//               <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//               <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                 Total Duration
 //               </th>
-//               <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//               <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                 Break Time
 //               </th>
-//               <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase tracking-wider">
+//               <th className="px-6 py-4 text-xs font-semibold tracking-wider text-left text-white uppercase">
 //                 Working Hours
 //               </th>
 //             </tr>
@@ -2188,8 +2188,8 @@ export default AdminLoginStatus;
 //                 >
 //                   <td className="px-6 py-4 whitespace-nowrap">
 //                     <div className="flex items-center">
-//                       <div className="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-//                         <span className="text-blue-600 font-medium">
+//                       <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full">
+//                         <span className="font-medium text-blue-600">
 //                           {name.charAt(0).toUpperCase()}
 //                         </span>
 //                       </div>
@@ -2198,16 +2198,16 @@ export default AdminLoginStatus;
 //                       </div>
 //                     </div>
 //                   </td>
-//                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-//                     <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+//                   <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
+//                     <span className="px-3 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
 //                       {loginTime}
 //                     </span>
 //                   </td>
-//                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+//                   <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
 //                     {logoutTime === '—' ? (
 //                       <span className="text-gray-500">{logoutTime}</span>
 //                     ) : (
-//                       <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">
+//                       <span className="px-3 py-1 text-xs font-semibold text-purple-800 bg-purple-100 rounded-full">
 //                         {logoutTime}
 //                       </span>
 //                     )}
@@ -2228,13 +2228,13 @@ export default AdminLoginStatus;
 //                       {breakStatus}
 //                     </span>
 //                   </td>
-//                   <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
+//                   <td className="px-6 py-4 text-sm text-center whitespace-nowrap">
 //                     {durations.loginDuration}
 //                   </td>
-//                   <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
+//                   <td className="px-6 py-4 text-sm text-center whitespace-nowrap">
 //                     {durations.breakDuration}
 //                   </td>
-//                   <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium">
+//                   <td className="px-6 py-4 text-sm font-medium text-center whitespace-nowrap">
 //                     {durations.workingDuration}
 //                   </td>
 //                 </tr>
@@ -2246,9 +2246,9 @@ export default AdminLoginStatus;
 
 //       {/* Pagination Controls */}
 //       {loginData.length > entriesPerPage && (
-//         <div className="mt-6 flex items-center justify-between">
+//         <div className="flex items-center justify-between mt-6">
 //           <div className="flex items-center space-x-2 text-sm text-gray-600">
-//             <span className="h-3 w-3 rounded-full bg-blue-500"></span>
+//             <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
 //             <span>Showing {indexOfFirstEntry + 1}-{Math.min(indexOfLastEntry, loginData.length)} of {loginData.length} entries</span>
 //           </div>
 

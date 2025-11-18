@@ -57,33 +57,33 @@ const TaskOverview = () => {
 
 
   return (
-    <div className="bg-white p-5 rounded-xl shadow border text-gray-800">
-      <p className="text-lg font-semibold mb-4">🗂️ Task Overview</p>
+    <div className="p-5 text-gray-800 bg-white border shadow rounded-xl">
+      <p className="mb-4 text-lg font-semibold">🗂️ Task Overview</p>
 
       <div className="overflow-x-auto">
         <table className="min-w-full text-sm text-left">
-          <thead className="bg-gray-100 text-gray-700">
+          <thead className="text-gray-700 bg-gray-100">
             <tr>
-              <th className="py-2 px-4">Title</th>
-              <th className="py-2 px-4">Assigned To</th>
-              <th className="py-2 px-4">Productivity</th>
-              <th className="py-2 px-4">Status</th>
-              <th className="py-2 px-4">Created</th>
+              <th className="px-4 py-2">Title</th>
+              <th className="px-4 py-2">Assigned To</th>
+              <th className="px-4 py-2">Productivity</th>
+              <th className="px-4 py-2">Status</th>
+              <th className="px-4 py-2">Created</th>
             </tr>
           </thead>
           <tbody>
             {tasks.length > 0 ? (
               tasks.map((task) => (
                 <tr key={task._id} className="border-b hover:bg-gray-50">
-                  <td className="py-2 px-4">{task.title}</td>
-                  <td className="py-2 px-4">{task.assignedTo?.name || 'N/A'}</td>
+                  <td className="px-4 py-2">{task.title}</td>
+                  <td className="px-4 py-2">{task.assignedTo?.name || 'N/A'}</td>
                   {/* ✅ Productivity column */}
-                  <td className="py-2 px-4 text-green-700 font-semibold">
+                  <td className="px-4 py-2 font-semibold text-green-700">
                     {productivityMap[task.assignedTo?.name] !== undefined
                       ? `${productivityMap[task.assignedTo?.name]}%`
                       : '—'}
                   </td>
-                  <td className="py-2 px-4">
+                  <td className="px-4 py-2">
                     <span
                       className={`px-2 py-1 rounded-full text-xs font-semibold ${badgeColor[task.status] || 'bg-gray-200 text-gray-800'
                         }`}
@@ -91,14 +91,14 @@ const TaskOverview = () => {
                       {task.status}
                     </span>
                   </td>
-                  <td className="py-2 px-4">
+                  <td className="px-4 py-2">
                     {new Date(task.createdAt).toLocaleDateString()}
                   </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="4" className="text-center py-4 text-gray-500">
+                <td colSpan="4" className="py-4 text-center text-gray-500">
                   No tasks found.
                 </td>
               </tr>
@@ -112,14 +112,14 @@ const TaskOverview = () => {
         <button
           onClick={() => setPage((p) => Math.max(p - 1, 1))}
           disabled={page === 1}
-          className="px-3 py-1 bg-gray-100 rounded hover:bg-gray-200 text-sm disabled:opacity-50"
+          className="px-3 py-1 text-sm bg-gray-100 rounded cursor-pointer hover:bg-gray-200 disabled:opacity-50"
         >
           ⬅ Previous
         </button>
         <button
           onClick={() => setPage((p) => Math.min(p + 1, totalPages))}
           disabled={page === totalPages}
-          className="px-3 py-1 bg-gray-100 rounded hover:bg-gray-200 text-sm disabled:opacity-50"
+          className="px-3 py-1 text-sm bg-gray-100 rounded cursor-pointer hover:bg-gray-200 disabled:opacity-50"
         >
           Next ➡
         </button>

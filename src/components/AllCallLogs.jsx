@@ -4051,7 +4051,7 @@ const AllCallLogs = () => {
                   name="callCategory"
                   value={filters.callCategory}
                   onChange={handleFilterChange}
-                  className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full p-2 border border-gray-300 rounded-md cursor-pointer focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="">All Categories</option>
                   <option value="Flight">Flight</option>
@@ -4066,7 +4066,7 @@ const AllCallLogs = () => {
                   name="wasSaleConverted"
                   value={filters.wasSaleConverted}
                   onChange={handleFilterChange}
-                  className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full p-2 border border-gray-300 rounded-md cursor-pointer focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="">All Status</option>
                   <option value="Yes">Converted</option>
@@ -4079,7 +4079,7 @@ const AllCallLogs = () => {
                   name="employeeId"
                   value={filters.employeeId}
                   onChange={handleFilterChange}
-                  className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full p-2 border border-gray-300 rounded-md cursor-pointer focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="">All Employees</option>
                   {employees.map(employee => (
@@ -4094,7 +4094,7 @@ const AllCallLogs = () => {
                 <select
                   value={selectedMonth}
                   onChange={(e) => setSelectedMonth(parseInt(e.target.value))}
-                  className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full p-2 border border-gray-300 rounded-md cursor-pointer focus:ring-blue-500 focus:border-blue-500"
                 >
                   {Array.from({length: 12}, (_, i) => i + 1).map(month => (
                     <option key={month} value={month}>
@@ -4108,7 +4108,7 @@ const AllCallLogs = () => {
                 <select
                   value={selectedYear}
                   onChange={(e) => setSelectedYear(parseInt(e.target.value))}
-                  className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full p-2 border border-gray-300 rounded-md cursor-pointer focus:ring-blue-500 focus:border-blue-500"
                 >
                   {Array.from({length: 5}, (_, i) => new Date().getFullYear() - 2 + i).map(year => (
                     <option key={year} value={year}>{year}</option>
@@ -4742,7 +4742,7 @@ const AllCallLogs = () => {
           <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
             <button
               onClick={() => downloadCallLogReport(log)}
-              className="!text-blue-600 hover:text-blue-900"
+              className="!text-blue-600 hover:text-blue-900 cursor-pointer"
               title="Download call log report"
             >
               <FiDownload />

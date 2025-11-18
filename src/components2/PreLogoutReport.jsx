@@ -1813,7 +1813,7 @@ const handleSendEmail = async () => {
           <button
             onClick={handleDownload}
             disabled={loading || todaysLogs.length === 0 || !employee?._id}
-            className={`flex-1 py-2 px-4 rounded-md !text-white font-medium ${
+            className={`cursor-pointer flex-1 py-2 px-4 rounded-md !text-white font-medium ${
               loading || todaysLogs.length === 0 || !employee?._id
                 ? 'bg-blue-400 cursor-not-allowed'
                 : 'bg-blue-600 hover:bg-blue-700'
@@ -1825,7 +1825,7 @@ const handleSendEmail = async () => {
           <button
             onClick={handleSendEmail}
             disabled={loading || todaysLogs.length === 0 || !employee?._id}
-            className={`flex-1 py-2 px-4 rounded-md !text-white font-medium ${
+            className={`cursor-pointer flex-1 py-2 px-4 rounded-md !text-white font-medium ${
               loading || todaysLogs.length === 0 || !employee?._id
                 ? 'bg-green-400 cursor-not-allowed'
                 : 'bg-green-600 hover:bg-green-700'

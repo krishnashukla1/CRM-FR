@@ -62,7 +62,7 @@ const AdminPasswordReset = () => {
 
       {!allowed ? (
         <div className="p-4 font-medium text-red-800 bg-red-100 rounded-md">
-          ❌ Access Denied: Only <strong>fbadmin@gmail.com</strong> can reset passwords.
+          ❌ Access Denied: Only <strong>krishna@gmail.com</strong> can reset passwords.
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -119,7 +119,7 @@ const AdminPasswordReset = () => {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 !text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-200"
+            className="cursor-pointer w-full bg-blue-600 hover:bg-blue-700 !text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-200"
           >
             🔁 Change Password
           </button>

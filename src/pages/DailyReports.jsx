@@ -2567,7 +2567,9 @@ const handleDownload = async () => {
     }
 
     // Use employee.email or fallback to a default
-    const toEmail = employee.email || 'meneiljohnson@gmail.com';
+    // const toEmail = employee.email || 'meneiljohnson@gmail.com';
+    const toEmail = employee.email || 'krishnaprasad24795@gmail.com';
+
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(toEmail)) {
       throw new Error('Invalid HR email address');
     }

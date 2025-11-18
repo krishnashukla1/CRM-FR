@@ -215,29 +215,29 @@
 
 //   return (
 //     <Layout>
-//       <div className="min-h-screen p-6 bg-gray-100 text-gray-900">
-//         <h1 className="text-3xl font-bold mb-8 text-center text-indigo-700">👥 Employee Management</h1>
+//       <div className="min-h-screen p-6 text-gray-900 bg-gray-100">
+//         <h1 className="mb-8 text-3xl font-bold text-center text-indigo-700">👥 Employee Management</h1>
 
 //         {/* Add/Edit Employee Form */}
-//         <div className="max-w-7xl mx-auto bg-white p-6 rounded-2xl shadow-md mb-10">
-//           <h2 className="text-xl font-semibold mb-4 text-gray-700">
+//         <div className="p-6 mx-auto mb-10 bg-white shadow-md max-w-7xl rounded-2xl">
+//           <h2 className="mb-4 text-xl font-semibold text-gray-700">
 //             {isEditing ? '✏️ Edit Employee' : '➕ Add New Employee'}
 //           </h2>
 //           <form onSubmit={handleSubmit}>
-//             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+//             <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
 //               <div>
-//                 <label className="block text-sm font-medium text-gray-700 mb-1">User ID</label>
+//                 <label className="block mb-1 text-sm font-medium text-gray-700">User ID</label>
 //                 <input
-//                   className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+//                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //                   placeholder="User ID"
 //                   value={form.userId}
 //                   onChange={(e) => setForm({ ...form, userId: e.target.value })}
 //                 />
 //               </div>
 //               <div>
-//                 <label className="block text-sm font-medium text-gray-700 mb-1">Full Name*</label>
+//                 <label className="block mb-1 text-sm font-medium text-gray-700">Full Name*</label>
 //                 <input
-//                   className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+//                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //                   placeholder="Full Name"
 //                   value={form.name}
 //                   onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -245,9 +245,9 @@
 //                 />
 //               </div>
 //               <div>
-//                 <label className="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+//                 <label className="block mb-1 text-sm font-medium text-gray-700">Email*</label>
 //                 <input
-//                   className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+//                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //                   placeholder="Email"
 //                   type="email"
 //                   value={form.email}
@@ -257,11 +257,11 @@
 //               </div>
 //             </div>
 
-//             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+//             <div className="grid grid-cols-1 gap-4 mt-4 md:grid-cols-3">
 //               <div>
-//                 <label className="block text-sm font-medium text-gray-700 mb-1">Role*</label>
+//                 <label className="block mb-1 text-sm font-medium text-gray-700">Role*</label>
 //                 <select
-//                   className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+//                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //                   value={form.role}
 //                   onChange={(e) => setForm({ ...form, role: e.target.value })}
 //                   required
@@ -273,9 +273,9 @@
 //                 </select>
 //               </div>
 //               <div>
-//                 <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+//                 <label className="block mb-1 text-sm font-medium text-gray-700">Status</label>
 //                 <select
-//                   className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+//                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //                   value={form.status}
 //                   onChange={(e) => setForm({ ...form, status: e.target.value })}
 //                 >
@@ -285,9 +285,9 @@
 //                 </select>
 //               </div>
 //               <div>
-//                 <label className="block text-sm font-medium text-gray-700 mb-1">Salary</label>
+//                 <label className="block mb-1 text-sm font-medium text-gray-700">Salary</label>
 //                 <input
-//                   className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+//                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //                   placeholder="Salary"
 //                   type="number"
 //                   value={form.salary}
@@ -296,29 +296,29 @@
 //               </div>
 //             </div>
 
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+//             <div className="grid grid-cols-1 gap-4 mt-4 md:grid-cols-2">
 //               <div>
-//                 <label className="block text-sm font-medium text-gray-700 mb-1">Joining Date*</label>
+//                 <label className="block mb-1 text-sm font-medium text-gray-700">Joining Date*</label>
 //                 <input
 //                   type="date"
-//                   className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+//                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //                   value={form.dateOfJoining}
 //                   onChange={(e) => setForm({ ...form, dateOfJoining: e.target.value })}
 //                   required
 //                 />
 //               </div>
 //               <div>
-//                 <label className="block text-sm font-medium text-gray-700 mb-1">Photo</label>
+//                 <label className="block mb-1 text-sm font-medium text-gray-700">Photo</label>
 //                 <input
 //                   type="file"
 //                   accept="image/*"
-//                   className="border border-gray-300 rounded-lg px-4 py-2 w-full"
+//                   className="w-full px-4 py-2 border border-gray-300 rounded-lg"
 //                   onChange={(e) => setForm({ ...form, photo: e.target.files[0] })}
 //                 />
 //               </div>
 //             </div>
 
-//             <div className="mt-6 flex justify-end space-x-3">
+//             <div className="flex justify-end mt-6 space-x-3">
 //               {isEditing && (
 //                 <button
 //                   type="button"
@@ -339,47 +339,47 @@
 //         </div>
 
 //         {/* Employee List with Pagination */}
-//         <div className="max-w-7xl mx-auto space-y-4">
-//           <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-//             <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-indigo-100 text-indigo-700 mr-3">
+//         <div className="mx-auto space-y-4 max-w-7xl">
+//           <h2 className="flex items-center mb-6 text-2xl font-bold text-gray-800">
+//             <span className="inline-flex items-center justify-center w-10 h-10 mr-3 text-indigo-700 bg-indigo-100 rounded-full">
 //               👨‍💼
 //             </span>
 //             Employee List
 //           </h2>
 
 //           {employees.length === 0 ? (
-//             <div className="text-center py-10">
-//               <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-3">
+//             <div className="py-10 text-center">
+//               <div className="inline-flex items-center justify-center w-16 h-16 mb-3 bg-gray-100 rounded-full">
 //                 <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 //                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
 //                 </svg>
 //               </div>
-//               <p className="text-gray-500 text-lg">No employees added yet.</p>
+//               <p className="text-lg text-gray-500">No employees added yet.</p>
 //             </div>
 //           ) : (
 //             <>
 //               {paginatedEmployees.map((emp) => (
 //                 <div
 //                   key={emp._id}
-//                   className="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row md:justify-between items-start md:items-center border-l-4 border-indigo-500"
+//                   className="flex flex-col items-start p-5 transition-shadow duration-300 bg-white border-l-4 border-indigo-500 shadow-md rounded-xl hover:shadow-lg md:flex-row md:justify-between md:items-center"
 //                 >
 //                   <div className="flex items-center gap-4">
 //                     <div className="relative">
 //                       <img
 //                         src={getPhotoUrl(emp.photo)}
 //                         alt={emp.name}
-//                         className="w-14 h-14 rounded-full object-cover border-2 border-indigo-200 shadow-sm"
+//                         className="object-cover border-2 border-indigo-200 rounded-full shadow-sm w-14 h-14"
 //                         onError={(e) => {
 //                           e.target.onerror = null;
 //                           e.target.src = 'https://via.placeholder.com/150';
 //                         }}
 //                       />
 //                       {emp.status === 'Active' && (
-//                         <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+//                         <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
 //                       )}
 //                     </div>
 //                     <div>
-//                       <p className="text-lg font-semibold text-gray-800 hover:text-indigo-600 transition-colors">
+//                       <p className="text-lg font-semibold text-gray-800 transition-colors hover:text-indigo-600">
 //                         {emp.name} {emp.userId && `(${emp.userId})`}
 //                       </p>
 //                       <div className="flex flex-wrap gap-2 mt-1">
@@ -398,16 +398,16 @@
 //                       </div>
 //                       <div className="flex items-center gap-3 mt-2">
 //                         {emp.salary && (
-//                           <span className="text-sm font-medium text-gray-700 flex items-center">
-//                             <svg className="w-4 h-4 text-green-500 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                           <span className="flex items-center text-sm font-medium text-gray-700">
+//                             <svg className="w-4 h-4 mr-1 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 //                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 //                             </svg>
 //                             ${emp.salary}
 //                           </span>
 //                         )}
 //                         {emp.dateOfJoining && (
-//                           <span className="text-xs text-gray-500 flex items-center">
-//                             <svg className="w-4 h-4 text-indigo-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                           <span className="flex items-center text-xs text-gray-500">
+//                             <svg className="w-4 h-4 mr-1 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 //                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
 //                             </svg>
 //                             Joined: {new Date(emp.dateOfJoining).toLocaleDateString('en-GB')}
@@ -418,7 +418,7 @@
 //                   </div>
 
 //                   <div className="flex items-center gap-3 mt-3 md:mt-0">
-//                     <a href={`mailto:${emp.email}`} className="text-gray-600 hover:text-indigo-600 transition-colors text-sm flex items-center">
+//                     <a href={`mailto:${emp.email}`} className="flex items-center text-sm text-gray-600 transition-colors hover:text-indigo-600">
 //                       <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 //                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 //                       </svg>
@@ -428,7 +428,7 @@
 //                     <div className="flex gap-2 ml-4">
 //                       <button
 //                         onClick={() => handleEdit(emp)}
-//                         className="p-2 rounded-full bg-blue-50 hover:bg-blue-100 text-blue-600 hover:text-blue-800 transition-colors duration-200 group"
+//                         className="p-2 text-blue-600 transition-colors duration-200 rounded-full bg-blue-50 hover:bg-blue-100 hover:text-blue-800 group"
 //                         title="Edit"
 //                       >
 //                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -439,7 +439,7 @@
 
 //                       <button
 //                         onClick={() => handleDelete(emp._id)}
-//                         className="p-2 rounded-full bg-red-50 hover:bg-red-100 text-red-600 hover:text-red-800 transition-colors duration-200 group"
+//                         className="p-2 text-red-600 transition-colors duration-200 rounded-full bg-red-50 hover:bg-red-100 hover:text-red-800 group"
 //                         title="Delete"
 //                       >
 //                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -453,11 +453,11 @@
 //               ))}
 
 //               {/* Pagination */}
-//               <div className="flex justify-between items-center mt-8">
+//               <div className="flex items-center justify-between mt-8">
 //                 <button
 //                   onClick={prevPage}
 //                   disabled={currentPage === 1}
-//                   className="flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+//                   className="flex items-center px-4 py-2 text-gray-700 transition-colors bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
 //                 >
 //                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 //                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
@@ -482,7 +482,7 @@
 //                 <button
 //                   onClick={nextPage}
 //                   disabled={currentPage === totalPages}
-//                   className="flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+//                   className="flex items-center px-4 py-2 text-gray-700 transition-colors bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
 //                 >
 //                   Next
 //                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -679,29 +679,29 @@ const Employees = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen p-6 bg-gray-100 text-gray-900">
-        <h1 className="text-3xl font-bold mb-8 text-center text-indigo-700">👥 Employee Management</h1>
+      <div className="min-h-screen p-6 text-gray-900 bg-gray-100">
+        <h1 className="mb-8 text-3xl font-bold text-center text-indigo-700">👥 Employee Management</h1>
 
         {/* Add/Edit Employee Form */}
-        <div className="max-w-7xl mx-auto bg-white p-6 rounded-2xl shadow-md mb-10">
-          <h2 className="text-xl font-semibold mb-4 text-gray-700">
+        <div className="max-w-full p-6 mx-auto mb-10 bg-white shadow-md rounded-2xl">
+          <h2 className="mb-4 text-xl font-semibold text-gray-700">
             {isEditing ? '✏️ Edit Employee' : '➕ Add New Employee'}
           </h2>
           <form onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">User ID</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">User ID</label>
                 <input
-                  className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   placeholder="User ID"
                   value={form.userId}
                   onChange={(e) => setForm({ ...form, userId: e.target.value })}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Full Name*</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">Full Name*</label>
                 <input
-                  className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   placeholder="Full Name"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -709,9 +709,9 @@ const Employees = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">Email*</label>
                 <input
-                  className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   placeholder="Email"
                   type="email"
                   value={form.email}
@@ -721,11 +721,11 @@ const Employees = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            <div className="grid grid-cols-1 gap-4 mt-4 md:grid-cols-3">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Role*</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">Role*</label>
                 <select
-                  className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   value={form.role}
                   onChange={(e) => setForm({ ...form, role: e.target.value })}
                   required
@@ -737,9 +737,9 @@ const Employees = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">Status</label>
                 <select
-                  className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   value={form.status}
                   onChange={(e) => setForm({ ...form, status: e.target.value })}
                 >
@@ -749,9 +749,9 @@ const Employees = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Salary</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">Salary</label>
                 <input
-                  className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   placeholder="Salary"
                   type="number"
                   value={form.salary}
@@ -761,17 +761,17 @@ const Employees = () => {
             </div>
 
             <div className="mt-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Joining Date*</label>
+              <label className="block mb-1 text-sm font-medium text-gray-700">Joining Date*</label>
               <input
                 type="date"
-                className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full md:w-1/2"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-400 md:w-1/2"
                 value={form.dateOfJoining}
                 onChange={(e) => setForm({ ...form, dateOfJoining: e.target.value })}
                 required
               />
             </div>
 
-            <div className="mt-6 flex justify-end space-x-3">
+            <div className="flex justify-end mt-6 space-x-3">
               {isEditing && (
                 <button
                   type="button"
@@ -783,7 +783,7 @@ const Employees = () => {
               )}
               <button
                 type="submit"
-                className="bg-indigo-600 hover:bg-indigo-700 !text-white px-6 py-2 rounded-lg shadow-md transition-all"
+                className="cursor-pointer bg-indigo-600 hover:bg-indigo-700 !text-white px-6 py-2 rounded-lg shadow-md transition-all"
               >
                 {isEditing ? 'Update Employee' : 'Add Employee'}
               </button>
@@ -792,71 +792,71 @@ const Employees = () => {
         </div>
 
         {/* Employee List with Pagination */}
-        <div className="max-w-7xl mx-auto space-y-4">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-indigo-100 text-indigo-700 mr-3">
+        <div className="max-w-full mx-auto space-y-4">
+          <h2 className="flex items-center mb-6 text-2xl font-bold text-gray-800">
+            <span className="inline-flex items-center justify-center w-10 h-10 mr-3 text-indigo-700 bg-indigo-100 rounded-full">
               👨‍💼
             </span>
             Employee List
           </h2>
 
           {employees.length === 0 ? (
-            <div className="text-center py-10">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-3">
+            <div className="py-10 text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 mb-3 bg-gray-100 rounded-full">
                 <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </div>
-              <p className="text-gray-500 text-lg">No employees added yet.</p>
+              <p className="text-lg text-gray-500">No employees added yet.</p>
             </div>
           ) : (
             <>
               {paginatedEmployees.map((emp) => (
                 <div
                   key={emp._id}
-                  className="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row md:justify-between items-start md:items-center border-l-4 border-indigo-500"
+                  className="flex flex-col items-start p-5 transition-shadow duration-300 bg-white border-l-4 border-indigo-500 shadow-md rounded-xl hover:shadow-lg md:flex-row md:justify-between md:items-center"
                 >
                   <div className="flex items-center gap-4">
                     {/* <div className="relative">
                       <img
                         src={getEmployeePhoto()}
                         alt={emp.name}
-                        className="w-14 h-14 rounded-full object-cover border-2 border-indigo-200 shadow-sm"
+                        className="object-cover border-2 border-indigo-200 rounded-full shadow-sm w-14 h-14"
                       />
                       {emp.status === 'Active' && (
-                        <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+                        <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
                       )}
                     </div> */}
 
                     <div className="relative">
-                      <div className="w-14 h-14 rounded-full bg-indigo-400 flex items-center justify-center shadow-sm">
+                      <div className="flex items-center justify-center bg-indigo-400 rounded-full shadow-sm w-14 h-14">
                         <svg viewBox="0 0 24 24" className="w-8 h-8 text-white" fill="currentColor" aria-hidden="true">
                           <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1c0-2.761-3.582-5-8-5Z" />
                         </svg>
                       </div>
 
                       {emp.status === 'Active' && (
-                        <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+                        <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
                       )}
                     </div>
 
 
                     {/* <div className="relative">
-                      <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center shadow-sm">
+                      <div className="flex items-center justify-center bg-blue-500 rounded-full shadow-sm w-14 h-14">
                         <svg viewBox="0 0 24 24" className="w-8 h-8 text-white" fill="currentColor" aria-hidden="true">
                           <path d="M9 3h6a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V8a2 2 0 0 1 2-2h1V5a2 2 0 0 1 2-2Zm1 3h4V5h-4v1Zm2 7a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-5 4h10v-.5c0-2.209-2.686-3.5-5-3.5s-5 1.291-5 3.5V17Z" />
                         </svg>
                       </div>
 
                       {emp.status === 'Active' && (
-                        <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+                        <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
                       )}
                     </div> */}
 
 
 
                     <div>
-                      <p className="text-lg font-semibold text-gray-800 hover:text-indigo-600 transition-colors">
+                      <p className="text-lg font-semibold text-gray-800 transition-colors hover:text-indigo-600">
                         {emp.name} {emp.userId && `(${emp.userId})`}
                       </p>
                       <div className="flex flex-wrap gap-2 mt-1">
@@ -874,16 +874,16 @@ const Employees = () => {
                       </div>
                       <div className="flex items-center gap-3 mt-2">
                         {emp.salary && (
-                          <span className="text-sm font-medium text-gray-700 flex items-center">
-                            <svg className="w-4 h-4 text-green-500 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <span className="flex items-center text-sm font-medium text-gray-700">
+                            <svg className="w-4 h-4 mr-1 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599-1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             ${emp.salary}
                           </span>
                         )}
                         {emp.dateOfJoining && (
-                          <span className="text-xs text-gray-500 flex items-center">
-                            <svg className="w-4 h-4 text-indigo-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <span className="flex items-center text-xs text-gray-500">
+                            <svg className="w-4 h-4 mr-1 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                             Joined: {new Date(emp.dateOfJoining).toLocaleDateString('en-GB')}
@@ -894,7 +894,7 @@ const Employees = () => {
                   </div>
 
                   <div className="flex items-center gap-3 mt-3 md:mt-0">
-                    <a href={`mailto:${emp.email}`} className="text-gray-600 hover:text-indigo-600 transition-colors text-sm flex items-center">
+                    <a href={`mailto:${emp.email}`} className="flex items-center text-sm text-gray-600 transition-colors hover:text-indigo-600">
                       <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
@@ -904,7 +904,7 @@ const Employees = () => {
                     <div className="flex gap-2 ml-4">
                       <button
                         onClick={() => handleEdit(emp)}
-                        className="p-2 rounded-full bg-blue-50 hover:bg-blue-100 text-blue-600 hover:text-blue-800 transition-colors duration-200 group"
+                        className="p-2 text-blue-600 transition-colors duration-200 rounded-full cursor-pointer bg-blue-50 hover:bg-blue-100 hover:text-blue-800 group"
                         title="Edit"
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -915,7 +915,7 @@ const Employees = () => {
 
                       <button
                         onClick={() => handleDelete(emp._id)}
-                        className="p-2 rounded-full bg-red-50 hover:bg-red-100 text-red-600 hover:text-red-800 transition-colors duration-200 group"
+                        className="p-2 text-red-600 transition-colors duration-200 rounded-full cursor-pointer bg-red-50 hover:bg-red-100 hover:text-red-800 group"
                         title="Delete"
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -929,11 +929,11 @@ const Employees = () => {
               ))}
 
               {/* Pagination */}
-              <div className="flex justify-between items-center mt-8">
+              <div className="flex items-center justify-between mt-8">
                 <button
                   onClick={prevPage}
                   disabled={currentPage === 1}
-                  className="flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="flex items-center px-4 py-2 text-gray-700 transition-colors bg-white border border-gray-300 rounded-lg shadow-sm cursor-pointer hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
@@ -957,7 +957,7 @@ const Employees = () => {
                 <button
                   onClick={nextPage}
                   disabled={currentPage === totalPages}
-                  className="flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="flex items-center px-4 py-2 text-gray-700 transition-colors bg-white border border-gray-300 rounded-lg shadow-sm cursor-pointer hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Next
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

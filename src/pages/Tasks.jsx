@@ -85,22 +85,22 @@
 
 //   return (
 //     <Layout>
-//       <div className="min-h-screen p-6 bg-gray-100 text-gray-900">
-//         <h1 className="text-3xl font-bold mb-8 text-center text-indigo-700">📝 Task Assignments</h1>
+//       <div className="min-h-screen p-6 text-gray-900 bg-gray-100">
+//         <h1 className="mb-8 text-3xl font-bold text-center text-indigo-700">📝 Task Assignments</h1>
 
 //         {/* Add Task Form */}
-//         <div className="bg-white p-6 rounded-2xl shadow-md max-w-5xl mx-auto mb-10">
-//           <h2 className="text-xl font-semibold mb-4 text-gray-700">➕ Assign New Task</h2>
-//           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+//         <div className="max-w-5xl p-6 mx-auto mb-10 bg-white shadow-md rounded-2xl">
+//           <h2 className="mb-4 text-xl font-semibold text-gray-700">➕ Assign New Task</h2>
+//           <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
 //             <input
-//               className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+//               className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //               placeholder="Task Title"
 //               value={form.title}
 //               onChange={e => setForm({ ...form, title: e.target.value })}
 //             />
 
 //             <textarea
-//               className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 md:col-span-1"
+//               className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 md:col-span-1"
 //               rows="1"
 //               placeholder="Task Description"
 //               value={form.description}
@@ -108,7 +108,7 @@
 //             ></textarea>
 
 //             <select
-//               className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+//               className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //               value={form.assignedTo}
 //               onChange={e => setForm({ ...form, assignedTo: e.target.value })}
 //             >
@@ -120,12 +120,12 @@
 //             <input
 //   type="file"
 //   onChange={(e) => setForm({ ...form, attachment: e.target.files[0] })}
-//   className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+//   className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 // />
 
 //             <button
 //               onClick={addTask}
-//               className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-all shadow md:col-span-4"
+//               className="px-4 py-2 text-white transition-all bg-indigo-600 rounded-lg shadow hover:bg-indigo-700 md:col-span-4"
 //             >
 //               Assign Task
 //             </button>
@@ -133,7 +133,7 @@
 //         </div>
 
 //         {/* Task List */}
-//         <div className="space-y-4 max-w-5xl mx-auto">
+//         <div className="max-w-5xl mx-auto space-y-4">
 //           {/* {Array.isArray(tasks) && tasks.map(task => ( */}
 
 //           {Array.isArray(tasks) && tasks
@@ -143,7 +143,7 @@
 
 //               <div
 //                 key={task._id}
-//                 className="bg-white text-gray-900 p-5 rounded-xl shadow border border-gray-200"
+//                 className="p-5 text-gray-900 bg-white border border-gray-200 shadow rounded-xl"
 //               >
 //                 <p className="mb-1 text-lg font-semibold text-indigo-700">
 //                   📝 {task.title}
@@ -357,24 +357,24 @@
 
 //   return (
 //     <Layout>
-//       <div className="min-h-screen p-6 bg-gray-100 text-gray-900">
-//         <h1 className="text-3xl font-bold mb-8 text-center text-indigo-700">📝 Task Assignments</h1>
+//       <div className="min-h-screen p-6 text-gray-900 bg-gray-100">
+//         <h1 className="mb-8 text-3xl font-bold text-center text-indigo-700">📝 Task Assignments</h1>
 
 //         {/* Add/Edit Task Form */}
-//         <div className="bg-white p-6 rounded-2xl shadow-md max-w-5xl mx-auto mb-10">
-//           <h2 className="text-xl font-semibold mb-4 text-gray-700">
+//         <div className="max-w-5xl p-6 mx-auto mb-10 bg-white shadow-md rounded-2xl">
+//           <h2 className="mb-4 text-xl font-semibold text-gray-700">
 //             {editingTask ? '✏️ Edit Task' : '➕ Assign New Task'}
 //           </h2>
-//           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+//           <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
 //             <input
-//               className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+//               className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //               placeholder="Task Title"
 //               value={form.title}
 //               onChange={e => setForm({ ...form, title: e.target.value })}
 //             />
 
 //             <textarea
-//               className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 md:col-span-1"
+//               className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 md:col-span-1"
 //               rows="1"
 //               placeholder="Task Description"
 //               value={form.description}
@@ -382,7 +382,7 @@
 //             ></textarea>
 
 //             <select
-//               className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+//               className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //               value={form.assignedTo}
 //               onChange={e => setForm({ ...form, assignedTo: e.target.value })}
 //             >
@@ -395,20 +395,20 @@
 //             <input
 //               type="file"
 //               onChange={(e) => setForm({ ...form, attachment: e.target.files[0] })}
-//               className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+//               className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //             />
 
 //             {editingTask ? (
 //               <div className="flex gap-2 md:col-span-4">
 //                 <button
 //                   onClick={updateTask}
-//                   className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-all shadow flex-1"
+//                   className="flex-1 px-4 py-2 text-white transition-all bg-green-600 rounded-lg shadow hover:bg-green-700"
 //                 >
 //                   Update Task
 //                 </button>
 //                 <button
 //                   onClick={cancelEdit}
-//                   className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-all shadow flex-1"
+//                   className="flex-1 px-4 py-2 text-white transition-all bg-gray-600 rounded-lg shadow hover:bg-gray-700"
 //                 >
 //                   Cancel
 //                 </button>
@@ -416,7 +416,7 @@
 //             ) : (
 //               <button
 //                 onClick={addTask}
-//                 className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-all shadow md:col-span-4"
+//                 className="px-4 py-2 text-white transition-all bg-indigo-600 rounded-lg shadow hover:bg-indigo-700 md:col-span-4"
 //               >
 //                 Assign Task
 //               </button>
@@ -425,15 +425,15 @@
 //         </div>
 
 //         {/* Task List */}
-//         <div className="space-y-4 max-w-5xl mx-auto">
+//         <div className="max-w-5xl mx-auto space-y-4">
 //           {Array.isArray(tasks) && tasks
 //             .slice((currentPage - 1) * tasksPerPage, currentPage * tasksPerPage)
 //             .map(task => (
 //               <div
 //                 key={task._id}
-//                 className="bg-white text-gray-900 p-5 rounded-xl shadow border border-gray-200"
+//                 className="p-5 text-gray-900 bg-white border border-gray-200 shadow rounded-xl"
 //               >
-//                 <div className="flex justify-between items-start">
+//                 <div className="flex items-start justify-between">
 //                   <p className="mb-1 text-lg font-semibold text-indigo-700">
 //                     📝 {task.title}
 //                   </p>
@@ -465,19 +465,19 @@
 
 //                 {task.attachment && (
 //                   <div className="mb-2">
-//                     <span className="font-medium text-sm">Attachment:</span>{' '}
+//                     <span className="text-sm font-medium">Attachment:</span>{' '}
 //                     <a
 //                       href={`${API_URL}${task.attachment}`}
 //                       target="_blank"
 //                       rel="noopener noreferrer"
-//                       className="text-blue-600 hover:underline text-sm"
+//                       className="text-sm text-blue-600 hover:underline"
 //                     >
 //                       View Attachment
 //                     </a>
 //                   </div>
 //                 )}
 
-//                 <div className="flex justify-between items-center">
+//                 <div className="flex items-center justify-between">
 //                   <p className="text-sm">
 //                     <span className="font-medium">Status:</span>{' '}
 //                     <span className={`font-semibold ${task.status === 'Completed'
@@ -493,7 +493,7 @@
 //                   <select
 //                     value={task.status}
 //                     onChange={e => updateTaskStatus(task._id, e.target.value)}
-//                     className="p-2 border border-indigo-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm"
+//                     className="p-2 text-sm border border-indigo-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
 //                   >
 //                     <option value="InProgress">InProgress</option>
 //                     <option value="Completed">Completed</option>
@@ -675,24 +675,24 @@ const updateTask = async () => {
 
   return (
     <Layout>
-      <div className="min-h-screen p-6 bg-gray-100 text-gray-900">
-        <h1 className="text-3xl font-bold mb-8 text-center text-indigo-700">📝 Task Assignments</h1>
+      <div className="min-h-screen p-6 text-gray-900 bg-gray-100 ">
+        <h1 className="mb-8 text-3xl font-bold text-center text-indigo-700">📝 Task Assignments</h1>
 
         {/* Add/Edit Task Form */}
-        <div className="bg-white p-6 rounded-2xl shadow-md max-w-5xl mx-auto mb-10">
-          <h2 className="text-xl font-semibold mb-4 text-gray-700">
+        <div className="max-w-full p-6 mx-auto mb-10 bg-white shadow-md rounded-2xl">
+          <h2 className="mb-4 text-xl font-semibold text-gray-700">
             {editingTask ? '✏️ Edit Task' : '➕ Assign New Task'}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
             <input
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
               placeholder="Task Title"
               value={form.title}
               onChange={e => setForm({ ...form, title: e.target.value })}
             />
 
             <textarea
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 md:col-span-1"
+              className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 md:col-span-1"
               rows="1"
               placeholder="Task Description"
               value={form.description}
@@ -700,7 +700,7 @@ const updateTask = async () => {
             ></textarea>
 
             <select
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="px-3 py-2 border border-gray-300 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-400"
               value={form.assignedTo}
               onChange={e => setForm({ ...form, assignedTo: e.target.value })}
             >
@@ -713,20 +713,20 @@ const updateTask = async () => {
             <input
               type="file"
               onChange={(e) => setForm({ ...form, attachment: e.target.files[0] })}
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="px-3 py-2 border border-gray-300 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-400"
             />
 
             {editingTask ? (
               <div className="flex gap-2 md:col-span-4">
                 <button
                   onClick={updateTask}
-                  className="bg-green-600 !text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-all shadow flex-1"
+                  className="cursor-pointer bg-green-600 !text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-all shadow flex-1"
                 >
                   Update Task
                 </button>
                 <button
                   onClick={cancelEdit}
-                  className="bg-gray-600 !text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-all shadow flex-1"
+                  className="cursor-pointer bg-gray-600 !text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-all shadow flex-1"
                 >
                   Cancel
                 </button>
@@ -734,7 +734,7 @@ const updateTask = async () => {
             ) : (
               <button
                 onClick={addTask}
-                className="bg-indigo-600 !text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-all shadow md:col-span-4 "
+                className="cursor-pointer bg-indigo-600 !text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-all shadow md:col-span-4 "
              >
                 Assign Task
               </button>
@@ -743,28 +743,28 @@ const updateTask = async () => {
         </div>
 
         {/* Task List */}
-        <div className="space-y-4 max-w-5xl mx-auto">
+        <div className="max-w-full mx-auto space-y-4">
           {Array.isArray(tasks) && tasks
             .slice((currentPage - 1) * tasksPerPage, currentPage * tasksPerPage)
             .map(task => (
               <div
                 key={task._id}
-                className="bg-white text-gray-900 p-5 rounded-xl shadow border border-gray-200"
+                className="p-5 text-gray-900 bg-white border border-gray-200 shadow rounded-xl"
               >
-                <div className="flex justify-between items-start">
+                <div className="flex items-start justify-between">
                   <p className="mb-1 text-lg font-semibold text-indigo-700">
                     📝 {task.title}
                   </p>
                   <div className="flex gap-2">
                     <button
                       onClick={() => handleEditTask(task)}
-                      className="!text-blue-600 hover:text-blue-800"
+                      className="!text-blue-600 hover:text-blue-800 cursor-pointer"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => deleteTask(task._id)}
-                      className="!text-red-600 hover:text-red-800"
+                      className="!text-red-600 hover:text-red-800 cursor-pointer"
                     >
                       Delete
                     </button>
@@ -783,19 +783,19 @@ const updateTask = async () => {
 
                 {task.attachment && (
                   <div className="mb-2">
-                    <span className="font-medium text-sm">Attachment:</span>{' '}
+                    <span className="text-sm font-medium">Attachment:</span>{' '}
                     <a
                       href={`${API_URL}${task.attachment}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline text-sm"
+                      className="text-sm text-blue-600 cursor-pointer hover:underline"
                     >
                       View Attachment
                     </a>
                   </div>
                 )}
 
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between ">
                   <p className="text-sm">
                     <span className="font-medium">Status:</span>{' '}
                     <span className={`font-semibold ${task.status === 'Completed'
@@ -811,7 +811,7 @@ const updateTask = async () => {
                   <select
                     value={task.status}
                     onChange={e => updateTaskStatus(task._id, e.target.value)}
-                    className="p-2 border border-indigo-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm"
+                    className="p-2 text-sm border border-indigo-300 rounded shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   >
                     
                     <option value="Not Started">Not Started</option>
@@ -830,7 +830,7 @@ const updateTask = async () => {
           <button
             onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className="px-4 py-2 bg-gray-300 rounded-lg shadow hover:bg-gray-400 disabled:opacity-50"
+            className="px-4 py-2 bg-gray-300 rounded-lg shadow cursor-pointer hover:bg-gray-400 disabled:opacity-50"
           >
             ⬅ Previous
           </button>
@@ -840,7 +840,7 @@ const updateTask = async () => {
           <button
             onClick={() => setCurrentPage(prev => prev + 1)}
             disabled={currentPage * tasksPerPage >= tasks.length}
-            className="px-4 py-2 bg-gray-300 rounded-lg shadow hover:bg-gray-400 disabled:opacity-50"
+            className="px-4 py-2 bg-gray-300 rounded-lg shadow cursor-pointer hover:bg-gray-400 disabled:opacity-50"
           >
             Next ➡
           </button>

@@ -536,7 +536,7 @@ const DashboardCards = () => {
   return (
     <div className="space-y-4">
       <div className="flex justify-end space-x-3">
-        <select value={filter} onChange={(e) => setFilter(e.target.value)} disabled={loading} className="px-4 py-2 bg-black border rounded-lg">
+        <select value={filter} onChange={(e) => setFilter(e.target.value)} disabled={loading} className="px-4 py-2 bg-black border rounded-lg cursor-pointer">
           <option value="today">Today's Attendance</option>
           <option value="monthly">Monthly Attendance</option>
           <option value="all">All Attendance</option>
@@ -544,12 +544,12 @@ const DashboardCards = () => {
  
         {filter === 'monthly' && (
           <>
-            <select value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)} disabled={loading} className="px-4 py-2 bg-black border rounded-lg"
+            <select value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)} disabled={loading} className="px-4 py-2 bg-black border rounded-lg cursor-pointer"
               >
               {months.map((m) => <option key={m} value={m}>{m}</option>)}
             </select>
  
-            <select value={selectedYear} onChange={(e) => setSelectedYear(Number(e.target.value))} disabled={loading} className="px-4 py-2 bg-black border rounded-lg">
+            <select value={selectedYear} onChange={(e) => setSelectedYear(Number(e.target.value))} disabled={loading} className="px-4 py-2 bg-black border rounded-lg cursor-pointer">
               {years.map((y) => <option key={y} value={y}>{y}</option>)}
             </select>
           </>

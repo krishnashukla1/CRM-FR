@@ -1955,7 +1955,7 @@ const AttendanceChart = () => {
           <select
             value={selectedYear}
             onChange={(e) => setSelectedYear(Number(e.target.value))}
-            className="px-3 py-2 font-medium text-blue-600 bg-gray-200 border border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-3 py-2 font-medium text-blue-600 bg-gray-200 border border-gray-500 rounded-md shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={loading}
           >
             {years.map((year) => (
@@ -2055,7 +2055,7 @@ const AttendanceChart = () => {
             <select
               value={selectedMonth}
               onChange={(e) => setSelectedMonth(e.target.value)}
-              className="px-3 py-2 font-medium text-blue-600 bg-gray-200 border border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-3 py-2 font-medium text-blue-600 bg-gray-200 border border-gray-500 rounded-md shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
               disabled={loading}
             >
               {months.map((month) => (
@@ -2067,7 +2067,7 @@ const AttendanceChart = () => {
             <select
               value={selectedYear}
               onChange={(e) => setSelectedYear(Number(e.target.value))}
-              className="px-3 py-2 font-medium text-blue-600 bg-gray-200 border border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-3 py-2 font-medium text-blue-600 bg-gray-200 border border-gray-500 rounded-md shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
               disabled={loading}
             >
               {years.map((year) => (
@@ -2208,7 +2208,7 @@ const AttendanceChart = () => {
           <select
             value={selectedMonth}
             onChange={(e) => setSelectedMonth(e.target.value)}
-            className="px-3 py-2 font-medium text-blue-600 bg-gray-200 border border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-3 py-2 font-medium text-blue-600 bg-gray-200 border border-gray-500 rounded-md shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={loading}
           >
             {months.map((month) => (
@@ -2220,7 +2220,7 @@ const AttendanceChart = () => {
           <select
             value={selectedYear}
             onChange={(e) => setSelectedYear(Number(e.target.value))}
-            className="px-3 py-2 font-medium text-blue-600 bg-gray-200 border border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-3 py-2 font-medium text-blue-600 bg-gray-200 border border-gray-500 rounded-md shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={loading}
           >
             {years.map((year) => (
@@ -2408,7 +2408,7 @@ const AttendanceChart = () => {
         <div className="flex p-1 space-x-2 rounded-lg bg-gray-50">
           <button
             onClick={() => setActiveTab('monthly')}
-            className={`px-4 py-2 rounded-md font-medium text-sm transition-colors ${
+            className={`cursor-pointer px-4 py-2 rounded-md font-medium text-sm transition-colors ${
               activeTab === 'monthly'
                 ? 'bg-white shadow-sm !text-blue-600 border border-gray-200'
                 : '!text-gray-600 hover:text-gray-800'
@@ -2418,7 +2418,7 @@ const AttendanceChart = () => {
           </button>
           <button
             onClick={() => setActiveTab('employee')}
-            className={`px-4 py-2 rounded-md font-medium text-sm transition-colors ${
+            className={`cursor-pointer px-4 py-2 rounded-md font-medium text-sm transition-colors ${
               activeTab === 'employee'
                 ? '!bg-white shadow-sm !text-blue-600 border border-gray-200'
                 : '!text-gray-600 hover:text-gray-800'
@@ -2428,7 +2428,7 @@ const AttendanceChart = () => {
           </button>
           <button
             onClick={() => setActiveTab('summary')}
-            className={`px-4 py-2 rounded-md font-medium text-sm transition-colors ${
+            className={`cursor-pointer px-4 py-2 rounded-md font-medium text-sm transition-colors ${
               activeTab === 'summary'
                 ? '!bg-white shadow-sm !text-blue-600 border border-gray-200'
                 : '!text-gray-600 hover:text-gray-800'

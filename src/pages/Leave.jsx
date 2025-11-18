@@ -313,14 +313,14 @@
 //                         className={`inline-flex justify-center w-full rounded-md px-4 py-2 text-sm font-medium ${statusColors[selectedStatus]} hover:bg-opacity-80 focus:outline-none`}
 //                     >
 //                         {selectedStatus}
-//                         <svg className="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+//                         <svg className="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 //                             <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
 //                         </svg>
 //                     </button>
 //                 </div>
 
 //                 {isOpen && (
-//                     <div className="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+//                     <div className="absolute right-0 z-10 w-32 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
 //                         <div className="py-1">
 //                             {['Approved', 'Rejected', 'Pending'].map((status) => (
 //                                 <button
@@ -424,62 +424,62 @@
 //         };
 
 //         return (
-//             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-//                 <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-//                     <h2 className="text-xl font-semibold mb-4">Edit Leave</h2>
+//             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+//                 <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
+//                     <h2 className="mb-4 text-xl font-semibold">Edit Leave</h2>
 //                     <form onSubmit={handleSubmit}>
 //                         <div className="space-y-4">
 //                             <div>
-//                                 <label className="block text-sm font-medium text-gray-700 mb-1">From Date</label>
+//                                 <label className="block mb-1 text-sm font-medium text-gray-700">From Date</label>
 //                                 <input
 //                                     type="date"
 //                                     name="from"
 //                                     value={formData.from}
 //                                     onChange={handleChange}
-//                                     className="w-full border rounded-md px-3 py-2"
+//                                     className="w-full px-3 py-2 border rounded-md"
 //                                     required
 //                                 />
 //                             </div>
 //                             <div>
-//                                 <label className="block text-sm font-medium text-gray-700 mb-1">To Date</label>
+//                                 <label className="block mb-1 text-sm font-medium text-gray-700">To Date</label>
 //                                 <input
 //                                     type="date"
 //                                     name="to"
 //                                     value={formData.to}
 //                                     onChange={handleChange}
-//                                     className="w-full border rounded-md px-3 py-2"
+//                                     className="w-full px-3 py-2 border rounded-md"
 //                                     required
 //                                 />
 //                             </div>
 //                             <div>
-//                                 <label className="block text-sm font-medium text-gray-700 mb-1">Reason</label>
+//                                 <label className="block mb-1 text-sm font-medium text-gray-700">Reason</label>
 //                                 <textarea
 //                                     name="reason"
 //                                     value={formData.reason}
 //                                     onChange={handleChange}
-//                                     className="w-full border rounded-md px-3 py-2"
+//                                     className="w-full px-3 py-2 border rounded-md"
 //                                     required
 //                                 />
 //                             </div>
 //                             <div>
-//                                 <label className="block text-sm font-medium text-gray-700 mb-1">Leave Type</label>
+//                                 <label className="block mb-1 text-sm font-medium text-gray-700">Leave Type</label>
 //                                 <select
 //                                     name="leaveType"
 //                                     value={formData.leaveType}
 //                                     onChange={handleChange}
-//                                     className="w-full border rounded-md px-3 py-2"
+//                                     className="w-full px-3 py-2 border rounded-md"
 //                                 >
 //                                     <option value="Paid Leave">Paid Leave</option>
 //                                     <option value="Leave Without Pay">Leave Without Pay</option>
 //                                 </select>
 //                             </div>
 //                             <div>
-//                                 <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+//                                 <label className="block mb-1 text-sm font-medium text-gray-700">Status</label>
 //                                 <select
 //                                     name="status"
 //                                     value={formData.status}
 //                                     onChange={handleChange}
-//                                     className="w-full border rounded-md px-3 py-2"
+//                                     className="w-full px-3 py-2 border rounded-md"
 //                                 >
 //                                     <option value="Approved">Approved</option>
 //                                     <option value="Pending">Pending</option>
@@ -487,17 +487,17 @@
 //                                 </select>
 //                             </div>
 //                         </div>
-//                         <div className="mt-6 flex justify-end space-x-3">
+//                         <div className="flex justify-end mt-6 space-x-3">
 //                             <button
 //                                 type="button"
 //                                 onClick={onClose}
-//                                 className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+//                                 className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50"
 //                             >
 //                                 Cancel
 //                             </button>
 //                             <button
 //                                 type="submit"
-//                                 className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+//                                 className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700"
 //                             >
 //                                 Save Changes
 //                             </button>
@@ -510,19 +510,19 @@
 
 //     return (
 //         <Layout>
-//             <div className="min-h-screen p-6 bg-gray-100 text-gray-900">
-//                 <h1 className="text-2xl font-bold text-indigo-700 mb-6">📝 Leave Management</h1>
+//             <div className="min-h-screen p-6 text-gray-900 bg-gray-100">
+//                 <h1 className="mb-6 text-2xl font-bold text-indigo-700">📝 Leave Management</h1>
 
 //                 {/* Filters */}
-//                 <div className="bg-white p-4 rounded-lg shadow border border-gray-200 mb-6">
-//                     <h2 className="text-lg font-semibold mb-3">Filters</h2>
+//                 <div className="p-4 mb-6 bg-white border border-gray-200 rounded-lg shadow">
+//                     <h2 className="mb-3 text-lg font-semibold">Filters</h2>
 //                     <div className="flex flex-wrap gap-4">
 //                         <div className="flex-1 min-w-[200px]">
-//                             <label className="block text-sm font-medium text-gray-700 mb-1">Employee</label>
+//                             <label className="block mb-1 text-sm font-medium text-gray-700">Employee</label>
 //                             <select
 //                                 value={selectedEmployee}
 //                                 onChange={(e) => setSelectedEmployee(e.target.value)}
-//                                 className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+//                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 //                             >
 //                                 <option value="all">All Employees</option>
 //                                 {employees.map(emp => (
@@ -531,11 +531,11 @@
 //                             </select>
 //                         </div>
 //                         <div className="flex-1 min-w-[150px]">
-//                             <label className="block text-sm font-medium text-gray-700 mb-1">Month</label>
+//                             <label className="block mb-1 text-sm font-medium text-gray-700">Month</label>
 //                             <select
 //                                 value={selectedMonth}
 //                                 onChange={(e) => setSelectedMonth(parseInt(e.target.value))}
-//                                 className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+//                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 //                             >
 //                                 {monthOptions.map(month => (
 //                                     <option key={month.value} value={month.value}>{month.label}</option>
@@ -543,11 +543,11 @@
 //                             </select>
 //                         </div>
 //                         <div className="flex-1 min-w-[150px]">
-//                             <label className="block text-sm font-medium text-gray-700 mb-1">Year</label>
+//                             <label className="block mb-1 text-sm font-medium text-gray-700">Year</label>
 //                             <select
 //                                 value={selectedYear}
 //                                 onChange={(e) => setSelectedYear(parseInt(e.target.value))}
-//                                 className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+//                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 //                             >
 //                                 {yearOptions.map(year => (
 //                                     <option key={year.value} value={year.value}>
@@ -560,38 +560,38 @@
 //                 </div>
 
 //                 {/* Global Summary Cards */}
-//                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-//                     <div className="bg-white p-4 rounded-lg shadow border border-gray-200">
+//                 <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-4">
+//                     <div className="p-4 bg-white border border-gray-200 rounded-lg shadow">
 //                         <h3 className="text-sm font-medium text-gray-500">Total Leaves</h3>
 //                         <p className="text-2xl font-semibold">{globalStats.totalLeaves}</p>
 //                     </div>
-//                     <div className="bg-white p-4 rounded-lg shadow border border-green-100">
+//                     <div className="p-4 bg-white border border-green-100 rounded-lg shadow">
 //                         <h3 className="text-sm font-medium text-gray-500">Approved</h3>
 //                         <p className="text-2xl font-semibold text-green-600">{globalStats.approvedCount}</p>
 //                     </div>
-//                     <div className="bg-white p-4 rounded-lg shadow border border-red-100">
+//                     <div className="p-4 bg-white border border-red-100 rounded-lg shadow">
 //                         <h3 className="text-sm font-medium text-gray-500">Rejected</h3>
 //                         <p className="text-2xl font-semibold text-red-600">{globalStats.rejectedCount}</p>
 //                     </div>
-//                     <div className="bg-white p-4 rounded-lg shadow border border-yellow-100">
+//                     <div className="p-4 bg-white border border-yellow-100 rounded-lg shadow">
 //                         <h3 className="text-sm font-medium text-gray-500">Pending</h3>
 //                         <p className="text-2xl font-semibold text-yellow-600">{globalStats.pendingCount}</p>
 //                     </div>
 //                 </div>
 
 //                 {/* Employee Leave Quotas */}
-//                 <div className="bg-white p-5 rounded-lg shadow border border-gray-200 mb-6">
-//                     <h2 className="text-lg font-semibold mb-4">Employee Leave Quotas</h2>
+//                 <div className="p-5 mb-6 bg-white border border-gray-200 rounded-lg shadow">
+//                     <h2 className="mb-4 text-lg font-semibold">Employee Leave Quotas</h2>
 //                     <div className="overflow-x-auto">
 //                         <table className="min-w-full divide-y divide-gray-200">
 //                             <thead className="bg-gray-50">
 //                                 <tr>
-//                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Employee</th>
-//                                     {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Weekly Off</th> */}
-//                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Annual Quota</th>
-//                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Used Days</th>
-//                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Remaining Days</th>
-//                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+//                                     <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Employee</th>
+//                                     {/* <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Weekly Off</th> */}
+//                                     <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Annual Quota</th>
+//                                     <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Used Days</th>
+//                                     <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Remaining Days</th>
+//                                     <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Actions</th>
 //                                 </tr>
 //                             </thead>
 //                             <tbody className="bg-white divide-y divide-gray-200">
@@ -602,18 +602,18 @@
 
 //                                     return (
 //                                         <tr key={emp._id}>
-//                                             <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+//                                             <td className="px-4 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
 //                                                 {emp.name}
 //                                             </td>
 
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {isEditingQuota ? (
 //                                                     <div className="flex items-center gap-2">
 //                                                         <input
 //                                                             type="number"
 //                                                             value={newLeaveQuota}
 //                                                             onChange={(e) => setNewLeaveQuota(e.target.value)}
-//                                                             className="w-20 border rounded px-2 py-1"
+//                                                             className="w-20 px-2 py-1 border rounded"
 //                                                             min="0"
 //                                                         />
 //                                                         <button
@@ -637,7 +637,7 @@
 //                                                                 setEditingQuota(emp._id);
 //                                                                 setNewLeaveQuota(emp.leaveQuota || 20);
 //                                                             }}
-//                                                             className="text-blue-600 hover:text-blue-800 text-xs"
+//                                                             className="text-xs text-blue-600 hover:text-blue-800"
 //                                                         >
 //                                                             Edit
 //                                                         </button>
@@ -645,14 +645,14 @@
 //                                                 )}
 //                                             </td>
 
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {isEditingUsedDays ? (
 //                                                     <div className="flex items-center gap-2">
 //                                                         <input
 //                                                             type="number"
 //                                                             value={tempUsedDays}
 //                                                             onChange={(e) => setTempUsedDays(e.target.value)}
-//                                                             className="w-20 border rounded px-2 py-1"
+//                                                             className="w-20 px-2 py-1 border rounded"
 //                                                             min={stats.totalUsedDays || 0}
 //                                                             max={emp.leaveQuota || 20}
 //                                                         />
@@ -677,7 +677,7 @@
 //                                                                 setEditingUsedDays(emp._id);
 //                                                                 setTempUsedDays(emp.usedDays || stats.totalUsedDays || 0);
 //                                                             }}
-//                                                             className="text-blue-600 hover:text-blue-800 text-xs"
+//                                                             className="text-xs text-blue-600 hover:text-blue-800"
 //                                                         >
 //                                                             Edit
 //                                                         </button>
@@ -686,10 +686,10 @@
 //                                             </td>
 
 
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {emp.remainingDays !== undefined ? emp.remainingDays : (emp.leaveQuota || 20) - (emp.usedDays || stats.totalUsedDays || 0)}
 //                                             </td>
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 <button
 //                                                     onClick={() => setSelectedEmployee(emp._id)}
 //                                                     className="text-blue-600 hover:text-blue-800"
@@ -706,25 +706,25 @@
 //                 </div>
 
 //                 {/* Monthly Summary */}
-//                 <div className="bg-white p-5 rounded-lg shadow border border-gray-200 mb-6">
-//                     <h2 className="text-lg font-semibold mb-4">
+//                 <div className="p-5 mb-6 bg-white border border-gray-200 rounded-lg shadow">
+//                     <h2 className="mb-4 text-lg font-semibold">
 //                         {new Date(selectedYear, selectedMonth - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} Summary
 //                     </h2>
 //                     {selectedEmployee === 'all' ? (
-//                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-//                             <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+//                         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+//                             <div className="p-4 border border-blue-100 rounded-lg bg-blue-50">
 //                                 <h3 className="text-sm font-medium text-gray-700">Total Leaves Taken</h3>
 //                                 <p className="text-xl font-semibold">
 //                                     {adminFilteredLeaves.filter(l => l.status === 'Approved').length}
 //                                 </p>
 //                             </div>
-//                             <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+//                             <div className="p-4 border border-yellow-100 rounded-lg bg-yellow-50">
 //                                 <h3 className="text-sm font-medium text-gray-700">Pending Approvals</h3>
 //                                 <p className="text-xl font-semibold text-yellow-600">
 //                                     {adminFilteredLeaves.filter(l => l.status === 'Pending').length}
 //                                 </p>
 //                             </div>
-//                             <div className="bg-purple-50 p-4 rounded-lg border border-purple-100">
+//                             <div className="p-4 border border-purple-100 rounded-lg bg-purple-50">
 //                                 <h3 className="text-sm font-medium text-gray-700">Weekly Offs</h3>
 //                                 <p className="text-xl font-semibold text-purple-600">
 //                                     {adminFilteredLeaves.filter(l => l.isWeeklyOff).length}
@@ -732,7 +732,7 @@
 //                             </div>
 //                         </div>
 //                     ) : (
-//                         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+//                         <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
 //                             <div>
 //                                 <h3 className="text-sm font-medium text-gray-500">Monthly Quota</h3>
 //                                 <p className="text-xl font-semibold">
@@ -750,7 +750,7 @@
 //                 </div>
 
 //                 {/* Leave History Table */}
-//                 <div className="bg-white rounded-lg shadow overflow-hidden border border-gray-200 mb-6">
+//                 <div className="mb-6 overflow-hidden bg-white border border-gray-200 rounded-lg shadow">
 //                     <div className="p-4 border-b border-gray-200">
 //                         <h2 className="text-lg font-semibold">
 //                             Leave History for {monthOptions[selectedMonth - 1].label} {selectedYear}
@@ -763,16 +763,16 @@
 //                             <table className="min-w-full divide-y divide-gray-200">
 //                                 <thead className="bg-gray-50">
 //                                     <tr>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">#</th>
 //                                         {selectedEmployee === 'all' && (
-//                                             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Employee</th>
+//                                             <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Employee</th>
 //                                         )}
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Period</th>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Days</th>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Document</th>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Period</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Days</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Type</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Document</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Status</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Actions</th>
 //                                     </tr>
 //                                 </thead>
 //                                 <tbody className="bg-white divide-y divide-gray-200">
@@ -781,32 +781,32 @@
 //                                             key={leave._id || index}
 //                                             className={leave.isWeeklyOff ? 'bg-purple-50' : ''}
 //                                         >
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+//                                             <td className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
 //                                                 {index + 1}
 //                                             </td>
 //                                             {selectedEmployee === 'all' && (
-//                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                                 <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                     {leave.employeeName}
 //                                                 </td>
 //                                             )}
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {dayjs(leave.fromDate).format('DD MMM YYYY')} - {dayjs(leave.toDate).format('DD MMM YYYY')}
 //                                             </td>
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {leave.totalDays} {leave.weeklyOffs > 0 && `(${leave.leaveDays} + ${leave.weeklyOffs} ${employeeStats[leave.employeeId]?.weeklyOffDay})`}
 //                                             </td>
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {leave.isWeeklyOff ?
 //                                                     `Weekly Off (${employeeStats[leave.employeeId]?.weeklyOffDay})` :
 //                                                     leave.leaveType || 'Regular Leave'}
 //                                             </td>
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {leave.document ? (
 //                                                     <a
 //                                                         href={`${API_URL}/uploads/documents/${leave.document}`}
 //                                                         target="_blank"
 //                                                         rel="noopener noreferrer"
-//                                                         className="text-blue-600 hover:text-blue-800 underline"
+//                                                         className="text-blue-600 underline hover:text-blue-800"
 //                                                     >
 //                                                         View Document
 //                                                     </a>
@@ -821,10 +821,10 @@
 //                                                     onStatusChange={handleStatusChange}
 //                                                 />
 //                                             </td>
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 <button
 //                                                     onClick={() => setEditingLeave(leave)}
-//                                                     className="text-blue-600 hover:text-blue-800 mr-2"
+//                                                     className="mr-2 text-blue-600 hover:text-blue-800"
 //                                                 >
 //                                                     Edit
 //                                                 </button>
@@ -1159,14 +1159,14 @@
 //                         className={`inline-flex justify-center w-full rounded-md px-4 py-2 text-sm font-medium ${statusColors[selectedStatus]} hover:bg-opacity-80 focus:outline-none`}
 //                     >
 //                         {selectedStatus}
-//                         <svg className="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+//                         <svg className="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 //                             <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
 //                         </svg>
 //                     </button>
 //                 </div>
 
 //                 {isOpen && (
-//                     <div className="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+//                     <div className="absolute right-0 z-10 w-32 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
 //                         <div className="py-1">
 //                             {['Approved', 'Rejected', 'Pending'].map((status) => (
 //                                 <button
@@ -1270,62 +1270,62 @@
 //         };
 
 //         return (
-//             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-//                 <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-//                     <h2 className="text-xl font-semibold mb-4">Edit Leave</h2>
+//             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+//                 <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
+//                     <h2 className="mb-4 text-xl font-semibold">Edit Leave</h2>
 //                     <form onSubmit={handleSubmit}>
 //                         <div className="space-y-4">
 //                             <div>
-//                                 <label className="block text-sm font-medium text-gray-700 mb-1">From Date</label>
+//                                 <label className="block mb-1 text-sm font-medium text-gray-700">From Date</label>
 //                                 <input
 //                                     type="date"
 //                                     name="from"
 //                                     value={formData.from}
 //                                     onChange={handleChange}
-//                                     className="w-full border rounded-md px-3 py-2"
+//                                     className="w-full px-3 py-2 border rounded-md"
 //                                     required
 //                                 />
 //                             </div>
 //                             <div>
-//                                 <label className="block text-sm font-medium text-gray-700 mb-1">To Date</label>
+//                                 <label className="block mb-1 text-sm font-medium text-gray-700">To Date</label>
 //                                 <input
 //                                     type="date"
 //                                     name="to"
 //                                     value={formData.to}
 //                                     onChange={handleChange}
-//                                     className="w-full border rounded-md px-3 py-2"
+//                                     className="w-full px-3 py-2 border rounded-md"
 //                                     required
 //                                 />
 //                             </div>
 //                             <div>
-//                                 <label className="block text-sm font-medium text-gray-700 mb-1">Reason</label>
+//                                 <label className="block mb-1 text-sm font-medium text-gray-700">Reason</label>
 //                                 <textarea
 //                                     name="reason"
 //                                     value={formData.reason}
 //                                     onChange={handleChange}
-//                                     className="w-full border rounded-md px-3 py-2"
+//                                     className="w-full px-3 py-2 border rounded-md"
 //                                     required
 //                                 />
 //                             </div>
 //                             <div>
-//                                 <label className="block text-sm font-medium text-gray-700 mb-1">Leave Type</label>
+//                                 <label className="block mb-1 text-sm font-medium text-gray-700">Leave Type</label>
 //                                 <select
 //                                     name="leaveType"
 //                                     value={formData.leaveType}
 //                                     onChange={handleChange}
-//                                     className="w-full border rounded-md px-3 py-2"
+//                                     className="w-full px-3 py-2 border rounded-md"
 //                                 >
 //                                     <option value="Paid Leave">Paid Leave</option>
 //                                     <option value="Leave Without Pay">Leave Without Pay</option>
 //                                 </select>
 //                             </div>
 //                             <div>
-//                                 <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+//                                 <label className="block mb-1 text-sm font-medium text-gray-700">Status</label>
 //                                 <select
 //                                     name="status"
 //                                     value={formData.status}
 //                                     onChange={handleChange}
-//                                     className="w-full border rounded-md px-3 py-2"
+//                                     className="w-full px-3 py-2 border rounded-md"
 //                                 >
 //                                     <option value="Approved">Approved</option>
 //                                     <option value="Pending">Pending</option>
@@ -1333,17 +1333,17 @@
 //                                 </select>
 //                             </div>
 //                         </div>
-//                         <div className="mt-6 flex justify-end space-x-3">
+//                         <div className="flex justify-end mt-6 space-x-3">
 //                             <button
 //                                 type="button"
 //                                 onClick={onClose}
-//                                 className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+//                                 className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50"
 //                             >
 //                                 Cancel
 //                             </button>
 //                             <button
 //                                 type="submit"
-//                                 className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+//                                 className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700"
 //                             >
 //                                 Save Changes
 //                             </button>
@@ -1356,19 +1356,19 @@
 
 //     return (
 //         <Layout>
-//             <div className="min-h-screen p-6 bg-gray-100 text-gray-900">
-//                 <h1 className="text-2xl font-bold text-indigo-700 mb-6">📝 Leave Management</h1>
+//             <div className="min-h-screen p-6 text-gray-900 bg-gray-100">
+//                 <h1 className="mb-6 text-2xl font-bold text-indigo-700">📝 Leave Management</h1>
 
 //                 {/* Filters */}
-//                 <div className="bg-white p-4 rounded-lg shadow border border-gray-200 mb-6">
-//                     <h2 className="text-lg font-semibold mb-3">Filters</h2>
+//                 <div className="p-4 mb-6 bg-white border border-gray-200 rounded-lg shadow">
+//                     <h2 className="mb-3 text-lg font-semibold">Filters</h2>
 //                     <div className="flex flex-wrap gap-4">
 //                         <div className="flex-1 min-w-[200px]">
-//                             <label className="block text-sm font-medium text-gray-700 mb-1">Employee</label>
+//                             <label className="block mb-1 text-sm font-medium text-gray-700">Employee</label>
 //                             <select
 //                                 value={selectedEmployee}
 //                                 onChange={(e) => setSelectedEmployee(e.target.value)}
-//                                 className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+//                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 //                             >
 //                                 <option value="all">All Employees</option>
 //                                 {employees.map(emp => (
@@ -1377,11 +1377,11 @@
 //                             </select>
 //                         </div>
 //                         <div className="flex-1 min-w-[150px]">
-//                             <label className="block text-sm font-medium text-gray-700 mb-1">Month</label>
+//                             <label className="block mb-1 text-sm font-medium text-gray-700">Month</label>
 //                             <select
 //                                 value={selectedMonth}
 //                                 onChange={(e) => setSelectedMonth(parseInt(e.target.value))}
-//                                 className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+//                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 //                             >
 //                                 {monthOptions.map(month => (
 //                                     <option key={month.value} value={month.value}>{month.label}</option>
@@ -1389,11 +1389,11 @@
 //                             </select>
 //                         </div>
 //                         <div className="flex-1 min-w-[150px]">
-//                             <label className="block text-sm font-medium text-gray-700 mb-1">Year</label>
+//                             <label className="block mb-1 text-sm font-medium text-gray-700">Year</label>
 //                             <select
 //                                 value={selectedYear}
 //                                 onChange={(e) => setSelectedYear(parseInt(e.target.value))}
-//                                 className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+//                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 //                             >
 //                                 {yearOptions.map(year => (
 //                                     <option key={year.value} value={year.value}>
@@ -1406,37 +1406,37 @@
 //                 </div>
 
 //                 {/* Global Summary Cards */}
-//                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-//                     <div className="bg-white p-4 rounded-lg shadow border border-gray-200">
+//                 <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-4">
+//                     <div className="p-4 bg-white border border-gray-200 rounded-lg shadow">
 //                         <h3 className="text-sm font-medium text-gray-500">Total Leaves</h3>
 //                         <p className="text-2xl font-semibold">{globalStats.totalLeaves}</p>
 //                     </div>
-//                     <div className="bg-white p-4 rounded-lg shadow border border-green-100">
+//                     <div className="p-4 bg-white border border-green-100 rounded-lg shadow">
 //                         <h3 className="text-sm font-medium text-gray-500">Approved</h3>
 //                         <p className="text-2xl font-semibold text-green-600">{globalStats.approvedCount}</p>
 //                     </div>
-//                     <div className="bg-white p-4 rounded-lg shadow border border-red-100">
+//                     <div className="p-4 bg-white border border-red-100 rounded-lg shadow">
 //                         <h3 className="text-sm font-medium text-gray-500">Rejected</h3>
 //                         <p className="text-2xl font-semibold text-red-600">{globalStats.rejectedCount}</p>
 //                     </div>
-//                     <div className="bg-white p-4 rounded-lg shadow border border-yellow-100">
+//                     <div className="p-4 bg-white border border-yellow-100 rounded-lg shadow">
 //                         <h3 className="text-sm font-medium text-gray-500">Pending</h3>
 //                         <p className="text-2xl font-semibold text-yellow-600">{globalStats.pendingCount}</p>
 //                     </div>
 //                 </div>
 
 //                 {/* Employee Leave Quotas */}
-//                 <div className="bg-white p-5 rounded-lg shadow border border-gray-200 mb-6">
-//                     <h2 className="text-lg font-semibold mb-4">Employee Leave Quotas</h2>
+//                 <div className="p-5 mb-6 bg-white border border-gray-200 rounded-lg shadow">
+//                     <h2 className="mb-4 text-lg font-semibold">Employee Leave Quotas</h2>
 //                     <div className="overflow-x-auto">
 //                         <table className="min-w-full divide-y divide-gray-200">
 //                             <thead className="bg-gray-50">
 //                                 <tr>
-//                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Employee</th>
-//                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Annual Quota</th>
-//                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Used Days</th>
-//                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Remaining Days</th>
-//                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+//                                     <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Employee</th>
+//                                     <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Annual Quota</th>
+//                                     <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Used Days</th>
+//                                     <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Remaining Days</th>
+//                                     <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Actions</th>
 //                                 </tr>
 //                             </thead>
 //                             <tbody className="bg-white divide-y divide-gray-200">
@@ -1447,18 +1447,18 @@
 
 //                                     return (
 //                                         <tr key={emp._id}>
-//                                             <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+//                                             <td className="px-4 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
 //                                                 {emp.name}
 //                                             </td>
 
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {isEditingQuota ? (
 //                                                     <div className="flex items-center gap-2">
 //                                                         <input
 //                                                             type="number"
 //                                                             value={newLeaveQuota}
 //                                                             onChange={(e) => setNewLeaveQuota(e.target.value)}
-//                                                             className="w-20 border rounded px-2 py-1"
+//                                                             className="w-20 px-2 py-1 border rounded"
 //                                                             min="0"
 //                                                         />
 //                                                         <button
@@ -1482,7 +1482,7 @@
 //                                                                 setEditingQuota(emp._id);
 //                                                                 setNewLeaveQuota(emp.leaveQuota || 21);
 //                                                             }}
-//                                                             className="text-blue-600 hover:text-blue-800 text-xs"
+//                                                             className="text-xs text-blue-600 hover:text-blue-800"
 //                                                         >
 //                                                             Edit
 //                                                         </button>
@@ -1490,14 +1490,14 @@
 //                                                 )}
 //                                             </td>
 
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {isEditingUsedDays ? (
 //                                                     <div className="flex items-center gap-2">
 //                                                         <input
 //                                                             type="number"
 //                                                             value={tempUsedDays}
 //                                                             onChange={(e) => setTempUsedDays(e.target.value)}
-//                                                             className="w-20 border rounded px-2 py-1"
+//                                                             className="w-20 px-2 py-1 border rounded"
 //                                                             min="0"
 //                                                             max={emp.leaveQuota || 21}
 //                                                         />
@@ -1522,7 +1522,7 @@
 //                                                                 setEditingUsedDays(emp._id);
 //                                                                 setTempUsedDays(emp.usedDays !== undefined ? emp.usedDays : (stats.totalUsedDays || 0));
 //                                                             }}
-//                                                             className="text-blue-600 hover:text-blue-800 text-xs"
+//                                                             className="text-xs text-blue-600 hover:text-blue-800"
 //                                                         >
 //                                                             Edit
 //                                                         </button>
@@ -1530,10 +1530,10 @@
 //                                                 )}
 //                                             </td>
 
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {emp.remainingDays !== undefined ? emp.remainingDays : (emp.leaveQuota || 21) - (emp.usedDays || 0)}
 //                                             </td>
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 <button
 //                                                     onClick={() => setSelectedEmployee(emp._id)}
 //                                                     className="text-blue-600 hover:text-blue-800"
@@ -1550,25 +1550,25 @@
 //                 </div>
 
 //                 {/* Monthly Summary */}
-//                 <div className="bg-white p-5 rounded-lg shadow border border-gray-200 mb-6">
-//                     <h2 className="text-lg font-semibold mb-4">
+//                 <div className="p-5 mb-6 bg-white border border-gray-200 rounded-lg shadow">
+//                     <h2 className="mb-4 text-lg font-semibold">
 //                         {new Date(selectedYear, selectedMonth - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} Summary
 //                     </h2>
 //                     {selectedEmployee === 'all' ? (
-//                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-//                             <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+//                         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+//                             <div className="p-4 border border-blue-100 rounded-lg bg-blue-50">
 //                                 <h3 className="text-sm font-medium text-gray-700">Total Leaves Taken</h3>
 //                                 <p className="text-xl font-semibold">
 //                                     {adminFilteredLeaves.filter(l => l.status === 'Approved').length}
 //                                 </p>
 //                             </div>
-//                             <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+//                             <div className="p-4 border border-yellow-100 rounded-lg bg-yellow-50">
 //                                 <h3 className="text-sm font-medium text-gray-700">Pending Approvals</h3>
 //                                 <p className="text-xl font-semibold text-yellow-600">
 //                                     {adminFilteredLeaves.filter(l => l.status === 'Pending').length}
 //                                 </p>
 //                             </div>
-//                             <div className="bg-purple-50 p-4 rounded-lg border border-purple-100">
+//                             <div className="p-4 border border-purple-100 rounded-lg bg-purple-50">
 //                                 <h3 className="text-sm font-medium text-gray-700">Weekly Offs</h3>
 //                                 <p className="text-xl font-semibold text-purple-600">
 //                                     {adminFilteredLeaves.filter(l => l.isWeeklyOff).length}
@@ -1576,7 +1576,7 @@
 //                             </div>
 //                         </div>
 //                     ) : (
-//                         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+//                         <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
 //                             <div>
 //                                 <h3 className="text-sm font-medium text-gray-500">Monthly Quota</h3>
 //                                 <p className="text-xl font-semibold">
@@ -1594,7 +1594,7 @@
 //                 </div>
 
 //                 {/* Leave History Table */}
-//                 <div className="bg-white rounded-lg shadow overflow-hidden border border-gray-200 mb-6">
+//                 <div className="mb-6 overflow-hidden bg-white border border-gray-200 rounded-lg shadow">
 //                     <div className="p-4 border-b border-gray-200">
 //                         <h2 className="text-lg font-semibold">
 //                             Leave History for {monthOptions[selectedMonth - 1].label} {selectedYear}
@@ -1607,16 +1607,16 @@
 //                             <table className="min-w-full divide-y divide-gray-200">
 //                                 <thead className="bg-gray-50">
 //                                     <tr>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">#</th>
 //                                         {selectedEmployee === 'all' && (
-//                                             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Employee</th>
+//                                             <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Employee</th>
 //                                         )}
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Period</th>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Days</th>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Document</th>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-//                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Period</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Days</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Type</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Document</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Status</th>
+//                                         <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Actions</th>
 //                                     </tr>
 //                                 </thead>
 //                                 <tbody className="bg-white divide-y divide-gray-200">
@@ -1625,32 +1625,32 @@
 //                                             key={leave._id || index}
 //                                             className={leave.isWeeklyOff ? 'bg-purple-50' : ''}
 //                                         >
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+//                                             <td className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
 //                                                 {index + 1}
 //                                             </td>
 //                                             {selectedEmployee === 'all' && (
-//                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                                 <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                     {leave.employeeName}
 //                                                 </td>
 //                                             )}
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {dayjs(leave.fromDate).format('DD MMM YYYY')} - {dayjs(leave.toDate).format('DD MMM YYYY')}
 //                                             </td>
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {leave.totalDays} {leave.weeklyOffs > 0 && `(${leave.leaveDays} + ${leave.weeklyOffs} ${employeeStats[leave.employeeId]?.weeklyOffDay})`}
 //                                             </td>
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {leave.isWeeklyOff ?
 //                                                     `Weekly Off (${employeeStats[leave.employeeId]?.weeklyOffDay})` :
 //                                                     leave.leaveType || 'Regular Leave'}
 //                                             </td>
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 {leave.document ? (
 //                                                     <a
 //                                                         href={`${API_URL}/uploads/documents/${leave.document}`}
 //                                                         target="_blank"
 //                                                         rel="noopener noreferrer"
-//                                                         className="text-blue-600 hover:text-blue-800 underline"
+//                                                         className="text-blue-600 underline hover:text-blue-800"
 //                                                     >
 //                                                         View Document
 //                                                     </a>
@@ -1665,10 +1665,10 @@
 //                                                     onStatusChange={handleStatusChange}
 //                                                 />
 //                                             </td>
-//                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                                             <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
 //                                                 <button
 //                                                     onClick={() => setEditingLeave(leave)}
-//                                                     className="text-blue-600 hover:text-blue-800 mr-2"
+//                                                     className="mr-2 text-blue-600 hover:text-blue-800"
 //                                                 >
 //                                                     Edit
 //                                                 </button>
@@ -1957,7 +1957,7 @@ const Leave = () => {
           >
             {selectedStatus}
             <svg
-              className="-mr-1 ml-2 h-5 w-5"
+              className="w-5 h-5 ml-2 -mr-1"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
@@ -1972,7 +1972,7 @@ const Leave = () => {
         </div>
 
         {isOpen && (
-          <div className="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+          <div className="absolute right-0 z-10 w-32 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="py-1">
               {['Approved', 'Rejected', 'Pending'].map((status) => (
                 <button
@@ -2034,8 +2034,8 @@ const Leave = () => {
     label: new Date(0, i).toLocaleString('default', { month: 'long' }),
   }));
 
-  const yearOptions = Array.from({ length: 5 }, (_, i) => {
-    const year = new Date().getFullYear() - 2 + i;
+  const yearOptions = Array.from({ length: 10 }, (_, i) => {
+    const year = new Date().getFullYear() - 1 + i;
     return { value: year, label: year };
   });
 
@@ -2075,13 +2075,13 @@ const Leave = () => {
     };
 
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-          <h2 className="text-xl font-semibold mb-4">Edit Leave</h2>
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
+          <h2 className="mb-4 text-xl font-semibold">Edit Leave</h2>
           <form onSubmit={handleSubmit}>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block mb-1 text-sm font-medium text-gray-700">
                   From Date
                 </label>
                 <input
@@ -2089,12 +2089,12 @@ const Leave = () => {
                   name="from"
                   value={formData.from}
                   onChange={handleChange}
-                  className="w-full border rounded-md px-3 py-2"
+                  className="w-full px-3 py-2 border rounded-md"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block mb-1 text-sm font-medium text-gray-700">
                   To Date
                 </label>
                 <input
@@ -2102,45 +2102,45 @@ const Leave = () => {
                   name="to"
                   value={formData.to}
                   onChange={handleChange}
-                  className="w-full border rounded-md px-3 py-2"
+                  className="w-full px-3 py-2 border rounded-md"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block mb-1 text-sm font-medium text-gray-700">
                   Reason
                 </label>
                 <textarea
                   name="reason"
                   value={formData.reason}
                   onChange={handleChange}
-                  className="w-full border rounded-md px-3 py-2"
+                  className="w-full px-3 py-2 border rounded-md"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block mb-1 text-sm font-medium text-gray-700">
                   Leave Type
                 </label>
                 <select
                   name="leaveType"
                   value={formData.leaveType}
                   onChange={handleChange}
-                  className="w-full border rounded-md px-3 py-2"
+                  className="w-full px-3 py-2 border rounded-md cursor-pointer"
                 >
                   <option value="Paid Leave">Paid Leave</option>
                   <option value="Leave Without Pay">Leave Without Pay</option>
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block mb-1 text-sm font-medium text-gray-700">
                   Status
                 </label>
                 <select
                   name="status"
                   value={formData.status}
                   onChange={handleChange}
-                  className="w-full border rounded-md px-3 py-2"
+                  className="w-full px-3 py-2 border rounded-md cursor-pointer"
                 >
                   <option value="Approved">Approved</option>
                   <option value="Pending">Pending</option>
@@ -2148,17 +2148,17 @@ const Leave = () => {
                 </select>
               </div>
             </div>
-            <div className="mt-6 flex justify-end space-x-3">
+            <div className="flex justify-end mt-6 space-x-3">
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+                className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm cursor-pointer hover:bg-indigo-700"
               >
                 Save Changes
               </button>
@@ -2171,21 +2171,21 @@ const Leave = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen p-6 bg-gray-100 text-gray-900">
-        <h1 className="text-2xl font-bold text-indigo-700 mb-6">📝 Leave Management</h1>
+      <div className="min-h-screen p-6 text-gray-900 bg-gray-100">
+        <h1 className="mb-6 text-2xl font-bold text-indigo-700">📝 Leave Management</h1>
 
         {/* Filters */}
-        <div className="bg-white p-4 rounded-lg shadow border border-gray-200 mb-6">
-          <h2 className="text-lg font-semibold mb-3">Filters</h2>
+        <div className="p-4 mb-6 bg-white border border-gray-200 rounded-lg shadow">
+          <h2 className="mb-3 text-lg font-semibold">Filters</h2>
           <div className="flex flex-wrap gap-4">
             <div className="flex-1 min-w-[200px]">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block mb-1 text-sm font-medium text-gray-700">
                 Employee
               </label>
               <select
                 value={selectedEmployee}
                 onChange={(e) => setSelectedEmployee(e.target.value)}
-                className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="all">All Employees</option>
                 {employees.map((emp) => (
@@ -2196,13 +2196,13 @@ const Leave = () => {
               </select>
             </div>
             <div className="flex-1 min-w-[150px]">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block mb-1 text-sm font-medium text-gray-700">
                 Month
               </label>
               <select
                 value={selectedMonth}
                 onChange={(e) => setSelectedMonth(parseInt(e.target.value))}
-                className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {monthOptions.map((month) => (
                   <option key={month.value} value={month.value}>
@@ -2212,13 +2212,13 @@ const Leave = () => {
               </select>
             </div>
             <div className="flex-1 min-w-[150px]">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block mb-1 text-sm font-medium text-gray-700">
                 Year
               </label>
               <select
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(parseInt(e.target.value))}
-                className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {yearOptions.map((year) => (
                   <option key={year.value} value={year.value}>
@@ -2231,45 +2231,45 @@ const Leave = () => {
         </div>
 
         {/* Global Summary Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-white p-4 rounded-lg shadow border border-gray-200">
+        <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-4">
+          <div className="p-4 bg-white border border-gray-200 rounded-lg shadow">
             <h3 className="text-sm font-medium text-gray-500">Total Leaves</h3>
             <p className="text-2xl font-semibold">{globalStats.totalLeaves}</p>
           </div>
-          <div className="bg-white p-4 rounded-lg shadow border border-green-100">
+          <div className="p-4 bg-white border border-green-100 rounded-lg shadow">
             <h3 className="text-sm font-medium text-gray-500">Approved</h3>
             <p className="text-2xl font-semibold text-green-600">{globalStats.approvedCount}</p>
           </div>
-          <div className="bg-white p-4 rounded-lg shadow border border-red-100">
+          <div className="p-4 bg-white border border-red-100 rounded-lg shadow">
             <h3 className="text-sm font-medium text-gray-500">Rejected</h3>
             <p className="text-2xl font-semibold text-red-600">{globalStats.rejectedCount}</p>
           </div>
-          <div className="bg-white p-4 rounded-lg shadow border border-yellow-100">
+          <div className="p-4 bg-white border border-yellow-100 rounded-lg shadow">
             <h3 className="text-sm font-medium text-gray-500">Pending</h3>
             <p className="text-2xl font-semibold text-yellow-600">{globalStats.pendingCount}</p>
           </div>
         </div>
 
         {/* Employee Leave Quotas */}
-        <div className="bg-white p-5 rounded-lg shadow border border-gray-200 mb-6">
-          <h2 className="text-lg font-semibold mb-4">Employee Leave Quotas</h2>
+        <div className="p-5 mb-6 bg-white border border-gray-200 rounded-lg shadow">
+          <h2 className="mb-4 text-lg font-semibold">Employee Leave Quotas</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                     Employee
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                     Annual Quota
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                     Used Days
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                     Remaining Days
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                     Actions
                   </th>
                 </tr>
@@ -2282,28 +2282,28 @@ const Leave = () => {
 
                   return (
                     <tr key={emp._id}>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <td className="px-4 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
                         {emp.name}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         {isEditingQuota ? (
                           <div className="flex items-center gap-2">
                             <input
                               type="number"
                               value={newLeaveQuota}
                               onChange={(e) => setNewLeaveQuota(e.target.value)}
-                              className="w-20 border rounded px-2 py-1"
+                              className="w-20 px-2 py-1 border rounded"
                               min="0"
                             />
                             <button
                               onClick={() => handleUpdateQuota(emp._id)}
-                              className="!text-green-600 !hover:text-green-800"
+                              className="!text-green-600 !hover:text-green-800 cursor-pointer"
                             >
                               Save
                             </button>
                             <button
                               onClick={() => setEditingQuota(null)}
-                              className="!text-red-600 !hover:text-gray-700"
+                              className="!text-red-600 !hover:text-gray-700 cursor-pointer"
                             >
                               Cancel
                             </button>
@@ -2316,7 +2316,7 @@ const Leave = () => {
                                 setEditingQuota(emp._id);
                                 setNewLeaveQuota(emp.leaveQuota || 20);
                               }}
-                              className="!text-blue-600 !hover:text-blue-800 text-xs"
+                              className="!text-blue-600 !hover:text-blue-800 text-xs cursor-pointer"
                               
                             >
                               Edit
@@ -2324,26 +2324,26 @@ const Leave = () => {
                           </div>
                         )}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         {isEditingUsedDays ? (
                           <div className="flex items-center gap-2">
                             <input
                               type="number"
                               value={tempUsedDays}
                               onChange={(e) => setTempUsedDays(e.target.value)}
-                              className="w-20 border rounded px-2 py-1"
+                              className="w-20 px-2 py-1 border rounded"
                               min="0"
                               max={emp.leaveQuota || 20}
                             />
                             <button
                               onClick={() => handleUsedDaysChange(emp._id, tempUsedDays)}
-                              className="!text-green-600 !hover:text-green-800"
+                              className="!text-green-600 !hover:text-green-800 cursor-pointer"
                             >
                               Save
                             </button>
                             <button
                               onClick={() => setEditingUsedDays(null)}
-                              className="!text-red-600 hover:text-gray-700"
+                              className="!text-red-600 hover:text-gray-700 cursor-pointer"
                             >
                               Cancel
                             </button>
@@ -2356,20 +2356,20 @@ const Leave = () => {
                                 setEditingUsedDays(emp._id);
                                 setTempUsedDays(emp.usedDays ?? 0);
                               }}
-                              className="!text-blue-600 hover:text-blue-800 text-xs"
+                              className="!text-blue-600 hover:text-blue-800 text-xs cursor-pointer"
                             >
                               Edit
                             </button>
                           </div>
                         )}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         {stats.remainingDays}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         <button
                           onClick={() => setSelectedEmployee(emp._id)}
-                          className="!text-blue-600 hover:text-blue-800"
+                          className="!text-blue-600 hover:text-blue-800 cursor-pointer"
                         >
                           View Leaves
                         </button>
@@ -2383,8 +2383,8 @@ const Leave = () => {
         </div>
 
         {/* Monthly Summary */}
-        <div className="bg-white p-5 rounded-lg shadow border border-gray-200 mb-6">
-          <h2 className="text-lg font-semibold mb-4">
+        <div className="p-5 mb-6 bg-white border border-gray-200 rounded-lg shadow">
+          <h2 className="mb-4 text-lg font-semibold">
             {new Date(selectedYear, selectedMonth - 1, 1).toLocaleDateString('en-US', {
               month: 'long',
               year: 'numeric',
@@ -2392,20 +2392,20 @@ const Leave = () => {
             Summary
           </h2>
           {selectedEmployee === 'all' ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+              <div className="p-4 border border-blue-100 rounded-lg bg-blue-50">
                 <h3 className="text-sm font-medium text-gray-700">Total Leaves Taken</h3>
                 <p className="text-xl font-semibold">
                   {adminFilteredLeaves.filter((l) => l.status === 'Approved').length}
                 </p>
               </div>
-              <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+              <div className="p-4 border border-yellow-100 rounded-lg bg-yellow-50">
                 <h3 className="text-sm font-medium text-gray-700">Pending Approvals</h3>
                 <p className="text-xl font-semibold text-yellow-600">
                   {adminFilteredLeaves.filter((l) => l.status === 'Pending').length}
                 </p>
               </div>
-              <div className="bg-purple-50 p-4 rounded-lg border border-purple-100">
+              <div className="p-4 border border-purple-100 rounded-lg bg-purple-50">
                 <h3 className="text-sm font-medium text-gray-700">Weekly Offs</h3>
                 <p className="text-xl font-semibold text-purple-600">
                   {adminFilteredLeaves.filter((l) => l.isWeeklyOff).length}
@@ -2413,7 +2413,7 @@ const Leave = () => {
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
               <div>
                 <h3 className="text-sm font-medium text-gray-500">Monthly Quota</h3>
                 <p className="text-xl font-semibold">
@@ -2431,7 +2431,7 @@ const Leave = () => {
         </div>
 
         {/* Leave History Table */}
-        <div className="bg-white rounded-lg shadow overflow-hidden border border-gray-200 mb-6">
+        <div className="mb-6 overflow-hidden bg-white border border-gray-200 rounded-lg shadow">
           <div className="p-4 border-b border-gray-200">
             <h2 className="text-lg font-semibold">
               Leave History for {monthOptions[selectedMonth - 1].label} {selectedYear}
@@ -2444,30 +2444,30 @@ const Leave = () => {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       #
                     </th>
                     {selectedEmployee === 'all' && (
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                         Employee
                       </th>
                     )}
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       Period
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       Days
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       Type
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       Document
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       Status
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       Actions
                     </th>
                   </tr>
@@ -2475,37 +2475,37 @@ const Leave = () => {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {adminFilteredLeaves.map((leave, index) => (
                     <tr key={leave._id || index} className={leave.isWeeklyOff ? 'bg-purple-50' : ''}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <td className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
                         {index + 1}
                       </td>
                       {selectedEmployee === 'all' && (
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                           {leave.employeeName}
                         </td>
                       )}
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         {dayjs(leave.fromDate).format('DD MMM YYYY')} -{' '}
                         {dayjs(leave.toDate).format('DD MMM YYYY')}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         {leave.totalDays}{' '}
                         {leave.weeklyOffs > 0 &&
                           `(${leave.leaveDays} + ${leave.weeklyOffs} ${
                             employeeStats[leave.employeeId]?.weeklyOffDay
                           })`}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         {leave.isWeeklyOff
                           ? `Weekly Off (${employeeStats[leave.employeeId]?.weeklyOffDay})`
                           : leave.leaveType || 'Regular Leave'}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         {leave.document ? (
                           <a
                             href={`${API_URL}/uploads/documents/${leave.document}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-600 hover:text-blue-800 underline"
+                            className="text-blue-600 underline hover:text-blue-800"
                           >
                             View Document
                           </a>
@@ -2520,10 +2520,10 @@ const Leave = () => {
                           onStatusChange={handleStatusChange}
                         />
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         <button
                           onClick={() => setEditingLeave(leave)}
-                          className="text-blue-600 hover:text-blue-800 mr-2"
+                          className="mr-2 text-blue-600 cursor-pointer hover:text-blue-800"
                         >
                           Edit
                         </button>

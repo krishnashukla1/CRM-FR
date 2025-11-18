@@ -4531,7 +4531,7 @@ const SalesChart = () => {
             <button
               onClick={handlePrev}
               disabled={startIndex === 0}
-              className="text-sm px-2 py-1 bg-white !text-black rounded disabled:opacity-50"
+              className="cursor-pointer text-sm px-2 py-1 bg-white !text-black rounded disabled:opacity-50"
             >
               ◀
             </button>
@@ -4539,7 +4539,7 @@ const SalesChart = () => {
             <button
               onClick={handleNext}
               disabled={startIndex + itemsPerPage >= monthlyPerformance.length}
-              className="text-sm px-2 py-1 bg-white !text-black rounded disabled:opacity-50"
+              className="cursor-pointer text-sm px-2 py-1 bg-white !text-black rounded disabled:opacity-50"
             >
               ▶
             </button>
@@ -4601,13 +4601,13 @@ const SalesChart = () => {
         <div className="flex mt-4 space-x-2 md:mt-0">
           <button
             onClick={() => setActiveTab('monthly')}
-            className={`px-4 py-2 rounded-lg text-sm font-medium flex items-center ${activeTab === 'monthly' ? 'bg-blue-600 text-white' : 'bg-white !text-gray-700 border border-gray-200'}`}
+            className={`cursor-pointer   px-4 py-2 rounded-lg text-sm font-medium flex items-center ${activeTab === 'monthly' ? 'bg-blue-600 text-white' : 'bg-white !text-gray-700 border border-gray-200'}`}
           >
             <FiCalendar className="mr-2" /> Monthly
           </button>
           <button
             onClick={() => setActiveTab('yearly')}
-            className={`px-4 py-2 rounded-lg text-sm font-medium flex items-center ${activeTab === 'yearly' ? 'bg-blue-600 text-white' : 'bg-white !text-gray-700 border border-gray-200'}`}
+            className={`cursor-pointer px-4 py-2 rounded-lg text-sm font-medium flex items-center ${activeTab === 'yearly' ? 'bg-blue-600 text-white' : 'bg-white !text-gray-700 border border-gray-200'}`}
           >
             <FiBarChart2 className="mr-2" /> Yearly
           </button>
@@ -4787,7 +4787,7 @@ const SalesChart = () => {
                 <div className="flex flex-wrap gap-2">
                   <button
                     onClick={() => setPerformanceView('monthly')}
-                    className={`px-14 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm ${performanceView === 'monthly'
+                    className={`cursor-pointer px-14 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm ${performanceView === 'monthly'
                       ? 'bg-blue-600 !text-white'
                       : 'bg-gray-100 !text-gray-800 hover:bg-gray-200'
                       }`}
@@ -4805,7 +4805,7 @@ const SalesChart = () => {
                   </button> */}
                   <button
                     onClick={() => setPerformanceView('daily')}
-                    className={`px-14 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm ${performanceView === 'daily'
+                    className={`cursor-pointer px-14 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm ${performanceView === 'daily'
                       ? 'bg-blue-600 !text-white'
                       : 'bg-gray-100 !text-gray-800 hover:bg-gray-200'
                       }`}
@@ -4829,7 +4829,7 @@ const SalesChart = () => {
                             setSelectedMonths([...selectedMonths, month]);
                           }
                         }}
-                        className={`py-1 px-2 text-xs rounded-md ${selectedMonths.includes(month)
+                        className={`cursor-pointer py-1 px-2 text-xs rounded-md ${selectedMonths.includes(month)
                           ? 'bg-blue-600 text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
                       >
@@ -4859,12 +4859,12 @@ const SalesChart = () => {
                     })}
                   </select> */}
 
-                  <select
+                  {/* <select
                     value={selectedEmployee}
                     onChange={(e) => setSelectedEmployee(e.target.value)}
-                    className="block w-full px-3 py-2 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="block w-full px-3 py-2 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   >
-                    <option value="all" className="text-gray-900">
+                    <option value="all" className="!text-gray-900">
                       All Employees
                     </option>
                     {Object.keys(employeeDetails).map(empKey => {
@@ -4875,7 +4875,25 @@ const SalesChart = () => {
                         </option>
                       );
                     })}
-                  </select>
+                  </select> */}
+
+                  <select
+  value={selectedEmployee}
+  onChange={(e) => setSelectedEmployee(e.target.value)}
+  className="block w-full px-3 py-2 text-sm !text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+>
+  <option value="all">All Employees</option>
+
+  {Object.keys(employeeDetails).map(empKey => {
+    const [id, name] = empKey.split('|');
+    return (
+      <option key={id} value={empKey} className="text-gray-900">
+        {id} - {name}
+      </option>
+    );
+  })}
+</select>
+
 
                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -4929,7 +4947,7 @@ const SalesChart = () => {
               
 
 
-                  <select
+                  {/* <select
                     className="block w-full px-4 py-2 pr-10 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     value={selectedEmployee}
                     onChange={(e) => setSelectedEmployee(e.target.value)}
@@ -4945,7 +4963,27 @@ const SalesChart = () => {
                         </option>
                       );
                     })}
-                  </select>
+                  </select> */}
+
+                  <select
+  value={selectedEmployee}
+  onChange={(e) => setSelectedEmployee(e.target.value)}
+  className="block w-full px-3 py-2 text-sm !text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+>
+  <option value="all" className="text-gray-900">
+    All Employees
+  </option>
+
+  {Object.keys(employeeDetails).map((empKey) => {
+    const [id, name] = empKey.split("|");
+    return (
+      <option key={id} value={empKey} className="text-gray-900">
+        {id} - {name}
+      </option>
+    );
+  })}
+</select>
+
 
 
                   <div className="absolute inset-y-0 flex items-center text-gray-400 pointer-events-none right-3">

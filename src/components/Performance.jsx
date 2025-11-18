@@ -235,14 +235,14 @@ const Performance = () => {
         🎯 Set Employee Target
       </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
-        {/* Employee Dropdown - Fixed with proper styling */}
+      {/* <form onSubmit={handleSubmit} className="space-y-5">
+        
         <div className="relative">
           <select
             value={employeeId}
             onChange={(e) => setEmployeeId(e.target.value)}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             <option value="">👤 Select Employee</option>
             {employees.map((emp) => (
@@ -258,41 +258,13 @@ const Performance = () => {
           </div>
         </div>
 
-        {/* Month Selector */}
-        {/* <select
-          value={month}
-          onChange={(e) => setMonth(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-        >
-          {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map((m) => (
-            <option key={m} value={m}>{m}</option>
-          ))}
-        </select>
-
-       
-        <input
-          type="number"
-          value={target}
-          onChange={(e) => setTarget(e.target.value)}
-          placeholder="🎯 Target ($)"
-          required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full py-2 font-semibold text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700"
-        >
-          {loading ? "Saving..." : "🚀 Set Target"}
-        </button> */}
-
+        
 
 
         <select
   value={month}
   onChange={(e) => setMonth(e.target.value)}
-  className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+  className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400"
 >
   {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map((m) => (
     <option key={m} value={m}>{m}</option>
@@ -311,12 +283,62 @@ const Performance = () => {
 <button
   type="submit"
   disabled={loading}
-  className="w-full bg-blue-600 hover:bg-blue-700 !text-white py-2 rounded-lg font-semibold transition duration-200"
+  className="cursor-pointer w-full bg-blue-600 hover:bg-blue-700 !text-white py-2 rounded-lg font-semibold transition duration-200"
 >
   {loading ? "Saving..." : "🚀 Set Target"}
 </button>
 
-      </form>
+      </form> */}
+
+
+      <form onSubmit={handleSubmit} className="space-y-5">
+
+  <div>
+    <select
+      value={employeeId}
+      onChange={(e) => setEmployeeId(e.target.value)}
+      className="w-full px-4 py-3 border border-gray-300 rounded-lg cursor-pointer"
+    >
+      <option value="">👤 Select Employee</option>
+      {employees.map((emp) => (
+        <option key={emp._id} value={emp._id}>
+          {emp.name}
+        </option>
+      ))}
+    </select>
+  </div>
+
+  <div>
+    <select
+      value={month}
+      onChange={(e) => setMonth(e.target.value)}
+      className="w-full px-4 py-3 border border-gray-300 rounded-lg cursor-pointer"
+    >
+      {["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map(m => (
+        <option key={m} value={m}>{m}</option>
+      ))}
+    </select>
+  </div>
+
+  <div>
+    <input
+      type="number"
+      value={target}
+      onChange={(e) => setTarget(e.target.value)}
+      placeholder="🎯 Target ($)"
+      className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+    />
+  </div>
+
+  <button
+    type="submit"
+    className="w-full py-3 !text-white bg-blue-600 rounded-lg cursor-pointer hover:bg-blue-700"
+  >
+    🚀 Set Target
+  </button>
+
+</form>
+
 
       {message && (
         <p className={`mt-4 text-center font-medium ${message.includes("✅") ? "text-green-600" : "text-red-600"}`}>

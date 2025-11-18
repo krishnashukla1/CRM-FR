@@ -318,7 +318,7 @@ const Dashboard = () => {
         {/* Content Sections */}
         <CallSummary />
         <SalesChart />
-        <TaskOverview />
+        {/* <TaskOverview /> */}
         <EmployeeOfMonth />
         <DashboardCards />
  
