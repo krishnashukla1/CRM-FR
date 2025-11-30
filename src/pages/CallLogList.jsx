@@ -16,12 +16,12 @@ const CallLogList = ({ employeeId }) => {
       setLoading(true);
       setError('');
       const token = localStorage.getItem('token');
-      
+
       // First, get employee info to display name
       const employeeResponse = await axios.get(`${API_URL}/${employeeId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      
+
       if (employeeResponse.data) {
         setEmployeeInfo(employeeResponse.data.data || employeeResponse.data);
       }
@@ -35,7 +35,7 @@ const CallLogList = ({ employeeId }) => {
 
       // Handle the response - it should be a direct array
       let logsData = Array.isArray(response.data) ? response.data : [];
-      
+
       // If response has data property that's an array
       if (response.data && Array.isArray(response.data.data)) {
         logsData = response.data.data;
@@ -44,10 +44,10 @@ const CallLogList = ({ employeeId }) => {
       setLogs(logsData);
     } catch (err) {
       console.error('Fetch error details:', err);
-      const errorMessage = err.response?.data?.message || 
-                          err.response?.data?.error || 
-                          err.message || 
-                          'Failed to fetch call logs';
+      const errorMessage = err.response?.data?.message ||
+        err.response?.data?.error ||
+        err.message ||
+        'Failed to fetch call logs';
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -87,8 +87,8 @@ const CallLogList = ({ employeeId }) => {
   if (loading) {
     return (
       <div className="p-6">
-        <div className="flex justify-center items-center py-8">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+        <div className="flex items-center justify-center py-8">
+          <div className="w-8 h-8 border-b-2 border-blue-600 rounded-full animate-spin"></div>
           <span className="ml-3">Loading call logs...</span>
         </div>
       </div>
@@ -97,18 +97,18 @@ const CallLogList = ({ employeeId }) => {
 
   return (
     <div className="p-6">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-2xl font-bold text-gray-800">Call Logs</h2>
           {employeeInfo && (
-            <p className="text-gray-600 mt-1">
+            <p className="mt-1 text-gray-600">
               for {employeeInfo.name} ({employeeInfo.email})
             </p>
           )}
         </div>
         <button
           onClick={fetchLogs}
-          className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center"
+          className="flex items-center px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700"
         >
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -118,7 +118,7 @@ const CallLogList = ({ employeeId }) => {
       </div>
 
       {error && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+        <div className="px-4 py-3 mb-6 text-red-700 bg-red-100 border border-red-400 rounded">
           <div className="flex items-center">
             <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -129,11 +129,11 @@ const CallLogList = ({ employeeId }) => {
       )}
 
       {logs.length === 0 && !loading ? (
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 text-center">
-          <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="p-8 text-center border border-gray-200 rounded-lg bg-gray-50">
+          <svg className="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
-          <h3 className="text-lg font-medium text-gray-900 mb-2">No call logs found</h3>
+          <h3 className="mb-2 text-lg font-medium text-gray-900">No call logs found</h3>
           <p className="text-gray-500">This employee doesn't have any call logs yet.</p>
         </div>
       ) : (
@@ -146,18 +146,18 @@ const CallLogList = ({ employeeId }) => {
             const netProfit = profit - deduction;
 
             return (
-              <div key={log._id} className="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div key={log._id} className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+                <div className="grid grid-cols-1 gap-4 mb-4 md:grid-cols-2">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Customer Information</h3>
+                    <h3 className="mb-2 text-lg font-semibold text-gray-800">Customer Information</h3>
                     <p><strong>Name:</strong> {log.customerName}</p>
                     <p><strong>Email:</strong> {log.customerEmail}</p>
                     <p><strong>Phone:</strong> {log.customerPhone}</p>
                     <p><strong>Language:</strong> {log.language}</p>
                   </div>
-                  
+
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Call Details</h3>
+                    <h3 className="mb-2 text-lg font-semibold text-gray-800">Call Details</h3>
                     <p><strong>Direction:</strong> <span className="capitalize">{log.callDirection?.toLowerCase()}</span></p>
                     <p><strong>Type:</strong> {log.typeOfCall}</p>
                     <p><strong>Reason:</strong> {log.reasonForCall}</p>
@@ -166,15 +166,15 @@ const CallLogList = ({ employeeId }) => {
                   </div>
                 </div>
 
-                <div className="border-t pt-4 mt-4">
+                <div className="pt-4 mt-4 border-t">
                   <p className={`text-lg font-semibold ${log.wasSaleConverted === 'Yes' ? 'text-green-600' : 'text-red-600'}`}>
                     <strong>Sale Status:</strong> {log.wasSaleConverted}
                   </p>
-                  
+
                   {log.wasSaleConverted === 'Yes' && (
-                    <div className="mt-3 bg-gray-50 p-4 rounded-lg">
-                      <h4 className="font-medium text-gray-800 mb-2">Sales Details</h4>
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="p-4 mt-3 rounded-lg bg-gray-50">
+                      <h4 className="mb-2 font-medium text-gray-800">Sales Details</h4>
+                      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                         <div>
                           <p className="text-sm text-gray-600">Profit</p>
                           <p className="font-medium">{formatCurrency(profit)}</p>
@@ -194,16 +194,16 @@ const CallLogList = ({ employeeId }) => {
                           </p>
                         </div>
                       </div>
-                      
+
                       {log.saleConvertedThrough && (
                         <p className="mt-2">
                           <strong>Converted through:</strong> {log.saleConvertedThrough}
                         </p>
                       )}
-                      
+
                       <button
                         onClick={() => setSelectedLogId(selectedLogId === log._id ? null : log._id)}
-                        className="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-sm"
+                        className="px-4 py-2 mt-4 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700"
                       >
                         {selectedLogId === log._id ? 'Cancel Update' : 'Update Chargeback/Refund'}
                       </button>
@@ -227,7 +227,7 @@ const CallLogList = ({ employeeId }) => {
                 </div>
 
                 {log.callDescription && (
-                  <div className="mt-4 border-t pt-4">
+                  <div className="pt-4 mt-4 border-t">
                     <p><strong>Description:</strong> {log.callDescription}</p>
                   </div>
                 )}

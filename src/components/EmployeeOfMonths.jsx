@@ -1,313 +1,3 @@
-
-
-//==================================
-
-// import { useEffect, useState } from 'react';
-// import axios from 'axios';
-
-// const EmployeeOfMonth = () => {
-//   const [topEmployee, setTopEmployee] = useState(null);
-//   const [loading, setLoading] = useState(true);
-//   const [performanceData, setPerformanceData] = useState([]);
-
-//   const role = localStorage.getItem('role');
-//   const token = localStorage.getItem('token');
-//   const API_URL = import.meta.env.VITE_API_BASE_URL;
-//   const PERFORMANCE_API_URL = 'http://localhost:5000/api/performance';
-
-//   useEffect(() => {
-//     const fetchPerformanceData = async () => {
-//       try {
-//         const response = await axios.get(`${API_URL}/performance/performance/all`);
-//         if (response.data.status === 'success') {
-//           setPerformanceData(response.data.data);
-//         }
-//       } catch (error) {
-//         console.error('Error fetching performance data:', error);
-//       }
-//     };
-
-//     fetchPerformanceData();
-//   }, []);
-
-//   useEffect(() => {
-//     const fetchTopPerformerWithAttendance = async () => {
-//       setLoading(true);
-//       try {
-//         // Fetch all pages of call logs
-//         let allCallLogs = [];
-//         let currentPage = 1;
-//         let totalPages = 1;
-
-//         while (currentPage <= totalPages) {
-//           const callLogsRes = await axios.get(`${API_URL}/call-logs?page=${currentPage}`, {
-//             headers: { Authorization: `Bearer ${token}` },
-//           });
-
-//           const { data, pagination } = callLogsRes.data;
-//           allCallLogs = [...allCallLogs, ...(data || [])];
-//           totalPages = pagination?.totalPages || 1;
-//           currentPage += 1;
-//         }
-
-//         // Fetch attendance data
-//         const attendanceRes = await axios.get(`${API_URL}/attendance?perPage=1000`, {
-//           headers: { Authorization: `Bearer ${token}` },
-//         });
-
-//         const attendance = attendanceRes.data?.data || [];
-
-//         if (!allCallLogs.length) {
-//           console.warn('⚠️ No call logs returned.');
-//           return;
-//         }
-
-//         // Calculate total profitAmount per employee for the current month
-//         const currentMonth = new Date().getMonth();
-//         const currentYear = new Date().getFullYear();
-
-//         const employeeProfitMap = {};
-//         allCallLogs.forEach((log) => {
-//           const logDate = new Date(log.createdAt);
-//           if (
-//             logDate.getMonth() === currentMonth &&
-//             logDate.getFullYear() === currentYear &&
-//             log.employeeId // Filter out logs with null employeeId
-//           ) {
-//             const empId = log.employeeId._id.toString();
-//             const profit = log.profitAmount || 0;
-//             if (!employeeProfitMap[empId]) {
-//               employeeProfitMap[empId] = {
-//                 employeeId: log.employeeId._id,
-//                 name: log.employeeId.name,
-//                 email: log.employeeId.email,
-//                 totalProfit: 0,
-//                 role: log.employeeId.role,
-//                 photo: log.employeeId.photo
-//               };
-//             }
-//             employeeProfitMap[empId].totalProfit += profit;
-//           }
-//         });
-
-//         // Find top performer
-//         const topEmployeeData = Object.values(employeeProfitMap).reduce(
-//           (top, emp) => (emp.totalProfit > (top?.totalProfit || 0) ? emp : top),
-//           null
-//         );
-
-//         if (!topEmployeeData) {
-//           console.warn('⚠️ No top performer found.');
-//           return;
-//         }
-
-//         // Calculate present days for top employee
-//         let presentDays = 0;
-//         attendance.forEach((record) => {
-//           const recordDate = new Date(record.date);
-//           const empId = typeof record.employeeId === 'object'
-//             ? record.employeeId?._id?.toString()
-//             : record.employeeId?.toString();
-
-//           const isCurrentMonth =
-//             recordDate.getMonth() === currentMonth &&
-//             recordDate.getFullYear() === currentYear;
-
-//           if (record.status === 'Present' && empId === topEmployeeData.employeeId && isCurrentMonth) {
-//             presentDays += 1;
-//           }
-//         });
-
-//         // Find the target for the top employee from performance data
-//         const employeePerformance = performanceData.find(
-//           (perf) => perf.employeeId === topEmployeeData.employeeId.toString()
-//         );
-
-//         const target = employeePerformance ? employeePerformance.target : 10000; // Fallback to 10000 if not found
-
-//         const storedEmployee = JSON.parse(localStorage.getItem('employee') || '{}');
-//         const photoToUse = topEmployeeData.photo || storedEmployee.photo || '';
-
-//         setTopEmployee({
-//           _id: topEmployeeData.employeeId,
-//           name: topEmployeeData.name,
-//           email: topEmployeeData.email,
-//           photo: photoToUse,
-//           totalSales: topEmployeeData.totalProfit || 0,
-//           role: topEmployeeData.role || 'N/A',
-//           presentDays,
-//           target, // Use dynamic target from performance data
-//         });
-
-//       } catch (err) {
-//         console.error('❌ Error fetching data:', err);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     if (performanceData.length > 0) {
-//       fetchTopPerformerWithAttendance();
-//     }
-//   }, [performanceData]);
-
-//   const handlePhotoUpload = async (e) => {
-//     const file = e.target.files[0];
-//     if (!file || !topEmployee) return;
-
-//     const formData = new FormData();
-//     formData.append('photo', file);
-
-//     try {
-//       const res = await axios.patch(
-//         `${API_URL}/employees/${topEmployee._id}/photo`,
-//         formData,
-//         {
-//           headers: {
-//             'Content-Type': 'multipart/form-data',
-//             Authorization: `Bearer ${token}`,
-//           },
-//         }
-//       );
-
-//       alert('📷 Photo updated!');
-//       const newPhoto = res.data.filename;
-
-//       setTopEmployee((prev) => ({
-//         ...prev,
-//         photo: newPhoto,
-//       }));
-
-//       const updatedUser = {
-//         ...topEmployee,
-//         photo: newPhoto,
-//       };
-//       localStorage.setItem('user', JSON.stringify(updatedUser));
-//       localStorage.setItem('employee', JSON.stringify(updatedUser));
-//     } catch (err) {
-//       alert('❌ Failed to upload photo');
-//       console.error(err);
-//     }
-//   };
-
-//   const getPhotoURL = (photo) => {
-//     if (!photo) {
-//       return 'https://www.citypng.com/public/uploads/preview/hd-man-user-illustration-icon-transparent-png-701751694974843ybexneueic.png';
-//     }
-
-//     const baseUrl = API_URL.replace('/api', '');
-//     const timestamp = Date.now(); // Force reload
-//     return photo.startsWith('http')
-//       ? `${photo}?ts=${timestamp}`
-//       : `${baseUrl}/uploads/${photo}?ts=${timestamp}`;
-//   };
-
-//   const getDisplayId = (employee) => {
-//     if (!employee) return '';
-//     return employee.employeeCode || `FBZ-${employee._id?.slice(-6).toUpperCase()}`;
-//   };
-
-//   return (
-//     <div className="bg-gradient-to-br from-white to-indigo-50 p-6 rounded-2xl shadow-lg border border-indigo-100 w-full max-w-8xl mx-auto">
-//       <div className="flex items-center justify-between mb-4">
-//         <div>
-//           <h2 className="text-2xl font-bold text-indigo-800">🏆 Employee of the Month</h2>
-//           <p className="text-sm text-indigo-600/80">
-//             Top performer based on <span className="font-semibold">profit generated</span>
-//           </p>
-//         </div>
-//         <div className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-semibold">
-//           {new Date().toLocaleString('default', { month: 'long' })}
-//         </div>
-//       </div>
-
-//       {loading ? (
-//         <div className="flex justify-center items-center h-40">
-//           <div className="animate-pulse flex space-x-4">
-//             <div className="rounded-full bg-indigo-200 h-12 w-12"></div>
-//             <div className="flex-1 space-y-4 py-1">
-//               <div className="h-4 bg-indigo-200 rounded w-3/4"></div>
-//               <div className="space-y-2">
-//                 <div className="h-4 bg-indigo-200 rounded"></div>
-//                 <div className="h-4 bg-indigo-200 rounded w-5/6"></div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       ) : topEmployee ? (
-//         <div className="flex flex-col sm:flex-row gap-6">
-//           <div className="flex-shrink-0 relative self-center">
-//             <div className="relative group">
-//               <img
-//                 src={getPhotoURL(topEmployee.photo)}
-//                 alt="Top Employee"
-//                 className="w-24 h-24 rounded-full border-4 border-yellow-400 shadow-md object-cover group-hover:scale-105 transition-transform duration-300"
-//               />
-//               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap shadow-sm">
-//                 #1 PERFORMER
-//               </div>
-//             </div>
-
-//             {role === 'admin' && (
-//               <label className="mt-3 block text-center">
-//                 <span className="text-xs bg-indigo-600 text-white px-2 py-1 rounded cursor-pointer hover:bg-indigo-700 transition">
-//                   Change Photo
-//                   <input type="file" accept="image/*" onChange={handlePhotoUpload} className="hidden" />
-//                 </span>
-//               </label>
-//             )}
-//           </div>
-
-//           <div className="flex-1">
-//             <div className="grid grid-cols-2 gap-3">
-//               <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100">
-//                 <div className="text-xs text-gray-500 font-medium">Name</div>
-//                 <div className="font-bold text-indigo-900">{topEmployee.name}</div>
-//               </div>
-//               <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100">
-//                 <div className="text-xs text-gray-500 font-medium">Role</div>
-//                 <div className="font-medium text-gray-800">{topEmployee.role || 'N/A'}</div>
-//               </div>
-//               <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100">
-//                 <div className="text-xs text-gray-500 font-medium">Employee ID</div>
-//                 <div className="font-mono text-sm text-gray-700">{getDisplayId(topEmployee)}</div>
-//               </div>
-//               <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100">
-//                 <div className="text-xs text-gray-500 font-medium">Present Days</div>
-//                 <div className="font-bold text-green-600">{topEmployee.presentDays}</div>
-//               </div>
-//             </div>
-
-//             <div className="mt-4 grid grid-cols-3 gap-3">
-//               <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center">
-//                 <div className="text-xs text-gray-500 font-medium">Profit</div>
-//                 <div className="font-bold text-green-600">${(topEmployee.totalSales || 0).toLocaleString()}</div>
-//               </div>
-//               <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center">
-//                 <div className="text-xs text-gray-500 font-medium">Target</div>
-//                 <div className="font-bold text-blue-600">${(topEmployee.target || 0).toLocaleString()}</div>
-//               </div>
-//               <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center">
-//                 <div className="text-xs text-gray-500 font-medium">Achieved</div>
-//                 <div className="font-bold text-indigo-600">
-//                   {(((topEmployee.totalSales || 0) / (topEmployee.target || 1)) * 100).toFixed(1)}%
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       ) : (
-//         <div className="text-center py-8 text-gray-500">
-//           No employee data available for this month.
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default EmployeeOfMonth;
-//----------------------
-
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -509,7 +199,7 @@ const EmployeeOfMonth = () => {
   console.log("Top Employee Data:", topEmployee);
 
   return (
-    <div className="bg-gradient-to-br from-white to-indigo-50 p-6 rounded-2xl shadow-lg border border-indigo-100 w-full max-w-8xl mx-auto">
+    <div className="w-full p-6 mx-auto border border-indigo-100 shadow-lg bg-gradient-to-br from-white to-indigo-50 rounded-2xl max-w-8xl">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="text-2xl font-bold text-indigo-800">🏆 Employee of the Month</h2>
@@ -517,31 +207,31 @@ const EmployeeOfMonth = () => {
             Top performer based on <span className="font-semibold">profit generated</span>
           </p>
         </div>
-        <div className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-semibold">
+        <div className="px-3 py-1 text-xs font-semibold text-indigo-800 bg-indigo-100 rounded-full">
           {new Date().toLocaleString('default', { month: 'long' })}
         </div>
       </div>
 
       {loading ? (
-        <div className="flex justify-center items-center h-40">
-          <div className="animate-pulse flex space-x-4">
-            <div className="rounded-full bg-indigo-200 h-12 w-12"></div>
-            <div className="flex-1 space-y-4 py-1">
-              <div className="h-4 bg-indigo-200 rounded w-3/4"></div>
+        <div className="flex items-center justify-center h-40">
+          <div className="flex space-x-4 animate-pulse">
+            <div className="w-12 h-12 bg-indigo-200 rounded-full"></div>
+            <div className="flex-1 py-1 space-y-4">
+              <div className="w-3/4 h-4 bg-indigo-200 rounded"></div>
               <div className="space-y-2">
                 <div className="h-4 bg-indigo-200 rounded"></div>
-                <div className="h-4 bg-indigo-200 rounded w-5/6"></div>
+                <div className="w-5/6 h-4 bg-indigo-200 rounded"></div>
               </div>
             </div>
           </div>
         </div>
       ) : topEmployee ? (
-        // <div className="flex flex-col sm:flex-row gap-6">
+        // <div className="flex flex-col gap-6 sm:flex-row">
 
 
-        //   <div className="flex-shrink-0 relative self-center">
+        //   <div className="relative self-center flex-shrink-0">
         //     <div className="relative group">
-        //       <div className="w-24 h-24 mb-12 rounded-full bg-yellow-400 flex items-center justify-center border-4 border-yellow-400 shadow-md group-hover:scale-105 transition-transform duration-300">
+        //       <div className="flex items-center justify-center w-24 h-24 mb-12 transition-transform duration-300 bg-yellow-400 border-4 border-yellow-400 rounded-full shadow-md group-hover:scale-105">
         //         <svg
         //           viewBox="0 0 24 24"
         //           className="w-12 h-12 text-white"
@@ -561,34 +251,34 @@ const EmployeeOfMonth = () => {
         //   <div className="flex-1">
 
         //     <div className="grid h-20 grid-cols-3 gap-3">
-        //       <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100">
-        //         <div className="text-xs text-gray-500 font-medium">Name</div>
+        //       <div className="p-3 bg-white border border-gray-100 rounded-lg shadow-sm">
+        //         <div className="text-xs font-medium text-gray-500">Name</div>
         //         <div className="font-bold text-indigo-900">{topEmployee.name}</div>
         //       </div>
 
-        //       <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100">
-        //         <div className="text-xs text-gray-500 font-medium">Employee ID</div>
+        //       <div className="p-3 bg-white border border-gray-100 rounded-lg shadow-sm">
+        //         <div className="text-xs font-medium text-gray-500">Employee ID</div>
         //         <div className="font-mono text-sm text-gray-700">{getDisplayId(topEmployee)}</div>
         //       </div>
 
-        //       <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100">
-        //         <div className="text-xs text-gray-500 font-medium">Present Days</div>
+        //       <div className="p-3 bg-white border border-gray-100 rounded-lg shadow-sm">
+        //         <div className="text-xs font-medium text-gray-500">Present Days</div>
         //         <div className="font-bold text-green-600">{topEmployee.presentDays}</div>
         //       </div>
         //     </div>
 
 
-        //     <div className="mt-4 grid grid-cols-3 gap-3">
-        //       <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center">
-        //         <div className="text-xs text-gray-500 font-medium">Profit</div>
+        //     <div className="grid grid-cols-3 gap-3 mt-4">
+        //       <div className="p-3 text-center bg-white border border-gray-100 rounded-lg shadow-sm">
+        //         <div className="text-xs font-medium text-gray-500">Profit</div>
         //         <div className="font-bold text-green-600">${(topEmployee.totalSales || 0).toLocaleString()}</div>
         //       </div>
-        //       <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center">
-        //         <div className="text-xs text-gray-500 font-medium">Target</div>
+        //       <div className="p-3 text-center bg-white border border-gray-100 rounded-lg shadow-sm">
+        //         <div className="text-xs font-medium text-gray-500">Target</div>
         //         <div className="font-bold text-blue-600">${(topEmployee.target || 0).toLocaleString()}</div>
         //       </div>
-        //       <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center">
-        //         <div className="text-xs text-gray-500 font-medium">Achieved</div>
+        //       <div className="p-3 text-center bg-white border border-gray-100 rounded-lg shadow-sm">
+        //         <div className="text-xs font-medium text-gray-500">Achieved</div>
         //         <div className="font-bold text-indigo-600">
         //           {(((topEmployee.totalSales || 0) / (topEmployee.target || 1)) * 100).toFixed(1)}%
         //         </div>
@@ -598,14 +288,14 @@ const EmployeeOfMonth = () => {
         // </div>
 
 
-<div className="flex flex-col sm:flex-row gap-6 p-6 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl shadow-lg border border-indigo-100 transform transition-all duration-300 hover:shadow-xl">
+<div className="flex flex-col gap-6 p-6 transition-all duration-300 transform border border-indigo-100 shadow-lg sm:flex-row bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl hover:shadow-xl">
   {/* Employee Avatar Section */}
-  <div className="flex-shrink-0 relative self-center">
+  <div className="relative self-center flex-shrink-0">
     <div className="relative group">
-      <div className="w-28 h-28 rounded-full bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center border-4 border-white shadow-2xl group-hover:scale-105 transition-all duration-300 transform-gpu">
+      <div className="flex items-center justify-center transition-all duration-300 border-4 border-white rounded-full shadow-2xl w-28 h-28 bg-gradient-to-br from-yellow-400 to-amber-500 group-hover:scale-105 transform-gpu">
         <svg
           viewBox="0 0 24 24"
-          className="w-14 h-14 text-white drop-shadow-sm"
+          className="text-white w-14 h-14 drop-shadow-sm"
           fill="currentColor"
           aria-hidden="true"
         >
@@ -624,28 +314,28 @@ const EmployeeOfMonth = () => {
       </div>
       
       {/* Decorative Elements */}
-      <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full opacity-80 animate-pulse"></div>
-      <div className="absolute -bottom-4 -left-2 w-5 h-5 bg-amber-400 rounded-full opacity-60"></div>
+      <div className="absolute w-6 h-6 bg-yellow-400 rounded-full -top-2 -right-2 opacity-80 animate-pulse"></div>
+      <div className="absolute w-5 h-5 rounded-full -bottom-4 -left-2 bg-amber-400 opacity-60"></div>
     </div>
   </div>
 
   {/* Employee Details Section */}
   <div className="flex-1">
     {/* First Row - Basic Info */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
-      <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 group">
+    <div className="grid grid-cols-1 gap-4 mb-5 md:grid-cols-3">
+      <div className="p-4 transition-all duration-200 bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md group">
         <div className="text-xs text-gray-500 font-medium uppercase tracking-wide mb-1.5">Name</div>
-        <div className="font-bold text-indigo-900 text-lg truncate group-hover:text-indigo-600 transition-colors">{topEmployee.name}</div>
+        <div className="text-lg font-bold text-indigo-900 truncate transition-colors group-hover:text-indigo-600">{topEmployee.name}</div>
       </div>
 
-      <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 group">
+      <div className="p-4 transition-all duration-200 bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md group">
         <div className="text-xs text-gray-500 font-medium uppercase tracking-wide mb-1.5">Employee ID</div>
-        <div className="font-mono text-sm text-gray-700 font-semibold truncate">{getDisplayId(topEmployee)}</div>
+        <div className="font-mono text-sm font-semibold text-gray-700 truncate">{getDisplayId(topEmployee)}</div>
       </div>
 
-      <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 group">
+      <div className="p-4 transition-all duration-200 bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md group">
         <div className="text-xs text-gray-500 font-medium uppercase tracking-wide mb-1.5">Present Days</div>
-        <div className="font-bold text-green-600 text-xl flex items-center">
+        <div className="flex items-center text-xl font-bold text-green-600">
           {topEmployee.presentDays}
           <svg className="w-5 h-5 ml-1 text-green-400" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -655,33 +345,33 @@ const EmployeeOfMonth = () => {
     </div>
 
     {/* Second Row - Performance Metrics */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-xl shadow-sm border border-green-100 hover:shadow-md transition-all duration-200 group text-center">
-        <div className="text-xs text-green-600 font-medium uppercase tracking-wide mb-2">Profit</div>
-        <div className="font-bold text-green-700 text-xl">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="p-4 text-center transition-all duration-200 border border-green-100 shadow-sm bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl hover:shadow-md group">
+        <div className="mb-2 text-xs font-medium tracking-wide text-green-600 uppercase">Profit</div>
+        <div className="text-xl font-bold text-green-700">
           ${(topEmployee.totalSales || 0).toLocaleString()}
         </div>
-        <div className="mt-1 h-1 w-12 bg-green-200 rounded-full mx-auto">
+        <div className="w-12 h-1 mx-auto mt-1 bg-green-200 rounded-full">
           <div className="h-1 bg-green-500 rounded-full" style={{ width: '85%' }}></div>
         </div>
       </div>
       
-      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-4 rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition-all duration-200 group text-center">
-        <div className="text-xs text-blue-600 font-medium uppercase tracking-wide mb-2">Target</div>
-        <div className="font-bold text-blue-700 text-xl">
+      <div className="p-4 text-center transition-all duration-200 border border-blue-100 shadow-sm bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl hover:shadow-md group">
+        <div className="mb-2 text-xs font-medium tracking-wide text-blue-600 uppercase">Target</div>
+        <div className="text-xl font-bold text-blue-700">
           ${(topEmployee.target || 0).toLocaleString()}
         </div>
-        <div className="mt-1 h-1 w-12 bg-blue-200 rounded-full mx-auto">
+        <div className="w-12 h-1 mx-auto mt-1 bg-blue-200 rounded-full">
           <div className="h-1 bg-blue-500 rounded-full" style={{ width: '75%' }}></div>
         </div>
       </div>
       
-      <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-4 rounded-xl shadow-sm border border-purple-100 hover:shadow-md transition-all duration-200 group text-center">
-        <div className="text-xs text-purple-600 font-medium uppercase tracking-wide mb-2">Achieved</div>
-        <div className="font-bold text-purple-700 text-xl">
+      <div className="p-4 text-center transition-all duration-200 border border-purple-100 shadow-sm bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl hover:shadow-md group">
+        <div className="mb-2 text-xs font-medium tracking-wide text-purple-600 uppercase">Achieved</div>
+        <div className="text-xl font-bold text-purple-700">
           {(((topEmployee.totalSales || 0) / (topEmployee.target || 1)) * 100).toFixed(1)}%
         </div>
-        <div className="mt-1 h-1 w-12 bg-purple-200 rounded-full mx-auto">
+        <div className="w-12 h-1 mx-auto mt-1 bg-purple-200 rounded-full">
           <div 
             className="h-1 bg-purple-500 rounded-full" 
             style={{ width: `${Math.min(100, ((topEmployee.totalSales || 0) / (topEmployee.target || 1)) * 100)}%` }}
@@ -691,8 +381,8 @@ const EmployeeOfMonth = () => {
     </div>
 
     {/* Achievement Bar */}
-    <div className="mt-6 bg-white p-3 rounded-xl shadow-sm border border-gray-100">
-      <div className="flex justify-between items-center mb-2">
+    <div className="p-3 mt-6 bg-white border border-gray-100 shadow-sm rounded-xl">
+      <div className="flex items-center justify-between mb-2">
         <span className="text-xs font-medium text-gray-600">Performance Progress</span>
         <span className="text-xs font-bold text-indigo-600">
           {Math.min(100, ((topEmployee.totalSales || 0) / (topEmployee.target || 1)) * 100).toFixed(1)}%
@@ -710,7 +400,7 @@ const EmployeeOfMonth = () => {
 
 
       ) : (
-        <div className="text-center py-8 text-gray-500">
+        <div className="py-8 text-center text-gray-500">
           No employee data available for this month.
         </div>
       )}

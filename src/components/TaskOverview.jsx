@@ -52,10 +52,7 @@ const TaskOverview = () => {
 
     return productivity;
   };
-
   const productivityMap = getProductivityMap();
-
-
   return (
     <div className="p-5 text-gray-800 bg-white border shadow rounded-xl">
       <p className="mb-4 text-lg font-semibold">🗂️ Task Overview</p>

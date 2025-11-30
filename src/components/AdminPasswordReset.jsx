@@ -9,7 +9,7 @@ const AdminPasswordReset = () => {
   const [status, setStatus] = useState('');
   const [loggedInEmail, setLoggedInEmail] = useState('');
   const [allowed, setAllowed] = useState(false);
-   const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
 
   useEffect(() => {
     // const user = JSON.parse(localStorage.getItem('user'));
@@ -80,42 +80,29 @@ const AdminPasswordReset = () => {
             />
           </div>
 
-          {/* <div>
+
+          <div className="relative">
             <label className="block mb-1 text-sm font-semibold text-gray-700">
               New Password
             </label>
+
             <input
-              type="password"
-              className="w-full px-4 py-2 border border-blue-300 rounded-lg shadow-sm focus:ring focus:ring-blue-200"
+              type={showNewPassword ? "text" : "password"}
+              className="w-full px-4 py-2 pr-10 border border-blue-300 rounded-lg shadow-sm focus:ring focus:ring-blue-200"
               placeholder="Enter new password"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
               required
             />
-          </div> */}
 
-           <div className="relative">
-      <label className="block mb-1 text-sm font-semibold text-gray-700">
-        New Password
-      </label>
-
-      <input
-        type={showNewPassword ? "text" : "password"}
-        className="w-full px-4 py-2 pr-10 border border-blue-300 rounded-lg shadow-sm focus:ring focus:ring-blue-200"
-        placeholder="Enter new password"
-        value={newPassword}
-        onChange={(e) => setNewPassword(e.target.value)}
-        required
-      />
-
-      {/* 👁️ Eye Icon */}
-      <div
-        className="absolute text-gray-600 cursor-pointer right-3 top-9 hover:text-blue-500"
-        onClick={() => setShowNewPassword(!showNewPassword)}
-      >
-        {showNewPassword ? <FaEyeSlash /> : <FaEye />}
-      </div>
-    </div>
+            {/* 👁️ Eye Icon */}
+            <div
+              className="absolute text-gray-600 cursor-pointer right-3 top-9 hover:text-blue-500"
+              onClick={() => setShowNewPassword(!showNewPassword)}
+            >
+              {showNewPassword ? <FaEyeSlash /> : <FaEye />}
+            </div>
+          </div>
 
           <button
             type="submit"
@@ -126,11 +113,10 @@ const AdminPasswordReset = () => {
 
           {message && (
             <div
-              className={`mt-4 p-3 rounded text-sm font-medium ${
-                status === 'success'
+              className={`mt-4 p-3 rounded text-sm font-medium ${status === 'success'
                   ? 'bg-green-100 text-green-800'
                   : 'bg-red-100 text-red-700'
-              }`}
+                }`}
             >
               {message}
             </div>

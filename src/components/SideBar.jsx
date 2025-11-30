@@ -2,8 +2,7 @@
 import { FaTachometerAlt, FaUserFriends, FaLock, FaCalendarCheck, FaChartLine, FaTasks, FaBell, FaRegCalendarMinus, FaPhoneAlt } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 
-import Logout from './Logout'; // 👈 import your Logout component
-
+import Logout from './Logout';
 // const Sidebar = () => {
 const Sidebar = ({ setLogoutMessage }) => {
   const items = [
@@ -22,40 +21,21 @@ const Sidebar = ({ setLogoutMessage }) => {
   ];
 
   return (
-    // <aside className="w-64 min-h-screen flex flex-col justify-between bg-[#72819a] text-white p-6 shadow-xl">
-     
-     <aside className="w-64 min-h-screen flex flex-col justify-between bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white p-6 shadow-xl">
+
+    <aside className="w-64 min-h-screen flex flex-col justify-between bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white p-6 shadow-xl">
 
       {/* Top - Logo and Nav */}
       <div>
-        {/* <div className="mb-8 text-2xl font-bold tracking-wide text-center text-indigo-200">
-          🚀 CRM Panel
-        </div> */}
-
-
-
-
         <div className="flex items-center justify-center gap-2 mb-8 text-2xl font-bold tracking-wide text-center text-indigo-200">
-  <img
-    src="/d2.png"
-    // src="/favicon.svg"
+          <img
+            src="/d2.png"
+            // src="/favicon.svg"
 
-    alt="Logo"
-    className="w-8 h-8 rounded-full"
-  />
- FareBuzzer
-</div>
-
-{/* <div className="flex items-center justify-center gap-3 mb-8 text-2xl font-bold tracking-wide text-center text-indigo-200">
-  <img
-    src="/favicon.svg"
-    alt="Logo"
-    className="w-12 h-12"
-  />
-  <span className="leading-none">FareBuzzer</span>
-</div> */}
-
-
+            alt="Logo"
+            className="w-8 h-8 rounded-full"
+          />
+          FareBuzzer
+        </div>
         <nav>
           <ul className="space-y-2">
             {items.map((item, idx) => (
@@ -75,14 +55,9 @@ const Sidebar = ({ setLogoutMessage }) => {
           </ul>
         </nav>
         <div className="pt-6">
-        <Logout onLogout={setLogoutMessage} className="w-full" />
+          <Logout onLogout={setLogoutMessage} className="w-full" />
+        </div>
       </div>
-      </div>
-
-      {/* Bottom - Logout Button */}
-      {/* <div className="pt-6">
-        <Logout onLogout={setLogoutMessage} className="w-full" />
-      </div> */}
     </aside>
   );
 };
